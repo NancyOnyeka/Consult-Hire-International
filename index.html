@@ -14,11 +14,11 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: "#0f172a", // Slate 900 (Deep Blue)
-                            primary: "#1e1b4b", // Indigo 950 (Deep Purple/Blue)
-                            accent: "#581c87", // Purple 900
-                            light: "#e0e7ff", // Indigo 100
-                            surface: "#f8fafc", // Slate 50 (Very Light Gray)
+                            dark: "#0f172a",
+                            primary: "#1e1b4b",
+                            accent: "#581c87",
+                            light: "#e0e7ff",
+                            surface: "#f8fafc",
                         }
                     },
                     fontFamily: {
@@ -156,8 +156,8 @@
                                     <div class="text-sm text-gray-600 mt-1">Retention Rate</div>
                                 </div>
                                 <div>
-                                    <div class="text-3xl font-bold text-brand-accent">6</div>
-                                    <div class="text-sm text-gray-600 mt-1">Complexity Levels</div>
+                                    <div class="text-3xl font-bold text-brand-accent">10</div>
+                                    <div class="text-sm text-gray-600 mt-1">Core Specialisms</div>
                                 </div>
                             </div>
                         </div>
@@ -180,7 +180,7 @@
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="text-center mb-16">
                         <h2 class="text-3xl font-bold text-brand-dark mb-4">Our Specialisms</h2>
-                        <p class="text-gray-600 max-w-2xl mx-auto">We partner with companies solving complex, high-stakes problems across emerging technology domains.</p>
+                        <p class="text-gray-600 max-w-2xl mx-auto">We partner with companies solving complex, high-stakes problems across emerging technology domains and product leadership.</p>
                     </div>
                     <div id="specialisms-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- Rendered by JS -->
@@ -204,7 +204,7 @@
                     </div>
 
                     <!-- Forms Container -->
-                    <div class="glass-panel rounded-2xl p-8 lg:p-12 max-w-4xl mx-auto">
+                    <div id="client-form-wrapper" class="glass-panel rounded-2xl p-8 lg:p-12 max-w-4xl mx-auto scroll-mt-24">
                         <div id="client-form-container">
                             <h3 class="text-2xl font-bold text-white mb-6">Submit a Vacancy</h3>
                             <form class="space-y-6" onsubmit="handleClientSubmit(event, 'vacancy')">
@@ -338,7 +338,11 @@
                                         <option value="cloud">Cloud Architecture</option>
                                         <option value="devops">DevOps & Site Reliability</option>
                                         <option value="data">Data Engineering & Analytics</option>
+                                        <option value="datascience">Data Science</option>
                                         <option value="security">Cybersecurity</option>
+                                        <option value="product">Product Management</option>
+                                        <option value="productowner">Product Ownership</option>
+                                        <option value="software">Software Engineering</option>
                                     </select>
                                 </div>
                                 <div>
@@ -458,6 +462,10 @@
             { "title": "Cloud Architecture", "icon": "fa-cloud", "description": "Multi-cloud strategists, Cloud-native developers, and migration specialists.", "color": "from-indigo-500 to-blue-400" },
             { "title": "Data Engineering", "icon": "fa-database", "description": "Big data architects, Analytics engineers, and real-time processing experts.", "color": "from-emerald-500 to-teal-400" },
             { "title": "Cybersecurity", "icon": "fa-shield-alt", "description": "Security architects, DevSecOps, and compliance specialists for high-stakes environments.", "color": "from-red-500 to-orange-400" },
+            { "title": "Product Management", "icon": "fa-lightbulb", "description": "Strategic product leaders, roadmap architects, and growth-focused PMs driving digital transformation.", "color": "from-violet-500 to-purple-400" },
+            { "title": "Product Ownership", "icon": "fa-clipboard-check", "description": "Agile product owners, backlog managers, and stakeholder coordinators for complex tech delivery.", "color": "from-fuchsia-500 to-pink-400" },
+            { "title": "Software Engineering", "icon": "fa-code", "description": "Full-stack, backend, and frontend engineers building mission-critical applications at scale.", "color": "from-blue-600 to-indigo-400" },
+            { "title": "Data Science", "icon": "fa-chart-bar", "description": "Statistical modelers, predictive analysts, and research scientists turning data into strategic advantage.", "color": "from-cyan-500 to-blue-500" },
             { "title": "Emerging Tech", "icon": "fa-rocket", "description": "Blockchain, Quantum computing, Edge computing, and IoT specialists.", "color": "from-amber-500 to-yellow-400" }
         ];
 
@@ -479,6 +487,7 @@
         const activeJobsData = [
             { "title": "Principal AI Engineer", "location": "San Francisco / Remote", "type": "Level 5", "salary": "$350k-$450k", "posted": "2 days ago" },
             { "title": "Staff Platform Engineer", "location": "New York", "type": "Level 4", "salary": "$280k-$320k", "posted": "3 days ago" },
+            { "title": "Senior Product Manager", "location": "London", "type": "Level 4", "salary": "£120k-£150k", "posted": "4 days ago" },
             { "title": "Head of Data Engineering", "location": "London", "type": "Level 5", "salary": "£180k-£220k", "posted": "5 days ago" },
             { "title": "Senior DevOps Architect", "location": "Singapore", "type": "Level 3", "salary": "$200k-$250k", "posted": "1 week ago" }
         ];
@@ -763,6 +772,12 @@
             }
             
             container.innerHTML = formHTML;
+            
+            // Smooth scroll to form after rendering
+            setTimeout(() => {
+                const formWrapper = document.getElementById('client-form-wrapper');
+                formWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
         }
 
         function handleClientSubmit(event, type) {
