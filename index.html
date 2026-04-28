@@ -1,143 +1,116 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Consult&Hire</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consult&Hire</title>
 
-<script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
-<style>
-body { font-family: Inter, sans-serif; }
+    <style>
+        body { font-family: Inter, sans-serif; }
 
-/* ===== SERVICES ===== */
-.service-card {
-    padding: 2rem;
-    border-radius: 1rem;
-    border: 1px solid #e5e7eb;
-    background: white;
-    transition: all 0.3s ease;
-}
+        .glass-panel {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
 
-.service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-    border-color: #d8b4fe;
-}
-
-.service-title {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: #0f172a;
-    margin-bottom: 0.5rem;
-}
-
-.service-desc {
-    color: #6b7280;
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-}
-
-.service-list {
-    font-size: 0.85rem;
-    color: #4b5563;
-    margin-bottom: 1.5rem;
-}
-
-.service-cta {
-    font-weight: 600;
-    color: #7c3aed;
-    transition: all 0.2s ease;
-}
-
-.service-cta:hover {
-    transform: translateX(4px);
-}
-
-/* ===== ANIMATIONS ===== */
-.fade-section,
-.service-card {
-    opacity: 0;
-    transform: translateY(20px);
-}
-
-.fade-in-visible {
-    opacity: 1;
-    transform: translateY(0);
-    transition: all 0.6s ease;
-}
-
-/* ===== BUTTON FEEDBACK ===== */
-button:active {
-    transform: scale(0.97);
-}
-</style>
+        @media (max-width: 640px) {
+            .glass-panel {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 
-<body class="bg-gray-50">
+<body class="bg-slate-50">
 
 <!-- HERO -->
-<section class="bg-slate-900 text-white py-20 text-center">
-    <h1 class="text-4xl sm:text-5xl font-bold mb-4">
-        Strategic Talent Intelligence
-    </h1>
-    <p class="text-lg text-gray-300 max-w-xl mx-auto">
-        We partner with organisations to identify, engage, and secure exceptional talent.
-    </p>
-</section>
+<section class="bg-slate-900 text-white py-20">
+    <div class="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
 
-<!-- SERVICES -->
-<section class="bg-white py-16 sm:py-20 fade-section">
-    <div class="max-w-7xl mx-auto px-4">
-
-        <div class="text-center max-w-2xl mx-auto mb-12">
-            <h2 class="text-3xl font-bold mb-4">
-                Strategic Hiring Solutions
-            </h2>
-            <p class="text-gray-600">
-                We solve complex hiring challenges through precision, intelligence, and execution.
+        <!-- TEXT -->
+        <div>
+            <h1 class="text-4xl sm:text-5xl font-bold mb-6">
+                Strategic Talent Intelligence
+            </h1>
+            <p class="text-gray-300 text-lg">
+                We partner with organisations to identify, engage, and secure exceptional hires.
             </p>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- FIXED CARD -->
+        <div class="hidden lg:flex justify-center">
+            <div class="glass-panel rounded-2xl p-8 max-w-sm transform rotate-3 hover:rotate-0 transition duration-500">
 
-            <div class="service-card">
-                <h3 class="service-title">Contingent Search</h3>
-                <p class="service-desc">
-                    Fast, targeted sourcing for defined roles.
+                <div class="flex items-center gap-4 mb-6">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
+                        <i class="fas fa-robot text-white"></i>
+                    </div>
+                    <div>
+                        <div class="text-white font-semibold">Principal AI Engineer</div>
+                        <div class="text-gray-400 text-sm">Dubai, UAE</div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <div>
+                        <div class="text-sm mb-1">Spatial Engineering</div>
+                        <div class="h-2 bg-white/20 rounded">
+                            <div class="h-2 bg-purple-400 rounded w-3/4"></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="text-sm mb-1">Cryptography</div>
+                        <div class="h-2 bg-white/20 rounded">
+                            <div class="h-2 bg-blue-400 rounded w-2/3"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="bg-white py-16 sm:py-20">
+    <div class="max-w-7xl mx-auto px-4">
+
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold mb-4">
+                Our Specialisms
+            </h2>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+                We partner with companies solving complex problems across emerging tech.
+            </p>
+        </div>
+
+        <!-- FIXED GRID -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+            <div class="p-6 rounded-xl border hover:shadow-lg transition">
+                <h3 class="font-semibold mb-2">Artificial Intelligence</h3>
+                <p class="text-sm text-gray-600">
+                    Machine learning, MLOps, and AI engineering roles.
                 </p>
-                <ul class="service-list">
-                    <li>Targeted outreach</li>
-                    <li>Screened candidates</li>
-                    <li>Fast turnaround</li>
-                </ul>
-                <button class="service-cta">Submit Role →</button>
             </div>
 
-            <div class="service-card">
-                <h3 class="service-title">Retained Search</h3>
-                <p class="service-desc">
-                    Deep search for critical or complex hires.
+            <div class="p-6 rounded-xl border hover:shadow-lg transition">
+                <h3 class="font-semibold mb-2">Platform Engineering</h3>
+                <p class="text-sm text-gray-600">
+                    Scalable infrastructure and SRE teams.
                 </p>
-                <ul class="service-list">
-                    <li>Market mapping</li>
-                    <li>Passive sourcing</li>
-                    <li>Executive search</li>
-                </ul>
-                <button class="service-cta">Start Search →</button>
             </div>
 
-            <div class="service-card">
-                <h3 class="service-title">Talent Intelligence</h3>
-                <p class="service-desc">
-                    Data-led hiring insights and benchmarks.
+            <div class="p-6 rounded-xl border hover:shadow-lg transition">
+                <h3 class="font-semibold mb-2">Cybersecurity</h3>
+                <p class="text-sm text-gray-600">
+                    Security engineers and architecture specialists.
                 </p>
-                <ul class="service-list">
-                    <li>Market reports</li>
-                    <li>Salary insights</li>
-                    <li>Competitor analysis</li>
-                </ul>
-                <button class="service-cta">Request Report →</button>
             </div>
 
         </div>
@@ -145,20 +118,38 @@ button:active {
     </div>
 </section>
 
-<!-- SCRIPT -->
-<script>
-/* FADE IN */
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in-visible');
-        }
-    });
-});
+<!-- FORM -->
+<section class="bg-slate-900 text-white py-16">
+    <div class="max-w-3xl mx-auto px-4">
 
-document.querySelectorAll('.service-card, .fade-section')
-.forEach(el => observer.observe(el));
-</script>
+        <h2 class="text-2xl font-bold mb-6">Submit a Vacancy</h2>
+
+        <form class="space-y-6">
+
+            <div>
+                <label class="block mb-2">Company Name</label>
+                <input class="w-full p-3 rounded bg-white/10 border border-white/10">
+            </div>
+
+            <!-- FIXED SECTION -->
+            <div>
+                <label class="block mb-2">Estimated Salary</label>
+                <select class="w-full p-3 rounded bg-white/10 border border-white/10">
+                    <option>Select range</option>
+                    <option>$67k - $100k</option>
+                    <option>$100k - $150k</option>
+                    <option>$150k+</option>
+                </select>
+            </div>
+
+            <button class="w-full bg-purple-600 py-3 rounded">
+                Submit
+            </button>
+
+        </form>
+
+    </div>
+</section>
 
 </body>
 </html>
