@@ -5,10 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consult&Hire | Global Technology Recruitment</title>
-
+    <meta name="description" content="Strategic headhunters specialising in complex, high-impact hiring across technology, AI, and emerging domains.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
     <script>
         tailwind.config = {
             theme: {
@@ -21,150 +20,844 @@
                             light: "#e0e7ff",
                             surface: "#f8fafc",
                         }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-
     <style>
-        .glass-panel {
-            background: rgba(255,255,255,0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
         }
-
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
         .gradient-text {
             background: linear-gradient(135deg, #e0e7ff 0%, #a855f7 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-
-        @media (max-width: 640px) {
-            .glass-panel { padding: 1.5rem; }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
     </style>
 </head>
+<body class="bg-brand-surface text-slate-800 font-sans antialiased">
 
-<body class="bg-brand-surface">
-
-<!-- HERO -->
-<section class="bg-brand-dark text-white py-24">
-    <div class="max-w-7xl mx-auto px-4 lg:grid lg:grid-cols-2 gap-10 items-center">
-
-        <div>
-            <h1 class="text-4xl lg:text-6xl font-bold mb-6">
-                Strategic Talent <br>
-                <span class="gradient-text">Intelligence</span>
-            </h1>
-            <p class="text-gray-300 text-lg">
-                We partner with organisations to identify, engage, and secure exceptional hires.
-            </p>
-        </div>
-
-        <!-- FIXED HERO CARD -->
-        <div class="hidden lg:flex justify-center">
-            <div class="glass-panel rounded-2xl p-8 max-w-sm transform rotate-3 hover:rotate-0 transition">
-
-                <div class="flex items-center gap-4 mb-6">
-                    <div class="w-12 h-12 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
-                        <i class="fas fa-robot text-white"></i>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-brand-dark/95 backdrop-blur-md border-b border-white/10 z-50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex-shrink-0 flex items-center gap-3 cursor-pointer" onclick="router.navigate('home')">
+                    <div class="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-network-wired text-white text-lg"></i>
                     </div>
-                    <div>
-                        <div class="font-semibold">Principal AI Engineer</div>
-                        <div class="text-gray-400 text-sm">Dubai, UAE</div>
+                    <span class="text-2xl font-bold text-white tracking-tight">Consult<span class="text-purple-400">&</span>Hire</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8" id="nav-container">
+                        <!-- Nav items rendered by JS -->
                     </div>
                 </div>
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="md:hidden hidden bg-brand-dark border-b border-white/10" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3" id="mobile-nav-container">
+                <!-- Mobile nav items rendered by JS -->
+            </div>
+        </div>
+    </nav>
 
-                <!-- IMPROVED -->
-                <div class="space-y-4">
-                    <div>
-                        <div class="text-sm mb-1">Spatial Engineering</div>
-                        <div class="h-2 bg-white/20 rounded">
-                            <div class="h-2 bg-purple-400 rounded w-3/4"></div>
+    <!-- Main Content Area -->
+    <main class="pt-20 min-h-screen">
+        
+        <!-- Home Page -->
+        <section id="page-home" class="page-section">
+            <!-- Hero -->
+            <div class="relative bg-brand-dark overflow-hidden">
+                <div class="absolute inset-0 bg-gradient-to-br from-brand-dark via-brand-primary to-brand-accent opacity-90"></div>
+                <div class="absolute inset-0 bg-[url('C&H Stock Image 4.png')] bg-cover bg-center mix-blend-overlay opacity-20"></div>
+                <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
+                    <div class="lg:grid lg:grid-cols-12 lg:gap-8">
+                        <div class="lg:col-span-7">
+                            <h1 class="text-4xl tracking-tight font-extrabold text-white sm:text-5xl md:text-6xl lg:text-7xl mb-6">
+                                Strategic Talent <br/>
+                                <span class="gradient-text">Intelligence</span>
+                            </h1>
+                            <p class="mt-6 text-xl text-gray-300 max-w-3xl leading-relaxed">
+                                We are not transactional recruiters. We operate as strategic technology talent-hunters, partnering with organisations to identify, engage, and secure exceptional hires in competitive and evolving markets.
+                            </p>
+                            <div class="mt-10 flex gap-4">
+                                <button onclick="router.navigate('clients')" class="bg-white text-brand-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg">
+                                    Hire Talent
+                                </button>
+                                <button onclick="router.navigate('candidates')" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors">
+                                    Find Opportunities
+                                </button>
+                            </div>
                         </div>
-                    </div>
-
-                    <div>
-                        <div class="text-sm mb-1">Cryptography</div>
-                        <div class="h-2 bg-white/20 rounded">
-                            <div class="h-2 bg-blue-400 rounded w-2/3"></div>
+                        <div class="hidden lg:block lg:col-span-5 relative">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="glass-panel rounded-2xl p-8 max-w-sm transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                                    <div class="flex items-center gap-4 mb-4">
+                                        <div class="w-12 h-12 rounded-full bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
+                                            <i class="fas fa-robot text-white text-xl"></i>
+                                        </div>
+                                        <div>
+                                            <div class="text-white font-semibold">Principal AI Engineer</div>
+                                            <div class="text-gray-400 text-sm">Dubai, UAE</div>
+                                        </div>
+                                    </div>
+                                    <div class="h-2 bg-white/20 rounded-full mb-2"></div>
+                                    <div class="h-2 bg-white/20 rounded-full w-2/3"></div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <!-- About Preview -->
+            <div class="bg-brand-surface py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                        <div>
+                            <h2 class="text-3xl font-bold text-brand-dark mb-6">Research Driven. Insight-Led. Outcome-Focused.</h2>
+                            <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                                Consult & Hire are global talent partners specialising in complex, high-impact hiring across technology, AI, and emerging domains.
+                            </p>
+                            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                                We work on roles that require precision, creativity, and a deep understanding of talent ecosystems. Our approach moves beyond basic matching into the realm of market intelligence and business advisory.
+                            </p>
+                            <div class="grid grid-cols-3 gap-6 text-center">
+                                <div>
+                                    <div class="text-3xl font-bold text-brand-accent">50+</div>
+                                    <div class="text-sm text-gray-600 mt-1">Global Clients</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold text-brand-accent">98%</div>
+                                    <div class="text-sm text-gray-600 mt-1">Retention Rate</div>
+                                </div>
+                                <div>
+                                    <div class="text-3xl font-bold text-brand-accent">10</div>
+                                    <div class="text-sm text-gray-600 mt-1">Core Specialisms</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-12 lg:mt-0 relative">
+                            <img src="C&H Stock Image 4.png" alt="Team collaboration" class="rounded-2xl shadow-2xl">
+                            <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg max-w-xs hidden md:block">
+                                <div class="flex items-center gap-3 mb-2">
+                                    <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                                    <span class="font-semibold text-brand-dark">Verified Talent</span>
+                                </div>
+                                <p class="text-sm text-gray-600">Deep tech talent market intelligence.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Grid -->
+            <div class="bg-white py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h2 class="text-3xl font-bold text-brand-dark mb-4">Our Specialisms</h2>
+                        <p class="text-gray-600 max-w-2xl mx-auto">We partner with companies solving complex, high-stakes problems across emerging technology domains and product leadership.</p>
+                    </div>
+                    <div id="specialisms-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients Page -->
+        <section id="page-clients" class="page-section hidden fade-in">
+            <div class="bg-brand-dark py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h1 class="text-4xl font-bold text-white mb-4">For Clients</h1>
+                        <p class="text-xl text-gray-300 max-w-3xl mx-auto">Strategic partnership for your most critical hires. Submit a vacancy, request intelligence, or schedule a consultation.</p>
+                    </div>
+
+                    <!-- Service Cards -->
+                    <div id="client-services" class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+                        <!-- Rendered by JS -->
+                    </div>
+
+                    <!-- Forms Container -->
+                    <div id="client-form-wrapper" class="glass-panel rounded-2xl p-8 lg:p-12 max-w-4xl mx-auto scroll-mt-24">
+                        <div id="client-form-container">
+                            <h3 class="text-2xl font-bold text-white mb-6">Submit a Vacancy</h3>
+                            <form class="space-y-6" onsubmit="handleClientSubmit(event, 'vacancy')">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-300 mb-2">Company Name</label>
+                                        <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Enter company name">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-300 mb-2">Contact Email</label>
+                                        <input type="email" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="email@company.com">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Role Title</label>
+                                    <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="e.g., Senior AI Engineer">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Role Description & Tech Stack</label>
+                                    <textarea rows="4" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Describe the role, required skills, and experience level..."></textarea>
+                                </div>
+                                <div>
+                                    class="bg-brand-dark">Select Estimated Annual Remuneration</option>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Estimated Annual Salary</label>
+                                    <select class="w-full bg-purple-600 border border-purple-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                        <option value="1" class="bg-purple-600 text-white">$67,000 - $100,000</option>
+                                        <option value="2" class="bg-purple-600 text-white">$100,001 - $135,000</option>
+                                        <option value="3" class="bg-purple-600 text-white">$135,001 - $175,000</option>
+                                        <option value="4" class="bg-purple-600 text-white">$175,001 - $225,000</option>
+                                        <option value="5" class="bg-purple-600 text-white">$225,001 - $275,000</option>
+                                        <option value="6" class="bg-purple-600 text-white">$275,001 - $325,000</option>
+                                        <option value="7" class="bg-purple-600 text-white">$325,001 - $375,000</option>
+                                        <option value="8" class="bg-purple-600 text-white">$375,001 - $425,000</option>
+                                        <option value="9" class="bg-purple-600 text-white">$425,001 - $475,000</option>
+                                        <option value="10" class="bg-purple-600 text-white">Over $475,000</option>
+                                        </select>
+                                </div>
+                                  <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2">Hire Type</label>
+                                    <select class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                        <option value="" class="bg-brand-dark">Select Hire Type</option>
+                                        <option value="1" class="bg-brand-dark">Permanent - Full Time</option>
+                                        <option value="2" class="bg-brand-dark">Permanent - Part Time</option>
+                                        <option value="3" class="bg-brand-dark">Temp / Contractor - 0 to 3 months</option>
+                                        <option value="4" class="bg-brand-dark">emp / Contractor - 3 to 6 months</option>
+                                        <option value="5" class="bg-brand-dark">emp / Contractor - 6 to 12 months</option>
+                                        <option value="6" class="bg-brand-dark">Over 12 months</option>
+                                    </select>
+                                </div><button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 rounded-lg transition-colors">
+                                    Submit Vacancy
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fees Page -->
+        <section id="page-fees" class="page-section hidden fade-in">
+            <div class="bg-brand-surface py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h1 class="text-4xl font-bold text-brand-dark mb-4">Our Fee Structure</h1>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Transparent pricing based on role complexity and realtime market availability.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+                        <div class="lg:col-span-2">
+                            <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+                                <div class="bg-brand-dark px-6 py-4">
+                                    <h3 class="text-lg font-semibold text-white">Complexity Levels</h3>
+                                </div>
+                                <div id="fees-container" class="divide-y divide-gray-100">
+                                    <!-- Rendered by JS -->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-1">
+                            <div class="bg-brand-dark rounded-2xl p-8 text-white h-full">
+                                <h3 class="text-xl font-bold mb-4">Why Complexity-Based?</h3>
+                                <ul class="space-y-4 text-gray-300">
+                                    <li class="flex items-start gap-3">
+                                        <i class="fas fa-check text-purple-400 mt-1"></i>
+                                        <span>Fair pricing aligned with actual search effort required</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="fas fa-check text-purple-400 mt-1"></i>
+                                        <span>Reflects market scarcity and availability</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="fas fa-check text-purple-400 mt-1"></i>
+                                        <span>Incentivises thorough, quality-focused searches</span>
+                                    </li>
+                                    <li class="flex items-start gap-3">
+                                        <i class="fas fa-check text-purple-400 mt-1"></i>
+                                        <span>Transparent methodology determined at engagement</span>
+                                    </li>
+                                </ul>
+                                <div class="mt-8 p-4 bg-white/10 rounded-lg">
+                                    <p class="text-sm text-gray-300 italic">"Levels are determined by market insight at the time of hiring request, ensuring accurate scope assessment."</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Candidates Page -->
+        <section id="page-candidates" class="page-section hidden fade-in">
+            <div class="bg-white py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h1 class="text-4xl font-bold text-brand-dark mb-4">For Candidates</h1>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Connect with opportunities at companies solving complex, high-stakes problems.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                        <!-- Resume Submission -->
+                        <div class="bg-brand-surface rounded-2xl p-8 lg:p-10">
+                            <h3 class="text-2xl font-bold text-brand-dark mb-6">Submit Your Resume</h3>
+                            <p class="text-gray-600 mb-8">Register your expression of interest for future opportunities. We match based on skills, motivations, and cultural alignment.</p>
+                            
+                            <form class="space-y-6" onsubmit="handleCandidateSubmit(event, 'resume')">
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">First Name</label>
+                                        <input type="text" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-gray-700 mb-2">Last Name</label>
+                                        <input type="text" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                                    <input type="email" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Primary Specialism</label>
+                                    <select required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent">
+                                        <option value="">Select specialism...</option>
+                                        <option value="ai">Artificial Intelligence & Machine Learning</option>
+                                        <option value="platform">Platform Engineering</option>
+                                        <option value="cloud">Cloud Architecture</option>
+                                        <option value="devops">DevOps & Site Reliability</option>
+                                        <option value="data">Data Engineering & Analytics</option>
+                                        <option value="datascience">Data Science</option>
+                                        <option value="security">Cybersecurity</option>
+                                        <option value="product">Product Management</option>
+                                        <option value="productowner">Product Ownership</option>
+                                        <option value="software">Software Engineering</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-700 mb-2">Upload Resume (PDF)</label>
+                                    <div class="border-2 border-dashed border-gray-300 rounded-lg p-6 text-center hover:border-purple-500 transition-colors cursor-pointer">
+                                        <i class="fas fa-cloud-upload-alt text-3xl text-gray-400 mb-2"></i>
+                                        <p class="text-sm text-gray-600">Click to upload or drag and drop</p>
+                                    </div>
+                                </div>
+                                <button type="submit" class="w-full bg-brand-dark hover:bg-brand-primary text-white font-semibold py-4 rounded-lg transition-colors">
+                                    Submit Expression of Interest
+                                </button>
+                            </form>
+                        </div>
+
+                        <!-- Active Specialisms -->
+                        <div>
+                            <h3 class="text-2xl font-bold text-brand-dark mb-6">Active Opportunities</h3>
+                            <div id="active-jobs" class="space-y-4">
+                                <!-- Rendered by JS -->
+                            </div>
+                            
+                            <div class="mt-8 bg-gradient-to-br from-brand-dark to-brand-accent rounded-2xl p-8 text-white">
+                                <h4 class="text-xl font-bold mb-3">Why Consult&Hire?</h4>
+                                <p class="text-gray-200 mb-4">We look beyond the CV to understand your intrinsic motivators and career aspirations. We nurture long-term relationships, not just immediate placements.</p>
+                                <div class="flex items-center gap-2 text-purple-300">
+                                    <i class="fas fa-arrow-right"></i>
+                                    <span class="font-medium">Average placement retention: 4+ years</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Page -->
+        <section id="page-blog" class="page-section hidden fade-in">
+            <div class="bg-brand-surface py-20">
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-center mb-16">
+                        <h1 class="text-4xl font-bold text-brand-dark mb-4">Global Tech Hiring Insights</h1>
+                        <p class="text-xl text-gray-600 max-w-3xl mx-auto">Market intelligence, salary benchmarks, and emerging trends in technology recruitment.</p>
+                    </div>
+
+                    <div id="blog-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <!-- Rendered by JS -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-white border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-network-wired text-white text-sm"></i>
+                        </div>
+                        <span class="text-xl font-bold">Consult<span class="text-purple-400">&</span>Hire</span>
+                    </div>
+                    <p class="text-gray-400 max-w-sm">Strategic headhunters specialising in complex, high-impact hiring across technology, AI, and emerging domains.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400" id="footer-links">
+                        <!-- Rendered by JS -->
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4 text-white">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-envelope mr-2"></i> hello@consultandhire.com</li>
+                        <li><i class="fas fa-phone mr-2"></i> +61489224611</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> Global HQ - Brisbane, Australia</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 mt-12 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2024 Consult&Hire. All rights reserved.</p>
             </div>
         </div>
+    </footer>
 
+    <!-- Toast Notification -->
+    <div id="toast" class="fixed bottom-4 right-4 bg-brand-dark text-white px-6 py-4 rounded-lg shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 z-50 flex items-center gap-3">
+        <i class="fas fa-check-circle text-green-400 text-xl"></i>
+        <span id="toast-message">Action completed successfully</span>
     </div>
-</section>
 
-<!-- SERVICES -->
-<section class="bg-white py-20">
-    <div class="max-w-7xl mx-auto px-4">
+    <script>
+        // Data Layer
+        const navigationData = [
+            { "id": "home", "label": "Home", "icon": "fa-home" },
+            { "id": "clients", "label": "For Clients", "icon": "fa-briefcase" },
+            { "id": "fees", "label": "Fees", "icon": "fa-tag" },
+            { "id": "candidates", "label": "For Candidates", "icon": "fa-users" },
+            { "id": "blog", "label": "Insights", "icon": "fa-newspaper" }
+        ];
 
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-bold mb-4">Our Specialisms</h2>
-            <p class="text-gray-600 max-w-2xl mx-auto">
-                We partner with companies solving complex, high-stakes problems.
-            </p>
-        </div>
+        const feesData = [
+            { "level": 1, "percentage": "12%", "title": "Level 1", "description": "Standard market availability. Established skill sets with moderate competition.", "features": ["Standard sourcing", "CV screening", "Basic market mapping"] },
+            { "level": 2, "percentage": "15%", "title": "Level 2", "description": "Moderate complexity. Specialised skills requiring targeted outreach.", "features": ["Advanced sourcing", "Competitor analysis", "Skills assessment"] },
+            { "level": 3, "percentage": "17.5%", "title": "Level 3", "description": "Complex requirements. Niche technologies or specific industry experience.", "features": ["Deep market mapping", "Passive candidate engagement", "Technical vetting"] },
+            { "level": 4, "percentage": "20%", "title": "Level 4", "description": "High complexity. Rare skill combinations or leadership roles in growth companies.", "features": ["Executive search methodology", "Global talent pools", "Cultural alignment analysis"] },
+            { "level": 5, "percentage": "25%", "title": "Level 5", "description": "Critical hires. Ultra-niche specialisms or mission-critical leadership.", "features": ["Dedicated research team", "Confidential search", "Retention consulting"] },
+            { "level": 6, "percentage": "30%", "title": "Level 6", "description": "Executive & Ultra-Niche. C-suite, transformative leadership, or unique global talent.", "features": ["Board-level advisory", "Global headhunting", "Comprehensive benchmarking"] }
+        ];
 
-        <!-- FIXED MOBILE GRID -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        const specialismsData = [
+            { "title": "Artificial Intelligence", "icon": "fa-brain", "description": "Machine Learning Engineers, AI Researchers, MLOps, Agentic AI specialists.", "color": "from-blue-500 to-cyan-400" },
+            { "title": "Platform Engineering", "icon": "fa-server", "description": "Infrastructure architects, SREs, and platform leads building scalable systems.", "color": "from-purple-500 to-pink-400" },
+            { "title": "Cloud Architecture", "icon": "fa-cloud", "description": "Multi-cloud strategists, Cloud-native developers, and migration specialists.", "color": "from-indigo-500 to-blue-400" },
+            { "title": "Data Engineering", "icon": "fa-database", "description": "Big data architects, Analytics engineers, and real-time processing experts.", "color": "from-emerald-500 to-teal-400" },
+            { "title": "Cybersecurity", "icon": "fa-shield-alt", "description": "Security architects, DevSecOps, and compliance specialists for high-stakes environments.", "color": "from-red-500 to-orange-400" },
+            { "title": "Product Management", "icon": "fa-lightbulb", "description": "Strategic product leaders, roadmap architects, and growth-focused PMs driving digital transformation.", "color": "from-violet-500 to-purple-400" },
+            { "title": "Product Ownership", "icon": "fa-clipboard-check", "description": "Agile product owners, backlog managers, and stakeholder coordinators for complex tech delivery.", "color": "from-fuchsia-500 to-pink-400" },
+            { "title": "Software Engineering", "icon": "fa-code", "description": "Full-stack, backend, and frontend engineers building mission-critical applications at scale.", "color": "from-blue-600 to-indigo-400" },
+            { "title": "Data Science", "icon": "fa-chart-bar", "description": "Statistical modelers, predictive analysts, and research scientists turning data into strategic advantage.", "color": "from-cyan-500 to-blue-500" },
+            { "title": "Emerging Tech", "icon": "fa-rocket", "description": "Blockchain, Quantum computing, Edge computing, and IoT specialists.", "color": "from-amber-500 to-yellow-400" }
+        ];
 
-            <div class="p-6 rounded-xl border hover:shadow-lg transition">
-                <h3 class="font-semibold mb-2">Artificial Intelligence</h3>
-                <p class="text-gray-600 text-sm">AI, ML, MLOps specialists.</p>
-            </div>
+        const clientServicesData = [
+            { "id": "vacancy", "title": "Submit a Vacancy", "icon": "fa-file-alt", "description": "Tell us about your open role and we'll begin the search immediately.", "action": "Submit Vacancy" },
+            { "id": "report", "title": "Talent Intelligence", "icon": "fa-chart-line", "description": "Order a comprehensive market report on availability, salaries, and competition.", "action": "Order Report" },
+            { "id": "callback", "title": "Request Callback", "icon": "fa-phone", "description": "Schedule a consultation to discuss your hiring strategy and challenges.", "action": "Schedule Call" }
+        ];
 
-            <div class="p-6 rounded-xl border hover:shadow-lg transition">
-                <h3 class="font-semibold mb-2">Platform Engineering</h3>
-                <p class="text-gray-600 text-sm">Infrastructure & SRE teams.</p>
-            </div>
+        const blogData = [
+            { "title": "The Rise of Agentic AI in Enterprise Hiring", "excerpt": "How autonomous AI agents are reshaping the landscape of technical recruitment and what it means for talent acquisition strategies.", "date": "December 15, 2024", "category": "AI Trends", "image": "https://picsum.photos/400/250?random=10" },
+            { "title": "Global Salary Benchmarks: Cloud Architects 2025", "excerpt": "Comprehensive analysis of compensation trends across US, EU, and APAC markets for senior cloud infrastructure roles.", "date": "December 10, 2024", "category": "Market Data", "image": "https://picsum.photos/400/250?random=11" },
+            { "title": "Beyond the CV: Assessing Intrinsic Motivators", "excerpt": "Why understanding candidate motivations beyond technical skills leads to longer retention and better cultural fit.", "date": "December 5, 2024", "category": "Strategy", "image": "https://picsum.photos/400/250?random=12" },
+            { "title": "The Future of Platform Engineering", "excerpt": "Emerging patterns in internal developer platforms and the talent required to build them at scale.", "date": "November 28, 2024", "category": "Engineering", "image": "https://picsum.photos/400/250?random=13" },
+            { "title": "Navigating Talent Scarcity in Quantum Computing", "excerpt": "Strategies for engaging the ultra-niche talent pool in quantum algorithm development and hardware engineering.", "date": "November 20, 2024", "category": "Emerging Tech", "image": "https://picsum.photos/400/250?random=14" },
+            { "title": "Retention Strategies for High-Impact Teams", "excerpt": "Data-driven approaches to keeping your best technical talent engaged and committed in competitive markets.", "date": "November 15, 2024", "category": "Retention", "image": "https://picsum.photos/400/250?random=15" }
+        ];
 
-            <div class="p-6 rounded-xl border hover:shadow-lg transition">
-                <h3 class="font-semibold mb-2">Cybersecurity</h3>
-                <p class="text-gray-600 text-sm">Security & compliance roles.</p>
-            </div>
+        const activeJobsData = [
+            { "title": "Principal AI Engineer", "location": "San Francisco / Remote", "type": "Level 5", "salary": "$350k-$450k", "posted": "2 days ago" },
+            { "title": "Staff Platform Engineer", "location": "New York", "type": "Level 4", "salary": "$280k-$320k", "posted": "3 days ago" },
+            { "title": "Senior Product Manager", "location": "London", "type": "Level 4", "salary": "£120k-£150k", "posted": "4 days ago" },
+            { "title": "Head of Data Engineering", "location": "London", "type": "Level 5", "salary": "£180k-£220k", "posted": "5 days ago" },
+            { "title": "Senior DevOps Architect", "location": "Singapore", "type": "Level 3", "salary": "$200k-$250k", "posted": "1 week ago" }
+        ];
 
-        </div>
+        // Render Functions
+        function renderNavigation() {
+            const navContainer = document.getElementById("nav-container");
+            const mobileNavContainer = document.getElementById("mobile-nav-container");
+            
+            const navHTML = navigationData.map(item => `
+                <button onclick="router.navigate('${item.id}')" 
+                    class="nav-link text-gray-300 hover:text-white hover:bg-white/10 px-3 py-2 rounded-md text-sm font-medium transition-colors" 
+                    data-page="${item.id}">
+                    ${item.label}
+                </button>
+            `).join("");
+            
+            const mobileNavHTML = navigationData.map(item => `
+                <button onclick="router.navigate('${item.id}')" 
+                    class="nav-link text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium w-full text-left" 
+                    data-page="${item.id}">
+                    ${item.label}
+                </button>
+            `).join("");
+            
+            navContainer.innerHTML = navHTML;
+            mobileNavContainer.innerHTML = mobileNavHTML;
+        }
 
-    </div>
-</section>
+        function renderFooterLinks() {
+            const container = document.getElementById("footer-links");
+            const linksHTML = navigationData.map(item => `
+                <li><button onclick="router.navigate('${item.id}')" class="hover:text-white transition-colors">${item.label}</button></li>
+            `).join("");
+            container.innerHTML = linksHTML;
+        }
 
-<!-- FORM FIX -->
-<section class="bg-brand-dark text-white py-16">
-    <div class="max-w-3xl mx-auto px-4">
+        function renderSpecialisms() {
+            const container = document.getElementById("specialisms-grid");
+            const html = specialismsData.map((item, index) => `
+                <div class="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-shadow border border-gray-100 group">
+                    <div class="w-14 h-14 rounded-lg bg-gradient-to-br ${item.color} flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                        <i class="fas ${item.icon} text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">${item.title}</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">${item.description}</p>
+                </div>
+            `).join("");
+            container.innerHTML = html;
+        }
 
-        <h2 class="text-2xl font-bold mb-6">Submit a Vacancy</h2>
+        function renderClientServices() {
+            const container = document.getElementById("client-services");
+            const html = clientServicesData.map(service => `
+                <div class="glass-panel rounded-xl p-8 text-center hover:bg-white/10 transition-colors cursor-pointer" onclick="showClientForm('${service.id}')">
+                    <div class="w-16 h-16 mx-auto bg-purple-600 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas ${service.icon} text-white text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-white mb-2">${service.title}</h3>
+                    <p class="text-gray-300 mb-6 text-sm">${service.description}</p>
+                    <button class="text-purple-400 font-semibold hover:text-purple-300 flex items-center justify-center gap-2 mx-auto">
+                        ${service.action} <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            `).join("");
+            container.innerHTML = html;
+        }
 
-        <form class="space-y-6">
+        function renderFees() {
+            const container = document.getElementById("fees-container");
+            const html = feesData.map((fee, index) => `
+                <div class="px-6 py-6 hover:bg-gray-50 transition-colors flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-1">
+                            <span class="text-2xl font-bold text-brand-dark">${fee.title}</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded-full">${fee.percentage} of Annual Remuneration</span>
+                        </div>
+                        <p class="text-gray-600 text-sm">${fee.description}</p>
+                        <div class="mt-3 flex flex-wrap gap-2">
+                            ${fee.features.map(feature => `<span class="text-xs text-gray-500 bg-gray-100 px-2 py-1 rounded">${feature}</span>`).join("")}
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-3xl font-bold text-brand-accent">${fee.percentage}</div>
+                        <div class="text-xs text-gray-500">Fee Rate</div>
+                    </div>
+                </div>
+            `).join("");
+            container.innerHTML = html;
+        }
 
-            <div>
-                <label class="block mb-2">Company Name</label>
-                <input class="w-full p-3 rounded bg-white/10 border border-white/10">
-            </div>
+        function renderActiveJobs() {
+            const container = document.getElementById("active-jobs");
+            const html = activeJobsData.map(job => `
+                <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-md transition-shadow cursor-pointer group">
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="text-lg font-bold text-brand-dark group-hover:text-purple-600 transition-colors">${job.title}</h4>
+                        <span class="bg-purple-100 text-purple-800 text-xs font-semibold px-2 py-1 rounded">${job.type}</span>
+                    </div>
+                    <div class="flex items-center gap-4 text-sm text-gray-600 mb-3">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i> ${job.location}</span>
+                        <span><i class="fas fa-clock mr-1"></i> ${job.posted}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="text-brand-dark font-semibold">${job.salary}</span>
+                        <button onclick="showToast('Application started for ${job.title}')" class="text-purple-600 hover:text-purple-800 font-medium text-sm">
+                            Apply Now <i class="fas fa-arrow-right ml-1"></i>
+                        </button>
+                    </div>
+                </div>
+            `).join("");
+            container.innerHTML = html;
+        }
 
-            <!-- FIXED BLOCK -->
-            <div>
-                <label class="block mb-2">Estimated Salary</label>
-                <select class="w-full p-3 rounded bg-white/10 border border-white/10">
-                    <option>Select range</option>
-                    <option>$67k - $100k</option>
-                    <option>$100k - $150k</option>
-                    <option>$150k+</option>
-                </select>
-            </div>
+        function renderBlog() {
+            const container = document.getElementById("blog-grid");
+            const html = blogData.map(post => `
+                <article class="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center gap-2 mb-3">
+                            <span class="text-xs font-semibold text-purple-600 bg-purple-50 px-2 py-1 rounded">${post.category}</span>
+                            <span class="text-xs text-gray-500">${post.date}</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-brand-dark mb-3 line-clamp-2 hover:text-purple-600 cursor-pointer transition-colors">${post.title}</h3>
+                        <p class="text-gray-600 text-sm mb-4 line-clamp-3">${post.excerpt}</p>
+                        <button class="text-purple-600 font-semibold text-sm hover:text-purple-800 flex items-center gap-1">
+                            Read More <i class="fas fa-arrow-right text-xs"></i>
+                        </button>
+                    </div>
+                </article>
+            `).join("");
+            container.innerHTML = html;
+        }
 
-            <button class="w-full bg-purple-600 py-3 rounded">
-                Submit
-            </button>
+        // Router
+        const router = {
+            currentPage: 'home',
+            navigate: function(pageId) {
+                // Hide all pages
+                document.querySelectorAll('.page-section').forEach(section => {
+                    section.classList.add('hidden');
+                });
+                
+                // Show target page
+                const targetPage = document.getElementById(`page-${pageId}`);
+                if (targetPage) {
+                    targetPage.classList.remove('hidden');
+                    window.scrollTo(0, 0);
+                }
+                
+                // Update nav active states
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    if (link.dataset.page === pageId) {
+                        link.classList.add('text-white', 'bg-white/10');
+                        link.classList.remove('text-gray-300');
+                    } else {
+                        link.classList.remove('text-white', 'bg-white/10');
+                        link.classList.add('text-gray-300');
+                    }
+                });
+                
+                // Close mobile menu if open
+                document.getElementById('mobile-menu').classList.add('hidden');
+                
+                this.currentPage = pageId;
+            }
+        };
 
-        </form>
+        // Form Handlers
+        function showClientForm(serviceType) {
+            const container = document.getElementById('client-form-container');
+            const service = clientServicesData.find(s => s.id === serviceType);
+            
+            let formHTML = '';
+            
+            if (serviceType === 'vacancy') {
+                formHTML = `
+                    <h3 class="text-2xl font-bold text-white mb-6">Submit a Vacancy</h3>
+                    <form class="space-y-6" onsubmit="handleClientSubmit(event, 'vacancy')">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Company Name</label>
+                                <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Enter company name">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Contact Email</label>
+                                <input type="email" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="email@company.com">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Role Title</label>
+                            <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="e.g., Senior AI Engineer">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Role Description & Requirements</label>
+                            <textarea rows="4" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Describe the role, required skills, and experience level..."></textarea>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Estimated Complexity Level</label>
+                            <select class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <option value="" class="bg-brand-dark">Select level...</option>
+                                ${feesData.map(fee => `<option value="${fee.level}" class="bg-brand-dark">${fee.title} - ${fee.percentage}</option>`).join('')}
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 rounded-lg transition-colors">
+                            Submit Vacancy
+                        </button>
+                    </form>
+                `;
+            } else if (serviceType === 'report') {
+                formHTML = `
+                    <h3 class="text-2xl font-bold text-white mb-6">Order Talent Intelligence Report</h3>
+                    <form class="space-y-6" onsubmit="handleClientSubmit(event, 'report')">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Company Name</label>
+                                <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Contact Email</label>
+                                <input type="email" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Target Role/Skill Area</label>
+                            <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="e.g., Machine Learning Engineers in NYC">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Geographic Scope</label>
+                            <select class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <option class="bg-brand-dark">The Americas</option>
+                                <option class="bg-brand-dark">Europe, Middle East & Africa</option>
+                                <option class="bg-brand-dark">Asia Pacific</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Specific Intelligence Requirements</label>
+                            <textarea rows="4" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Salary benchmarks, competitor analysis, talent availability, etc..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 rounded-lg transition-colors">
+                            Order Report
+                        </button>
+                    </form>
+                `;
+            } else if (serviceType === 'callback') {
+                formHTML = `
+                    <h3 class="text-2xl font-bold text-white mb-6">Request a Callback</h3>
+                    <form class="space-y-6" onsubmit="handleClientSubmit(event, 'callback')">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Name</label>
+                                <input type="text" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                                <input type="tel" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" required class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Preferred Call Time</label>
+                            <select class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:ring-2 focus:ring-purple-500">
+                                <option class="bg-brand-dark">Morning (9am - 12pm)</option>
+                                <option class="bg-brand-dark">Afternoon (12pm - 5pm)</option>
+                                <option class="bg-brand-dark">Evening (5pm - 7pm)</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">How can we help?</label>
+                            <textarea rows="4" class="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500" placeholder="Brief description of your hiring needs..."></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-4 rounded-lg transition-colors">
+                            Request Callback
+                        </button>
+                    </form>
+                `;
+            }
+            
+            container.innerHTML = formHTML;
+            
+            // Smooth scroll to form after rendering
+            setTimeout(() => {
+                const formWrapper = document.getElementById('client-form-wrapper');
+                formWrapper.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }, 100);
+        }
 
-    </div>
-</section>
+        function handleClientSubmit(event, type) {
+            event.preventDefault();
+            const messages = {
+                'vacancy': 'Vacancy submitted successfully! We will review and contact you within 24 hours.',
+                'report': 'Intelligence report request received. Our research team will begin analysis immediately.',
+                'callback': 'Callback requested. Expect a call from our team within 4 business hours.'
+            };
+            showToast(messages[type] || 'Submission successful');
+            event.target.reset();
+        }
 
+        function handleCandidateSubmit(event, type) {
+            event.preventDefault();
+            showToast('Expression of interest submitted successfully. We will be in touch regarding relevant opportunities.');
+            event.target.reset();
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMessage = document.getElementById('toast-message');
+            toastMessage.textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 4000);
+        }
+
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            renderNavigation();
+            renderFooterLinks();
+            renderSpecialisms();
+            renderClientServices();
+            renderFees();
+            renderActiveJobs();
+            renderBlog();
+            
+            // Show home by default
+            router.navigate('home');
+            
+            // Handle initial hash if present
+            if (window.location.hash) {
+                const page = window.location.hash.replace('#', '');
+                if (navigationData.find(n => n.id === page)) {
+                    router.navigate(page);
+                }
+            }
+        });
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-lg');
+            } else {
+                navbar.classList.remove('shadow-lg');
+            }
+        });
+    </script>
 </body>
 </html>
