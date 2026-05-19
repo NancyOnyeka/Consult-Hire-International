@@ -1,1 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Articles & Tech News | Consult & Hire</title>
+    <meta name="description" content="Read articles and technology news from Consult & Hire covering AI, engineering, recruitment, employer branding, data, talent intelligence and the future of work.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: "#0a0a0a",
+                            blue: "#1e3a8a",
+                            purple: "#581c87",
+                            accent: "#3730a3",
+                            surface: "#171717",
+                            card: "#262626"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 50%, #2e1065 100%);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .article-card {
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-6px);
+            border-color: #1e3a8a;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .category-pill {
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-100 bg-brand-dark antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center border border-gray-700">
+                        <i class="fas fa-briefcase text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Consult &amp; Hire</h1>
+                        <p class="text-xs text-gray-400">Experts in Global Tech Talent</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">About Us</a>
+                    <a href="articles.html" class="text-white font-medium transition-colors duration-200">Articles &amp; Tech News</a>
+                    <a href="index.html#register" class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200">Register</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="gradient-bg pt-36 pb-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-blue-300 uppercase tracking-widest font-semibold mb-4">Articles &amp; Tech News</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Insights for hiring, technology and the future of work</h1>
+                <p class="text-xl text-gray-300 leading-relaxed">Explore practical articles, market observations and technology updates across AI, engineering, talent strategy and global recruitment.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="py-10 bg-brand-dark border-b border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap justify-center gap-3">
+                <span class="category-pill text-white px-5 py-2 rounded-full text-sm font-medium">AI Hiring</span>
+                <span class="category-pill text-white px-5 py-2 rounded-full text-sm font-medium">Tech News</span>
+                <span class="category-pill text-white px-5 py-2 rounded-full text-sm font-medium">Employer Branding</span>
+                <span class="category-pill text-white px-5 py-2 rounded-full text-sm font-medium">Talent Intelligence</span>
+                <span class="category-pill text-white px-5 py-2 rounded-full text-sm font-medium">Engineering Talent</span>
+                <span class="category-pill text-white px-5 py-2 rounded-full text-sm font-medium">Future of Work</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="py-20 bg-white text-brand-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-10 items-center bg-gray-50 rounded-3xl p-8 md:p-12 border border-gray-200">
+                    <div>
+                        <span class="inline-block bg-brand-blue/10 text-brand-blue px-4 py-2 rounded-full text-sm font-semibold mb-5">Featured Insight</span>
+                        <h2 class="text-3xl md:text-4xl font-bold mb-5">The Rise of Agentic AI in Enterprise Hiring</h2>
+                        <p class="text-gray-600 text-lg leading-relaxed mb-6">Autonomous AI agents are changing how companies source candidates, screen skills, schedule interviews and manage hiring workflows. For talent teams, this creates an opportunity to move faster while keeping human judgement at the centre of critical decisions.</p>
+                        <a href="#" class="inline-flex items-center text-brand-blue font-semibold hover:text-brand-purple">
+                            Read article <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+
+                    <div class="gradient-bg rounded-2xl min-h-[300px] flex items-center justify-center p-8 text-center">
+                        <div>
+                            <i class="fas fa-robot text-6xl text-white mb-6"></i>
+                            <h3 class="text-2xl font-bold text-white mb-3">AI, Automation &amp; Talent Strategy</h3>
+                            <p class="text-gray-300">How intelligent tools are reshaping the hiring landscape.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech News Highlights -->
+    <section class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-14">
+                <p class="text-blue-300 uppercase tracking-widest font-semibold mb-3">Tech News Highlights</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">What we are watching</h2>
+                <p class="text-gray-400 text-lg">Sample news-style updates you can replace with real industry news, company updates or market commentary.</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+                <article class="article-card bg-brand-card rounded-2xl border border-gray-800 p-6">
+                    <div class="w-14 h-14 bg-brand-blue/20 rounded-xl flex items-center justify-center mb-5">
+                        <i class="fas fa-brain text-2xl text-blue-300"></i>
+                    </div>
+                    <p class="text-sm text-blue-300 font-semibold mb-3">AI &amp; Automation</p>
+                    <h3 class="text-xl font-bold text-white mb-3">AI tools continue to reshape technical recruitment workflows</h3>
+                    <p class="text-gray-400 leading-relaxed mb-5">Recruitment teams are increasingly exploring AI-assisted sourcing, candidate matching and interview coordination to improve speed and consistency.</p>
+                    <a href="#" class="text-white font-semibold hover:text-blue-300">Read more</a>
+                </article>
+
+                <article class="article-card bg-brand-card rounded-2xl border border-gray-800 p-6">
+                    <div class="w-14 h-14 bg-brand-blue/20 rounded-xl flex items-center justify-center mb-5">
+                        <i class="fas fa-cloud text-2xl text-blue-300"></i>
+                    </div>
+                    <p class="text-sm text-blue-300 font-semibold mb-3">Cloud &amp; Platform</p>
+                    <h3 class="text-xl font-bold text-white mb-3">Platform Engineering remains a high-priority hiring area</h3>
+                    <p class="text-gray-400 leading-relaxed mb-5">Organisations investing in developer experience, scalable infrastructure and cloud transformation continue to seek strong platform talent.</p>
+                    <a href="#" class="text-white font-semibold hover:text-blue-300">Read more</a>
+                </article>
+
+                <article class="article-card bg-brand-card rounded-2xl border border-gray-800 p-6">
+                    <div class="w-14 h-14 bg-brand-blue/20 rounded-xl flex items-center justify-center mb-5">
+                        <i class="fas fa-chart-line text-2xl text-blue-300"></i>
+                    </div>
+                    <p class="text-sm text-blue-300 font-semibold mb-3">Talent Market</p>
+                    <h3 class="text-xl font-bold text-white mb-3">Hiring leaders are placing more value on talent intelligence</h3>
+                    <p class="text-gray-400 leading-relaxed mb-5">Market mapping, salary benchmarking and competitor analysis are becoming essential for confident workforce planning.</p>
+                    <a href="#" class="text-white font-semibold hover:text-blue-300">Read more</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Articles Grid -->
+    <section class="py-20 bg-white text-brand-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-14">
+                <p class="text-brand-blue uppercase tracking-widest font-semibold mb-3">Articles</p>
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Practical hiring insights</h2>
+                <p class="text-gray-600 text-lg">Sample articles for your blog section. Each card can later link to its own full article page.</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="article-card bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                    <div class="h-44 gradient-bg flex items-center justify-center">
+                        <i class="fas fa-search text-5xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-brand-blue font-semibold mb-3">Candidate Assessment</p>
+                        <h3 class="text-xl font-bold mb-3">Beyond the CV: Assessing Intrinsic Motivators</h3>
+                        <p class="text-gray-600 leading-relaxed mb-5">Why understanding candidate motivations beyond technical skills can lead to stronger retention and better cultural fit.</p>
+                        <a href="#" class="text-brand-blue font-semibold hover:text-brand-purple">Read more</a>
+                    </div>
+                </article>
+
+                <article class="article-card bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                    <div class="h-44 gradient-bg flex items-center justify-center">
+                        <i class="fas fa-bullhorn text-5xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-brand-blue font-semibold mb-3">Employer Branding</p>
+                        <h3 class="text-xl font-bold mb-3">Why Employer Brand Matters in Technical Hiring</h3>
+                        <p class="text-gray-600 leading-relaxed mb-5">How a clear employer value proposition helps organisations stand out in competitive technology markets.</p>
+                        <a href="#" class="text-brand-blue font-semibold hover:text-brand-purple">Read more</a>
+                    </div>
+                </article>
+
+                <article class="article-card bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                    <div class="h-44 gradient-bg flex items-center justify-center">
+                        <i class="fas fa-map-marked-alt text-5xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-brand-blue font-semibold mb-3">Talent Intelligence</p>
+                        <h3 class="text-xl font-bold mb-3">Using Talent Mapping to Make Better Hiring Decisions</h3>
+                        <p class="text-gray-600 leading-relaxed mb-5">How market intelligence, competitor insight and salary benchmarking can reduce hiring risk.</p>
+                        <a href="#" class="text-brand-blue font-semibold hover:text-brand-purple">Read more</a>
+                    </div>
+                </article>
+
+                <article class="article-card bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                    <div class="h-44 gradient-bg flex items-center justify-center">
+                        <i class="fas fa-users text-5xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-brand-blue font-semibold mb-3">Early Careers</p>
+                        <h3 class="text-xl font-bold mb-3">Building Sustainable Graduate Hiring Campaigns</h3>
+                        <p class="text-gray-600 leading-relaxed mb-5">What organisations should consider when designing graduate, internship and early careers programmes.</p>
+                        <a href="#" class="text-brand-blue font-semibold hover:text-brand-purple">Read more</a>
+                    </div>
+                </article>
+
+                <article class="article-card bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                    <div class="h-44 gradient-bg flex items-center justify-center">
+                        <i class="fas fa-laptop-code text-5xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-brand-blue font-semibold mb-3">Engineering Talent</p>
+                        <h3 class="text-xl font-bold mb-3">What Strong Engineering Candidates Look For</h3>
+                        <p class="text-gray-600 leading-relaxed mb-5">From technical challenge to autonomy, growth and leadership quality, engineering talent is assessing more than salary.</p>
+                        <a href="#" class="text-brand-blue font-semibold hover:text-brand-purple">Read more</a>
+                    </div>
+                </article>
+
+                <article class="article-card bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
+                    <div class="h-44 gradient-bg flex items-center justify-center">
+                        <i class="fas fa-chess-king text-5xl text-white"></i>
+                    </div>
+                    <div class="p-6">
+                        <p class="text-sm text-brand-blue font-semibold mb-3">Executive Search</p>
+                        <h3 class="text-xl font-bold mb-3">What Makes a Strong Technology Leader?</h3>
+                        <p class="text-gray-600 leading-relaxed mb-5">A look at the leadership qualities that matter most in fast-moving technology organisations.</p>
+                        <a href="#" class="text-brand-blue font-semibold hover:text-brand-purple">Read more</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center glass-effect rounded-3xl p-10 md:p-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Need help turning market insight into hiring action?</h2>
+                <p class="text-gray-300 text-lg mb-8">Speak with Consult&Hire about recruitment, executive search, employer branding, talent mapping or strategic talent management.</p>
+                <a href="index.html#register" class="inline-block bg-white text-brand-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200">Register Your Interest</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2026 Consult &amp; Hire. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
 
