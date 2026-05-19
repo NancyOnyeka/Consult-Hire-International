@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consult & Hire | Experts in Global Tech Talent</title>
-    <meta name="description" content="Consult & Hire specializes in Engineering, AI, Analytics and Data Science recruitment for tech startups and scale-ups.">
+    <meta name="description" content="Consult & Hire specialises in Engineering, AI, Analytics and Data Science recruitment for tech startups and scale-ups. Based in Brisbane, Australia.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -70,6 +70,20 @@
                 padding-bottom: 8rem;
             }
         }
+        .tab-active {
+            background-color: #1e3a8a;
+            color: white;
+            border-color: #1e3a8a;
+        }
+        .tab-inactive {
+            background-color: transparent;
+            color: #9ca3af;
+            border-color: #404040;
+        }
+        .tab-inactive:hover {
+            background-color: #262626;
+            color: white;
+        }
     </style>
 </head>
 <body class="font-sans text-gray-100 bg-brand-dark antialiased overflow-x-hidden">
@@ -90,7 +104,7 @@
                 <div class="hidden md:flex items-center space-x-8">
                     <ul id="desktop-nav" class="flex space-x-6"></ul>
                     <a href="#register" class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200">
-                        Register CV
+                        Register
                     </a>
                 </div>
 
@@ -125,15 +139,15 @@
                     <a href="#register" class="bg-white text-brand-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200 text-center">
                         Submit Your CV
                     </a>
-                    <a href="#specialisms" class="glass-effect text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 text-center">
-                        Explore Specialisms
+                    <a href="#hire-talent" class="glass-effect text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 text-center">
+                        Hire Talent
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Specialisms Section - No Containers -->
+    <!-- Specialisms Section -->
     <section id="specialisms" class="py-20 bg-brand-surface">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -150,13 +164,18 @@
     <!-- Full Width Image Section -->
     <section class="hero-dimensions relative overflow-hidden flex items-center justify-center w-full">
         <div class="absolute inset-0 w-full h-full">
-            <img src="Logo_Website.png" alt="Consult & Hire Brand Logo" class="w-full h-full object-cover" loading="lazy">
+            <img src="Logo_Website.png">
             <div class="absolute inset-0 bg-brand-dark/40"></div>
         </div>
         
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
-               <img src="images/Logo_Website.png" alt="Consult and Hire Logo">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
+                    Your Logo Here
+                </h2>
+                <p class="text-xl md:text-2xl text-gray-200 mb-8 font-light drop-shadow-md">
+                    Full width image space ready for your brand assets
+                </p>
             </div>
         </div>
     </section>
@@ -175,51 +194,64 @@
         </div>
     </section>
 
-    <!-- Registration Form Section -->
+    <!-- Registration Section with Tabs -->
     <section id="register" class="py-20 bg-brand-surface">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-5xl mx-auto">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Register With Us</h2>
                     <p class="text-gray-400 text-lg">
-                        Upload your resume and join our talent network for exclusive opportunities
+                        Whether you are seeking your next opportunity or looking to hire exceptional talent, we are here to help
                     </p>
                 </div>
 
-                <div class="bg-brand-card rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-800">
-                    <form id="registration-form" class="space-y-8">
+                <!-- Tabs -->
+                <div class="flex justify-center mb-8">
+                    <div class="inline-flex bg-brand-card rounded-lg p-1 border border-gray-700">
+                        <button onclick="switchTab('candidate')" id="tab-candidate" class="px-6 py-3 rounded-md font-medium transition-all duration-200 tab-active">
+                            <i class="fas fa-user mr-2"></i>I am a Candidate
+                        </button>
+                        <button onclick="switchTab('employer')" id="tab-employer" class="px-6 py-3 rounded-md font-medium transition-all duration-200 tab-inactive">
+                            <i class="fas fa-building mr-2"></i>I am an Employer
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Candidate Form -->
+                <div id="form-candidate" class="bg-brand-card rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-800">
+                    <form id="candidate-form" class="space-y-8">
                         <!-- Personal Information -->
                         <div class="space-y-6">
                             <h3 class="text-xl font-semibold text-white border-b border-gray-700 pb-2">Personal Information</h3>
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="firstName">First Name *</label>
-                                    <input type="text" id="firstName" name="firstName" required 
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="c-firstName">First Name *</label>
+                                    <input type="text" id="c-firstName" name="firstName" required 
                                         class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="lastName">Last Name *</label>
-                                    <input type="text" id="lastName" name="lastName" required 
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="c-lastName">Last Name *</label>
+                                    <input type="text" id="c-lastName" name="lastName" required 
                                         class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
                                 </div>
                             </div>
                             
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="email">Email Address *</label>
-                                    <input type="email" id="email" name="email" required 
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="c-email">Email Address *</label>
+                                    <input type="email" id="c-email" name="email" required 
                                         class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
                                 </div>
                                 <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="phone">Phone Number *</label>
-                                    <input type="tel" id="phone" name="phone" required 
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="c-phone">Phone Number *</label>
+                                    <input type="tel" id="c-phone" name="phone" required 
                                         class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
                                 </div>
                             </div>
 
                             <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-2" for="location">Current Location *</label>
-                                <input type="text" id="location" name="location" placeholder="City, Country" required 
+                                <label class="block text-sm font-medium text-gray-300 mb-2" for="c-location">Current Location *</label>
+                                <input type="text" id="c-location" name="location" placeholder="City, Country" required 
                                     class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
                             </div>
                         </div>
@@ -230,31 +262,30 @@
                             
                             <div>
                                 <label class="block text-sm font-medium text-gray-300 mb-3">Specialisms Interested In *</label>
-                                <div id="specialisms-checkboxes" class="grid md:grid-cols-2 gap-3"></div>
+                                <div id="c-specialisms-checkboxes" class="grid md:grid-cols-2 gap-3"></div>
                             </div>
 
                             <div>
                                 <label class="block text-sm font-medium text-gray-300 mb-3">Role Type *</label>
-                                <div id="role-type-options" class="flex flex-wrap gap-4"></div>
+                                <div id="c-role-type-options" class="flex flex-wrap gap-4"></div>
                             </div>
 
-                            <!-- Dynamic Salary Section -->
-                            <div id="salary-section" class="space-y-4">
-                                <div id="permanent-salary" class="hidden">
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="salaryPermanent">
+                            <div id="c-salary-section" class="space-y-4">
+                                <div id="c-permanent-salary" class="hidden">
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="c-salaryPermanent">
                                         Expected Annual Salary (Permanent)
                                     </label>
-                                    <select id="salaryPermanent" name="salaryPermanent" 
+                                    <select id="c-salaryPermanent" name="salaryPermanent" 
                                         class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
                                         <option value="">Select salary range</option>
                                     </select>
                                 </div>
                                 
-                                <div id="contract-salary" class="hidden">
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="salaryContract">
+                                <div id="c-contract-salary" class="hidden">
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="c-salaryContract">
                                         Expected Daily Rate (Contract)
                                     </label>
-                                    <select id="salaryContract" name="salaryContract" 
+                                    <select id="c-salaryContract" name="salaryContract" 
                                         class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
                                         <option value="">Select daily rate</option>
                                     </select>
@@ -262,8 +293,8 @@
                             </div>
 
                             <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-2" for="workingRights">Working Rights *</label>
-                                <select id="workingRights" name="workingRights" required 
+                                <label class="block text-sm font-medium text-gray-300 mb-2" for="c-workingRights">Working Rights *</label>
+                                <select id="c-workingRights" name="workingRights" required 
                                     class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
                                     <option value="">Select your working rights</option>
                                 </select>
@@ -274,14 +305,14 @@
                         <div class="space-y-6">
                             <h3 class="text-xl font-semibold text-white border-b border-gray-700 pb-2">Resume & Documents</h3>
                             
-                            <div class="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center hover:border-brand-blue transition-colors duration-200 bg-brand-dark/50" id="drop-zone">
-                                <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" class="hidden" required>
-                                <label for="resume" class="cursor-pointer block">
+                            <div class="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center hover:border-brand-blue transition-colors duration-200 bg-brand-dark/50" id="c-drop-zone">
+                                <input type="file" id="c-resume" name="resume" accept=".pdf,.doc,.docx" class="hidden" required>
+                                <label for="c-resume" class="cursor-pointer block">
                                     <i class="fas fa-cloud-upload-alt text-4xl text-gray-500 mb-4"></i>
                                     <p class="text-gray-300 font-medium mb-2">Click to upload your resume</p>
                                     <p class="text-sm text-gray-500">PDF, DOC, or DOCX up to 5MB</p>
                                 </label>
-                                <p id="file-name" class="mt-4 text-sm text-brand-blue font-medium hidden"></p>
+                                <p id="c-file-name" class="mt-4 text-sm text-brand-blue font-medium hidden"></p>
                             </div>
                         </div>
 
@@ -290,9 +321,9 @@
                             <h3 class="text-xl font-semibold text-white border-b border-gray-700 pb-2">Communication Preferences</h3>
                             
                             <div class="flex items-start gap-3">
-                                <input type="checkbox" id="emailAlerts" name="emailAlerts" 
+                                <input type="checkbox" id="c-emailAlerts" name="emailAlerts" 
                                     class="checkbox-custom w-5 h-5 mt-0.5 rounded border-gray-600 text-brand-blue focus:ring-brand-blue cursor-pointer bg-gray-700">
-                                <label for="emailAlerts" class="text-sm text-gray-300 cursor-pointer">
+                                <label for="c-emailAlerts" class="text-sm text-gray-300 cursor-pointer">
                                     <span class="font-medium text-white">Email Job Alerts</span> - I would like to receive email notifications when roles matching my criteria become available
                                 </label>
                             </div>
@@ -302,33 +333,24 @@
                         <div class="bg-brand-dark rounded-lg p-6 space-y-4 border border-gray-700">
                             <h3 class="text-lg font-semibold text-white">Terms & Conditions</h3>
                             
-                            <div class="bg-brand-card border border-gray-700 rounded-lg p-4 h-48 overflow-y-auto text-sm text-gray-400 space-y-3" id="terms-content">
+                            <div class="bg-brand-card border border-gray-700 rounded-lg p-4 h-48 overflow-y-auto text-sm text-gray-400 space-y-3">
                                 <p><strong class="text-gray-300">1. Data Collection and Use</strong></p>
                                 <p>By submitting this registration form, you consent to Consult & Hire collecting and processing your personal data, including your resume and contact details, for the purpose of recruitment services.</p>
                                 
                                 <p><strong class="text-gray-300">2. Agency Representation</strong></p>
                                 <p>Registration with Consult & Hire constitutes an agreement to be represented by our agency for suitable employment opportunities. We may share your profile with prospective employers after obtaining your consent for specific roles.</p>
                                 
-                                <p><strong class="text-gray-300">3. Accuracy of Information</strong></p>
-                                <p>You confirm that all information provided is accurate and complete. Consult & Hire reserves the right to verify any information provided and to terminate representation if false information is discovered.</p>
-                                
-                                <p><strong class="text-gray-300">4. Interview Process</strong></p>
+                                <p><strong class="text-gray-300">3. Interview Process</strong></p>
                                 <p>Please note that we may contact you to complete an agency intake interview. This interview helps us better understand your career goals, technical skills, and cultural preferences to match you with suitable opportunities.</p>
                                 
-                                <p><strong class="text-gray-300">5. Data Retention</strong></p>
-                                <p>Your data will be retained for a period of 24 months from your last activity, unless you request earlier deletion. You have the right to access, modify, or delete your personal data at any time.</p>
-                                
-                                <p><strong class="text-gray-300">6. Working Rights Verification</strong></p>
-                                <p>You confirm that you have the legal right to work in your stated locations. Consult & Hire may request documentation to verify working rights before submitting your profile to clients.</p>
-                                
-                                <p><strong class="text-gray-300">7. Communication</strong></p>
-                                <p>By registering, you agree to receive communications from Consult & Hire regarding suitable opportunities, market insights, and agency updates. You may opt out of non-essential communications at any time.</p>
+                                <p><strong class="text-gray-300">4. Data Retention</strong></p>
+                                <p>Your data will be retained for a period of 24 months from your last activity, unless you request earlier deletion.</p>
                             </div>
                             
                             <div class="flex items-start gap-3">
-                                <input type="checkbox" id="termsAccepted" name="termsAccepted" required 
+                                <input type="checkbox" id="c-termsAccepted" name="termsAccepted" required 
                                     class="checkbox-custom w-5 h-5 mt-0.5 rounded border-gray-600 text-brand-blue focus:ring-brand-blue cursor-pointer bg-gray-700">
-                                <label for="termsAccepted" class="text-sm text-gray-300 cursor-pointer">
+                                <label for="c-termsAccepted" class="text-sm text-gray-300 cursor-pointer">
                                     I have read and agree to the Terms & Conditions *<br>
                                     <span class="text-xs text-gray-500">I understand that Consult & Hire may contact me to complete an agency intake interview</span>
                                 </label>
@@ -340,6 +362,174 @@
                             <button type="submit" 
                                 class="w-full bg-brand-blue hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg border border-blue-600">
                                 Complete Registration
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Employer Form -->
+                <div id="form-employer" class="hidden bg-brand-card rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-800">
+                    <form id="employer-form" class="space-y-8">
+                        <!-- Company Information -->
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-semibold text-white border-b border-gray-700 pb-2">Company Information</h3>
+                            
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-companyName">Company Name *</label>
+                                    <input type="text" id="e-companyName" name="companyName" required 
+                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-industry">Industry *</label>
+                                    <select id="e-industry" name="industry" required 
+                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
+                                        <option value="">Select industry</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-contactName">Contact Person *</label>
+                                    <input type="text" id="e-contactName" name="contactName" placeholder="Full Name" required 
+                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-jobTitle">Job Title *</label>
+                                    <input type="text" id="e-jobTitle" name="jobTitle" required 
+                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
+                                </div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-email">Business Email *</label>
+                                    <input type="email" id="e-email" name="email" required 
+                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-phone">Phone Number *</label>
+                                    <input type="tel" id="e-phone" name="phone" required 
+                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2" for="e-companySize">Company Size *</label>
+                                <select id="e-companySize" name="companySize" required 
+                                    class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
+                                    <option value="">Select company size</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Vacancy Details -->
+                        <div class="space-y-6">
+                            <h3 class="text-xl font-semibold text-white border-b border-gray-700 pb-2">Vacancy Details</h3>
+                            
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2" for="e-vacancyTitle">Job Title *</label>
+                                <input type="text" id="e-vacancyTitle" name="vacancyTitle" placeholder="e.g., Senior Machine Learning Engineer" required 
+                                    class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-3">Specialism Required *</label>
+                                <div id="e-specialisms-checkboxes" class="grid md:grid-cols-2 gap-3"></div>
+                            </div>
+
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-3">Role Type *</label>
+                                    <div id="e-role-type-options" class="flex flex-wrap gap-4"></div>
+                                </div>
+                                <div>
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-location">Work Location *</label>
+                                    <select id="e-location" name="location" required 
+                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
+                                        <option value="">Select work arrangement</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div id="e-salary-section" class="space-y-4">
+                                <div id="e-permanent-salary" class="hidden">
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-salaryPermanent">
+                                        Salary Range (AUD) *
+                                    </label>
+                                    <select id="e-salaryPermanent" name="salaryPermanent" 
+                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
+                                        <option value="">Select salary range</option>
+                                    </select>
+                                </div>
+                                
+                                <div id="e-contract-salary" class="hidden">
+                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-salaryContract">
+                                        Daily Rate Range (AUD) *
+                                    </label>
+                                    <select id="e-salaryContract" name="salaryContract" 
+                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
+                                        <option value="">Select daily rate</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2" for="e-jobDescription">Job Description *</label>
+                                <textarea id="e-jobDescription" name="jobDescription" rows="4" placeholder="Please provide a brief description of the role, key responsibilities, and required skills..." required 
+                                    class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input resize-none"></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2" for="e-requirements">Essential Requirements</label>
+                                <textarea id="e-requirements" name="requirements" rows="3" placeholder="e.g., 5+ years Python experience, AWS certification, etc." 
+                                    class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input resize-none"></textarea>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-medium text-gray-300 mb-2" for="e-startDate">Target Start Date</label>
+                                <input type="date" id="e-startDate" name="startDate" 
+                                    class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
+                            </div>
+                        </div>
+
+                        <!-- Hiring Terms -->
+                        <div class="bg-brand-dark rounded-lg p-6 space-y-4 border border-gray-700">
+                            <h3 class="text-lg font-semibold text-white">Engagement Terms</h3>
+                            
+                            <div class="bg-brand-card border border-gray-700 rounded-lg p-4 h-48 overflow-y-auto text-sm text-gray-400 space-y-3">
+                                <p><strong class="text-gray-300">1. Fee Structure</strong></p>
+                                <p>Our placement fees are calculated as a percentage of the successful candidate's first-year remuneration. Fees are payable upon candidate commencement.</p>
+                                
+                                <p><strong class="text-gray-300">2. Replacement Guarantee</strong></p>
+                                <p>We offer a 3-month replacement guarantee for all permanent placements. If the candidate leaves or is terminated within this period, we will conduct a replacement search at no additional fee.</p>
+                                
+                                <p><strong class="text-gray-300">3. Exclusivity</strong></p>
+                                <p>For retained searches, we require a period of exclusivity. For contingent searches, we operate on a first-introduction basis.</p>
+                                
+                                <p><strong class="text-gray-300">4. Confidentiality</strong></p>
+                                <p>All candidate information shared by Consult & Hire is confidential and proprietary. Client companies agree not to disclose candidate details to third parties or approach candidates directly without our consent.</p>
+                                
+                                <p><strong class="text-gray-300">5. Refund Policy</strong></p>
+                                <p>In the unlikely event that a placed candidate does not commence employment, any fees paid will be refunded in full within 30 days.</p>
+                            </div>
+                            
+                            <div class="flex items-start gap-3">
+                                <input type="checkbox" id="e-termsAccepted" name="termsAccepted" required 
+                                    class="checkbox-custom w-5 h-5 mt-0.5 rounded border-gray-600 text-brand-blue focus:ring-brand-blue cursor-pointer bg-gray-700">
+                                <label for="e-termsAccepted" class="text-sm text-gray-300 cursor-pointer">
+                                    I have read and agree to the Engagement Terms *<br>
+                                    <span class="text-xs text-gray-500">I confirm I am authorized to engage recruitment services on behalf of the company named above</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="pt-4">
+                            <button type="submit" 
+                                class="w-full bg-brand-blue hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg border border-blue-600">
+                                Submit Vacancy
                             </button>
                             <p class="text-center text-sm text-gray-500 mt-4">
                                 <i class="fas fa-lock mr-1"></i> Your information is securely encrypted and protected
@@ -388,7 +578,7 @@
                         <span class="text-xl font-bold">Consult & Hire</span>
                     </div>
                     <p class="text-gray-400 mb-4 max-w-md">
-                        Experts in global tech talent. Specializing in Engineering, AI, Analytics and Data Science recruitment for startups and scale-ups.
+                        Experts in global tech talent. Specialising in Engineering, AI, Analytics and Data Science recruitment for startups and scale-ups.
                     </p>
                     <p class="text-gray-500 text-sm">
                         <i class="fas fa-map-marker-alt mr-2"></i>Brisbane, Australia
@@ -421,9 +611,9 @@
             <div class="w-16 h-16 bg-green-900/50 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-700">
                 <i class="fas fa-check text-green-400 text-2xl"></i>
             </div>
-            <h3 class="text-2xl font-bold text-white mb-2">Registration Complete!</h3>
-            <p class="text-gray-400 mb-6">
-                Thank you for registering with Consult & Hire. We have received your details and will review your profile. One of our consultants may contact you shortly to complete your agency intake interview.
+            <h3 class="text-2xl font-bold text-white mb-2" id="modal-title">Registration Complete!</h3>
+            <p class="text-gray-400 mb-6" id="modal-message">
+                Thank you for registering with Consult & Hire. We have received your details and will review your profile.
             </p>
             <button onclick="closeModal()" class="bg-brand-blue text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 w-full border border-blue-600">
                 Close
@@ -466,7 +656,7 @@
         const featuresData = [
             {
                 "icon": "fa-bullseye",
-                "title": "Specialized Focus",
+                "title": "Specialised Focus",
                 "description": "Deep expertise in Engineering, AI, Analytics and Data Science means we speak your language and understand your technical requirements."
             },
             {
@@ -508,6 +698,34 @@
             { "value": "1300-1600", "label": "$1,300 - $1,600 per day" },
             { "value": "1600-2000", "label": "$1,600 - $2,000 per day" },
             { "value": "2000+", "label": "$2,000+ per day" }
+        ];
+
+        const industryOptions = [
+            { "value": "software", "label": "Software & Technology" },
+            { "value": "fintech", "label": "FinTech" },
+            { "value": "healthtech", "label": "HealthTech" },
+            { "value": "retail", "label": "Retail & E-commerce" },
+            { "value": "consulting", "label": "Consulting" },
+            { "value": "media", "label": "Media & Entertainment" },
+            { "value": "telecom", "label": "Telecommunications" },
+            { "value": "energy", "label": "Energy & Utilities" },
+            { "value": "other", "label": "Other" }
+        ];
+
+        const companySizeOptions = [
+            { "value": "1-10", "label": "1-10 employees" },
+            { "value": "11-50", "label": "11-50 employees" },
+            { "value": "51-200", "label": "51-200 employees" },
+            { "value": "201-500", "label": "201-500 employees" },
+            { "value": "501-1000", "label": "501-1000 employees" },
+            { "value": "1000+", "label": "1000+ employees" }
+        ];
+
+        const locationOptions = [
+            { "value": "onsite", "label": "On-site (Full time)" },
+            { "value": "hybrid", "label": "Hybrid (Mix of remote and on-site)" },
+            { "value": "remote", "label": "Remote (Work from anywhere)" },
+            { "value": "flexible", "label": "Flexible (To be discussed)" }
         ];
 
         const footerServices = [
@@ -561,17 +779,17 @@
             `).join("");
         }
 
-        function renderCheckboxes(items, name) {
+        function renderCheckboxes(items, name, prefix) {
             return items.map((item, index) => `
                 <div class="flex items-center gap-3">
-                    <input type="checkbox" id="${name}-${index}" name="${name}" value="${item.title}" 
+                    <input type="checkbox" id="${prefix}-${name}-${index}" name="${name}" value="${item.title}" 
                         class="checkbox-custom w-5 h-5 rounded border-gray-600 text-brand-blue focus:ring-brand-blue cursor-pointer bg-gray-700">
-                    <label for="${name}-${index}" class="text-gray-300 cursor-pointer select-none">${item.title}</label>
+                    <label for="${prefix}-${name}-${index}" class="text-gray-300 cursor-pointer select-none">${item.title}</label>
                 </div>
             `).join("");
         }
 
-        function renderRoleTypes() {
+        function renderRoleTypes(prefix) {
             const types = [
                 { "value": "permanent", "label": "Permanent" },
                 { "value": "contract", "label": "Contract" },
@@ -579,7 +797,7 @@
             ];
             return types.map(type => `
                 <label class="inline-flex items-center gap-2 cursor-pointer">
-                    <input type="radio" name="roleType" value="${type.value}" 
+                    <input type="radio" name="${prefix}-roleType" value="${type.value}" 
                         class="w-5 h-5 text-brand-blue border-gray-600 focus:ring-brand-blue cursor-pointer bg-gray-700" required>
                     <span class="text-gray-300">${type.label}</span>
                 </label>
@@ -609,14 +827,51 @@
         document.getElementById("mobile-nav").innerHTML = renderNavItems(navItems);
         document.getElementById("specialisms-grid").innerHTML = renderSpecialisms(specialismsData);
         document.getElementById("features-grid").innerHTML = renderFeatures(featuresData);
-        document.getElementById("specialisms-checkboxes").innerHTML = renderCheckboxes(specialismsData, "specialisms");
-        document.getElementById("role-type-options").innerHTML = renderRoleTypes();
-        document.getElementById("workingRights").innerHTML += renderSelectOptions(workingRightsOptions);
-        document.getElementById("salaryPermanent").innerHTML += renderSelectOptions(salaryRangesPermanent);
-        document.getElementById("salaryContract").innerHTML += renderSelectOptions(dailyRatesContract);
+        
+        // Candidate form elements
+        document.getElementById("c-specialisms-checkboxes").innerHTML = renderCheckboxes(specialismsData, "specialisms", "c");
+        document.getElementById("c-role-type-options").innerHTML = renderRoleTypes("c");
+        document.getElementById("c-workingRights").innerHTML += renderSelectOptions(workingRightsOptions);
+        document.getElementById("c-salaryPermanent").innerHTML += renderSelectOptions(salaryRangesPermanent);
+        document.getElementById("c-salaryContract").innerHTML += renderSelectOptions(dailyRatesContract);
+        
+        // Employer form elements
+        document.getElementById("e-specialisms-checkboxes").innerHTML = renderCheckboxes(specialismsData, "specialisms", "e");
+        document.getElementById("e-role-type-options").innerHTML = renderRoleTypes("e");
+        document.getElementById("e-industry").innerHTML += renderSelectOptions(industryOptions);
+        document.getElementById("e-companySize").innerHTML += renderSelectOptions(companySizeOptions);
+        document.getElementById("e-location").innerHTML += renderSelectOptions(locationOptions);
+        document.getElementById("e-salaryPermanent").innerHTML += renderSelectOptions(salaryRangesPermanent);
+        document.getElementById("e-salaryContract").innerHTML += renderSelectOptions(dailyRatesContract);
+        
+        // Footer
         document.getElementById("footer-services").innerHTML = renderFooterList(footerServices);
         document.getElementById("footer-specialisms").innerHTML = renderFooterList(footerSpecialisms);
         document.getElementById("footer-legal").innerHTML = renderFooterLinks(footerLegal);
+
+        // Tab Switching
+        function switchTab(tab) {
+            const candidateForm = document.getElementById("form-candidate");
+            const employerForm = document.getElementById("form-employer");
+            const candidateTab = document.getElementById("tab-candidate");
+            const employerTab = document.getElementById("tab-employer");
+
+            if (tab === "candidate") {
+                candidateForm.classList.remove("hidden");
+                employerForm.classList.add("hidden");
+                candidateTab.classList.remove("tab-inactive");
+                candidateTab.classList.add("tab-active");
+                employerTab.classList.remove("tab-active");
+                employerTab.classList.add("tab-inactive");
+            } else {
+                candidateForm.classList.add("hidden");
+                employerForm.classList.remove("hidden");
+                employerTab.classList.remove("tab-inactive");
+                employerTab.classList.add("tab-active");
+                candidateTab.classList.remove("tab-active");
+                candidateTab.classList.add("tab-inactive");
+            }
+        }
 
         // Mobile Menu Toggle
         const mobileMenuBtn = document.getElementById("mobile-menu-btn");
@@ -638,70 +893,114 @@
             }
         });
 
-        // File Upload Display
-        const fileInput = document.getElementById("resume");
-        const fileNameDisplay = document.getElementById("file-name");
+        // File Upload Display - Candidate
+        const cFileInput = document.getElementById("c-resume");
+        const cFileNameDisplay = document.getElementById("c-file-name");
         
-        fileInput.addEventListener("change", function() {
+        cFileInput.addEventListener("change", function() {
             if (this.files && this.files[0]) {
-                fileNameDisplay.textContent = `Selected: ${this.files[0].name}`;
-                fileNameDisplay.classList.remove("hidden");
+                cFileNameDisplay.textContent = `Selected: ${this.files[0].name}`;
+                cFileNameDisplay.classList.remove("hidden");
             }
         });
 
-        // Dynamic Salary Fields
-        const roleTypeInputs = document.getElementsByName("roleType");
-        const permanentSalaryDiv = document.getElementById("permanent-salary");
-        const contractSalaryDiv = document.getElementById("contract-salary");
-        const salaryPermanentSelect = document.getElementById("salaryPermanent");
-        const salaryContractSelect = document.getElementById("salaryContract");
+        // Dynamic Salary Fields - Candidate
+        const cRoleTypeInputs = document.getElementsByName("c-roleType");
+        const cPermanentSalaryDiv = document.getElementById("c-permanent-salary");
+        const cContractSalaryDiv = document.getElementById("c-contract-salary");
+        const cSalaryPermanentSelect = document.getElementById("c-salaryPermanent");
+        const cSalaryContractSelect = document.getElementById("c-salaryContract");
 
-        function updateSalaryFields() {
-            const selected = document.querySelector('input[name="roleType"]:checked')?.value;
+        function updateCandidateSalaryFields() {
+            const selected = document.querySelector('input[name="c-roleType"]:checked')?.value;
             
-            permanentSalaryDiv.classList.add("hidden");
-            contractSalaryDiv.classList.add("hidden");
-            salaryPermanentSelect.required = false;
-            salaryContractSelect.required = false;
+            cPermanentSalaryDiv.classList.add("hidden");
+            cContractSalaryDiv.classList.add("hidden");
+            cSalaryPermanentSelect.required = false;
+            cSalaryContractSelect.required = false;
             
             if (selected === "permanent") {
-                permanentSalaryDiv.classList.remove("hidden");
-                salaryPermanentSelect.required = true;
+                cPermanentSalaryDiv.classList.remove("hidden");
+                cSalaryPermanentSelect.required = true;
             } else if (selected === "contract") {
-                contractSalaryDiv.classList.remove("hidden");
-                salaryContractSelect.required = true;
+                cContractSalaryDiv.classList.remove("hidden");
+                cSalaryContractSelect.required = true;
             } else if (selected === "both") {
-                permanentSalaryDiv.classList.remove("hidden");
-                contractSalaryDiv.classList.remove("hidden");
+                cPermanentSalaryDiv.classList.remove("hidden");
+                cContractSalaryDiv.classList.remove("hidden");
             }
         }
 
-        roleTypeInputs.forEach(input => {
-            input.addEventListener("change", updateSalaryFields);
+        cRoleTypeInputs.forEach(input => {
+            input.addEventListener("change", updateCandidateSalaryFields);
         });
 
-        // Form Submission
-        const form = document.getElementById("registration-form");
+        // Dynamic Salary Fields - Employer
+        const eRoleTypeInputs = document.getElementsByName("e-roleType");
+        const ePermanentSalaryDiv = document.getElementById("e-permanent-salary");
+        const eContractSalaryDiv = document.getElementById("e-contract-salary");
+        const eSalaryPermanentSelect = document.getElementById("e-salaryPermanent");
+        const eSalaryContractSelect = document.getElementById("e-salaryContract");
+
+        function updateEmployerSalaryFields() {
+            const selected = document.querySelector('input[name="e-roleType"]:checked')?.value;
+            
+            ePermanentSalaryDiv.classList.add("hidden");
+            eContractSalaryDiv.classList.add("hidden");
+            eSalaryPermanentSelect.required = false;
+            eSalaryContractSelect.required = false;
+            
+            if (selected === "permanent") {
+                ePermanentSalaryDiv.classList.remove("hidden");
+                eSalaryPermanentSelect.required = true;
+            } else if (selected === "contract") {
+                eContractSalaryDiv.classList.remove("hidden");
+                eSalaryContractSelect.required = true;
+            } else if (selected === "both") {
+                ePermanentSalaryDiv.classList.remove("hidden");
+                eContractSalaryDiv.classList.remove("hidden");
+            }
+        }
+
+        eRoleTypeInputs.forEach(input => {
+            input.addEventListener("change", updateEmployerSalaryFields);
+        });
+
+        // Form Submissions
+        const candidateForm = document.getElementById("candidate-form");
+        const employerForm = document.getElementById("employer-form");
         const modal = document.getElementById("success-modal");
         const modalContent = document.getElementById("modal-content");
+        const modalTitle = document.getElementById("modal-title");
+        const modalMessage = document.getElementById("modal-message");
 
-        form.addEventListener("submit", function(e) {
+        candidateForm.addEventListener("submit", function(e) {
             e.preventDefault();
-            
-            // Show success modal
+            showModal("Registration Complete!", "Thank you for registering with Consult & Hire. We have received your details and will review your profile. One of our consultants may contact you shortly to complete your agency intake interview.");
+            this.reset();
+            cFileNameDisplay.classList.add("hidden");
+            cPermanentSalaryDiv.classList.add("hidden");
+            cContractSalaryDiv.classList.add("hidden");
+        });
+
+        employerForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            showModal("Vacancy Submitted!", "Thank you for submitting your vacancy with Consult & Hire. Our team will review your requirements and contact you within 24 hours to discuss your hiring needs and next steps.");
+            this.reset();
+            ePermanentSalaryDiv.classList.add("hidden");
+            eContractSalaryDiv.classList.add("hidden");
+        });
+
+        function showModal(title, message) {
+            modalTitle.textContent = title;
+            modalMessage.textContent = message;
             modal.classList.remove("hidden");
             modal.classList.add("flex");
             setTimeout(() => {
                 modalContent.classList.remove("scale-95", "opacity-0");
                 modalContent.classList.add("scale-100", "opacity-100");
             }, 10);
-            
-            // Reset form
-            form.reset();
-            fileNameDisplay.classList.add("hidden");
-            permanentSalaryDiv.classList.add("hidden");
-            contractSalaryDiv.classList.add("hidden");
-        });
+        }
 
         function closeModal() {
             modalContent.classList.remove("scale-100", "opacity-100");
