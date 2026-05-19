@@ -1,32 +1,196 @@
-<!-- About -->
-    <section id="about" class="py-20 bg-white">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Consult & Hire</title>
+    <meta name="description" content="Learn more about Consult and Hire, a global tech recruitment and talent advisory firm specialising in Engineering, AI, Analytics, Data Science and strategic talent solutions.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: "#0a0a0a",
+                            blue: "#1e3a8a",
+                            purple: "#581c87",
+                            accent: "#3730a3",
+                            surface: "#171717",
+                            card: "#262626"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 50%, #2e1065 100%);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-100 bg-brand-dark antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center border border-gray-700">
+                        <i class="fas fa-briefcase text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Consult & Hire</h1>
+                        <p class="text-xs text-gray-400">Experts in Global Tech Talent</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white font-medium">Home</a>
+                    <a href="about.html" class="text-white font-medium">About Us</a>
+                    <a href="articles.html" class="text-gray-300 hover:text-white font-medium">Articles</a>
+                    <a href="index.html#register" class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200">Register</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="gradient-bg pt-36 pb-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-brand-blue uppercase tracking-widest font-semibold mb-4">About Us</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Global Tech Talent & Brand Partners</h1>
+                <p class="text-xl text-gray-300 leading-relaxed">Consult & Hire helps organisations attract, assess and secure exceptional technology talent across global markets.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="py-20 bg-white text-brand-dark">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-5xl mx-auto">
-                <div class="text-center mb-16">
-                    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6">About Us</h2>
-                    <div class="w-24 h-1 bg-gradient-to-r from-brand-blue to-brand-purple mx-auto rounded-full"></div>
+            <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Built for modern hiring challenges</h2>
+                    <p class="text-gray-700 text-lg leading-relaxed mb-6">At Consult & Hire, we partner with organisations to build high-performing teams through strategic recruitment, talent intelligence and employer brand solutions.</p>
+                    <p class="text-gray-600 text-lg leading-relaxed">We specialise in the fast-moving technology market, supporting start-ups, scale-ups and established organisations hiring across Engineering, AI, Data, Analytics, Cloud, DevOps, Platform Engineering and technology leadership.</p>
                 </div>
 
-                <div class="max-w-none mb-16">
-                    <p class="text-xl text-gray-700 leading-relaxed mb-6 text-center max-w-4xl mx-auto">At Consult&Hire, we partner with organisations to build high-performing teams through strategic talent solutions designed for the modern world of work. As a global tech recruitment and talent advisory firm, we specialise in connecting businesses with exceptional talent across emerging technologies, digital transformation, engineering, data, AI, and enterprise platforms.</p>
-                    <p class="text-lg text-gray-600 leading-relaxed mb-6 text-center max-w-3xl mx-auto">We understand that successful hiring goes beyond matching technical skills to a job description. It requires a deep understanding of business strategy, culture, growth objectives, and the evolving expectations of today’s workforce.</p>
-                    <p class="text-lg text-gray-600 leading-relaxed text-center max-w-3xl mx-auto">Whether supporting high-growth start-ups, scaling technology businesses, or established enterprises, we act as a trusted extension of our clients’ teams — helping them attract, engage, and retain world-class talent globally.</p>
-                </div>
-
-                <div class="mb-16">
-                    <h3 class="text-3xl font-bold text-brand-dark text-center mb-12">Our Services</h3>
-                    <div id="services-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
-                </div>
-
-                <div class="bg-gray-50 rounded-2xl p-8 md:p-12 border border-gray-200">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <i class="fas fa-globe text-3xl text-brand-blue"></i>
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 shadow-sm">
+                    <h3 class="text-2xl font-bold mb-6">What makes us different?</h3>
+                    <div class="space-y-5">
+                        <div class="flex gap-4">
+                            <i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i>
+                            <p class="text-gray-700">We understand technical hiring beyond buzzwords and job descriptions.</p>
                         </div>
-                        <h3 class="text-2xl md:text-3xl font-bold text-brand-dark mb-4">Experts in Global Tech Talent</h3>
-                        <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">From AI Engineering and Data Science to Cloud, DevOps, Cyber Security, Platform Engineering, and Enterprise Technology, Consult&amp;Hire delivers specialist expertise across the global technology landscape — helping organisations secure the talent they need to innovate and grow.</p>
+                        <div class="flex gap-4">
+                            <i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i>
+                            <p class="text-gray-700">We combine recruitment delivery with market intelligence and talent strategy.</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i>
+                            <p class="text-gray-700">We focus on long-term fit, not just short-term placement.</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i>
+                            <p class="text-gray-700">We support businesses hiring locally, remotely and globally.</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Services -->
+    <section class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-14">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our Services</h2>
+                <p class="text-gray-400 text-lg">Flexible talent solutions for organisations at every stage of growth.</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-brand-card p-6 rounded-2xl border border-gray-800">
+                    <i class="fas fa-user-tie text-3xl text-brand-blue mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Recruitment</h3>
+                    <p class="text-gray-400 leading-relaxed">End-to-end hiring support across technical, commercial and operational roles.</p>
+                </div>
+
+                <div class="bg-brand-card p-6 rounded-2xl border border-gray-800">
+                    <i class="fas fa-chess-king text-3xl text-brand-blue mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Executive Search</h3>
+                    <p class="text-gray-400 leading-relaxed">Targeted leadership search for senior and transformational technology talent.</p>
+                </div>
+
+                <div class="bg-brand-card p-6 rounded-2xl border border-gray-800">
+                    <i class="fas fa-graduation-cap text-3xl text-brand-blue mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Graduate Campaign Management</h3>
+                    <p class="text-gray-400 leading-relaxed">Structured graduate hiring campaigns designed to attract and assess emerging talent.</p>
+                </div>
+
+                <div class="bg-brand-card p-6 rounded-2xl border border-gray-800">
+                    <i class="fas fa-seedling text-3xl text-brand-blue mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Early Careers</h3>
+                    <p class="text-gray-400 leading-relaxed">Internship, apprentice and early-career hiring strategies for sustainable talent pipelines.</p>
+                </div>
+
+                <div class="bg-brand-card p-6 rounded-2xl border border-gray-800">
+                    <i class="fas fa-sitemap text-3xl text-brand-blue mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Strategic Talent Management</h3>
+                    <p class="text-gray-400 leading-relaxed">Workforce planning, succession mapping and advisory aligned to business goals.</p>
+                </div>
+
+                <div class="bg-brand-card p-6 rounded-2xl border border-gray-800">
+                    <i class="fas fa-map-marked-alt text-3xl text-brand-blue mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Talent Mapping & Intelligence</h3>
+                    <p class="text-gray-400 leading-relaxed">Market insights, competitor intelligence and talent landscape mapping for informed hiring decisions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-20 bg-white text-brand-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center bg-gray-50 rounded-3xl p-10 md:p-14 border border-gray-200">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Need support with hiring?</h2>
+                <p class="text-gray-600 text-lg mb-8">Speak with Consult & Hire about recruitment, executive search, employer branding or talent intelligence.</p>
+                <a href="index.html#register" class="inline-block bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200">Register Your Interest</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2026 Consult & Hire. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
