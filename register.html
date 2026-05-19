@@ -1,1 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration | Consult & Hire</title>
+    <meta name="description" content="Register with Consult & Hire as a candidate seeking technology opportunities or as an employer looking to hire global tech talent.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: "#0a0a0a",
+                            blue: "#1e3a8a",
+                            purple: "#581c87",
+                            accent: "#3730a3",
+                            surface: "#171717",
+                            card: "#262626"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 50%, #2e1065 100%);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #1e3a8a;
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+        }
+
+        .dark-input {
+            background-color: #262626;
+            border: 1px solid #404040;
+            color: #e5e5e5;
+        }
+
+        .dark-input::placeholder {
+            color: #9ca3af;
+        }
+
+        .dark-input:focus {
+            background-color: #262626;
+            border-color: #1e3a8a;
+        }
+
+        .tab-active {
+            background-color: #1e3a8a;
+            color: white;
+            border-color: #1e3a8a;
+        }
+
+        .tab-inactive {
+            background-color: transparent;
+            color: #9ca3af;
+            border-color: #404040;
+        }
+
+        .tab-inactive:hover {
+            background-color: #262626;
+            color: white;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-100 bg-brand-dark antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center border border-gray-700">
+                        <i class="fas fa-briefcase text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Consult &amp; Hire</h1>
+                        <p class="text-xs text-gray-400">Experts in Global Tech Talent</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">About Us</a>
+                    <a href="articles.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">Articles &amp; Tech News</a>
+                    <a href="registration.html" class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200">Register</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="gradient-bg pt-36 pb-20 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-blue-300 uppercase tracking-widest font-semibold mb-4">Registration</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Register with Consult &amp; Hire</h1>
+                <p class="text-xl text-gray-300 leading-relaxed">Whether you are exploring your next technology opportunity or looking to hire exceptional talent, complete the relevant form below and our team will be in touch.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Forms -->
+    <section class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+
+                <!-- Tabs -->
+                <div class="flex justify-center mb-10">
+                    <div class="inline-flex bg-brand-card rounded-lg p-1 border border-gray-700">
+                        <button type="button" onclick="switchTab('candidate')" id="tab-candidate" class="px-4 sm:px-6 py-3 rounded-md font-medium transition-all duration-200 tab-active">
+                            <i class="fas fa-user mr-2"></i>Candidate
+                        </button>
+                        <button type="button" onclick="switchTab('employer')" id="tab-employer" class="px-4 sm:px-6 py-3 rounded-md font-medium transition-all duration-200 tab-inactive">
+                            <i class="fas fa-building mr-2"></i>Employer
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Candidate Registration -->
+                <div id="form-candidate" class="bg-brand-card rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-800">
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-3">Candidate Registration</h2>
+                        <p class="text-gray-400">Tell us about your experience, career goals and preferred opportunities.</p>
+                    </div>
+
+                    <form id="candidate-form" class="space-y-6" action="#" method="post" enctype="multipart/form-data">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="candidate-name" class="block text-sm font-medium text-gray-300 mb-2">Full Name *</label>
+                                <input id="candidate-name" name="candidate-name" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Your full name" required>
+                            </div>
+
+                            <div>
+                                <label for="candidate-email" class="block text-sm font-medium text-gray-300 mb-2">Email Address *</label>
+                                <input id="candidate-email" name="candidate-email" type="email" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="you@example.com" required>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="candidate-phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                                <input id="candidate-phone" name="candidate-phone" type="tel" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Your phone number">
+                            </div>
+
+                            <div>
+                                <label for="candidate-location" class="block text-sm font-medium text-gray-300 mb-2">Current Location</label>
+                                <input id="candidate-location" name="candidate-location" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="City, country or remote preference">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="candidate-specialism" class="block text-sm font-medium text-gray-300 mb-2">Primary Specialism *</label>
+                                <select id="candidate-specialism" name="candidate-specialism" class="dark-input form-input w-full rounded-lg px-4 py-3" required>
+                                    <option value="">Select your specialism</option>
+                                    <option>Software Engineering</option>
+                                    <option>AI / Machine Learning</option>
+                                    <option>Generative AI</option>
+                                    <option>Data Science</option>
+                                    <option>Data Engineering</option>
+                                    <option>Analytics / Business Intelligence</option>
+                                    <option>DevOps / DevSecOps</option>
+                                    <option>Site Reliability Engineering</option>
+                                    <option>Platform Engineering</option>
+                                    <option>Cloud Engineering</option>
+                                    <option>Cyber Security</option>
+                                    <option>Product Management</option>
+                                    <option>Technology Leadership</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="candidate-level" class="block text-sm font-medium text-gray-300 mb-2">Seniority Level</label>
+                                <select id="candidate-level" name="candidate-level" class="dark-input form-input w-full rounded-lg px-4 py-3">
+                                    <option value="">Select level</option>
+                                    <option>Graduate / Entry Level</option>
+                                    <option>Mid-Level</option>
+                                    <option>Senior</option>
+                                    <option>Lead</option>
+                                    <option>Principal</option>
+                                    <option>Manager</option>
+                                    <option>Head of / Director</option>
+                                    <option>Executive / C-Suite</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="candidate-work-type" class="block text-sm font-medium text-gray-300 mb-2">Preferred Work Type</label>
+                                <select id="candidate-work-type" name="candidate-work-type" class="dark-input form-input w-full rounded-lg px-4 py-3">
+                                    <option value="">Select preference</option>
+                                    <option>Permanent</option>
+                                    <option>Contract</option>
+                                    <option>Fixed-Term</option>
+                                    <option>Freelance / Consulting</option>
+                                    <option>Open to Multiple Options</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="candidate-work-location" class="block text-sm font-medium text-gray-300 mb-2">Preferred Location Model</label>
+                                <select id="candidate-work-location" name="candidate-work-location" class="dark-input form-input w-full rounded-lg px-4 py-3">
+                                    <option value="">Select preference</option>
+                                    <option>Remote</option>
+                                    <option>Hybrid</option>
+                                    <option>On-site</option>
+                                    <option>Open to Relocation</option>
+                                    <option>Open to Global Opportunities</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="candidate-salary" class="block text-sm font-medium text-gray-300 mb-2">Expected Salary / Rate</label>
+                                <input id="candidate-salary" name="candidate-salary" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="e.g. AUD 150,000 or day rate">
+                            </div>
+
+                            <div>
+                                <label for="candidate-availability" class="block text-sm font-medium text-gray-300 mb-2">Availability / Notice Period</label>
+                                <input id="candidate-availability" name="candidate-availability" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="e.g. Immediately available, 4 weeks">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="candidate-linkedin" class="block text-sm font-medium text-gray-300 mb-2">LinkedIn Profile</label>
+                            <input id="candidate-linkedin" name="candidate-linkedin" type="url" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="https://www.linkedin.com/in/your-profile">
+                        </div>
+
+                        <div>
+                            <label for="candidate-message" class="block text-sm font-medium text-gray-300 mb-2">Career Goals / Role Preferences</label>
+                            <textarea id="candidate-message" name="candidate-message" rows="5" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Tell us what you are looking for in your next role, preferred industries, technologies, locations, salary expectations or anything else useful."></textarea>
+                        </div>
+
+                        <div>
+                            <label for="candidate-cv" class="block text-sm font-medium text-gray-300 mb-2">Upload CV / Resume</label>
+                            <input id="candidate-cv" name="candidate-cv" type="file" accept=".pdf,.doc,.docx" class="dark-input form-input w-full rounded-lg px-4 py-3 file:mr-4 file:rounded-lg file:border-0 file:bg-brand-blue file:px-4 file:py-2 file:text-white">
+                            <p class="text-gray-500 text-sm mt-2">Accepted formats: PDF, DOC or DOCX.</p>
+                        </div>
+
+                        <label class="flex items-start gap-3 text-sm text-gray-400">
+                            <input type="checkbox" required class="mt-1">
+                            <span>I confirm that the information provided is accurate and I consent to Consult&amp;Hire contacting me about relevant opportunities.</span>
+                        </label>
+
+                        <button type="submit" class="w-full bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200">
+                            Submit Candidate Registration
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Employer Registration -->
+                <div id="form-employer" class="hidden bg-brand-card rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-800">
+                    <div class="mb-8">
+                        <h2 class="text-3xl font-bold text-white mb-3">Employer Registration</h2>
+                        <p class="text-gray-400">Tell us about your organisation, hiring priorities and the type of talent you need.</p>
+                    </div>
+
+                    <form id="employer-form" class="space-y-6" action="#" method="post" enctype="multipart/form-data">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="employer-name" class="block text-sm font-medium text-gray-300 mb-2">Your Name *</label>
+                                <input id="employer-name" name="employer-name" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Your full name" required>
+                            </div>
+
+                            <div>
+                                <label for="employer-email" class="block text-sm font-medium text-gray-300 mb-2">Work Email *</label>
+                                <input id="employer-email" name="employer-email" type="email" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="you@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="employer-phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                                <input id="employer-phone" name="employer-phone" type="tel" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Your phone number">
+                            </div>
+
+                            <div>
+                                <label for="company-name" class="block text-sm font-medium text-gray-300 mb-2">Company Name *</label>
+                                <input id="company-name" name="company-name" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Company name" required>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="company-website" class="block text-sm font-medium text-gray-300 mb-2">Company Website</label>
+                                <input id="company-website" name="company-website" type="url" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="https://www.company.com">
+                            </div>
+
+                            <div>
+                                <label for="company-location" class="block text-sm font-medium text-gray-300 mb-2">Company Location</label>
+                                <input id="company-location" name="company-location" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="City, country or global">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="hiring-service" class="block text-sm font-medium text-gray-300 mb-2">Service Required *</label>
+                                <select id="hiring-service" name="hiring-service" class="dark-input form-input w-full rounded-lg px-4 py-3" required>
+                                    <option value="">Select a service</option>
+                                    <option>Recruitment</option>
+                                    <option>Executive Search</option>
+                                    <option>Graduate Campaign Management & Hiring</option>
+                                    <option>Early Careers</option>
+                                    <option>Strategic Talent Management</option>
+                                    <option>Employer Branding</option>
+                                    <option>Talent Mapping & Talent Intelligence</option>
+                                    <option>Multiple Services</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="hiring-stage" class="block text-sm font-medium text-gray-300 mb-2">Hiring Timeline</label>
+                                <select id="hiring-stage" name="hiring-stage" class="dark-input form-input w-full rounded-lg px-4 py-3">
+                                    <option value="">Select timeline</option>
+                                    <option>Immediate</option>
+                                    <option>Within 1 Month</option>
+                                    <option>1–3 Months</option>
+                                    <option>3–6 Months</option>
+                                    <option>Planning Ahead</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="role-title" class="block text-sm font-medium text-gray-300 mb-2">Role Title / Hiring Area</label>
+                                <input id="role-title" name="role-title" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="e.g. Principal AI Engineer, DevOps Lead">
+                            </div>
+
+                            <div>
+                                <label for="number-of-hires" class="block text-sm font-medium text-gray-300 mb-2">Number of Hires</label>
+                                <input id="number-of-hires" name="number-of-hires" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="e.g. 1, 3, 10+">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="role-details" class="block text-sm font-medium text-gray-300 mb-2">Hiring Requirements</label>
+                            <textarea id="role-details" name="role-details" rows="6" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Tell us about the role, skills required, location, salary range, hiring challenges, team structure or support needed."></textarea>
+                        </div>
+
+                        <div>
+                            <label for="job-description" class="block text-sm font-medium text-gray-300 mb-2">Upload Job Description / Brief</label>
+                            <input id="job-description" name="job-description" type="file" accept=".pdf,.doc,.docx" class="dark-input form-input w-full rounded-lg px-4 py-3 file:mr-4 file:rounded-lg file:border-0 file:bg-brand-blue file:px-4 file:py-2 file:text-white">
+                            <p class="text-gray-500 text-sm mt-2">Accepted formats: PDF, DOC or DOCX.</p>
+                        </div>
+
+                        <label class="flex items-start gap-3 text-sm text-gray-400">
+                            <input type="checkbox" required class="mt-1">
+                            <span>I confirm that I am authorised to submit this enquiry and I consent to Consult&Hire contacting me about hiring support.</span>
+                        </label>
+
+                        <button type="submit" class="w-full bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200">
+                            Submit Employer Registration
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="py-20 bg-white text-brand-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto grid md:grid-cols-3 gap-8 text-center">
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <i class="fas fa-user-check text-4xl text-brand-blue mb-5"></i>
+                    <h3 class="text-xl font-bold mb-3">For Candidates</h3>
+                    <p class="text-gray-600">Access relevant technology opportunities across local, remote and global markets.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <i class="fas fa-briefcase text-4xl text-brand-blue mb-5"></i>
+                    <h3 class="text-xl font-bold mb-3">For Employers</h3>
+                    <p class="text-gray-600">Secure specialist support across recruitment, executive search and strategic talent planning.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200">
+                    <i class="fas fa-globe text-4xl text-brand-blue mb-5"></i>
+                    <h3 class="text-xl font-bold mb-3">Global Talent</h3>
+                    <p class="text-gray-600">Connect with high-impact technology talent across Engineering, AI, Data, Cloud and Leadership.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2026 Consult &amp; Hire. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function switchTab(type) {
+            const candidateForm = document.getElementById("form-candidate");
+            const employerForm = document.getElementById("form-employer");
+            const candidateTab = document.getElementById("tab-candidate");
+            const employerTab = document.getElementById("tab-employer");
+
+            if (type === "candidate") {
+                candidateForm.classList.remove("hidden");
+                employerForm.classList.add("hidden");
+
+                candidateTab.classList.add("tab-active");
+                candidateTab.classList.remove("tab-inactive");
+
+                employerTab.classList.add("tab-inactive");
+                employerTab.classList.remove("tab-active");
+            } else {
+                employerForm.classList.remove("hidden");
+                candidateForm.classList.add("hidden");
+
+                employerTab.classList.add("tab-active");
+                employerTab.classList.remove("tab-inactive");
+
+                candidateTab.classList.add("tab-inactive");
+                candidateTab.classList.remove("tab-active");
+            }
+        }
+    </script>
+</body>
+</html>
 
