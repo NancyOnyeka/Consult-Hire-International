@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consult & Hire | Experts in Global Tech Talent</title>
-    <meta name="description" content="Consult & Hire specialises in Engineering, AI, Analytics and Data Science recruitment for tech startups and scale-ups. Based in Brisbane, Australia.">
+    <meta name="description" content="Consult & Hire specialises in Engineering, AI, Analytics and Data Science recruitment for tech start-ups and scale-ups. Based in Brisbane, Australia.">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -30,176 +36,216 @@
                     }
                 }
             }
-        }
+        };
     </script>
+
     <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
         .gradient-bg {
             background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 50%, #2e1065 100%);
         }
+
         .glass-effect {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
+
         .form-input:focus {
             outline: none;
             border-color: #1e3a8a;
             box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
         }
-        .checkbox-custom:checked {
-            background-color: #1e3a8a;
-            border-color: #1e3a8a;
-        }
+
         .dark-input {
             background-color: #262626;
-            border-color: #404040;
+            border: 1px solid #404040;
             color: #e5e5e5;
         }
+
+        .dark-input::placeholder {
+            color: #9ca3af;
+        }
+
         .dark-input:focus {
             background-color: #262626;
             border-color: #1e3a8a;
         }
+
         .hero-dimensions {
             min-height: 600px;
             padding-top: 8rem;
             padding-bottom: 5rem;
         }
+
         @media (min-width: 1024px) {
             .hero-dimensions {
                 padding-top: 10rem;
                 padding-bottom: 8rem;
             }
         }
+
         .tab-active {
             background-color: #1e3a8a;
             color: white;
             border-color: #1e3a8a;
         }
+
         .tab-inactive {
             background-color: transparent;
             color: #9ca3af;
             border-color: #404040;
         }
+
         .tab-inactive:hover {
             background-color: #262626;
             color: white;
         }
     </style>
 </head>
+
 <body class="font-sans text-gray-100 bg-brand-dark antialiased overflow-x-hidden">
-    <!-- Navigation -->
+
+    <!-- Header -->
     <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300" id="header">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <div class="flex items-center space-x-3">
+                <a href="#home" class="flex items-center space-x-3">
                     <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center border border-gray-700">
                         <i class="fas fa-briefcase text-white text-xl"></i>
                     </div>
                     <div>
-                        <h1 class="text-xl font-bold text-white">Consult & Hire</h1>
-                        <p class="text-xs text-gray-400">Global Tech Recruitment Specialists</p>
+                        <h1 class="text-xl font-bold text-white">Consult &amp; Hire</h1>
+                        <p class="text-xs text-gray-400">Brisbane, Australia</p>
                     </div>
-                </div>
-                
+                </a>
+
                 <div class="hidden md:flex items-center space-x-8">
                     <ul id="desktop-nav" class="flex space-x-6"></ul>
-                    <a href="#register" class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200">
-                        Register
-                    </a>
+                    <a href="#register" class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200">Register</a>
                 </div>
 
-                <button class="md:hidden text-white text-2xl" id="mobile-menu-btn" aria-label="Toggle menu">
+                <button class="md:hidden text-white text-2xl" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </nav>
 
-        <!-- Mobile Menu -->
         <div id="mobile-menu" class="hidden md:hidden bg-brand-surface border-t border-gray-800">
             <ul id="mobile-nav" class="px-4 py-4 space-y-3"></ul>
+            <div class="px-4 pb-4">
+                <a href="#register" class="block bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors duration-200">Register</a>
+            </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-dimensions gradient-bg relative overflow-hidden flex items-center">
+    <!-- Hero -->
+    <section id="home" class="hero-dimensions gradient-bg relative overflow-hidden flex items-center">
         <div class="absolute inset-0 opacity-20">
             <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
             <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
         </div>
-        
+
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                    Experts in Global Tech Talent
-                </h1>
-                <p class="text-xl md:text-2xl text-gray-300 mb-8 font-light">
-                    Connecting exceptional Engineering, AI, Analytics and Data Science professionals with innovative companies worldwide
-                </p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Experts in Global Tech Talent</h1>
+                <p class="text-xl md:text-2xl text-gray-300 mb-8 font-light">Connecting exceptional Engineering, AI, Analytics and Data Science professionals with innovative companies worldwide.</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#register" class="bg-white text-brand-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200 text-center">
-                        Submit Your CV
-                    </a>
-                    <a href="#hire-talent" class="glass-effect text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 text-center">
-                        Hire Talent
-                    </a>
+                    <a href="#register" onclick="switchTab('candidate')" class="bg-white text-brand-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200 text-center">Submit Your CV</a>
+                    <a href="#register" onclick="switchTab('employer')" class="glass-effect text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 text-center">Hire Talent</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Specialisms Section -->
+    <!-- Specialisms -->
     <section id="specialisms" class="py-20 bg-brand-surface">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our Specialisms</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-lg">
-                    Deep expertise across the most in-demand technical disciplines
-                </p>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Deep expertise across the most in-demand technical disciplines.</p>
             </div>
-            
-            <div id="specialisms-grid" class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center"></div>
+            <div id="specialisms-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center"></div>
         </div>
     </section>
 
-    <!-- Full Width Image Section -->
+    <!-- Logo / Brand Image Section -->
     <section class="hero-dimensions relative overflow-hidden flex items-center justify-center w-full">
         <div class="absolute inset-0 w-full h-full">
-            <img src="Logo_Website.png">
+            <img src="Logo_Website.png" alt="Consult & Hire brand logo" class="w-full h-full object-cover" loading="lazy">
+            <div class="absolute inset-0 bg-brand-dark/50"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">Consult &amp; Hire</h2>
+                <p class="text-xl md:text-2xl text-gray-200 mb-8 font-light drop-shadow-md">Specialist recruitment and talent advisory for global technology teams.</p>
+            </div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section class="py-20 bg-brand-dark border-y border-gray-800">
+    <!-- About -->
+    <section id="about" class="py-20 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl md:text-5xl font-bold text-brand-dark mb-6">About Consult&amp;Hire</h2>
+                    <div class="w-24 h-1 bg-gradient-to-r from-brand-blue to-brand-purple mx-auto rounded-full"></div>
+                </div>
+
+                <div class="max-w-none mb-16">
+                    <p class="text-xl text-gray-700 leading-relaxed mb-6 text-center max-w-4xl mx-auto">At Consult&amp;Hire, we partner with organisations to build high-performing teams through strategic talent solutions designed for the modern world of work. As a global tech recruitment and talent advisory firm, we specialise in connecting businesses with exceptional talent across emerging technologies, digital transformation, engineering, data, AI, and enterprise platforms.</p>
+                    <p class="text-lg text-gray-600 leading-relaxed mb-6 text-center max-w-3xl mx-auto">We understand that successful hiring goes beyond matching technical skills to a job description. It requires a deep understanding of business strategy, culture, growth objectives, and the evolving expectations of today’s workforce.</p>
+                    <p class="text-lg text-gray-600 leading-relaxed text-center max-w-3xl mx-auto">Whether supporting high-growth start-ups, scaling technology businesses, or established enterprises, we act as a trusted extension of our clients’ teams — helping them attract, engage, and retain world-class talent globally.</p>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="text-3xl font-bold text-brand-dark text-center mb-12">Our Services</h3>
+                    <div id="services-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-6"></div>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 md:p-12 border border-gray-200">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-brand-blue/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-globe text-3xl text-brand-blue"></i>
+                        </div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-brand-dark mb-4">Experts in Global Tech Talent</h3>
+                        <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">From AI Engineering and Data Science to Cloud, DevOps, Cyber Security, Platform Engineering, and Enterprise Technology, Consult&amp;Hire delivers specialist expertise across the global technology landscape — helping organisations secure the talent they need to innovate and grow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us -->
+    <section id="why-us" class="py-20 bg-brand-dark border-y border-gray-800">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Consult & Hire?</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-lg">
-                    Partner with specialists who understand the tech talent landscape
-                </p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Consult &amp; Hire?</h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Partner with specialists who understand the tech talent landscape.</p>
             </div>
-            
             <div id="features-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
         </div>
     </section>
 
-    <!-- Registration Section with Tabs -->
+    <!-- Register -->
     <section id="register" class="py-20 bg-brand-surface">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-5xl mx-auto">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Register With Us</h2>
-                    <p class="text-gray-400 text-lg">
-                        Whether you are seeking your next opportunity or looking to hire exceptional talent, we are here to help
-                    </p>
+                    <p class="text-gray-400 text-lg">Whether you are seeking your next opportunity or looking to hire exceptional talent, we are here to help.</p>
                 </div>
 
-                <!-- Tabs -->
                 <div class="flex justify-center mb-8">
                     <div class="inline-flex bg-brand-card rounded-lg p-1 border border-gray-700">
-                        <button onclick="switchTab('candidate')" id="tab-candidate" class="px-6 py-3 rounded-md font-medium transition-all duration-200 tab-active">
+                        <button type="button" onclick="switchTab('candidate')" id="tab-candidate" class="px-4 sm:px-6 py-3 rounded-md font-medium transition-all duration-200 tab-active">
                             <i class="fas fa-user mr-2"></i>I am a Candidate
                         </button>
-                        <button onclick="switchTab('employer')" id="tab-employer" class="px-6 py-3 rounded-md font-medium transition-all duration-200 tab-inactive">
+                        <button type="button" onclick="switchTab('employer')" id="tab-employer" class="px-4 sm:px-6 py-3 rounded-md font-medium transition-all duration-200 tab-inactive">
                             <i class="fas fa-building mr-2"></i>I am an Employer
                         </button>
                     </div>
@@ -207,545 +253,169 @@
 
                 <!-- Candidate Form -->
                 <div id="form-candidate" class="bg-brand-card rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-800">
-                    <form id="candidate-form" class="space-y-8">
-                        <!-- Personal Information -->
-                        <div class="space-y-6">
-                            <h3 class="text-xl font-semibold text-white border-b border-gray-700 pb-2">Personal Information</h3>
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="c-firstName">First Name *</label>
-                                    <input type="text" id="c-firstName" name="firstName" required 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="c-lastName">Last Name *</label>
-                                    <input type="text" id="c-lastName" name="lastName" required 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                </div>
-                            </div>
-                            
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="c-email">Email Address *</label>
-                                    <input type="email" id="c-email" name="email" required 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="c-phone">Phone Number *</label>
-                                    <input type="tel" id="c-phone" name="phone" required 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                </div>
-                            </div>
-
+                    <form id="candidate-form" class="space-y-6" action="#" method="post">
+                        <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-2" for="c-location">Current Location *</label>
-                                <input type="text" id="c-location" name="location" placeholder="City, Country" required 
-                                    class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
+                                <label for="candidate-name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                                <input id="candidate-name" name="candidate-name" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Your full name" required>
+                            </div>
+                            <div>
+                                <label for="candidate-email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
+                                <input id="candidate-email" name="candidate-email" type="email" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="you@example.com" required>
                             </div>
                         </div>
 
-                        <!-- Professional Preferences -->
-                        <div class="space-y-6">
-                            <h3 class="text-xl font-semibold text-white border-b border-gray-700 pb-2">Professional Preferences</h3>
-                            
+                        <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-3">Specialisms Interested In *</label>
-                                <div id="c-specialisms-checkboxes" class="grid md:grid-cols-2 gap-3"></div>
+                                <label for="candidate-phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                                <input id="candidate-phone" name="candidate-phone" type="tel" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Your phone number">
                             </div>
-
                             <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-3">Role Type *</label>
-                                <div id="c-role-type-options" class="flex flex-wrap gap-4"></div>
-                            </div>
-
-                            <div id="c-salary-section" class="space-y-4">
-                                <div id="c-permanent-salary" class="hidden">
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="c-salaryPermanent">
-                                        Expected Annual Salary (Permanent)
-                                    </label>
-                                    <select id="c-salaryPermanent" name="salaryPermanent" 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                        <option value="">Select salary range</option>
-                                    </select>
-                                </div>
-                                
-                                <div id="c-contract-salary" class="hidden">
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="c-salaryContract">
-                                        Expected Daily Rate (Contract)
-                                    </label>
-                                    <select id="c-salaryContract" name="salaryContract" 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                        <option value="">Select daily rate</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-2" for="c-workingRights">Working Rights *</label>
-                                <select id="c-workingRights" name="workingRights" required 
-                                    class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                    <option value="">Select your working rights</option>
+                                <label for="candidate-specialism" class="block text-sm font-medium text-gray-300 mb-2">Specialism</label>
+                                <select id="candidate-specialism" name="candidate-specialism" class="dark-input form-input w-full rounded-lg px-4 py-3">
+                                    <option value="">Select your specialism</option>
+                                    <option>Engineering</option>
+                                    <option>AI / Machine Learning</option>
+                                    <option>Analytics</option>
+                                    <option>Data Science</option>
+                                    <option>Product</option>
+                                    <option>Technology Leadership</option>
                                 </select>
                             </div>
                         </div>
 
-                        <!-- Resume Upload -->
-                        <div class="space-y-6">
-                            <h3 class="text-xl font-semibold text-white border-b border-gray-700 pb-2">Resume & Documents</h3>
-                            
-                            <div class="border-2 border-dashed border-gray-600 rounded-lg p-8 text-center hover:border-brand-blue transition-colors duration-200 bg-brand-dark/50" id="c-drop-zone">
-                                <input type="file" id="c-resume" name="resume" accept=".pdf,.doc,.docx" class="hidden" required>
-                                <label for="c-resume" class="cursor-pointer block">
-                                    <i class="fas fa-cloud-upload-alt text-4xl text-gray-500 mb-4"></i>
-                                    <p class="text-gray-300 font-medium mb-2">Click to upload your resume</p>
-                                    <p class="text-sm text-gray-500">PDF, DOC, or DOCX up to 5MB</p>
-                                </label>
-                                <p id="c-file-name" class="mt-4 text-sm text-brand-blue font-medium hidden"></p>
-                            </div>
+                        <div>
+                            <label for="candidate-message" class="block text-sm font-medium text-gray-300 mb-2">Tell us what you are looking for</label>
+                            <textarea id="candidate-message" name="candidate-message" rows="5" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Share your ideal role, location, salary expectations, notice period, or anything else useful."></textarea>
                         </div>
 
-                        <!-- Communication Preferences -->
-                        <div class="space-y-6">
-                            <h3 class="text-xl font-semibold text-white border-b border-gray-700 pb-2">Communication Preferences</h3>
-                            
-                            <div class="flex items-start gap-3">
-                                <input type="checkbox" id="c-emailAlerts" name="emailAlerts" 
-                                    class="checkbox-custom w-5 h-5 mt-0.5 rounded border-gray-600 text-brand-blue focus:ring-brand-blue cursor-pointer bg-gray-700">
-                                <label for="c-emailAlerts" class="text-sm text-gray-300 cursor-pointer">
-                                    <span class="font-medium text-white">Email Job Alerts</span> - I would like to receive email notifications when roles matching my criteria become available
-                                </label>
-                            </div>
+                        <div>
+                            <label for="candidate-cv" class="block text-sm font-medium text-gray-300 mb-2">Upload CV</label>
+                            <input id="candidate-cv" name="candidate-cv" type="file" class="dark-input form-input w-full rounded-lg px-4 py-3 file:mr-4 file:rounded-lg file:border-0 file:bg-brand-blue file:px-4 file:py-2 file:text-white">
                         </div>
 
-                        <!-- Terms and Conditions -->
-                        <div class="bg-brand-dark rounded-lg p-6 space-y-4 border border-gray-700">
-                            <h3 class="text-lg font-semibold text-white">Terms & Conditions</h3>
-                            
-                            <div class="bg-brand-card border border-gray-700 rounded-lg p-4 h-48 overflow-y-auto text-sm text-gray-400 space-y-3">
-                                <p><strong class="text-gray-300">1. Data Collection and Use</strong></p>
-                                <p>By submitting this registration form, you consent to Consult & Hire collecting and processing your personal data, including your resume and contact details, for the purpose of recruitment services.</p>
-                                
-                                <p><strong class="text-gray-300">2. Agency Representation</strong></p>
-                                <p>Registration with Consult & Hire constitutes an agreement to be represented by our agency for suitable employment opportunities. We may share your profile with prospective employers after obtaining your consent for specific roles.</p>
-                                
-                                <p><strong class="text-gray-300">3. Interview Process</strong></p>
-                                <p>Please note that we may contact you to complete an agency intake interview. This interview helps us better understand your career goals, technical skills, and cultural preferences to match you with suitable opportunities.</p>
-                                
-                                <p><strong class="text-gray-300">4. Data Retention</strong></p>
-                                <p>Your data will be retained for a period of 24 months from your last activity, unless you request earlier deletion.</p>
-                            </div>
-                            
-                            <div class="flex items-start gap-3">
-                                <input type="checkbox" id="c-termsAccepted" name="termsAccepted" required 
-                                    class="checkbox-custom w-5 h-5 mt-0.5 rounded border-gray-600 text-brand-blue focus:ring-brand-blue cursor-pointer bg-gray-700">
-                                <label for="c-termsAccepted" class="text-sm text-gray-300 cursor-pointer">
-                                    I have read and agree to the Terms & Conditions *<br>
-                                    <span class="text-xs text-gray-500">I understand that Consult & Hire may contact me to complete an agency intake interview</span>
-                                </label>
-                            </div>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <div class="pt-4">
-                            <button type="submit" 
-                                class="w-full bg-brand-blue hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg border border-blue-600">
-                                Complete Registration
-                            </button>
-                        </div>
+                        <button type="submit" class="w-full bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200">Submit Candidate Registration</button>
                     </form>
                 </div>
 
                 <!-- Employer Form -->
                 <div id="form-employer" class="hidden bg-brand-card rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-800">
-                    <form id="employer-form" class="space-y-8">
-                        <!-- Company Information -->
-                        <div class="space-y-6">
-                            <h3 class="text-xl font-semibold text-white border-b border-gray-700 pb-2">Company Information</h3>
-                            
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-companyName">Company Name *</label>
-                                    <input type="text" id="e-companyName" name="companyName" required 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-industry">Industry *</label>
-                                    <select id="e-industry" name="industry" required 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                        <option value="">Select industry</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-contactName">Contact Person *</label>
-                                    <input type="text" id="e-contactName" name="contactName" placeholder="Full Name" required 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-jobTitle">Job Title *</label>
-                                    <input type="text" id="e-jobTitle" name="jobTitle" required 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                </div>
-                            </div>
-
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-email">Business Email *</label>
-                                    <input type="email" id="e-email" name="email" required 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-phone">Phone Number *</label>
-                                    <input type="tel" id="e-phone" name="phone" required 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                </div>
-                            </div>
-
+                    <form id="employer-form" class="space-y-6" action="#" method="post">
+                        <div class="grid md:grid-cols-2 gap-6">
                             <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-2" for="e-companySize">Company Size *</label>
-                                <select id="e-companySize" name="companySize" required 
-                                    class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                    <option value="">Select company size</option>
+                                <label for="employer-name" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
+                                <input id="employer-name" name="employer-name" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Your full name" required>
+                            </div>
+                            <div>
+                                <label for="employer-email" class="block text-sm font-medium text-gray-300 mb-2">Work Email</label>
+                                <input id="employer-email" name="employer-email" type="email" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="you@company.com" required>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="company-name" class="block text-sm font-medium text-gray-300 mb-2">Company Name</label>
+                                <input id="company-name" name="company-name" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Company name" required>
+                            </div>
+                            <div>
+                                <label for="hiring-service" class="block text-sm font-medium text-gray-300 mb-2">Service Required</label>
+                                <select id="hiring-service" name="hiring-service" class="dark-input form-input w-full rounded-lg px-4 py-3">
+                                    <option value="">Select a service</option>
+                                    <option>Recruitment</option>
+                                    <option>Executive Search</option>
+                                    <option>Graduate Campaign Management & Hiring</option>
+                                    <option>Early Careers</option>
+                                    <option>Strategic Talent Management</option>
+                                    <option>Employer Branding</option>
+                                    <option>Talent Mapping & Talent Intelligence</option>
                                 </select>
                             </div>
                         </div>
 
-                        <!-- Vacancy Details -->
-                        <div class="space-y-6">
-                            <h3 class="text-xl font-semibold text-white border-b border-gray-700 pb-2">Vacancy Details</h3>
-                            
-                            <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-2" for="e-vacancyTitle">Job Title *</label>
-                                <input type="text" id="e-vacancyTitle" name="vacancyTitle" placeholder="e.g., Senior Machine Learning Engineer" required 
-                                    class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-3">Specialism Required *</label>
-                                <div id="e-specialisms-checkboxes" class="grid md:grid-cols-2 gap-3"></div>
-                            </div>
-
-                            <div class="grid md:grid-cols-2 gap-6">
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-3">Role Type *</label>
-                                    <div id="e-role-type-options" class="flex flex-wrap gap-4"></div>
-                                </div>
-                                <div>
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-location">Work Location *</label>
-                                    <select id="e-location" name="location" required 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                        <option value="">Select work arrangement</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div id="e-salary-section" class="space-y-4">
-                                <div id="e-permanent-salary" class="hidden">
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-salaryPermanent">
-                                        Salary Range (AUD) *
-                                    </label>
-                                    <select id="e-salaryPermanent" name="salaryPermanent" 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                        <option value="">Select salary range</option>
-                                    </select>
-                                </div>
-                                
-                                <div id="e-contract-salary" class="hidden">
-                                    <label class="block text-sm font-medium text-gray-300 mb-2" for="e-salaryContract">
-                                        Daily Rate Range (AUD) *
-                                    </label>
-                                    <select id="e-salaryContract" name="salaryContract" 
-                                        class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                                        <option value="">Select daily rate</option>
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-2" for="e-jobDescription">Job Description *</label>
-                                <textarea id="e-jobDescription" name="jobDescription" rows="4" placeholder="Please provide a brief description of the role, key responsibilities, and required skills..." required 
-                                    class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input resize-none"></textarea>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-2" for="e-requirements">Essential Requirements</label>
-                                <textarea id="e-requirements" name="requirements" rows="3" placeholder="e.g., 5+ years Python experience, AWS certification, etc." 
-                                    class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input resize-none"></textarea>
-                            </div>
-
-                            <div>
-                                <label class="block text-sm font-medium text-gray-300 mb-2" for="e-startDate">Target Start Date</label>
-                                <input type="date" id="e-startDate" name="startDate" 
-                                    class="form-input w-full px-4 py-3 border border-gray-600 rounded-lg transition-all duration-200 dark-input">
-                            </div>
+                        <div>
+                            <label for="role-details" class="block text-sm font-medium text-gray-300 mb-2">Hiring Requirements</label>
+                            <textarea id="role-details" name="role-details" rows="5" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Tell us about the roles, skills, location, salary range, timeline, or hiring challenge."></textarea>
                         </div>
 
-                        <!-- Hiring Terms -->
-                        <div class="bg-brand-dark rounded-lg p-6 space-y-4 border border-gray-700">
-                            <h3 class="text-lg font-semibold text-white">Engagement Terms</h3>
-                            
-                            <div class="bg-brand-card border border-gray-700 rounded-lg p-4 h-48 overflow-y-auto text-sm text-gray-400 space-y-3">
-                                <p><strong class="text-gray-300">1. Fee Structure</strong></p>
-                                <p>Our placement fees are calculated as a percentage of the successful candidate's first-year remuneration. Fees are payable upon candidate commencement.</p>
-                                
-                                <p><strong class="text-gray-300">2. Replacement Guarantee</strong></p>
-                                <p>We offer a 3-month replacement guarantee for all permanent placements. If the candidate leaves or is terminated within this period, we will conduct a replacement search at no additional fee.</p>
-                                
-                                <p><strong class="text-gray-300">3. Exclusivity</strong></p>
-                                <p>For retained searches, we require a period of exclusivity. For contingent searches, we operate on a first-introduction basis.</p>
-                                
-                                <p><strong class="text-gray-300">4. Confidentiality</strong></p>
-                                <p>All candidate information shared by Consult & Hire is confidential and proprietary. Client companies agree not to disclose candidate details to third parties or approach candidates directly without our consent.</p>
-                                
-                                <p><strong class="text-gray-300">5. Refund Policy</strong></p>
-                                <p>In the unlikely event that a placed candidate does not commence employment, any fees paid will be refunded in full within 30 days.</p>
-                            </div>
-                            
-                            <div class="flex items-start gap-3">
-                                <input type="checkbox" id="e-termsAccepted" name="termsAccepted" required 
-                                    class="checkbox-custom w-5 h-5 mt-0.5 rounded border-gray-600 text-brand-blue focus:ring-brand-blue cursor-pointer bg-gray-700">
-                                <label for="e-termsAccepted" class="text-sm text-gray-300 cursor-pointer">
-                                    I have read and agree to the Engagement Terms *<br>
-                                    <span class="text-xs text-gray-500">I confirm I am authorized to engage recruitment services on behalf of the company named above</span>
-                                </label>
-                            </div>
+                        <div>
+                            <label for="job-description" class="block text-sm font-medium text-gray-300 mb-2">Upload Job Description</label>
+                            <input id="job-description" name="job-description" type="file" class="dark-input form-input w-full rounded-lg px-4 py-3 file:mr-4 file:rounded-lg file:border-0 file:bg-brand-blue file:px-4 file:py-2 file:text-white">
                         </div>
 
-                        <!-- Submit Button -->
-                        <div class="pt-4">
-                            <button type="submit" 
-                                class="w-full bg-brand-blue hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-200 transform hover:scale-[1.02] shadow-lg border border-blue-600">
-                                Submit Vacancy
-                            </button>
-                            <p class="text-center text-sm text-gray-500 mt-4">
-                                <i class="fas fa-lock mr-1"></i> Your information is securely encrypted and protected
-                            </p>
-                        </div>
+                        <button type="submit" class="w-full bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200">Submit Hiring Enquiry</button>
                     </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-brand-dark border-t border-gray-800">
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-brand-dark">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">Get In Touch</h2>
-                <p class="text-gray-400 text-lg mb-8">
-                    Ready to discuss your hiring needs or career opportunities? Reach out to our Brisbane team.
-                </p>
-                
-                <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-                    <a href="mailto:hello@consultandhire.com" 
-                        class="flex items-center gap-3 bg-brand-card border border-gray-700 text-white px-8 py-4 rounded-lg hover:bg-gray-800 transition-colors duration-200">
-                        <i class="fas fa-envelope text-xl text-brand-blue"></i>
-                        <span class="font-medium">hello@consultandhire.com</span>
-                    </a>
-                    
-                    <div class="flex items-center gap-3 text-gray-400">
-                        <i class="fas fa-map-marker-alt text-brand-blue text-xl"></i>
-                        <span>Brisbane, Australia</span>
-                    </div>
-                </div>
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Contact Us</h2>
+                <p class="text-gray-400 text-lg mb-8">Ready to discuss your next hire or career move? Get in touch with Consult&amp;Hire.</p>
+                <a href="mailto:info@consultandhire.com" class="inline-flex items-center justify-center bg-white text-brand-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200">
+                    <i class="fas fa-envelope mr-3"></i>info@consultandhire.com
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-black text-white py-12 border-t border-gray-800">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-8 mb-8">
-                <div class="md:col-span-2">
-                    <div class="flex items-center space-x-2 mb-4">
-                        <div class="w-8 h-8 bg-brand-blue rounded-lg flex items-center justify-center">
-                            <i class="fas fa-briefcase text-white text-sm"></i>
-                        </div>
-                        <span class="text-xl font-bold">Consult & Hire</span>
-                    </div>
-                    <p class="text-gray-400 mb-4 max-w-md">
-                        Experts in global tech talent. Specialising in Engineering, AI, Analytics and Data Science recruitment for startups and scale-ups.
-                    </p>
-                    <p class="text-gray-500 text-sm">
-                        <i class="fas fa-map-marker-alt mr-2"></i>Brisbane, Australia
-                    </p>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4 text-gray-200">Services</h4>
-                    <ul id="footer-services" class="space-y-2 text-gray-400 text-sm"></ul>
-                </div>
-                
-                <div>
-                    <h4 class="font-semibold mb-4 text-gray-200">Specialisms</h4>
-                    <ul id="footer-specialisms" class="space-y-2 text-gray-400 text-sm"></ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-                <p class="text-gray-500 text-sm">
-                    © 2024 Consult & Hire. All rights reserved.
-                </p>
-                <div class="flex gap-6 text-sm text-gray-400" id="footer-legal"></div>
-            </div>
+    <footer class="bg-black border-t border-gray-800 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-500 text-sm">&copy; <span id="current-year"></span> Consult &amp; Hire. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Success Modal -->
-    <div id="success-modal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-        <div class="bg-brand-card border border-gray-700 rounded-2xl max-w-md w-full p-8 text-center transform scale-95 opacity-0 transition-all duration-300" id="modal-content">
-            <div class="w-16 h-16 bg-green-900/50 rounded-full flex items-center justify-center mx-auto mb-4 border border-green-700">
-                <i class="fas fa-check text-green-400 text-2xl"></i>
-            </div>
-            <h3 class="text-2xl font-bold text-white mb-2" id="modal-title">Registration Complete!</h3>
-            <p class="text-gray-400 mb-6" id="modal-message">
-                Thank you for registering with Consult & Hire. We have received your details and will review your profile.
-            </p>
-            <button onclick="closeModal()" class="bg-brand-blue text-white px-8 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors duration-200 w-full border border-blue-600">
-                Close
-            </button>
-        </div>
-    </div>
-
     <script>
-        // Data Layer
         const navItems = [
-            { "label": "Home", "href": "#" },
-            { "label": "Specialisms", "href": "#specialisms" },
-            { "label": "Register", "href": "#register" },
-            { "label": "Contact", "href": "#contact" }
+            { label: "Home", href: "#home" },
+            { label: "Specialisms", href: "#specialisms" },
+            { label: "About Us", href: "#about" },
+            { label: "Register", href: "#register" },
+            { label: "Contact", href: "#contact" }
         ];
 
         const specialismsData = [
-            { 
-                "title": "Engineering", 
-                "icon": "fa-code", 
-                "description": "Software, DevOps, Cloud, and Infrastructure Engineering roles across all levels."
-            },
-            { 
-                "title": "AI", 
-                "icon": "fa-robot", 
-                "description": "Machine Learning Engineers, AI Researchers, and MLOps specialists."
-            },
-            { 
-                "title": "Analytics", 
-                "icon": "fa-chart-line", 
-                "description": "Business Intelligence, Data Analytics, and Visualization experts."
-            },
-            { 
-                "title": "Data Science", 
-                "icon": "fa-database", 
-                "description": "Data Scientists, Statisticians, and Quantitative Analysts."
-            }
+            { title: "Engineering", icon: "fa-code", description: "Software, DevOps, Cloud, and Infrastructure Engineering roles across all levels." },
+            { title: "AI", icon: "fa-robot", description: "Machine Learning Engineers, AI Researchers, and MLOps specialists." },
+            { title: "Analytics", icon: "fa-chart-line", description: "Business Intelligence, Data Analytics, and visualisation experts." },
+            { title: "Data Science", icon: "fa-database", description: "Data Scientists, Statisticians, and Quantitative Analysts." },
+            { title: "Product", icon: "fa-cubes", description: "Product Managers, Product Owners, and strategic product leaders." },
+            { title: "Technology Leadership", icon: "fa-user-tie", description: "CTOs, Heads of Engineering, and senior technology leadership talent." }
         ];
 
         const featuresData = [
-            {
-                "icon": "fa-bullseye",
-                "title": "Specialised Focus",
-                "description": "Deep expertise in Engineering, AI, Analytics and Data Science means we speak your language and understand your technical requirements."
-            },
-            {
-                "icon": "fa-globe-americas",
-                "title": "Global Reach",
-                "description": "Based in Brisbane with international capabilities. We source talent locally and globally to find the perfect match."
-            },
-            {
-                "icon": "fa-rocket",
-                "title": "Startup Specialists",
-                "description": "We understand the unique challenges of startups and scale-ups, from rapid growth to equity negotiations and cultural fit."
-            }
+            { icon: "fa-bullseye", title: "Specialist Focus", description: "Deep expertise in Engineering, AI, Analytics and Data Science means we speak your language and understand your technical requirements." },
+            { icon: "fa-globe-americas", title: "Global Reach", description: "Based in Brisbane with international capability. We source talent locally and globally to find the right match." },
+            { icon: "fa-rocket", title: "Start-up & Scale-up Specialists", description: "We understand the unique challenges of high-growth organisations, from rapid hiring to leadership search and cultural alignment." }
         ];
 
-        const workingRightsOptions = [
-            { "value": "citizen", "label": "Australian Citizen" },
-            { "value": "pr", "label": "Australian Permanent Resident" },
-            { "value": "visa-457", "label": "457 / TSS Visa Holder" },
-            { "value": "visa-485", "label": "485 Graduate Visa" },
-            { "value": "visa-482", "label": "482 Temporary Skill Shortage" },
-            { "value": "nz", "label": "New Zealand Citizen" },
-            { "value": "sponsored", "label": "Require Sponsorship" },
-            { "value": "other", "label": "Other Working Rights" }
+        const servicesData = [
+            { title: "Recruitment", description: "End-to-end hiring solutions across technical, commercial, and operational functions.", icon: "fa-user-tie" },
+            { title: "Executive Search", description: "Targeted leadership search services focused on securing transformational executives and senior leadership talent.", icon: "fa-chess-king" },
+            { title: "Graduate Campaign Management & Hiring", description: "Structured graduate attraction and recruitment programmes designed to identify and engage emerging talent at scale.", icon: "fa-graduation-cap" },
+            { title: "Early Careers", description: "Internship, apprentice, and early careers hiring strategies that build sustainable talent pipelines for future growth.", icon: "fa-seedling" },
+            { title: "Strategic Talent Management", description: "Workforce planning, talent strategy, succession planning, and advisory solutions aligned to organisational objectives.", icon: "fa-sitemap" },
+            { title: "Employer Branding", description: "Helping organisations define and communicate compelling employer value propositions that attract top talent.", icon: "fa-bullhorn" },
+            { title: "Talent Mapping & Talent Intelligence", description: "Market insights, competitor analysis, salary benchmarking, and talent landscape mapping to support informed hiring decisions.", icon: "fa-map-marked-alt" }
         ];
 
-        const salaryRangesPermanent = [
-            { "value": "80-100", "label": "$80,000 - $100,000 AUD" },
-            { "value": "100-130", "label": "$100,000 - $130,000 AUD" },
-            { "value": "130-160", "label": "$130,000 - $160,000 AUD" },
-            { "value": "160-200", "label": "$160,000 - $200,000 AUD" },
-            { "value": "200-250", "label": "$200,000 - $250,000 AUD" },
-            { "value": "250+", "label": "$250,000+ AUD" }
-        ];
-
-        const dailyRatesContract = [
-            { "value": "600-800", "label": "$600 - $800 per day" },
-            { "value": "800-1000", "label": "$800 - $1,000 per day" },
-            { "value": "1000-1300", "label": "$1,000 - $1,300 per day" },
-            { "value": "1300-1600", "label": "$1,300 - $1,600 per day" },
-            { "value": "1600-2000", "label": "$1,600 - $2,000 per day" },
-            { "value": "2000+", "label": "$2,000+ per day" }
-        ];
-
-        const industryOptions = [
-            { "value": "software", "label": "Software & Technology" },
-            { "value": "fintech", "label": "FinTech" },
-            { "value": "healthtech", "label": "HealthTech" },
-            { "value": "retail", "label": "Retail & E-commerce" },
-            { "value": "consulting", "label": "Consulting" },
-            { "value": "media", "label": "Media & Entertainment" },
-            { "value": "telecom", "label": "Telecommunications" },
-            { "value": "energy", "label": "Energy & Utilities" },
-            { "value": "other", "label": "Other" }
-        ];
-
-        const companySizeOptions = [
-            { "value": "1-10", "label": "1-10 employees" },
-            { "value": "11-50", "label": "11-50 employees" },
-            { "value": "51-200", "label": "51-200 employees" },
-            { "value": "201-500", "label": "201-500 employees" },
-            { "value": "501-1000", "label": "501-1000 employees" },
-            { "value": "1000+", "label": "1000+ employees" }
-        ];
-
-        const locationOptions = [
-            { "value": "onsite", "label": "On-site (Full time)" },
-            { "value": "hybrid", "label": "Hybrid (Mix of remote and on-site)" },
-            { "value": "remote", "label": "Remote (Work from anywhere)" },
-            { "value": "flexible", "label": "Flexible (To be discussed)" }
-        ];
-
-        const footerServices = [
-            "Technology Staffing",
-            "Executive Search",
-            "Talent Mapping",
-            "Market Intelligence"
-        ];
-
-        const footerSpecialisms = [
-            "Engineering",
-            "AI & Machine Learning",
-            "Analytics",
-            "Data Science"
-        ];
-
-        const footerLegal = [
-            { "label": "Privacy Policy", "href": "#" },
-            { "label": "Terms of Service", "href": "#" },
-            { "label": "Cookie Policy", "href": "#" }
-        ];
-
-        // Render Functions
         function renderNavItems(items) {
-            return items.map(item => 
-                `<li><a href="${item.href}" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">${item.label}</a></li>`
-            ).join("");
+            return items.map(item => `
+                <li>
+                    <a href="${item.href}" class="block text-gray-300 hover:text-white font-medium transition-colors duration-200">
+                        ${item.label}
+                    </a>
+                </li>
+            `).join("");
         }
 
         function renderSpecialisms(items) {
             return items.map(item => `
-                <div class="group">
+                <div class="group p-6 rounded-2xl hover:bg-brand-card transition-colors duration-300">
                     <div class="w-16 h-16 mx-auto mb-4 text-gray-400 group-hover:text-brand-blue transition-colors duration-300">
                         <i class="fas ${item.icon} text-4xl"></i>
                     </div>
@@ -757,7 +427,7 @@
 
         function renderFeatures(items) {
             return items.map(item => `
-                <div class="text-center p-6">
+                <div class="text-center p-6 bg-brand-surface rounded-2xl border border-gray-800">
                     <div class="w-16 h-16 bg-brand-card rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-800">
                         <i class="fas ${item.icon} text-2xl text-brand-blue"></i>
                     </div>
@@ -767,253 +437,63 @@
             `).join("");
         }
 
-        function renderCheckboxes(items, name, prefix) {
-            return items.map((item, index) => `
-                <div class="flex items-center gap-3">
-                    <input type="checkbox" id="${prefix}-${name}-${index}" name="${name}" value="${item.title}" 
-                        class="checkbox-custom w-5 h-5 rounded border-gray-600 text-brand-blue focus:ring-brand-blue cursor-pointer bg-gray-700">
-                    <label for="${prefix}-${name}-${index}" class="text-gray-300 cursor-pointer select-none">${item.title}</label>
+        function renderServices(items) {
+            return items.map(item => `
+                <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 group">
+                    <div class="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-brand-blue transition-colors duration-300">
+                        <i class="fas ${item.icon} text-xl text-brand-blue group-hover:text-white transition-colors duration-300"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-brand-dark mb-2">${item.title}</h4>
+                    <p class="text-gray-600 text-sm leading-relaxed">${item.description}</p>
                 </div>
             `).join("");
         }
 
-        function renderRoleTypes(prefix) {
-            const types = [
-                { "value": "permanent", "label": "Permanent" },
-                { "value": "contract", "label": "Contract" },
-                { "value": "both", "label": "Both" }
-            ];
-            return types.map(type => `
-                <label class="inline-flex items-center gap-2 cursor-pointer">
-                    <input type="radio" name="${prefix}-roleType" value="${type.value}" 
-                        class="w-5 h-5 text-brand-blue border-gray-600 focus:ring-brand-blue cursor-pointer bg-gray-700" required>
-                    <span class="text-gray-300">${type.label}</span>
-                </label>
-            `).join("");
-        }
-
-        function renderSelectOptions(options) {
-            return options.map(opt => 
-                `<option value="${opt.value}" class="bg-brand-card text-gray-300">${opt.label}</option>`
-            ).join("");
-        }
-
-        function renderFooterLinks(items) {
-            return items.map(item => 
-                `<li><a href="${item.href}" class="hover:text-white transition-colors duration-200">${item.label}</a></li>`
-            ).join("");
-        }
-
-        function renderFooterList(items) {
-            return items.map(item => 
-                `<li><a href="#" class="hover:text-white transition-colors duration-200">${item}</a></li>`
-            ).join("");
-        }
-
-        // Initialize DOM
-        document.getElementById("desktop-nav").innerHTML = renderNavItems(navItems);
-        document.getElementById("mobile-nav").innerHTML = renderNavItems(navItems);
-        document.getElementById("specialisms-grid").innerHTML = renderSpecialisms(specialismsData);
-        document.getElementById("features-grid").innerHTML = renderFeatures(featuresData);
-        
-        // Candidate form elements
-        document.getElementById("c-specialisms-checkboxes").innerHTML = renderCheckboxes(specialismsData, "specialisms", "c");
-        document.getElementById("c-role-type-options").innerHTML = renderRoleTypes("c");
-        document.getElementById("c-workingRights").innerHTML += renderSelectOptions(workingRightsOptions);
-        document.getElementById("c-salaryPermanent").innerHTML += renderSelectOptions(salaryRangesPermanent);
-        document.getElementById("c-salaryContract").innerHTML += renderSelectOptions(dailyRatesContract);
-        
-        // Employer form elements
-        document.getElementById("e-specialisms-checkboxes").innerHTML = renderCheckboxes(specialismsData, "specialisms", "e");
-        document.getElementById("e-role-type-options").innerHTML = renderRoleTypes("e");
-        document.getElementById("e-industry").innerHTML += renderSelectOptions(industryOptions);
-        document.getElementById("e-companySize").innerHTML += renderSelectOptions(companySizeOptions);
-        document.getElementById("e-location").innerHTML += renderSelectOptions(locationOptions);
-        document.getElementById("e-salaryPermanent").innerHTML += renderSelectOptions(salaryRangesPermanent);
-        document.getElementById("e-salaryContract").innerHTML += renderSelectOptions(dailyRatesContract);
-        
-        // Footer
-        document.getElementById("footer-services").innerHTML = renderFooterList(footerServices);
-        document.getElementById("footer-specialisms").innerHTML = renderFooterList(footerSpecialisms);
-        document.getElementById("footer-legal").innerHTML = renderFooterLinks(footerLegal);
-
-        // Tab Switching
-        function switchTab(tab) {
+        function switchTab(type) {
             const candidateForm = document.getElementById("form-candidate");
             const employerForm = document.getElementById("form-employer");
             const candidateTab = document.getElementById("tab-candidate");
             const employerTab = document.getElementById("tab-employer");
 
-            if (tab === "candidate") {
+            if (type === "candidate") {
                 candidateForm.classList.remove("hidden");
                 employerForm.classList.add("hidden");
-                candidateTab.classList.remove("tab-inactive");
                 candidateTab.classList.add("tab-active");
-                employerTab.classList.remove("tab-active");
+                candidateTab.classList.remove("tab-inactive");
                 employerTab.classList.add("tab-inactive");
+                employerTab.classList.remove("tab-active");
             } else {
-                candidateForm.classList.add("hidden");
                 employerForm.classList.remove("hidden");
-                employerTab.classList.remove("tab-inactive");
+                candidateForm.classList.add("hidden");
                 employerTab.classList.add("tab-active");
-                candidateTab.classList.remove("tab-active");
+                employerTab.classList.remove("tab-inactive");
                 candidateTab.classList.add("tab-inactive");
+                candidateTab.classList.remove("tab-active");
             }
         }
 
-        // Mobile Menu Toggle
-        const mobileMenuBtn = document.getElementById("mobile-menu-btn");
-        const mobileMenu = document.getElementById("mobile-menu");
-        
-        mobileMenuBtn.addEventListener("click", () => {
-            mobileMenu.classList.toggle("hidden");
-        });
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("desktop-nav").innerHTML = renderNavItems(navItems);
+            document.getElementById("mobile-nav").innerHTML = renderNavItems(navItems);
+            document.getElementById("specialisms-grid").innerHTML = renderSpecialisms(specialismsData);
+            document.getElementById("features-grid").innerHTML = renderFeatures(featuresData);
+            document.getElementById("services-grid").innerHTML = renderServices(servicesData);
+            document.getElementById("current-year").textContent = new Date().getFullYear();
 
-        // Smooth Scroll for Anchor Links
-        document.addEventListener("click", function(e) {
-            const link = e.target.closest("a[href^='#']");
-            if (!link) return;
-            e.preventDefault();
-            const target = document.querySelector(link.getAttribute("href"));
-            if (target) {
-                target.scrollIntoView({ behavior: "smooth", block: "start" });
-                mobileMenu.classList.add("hidden");
-            }
-        });
+            const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
 
-        // File Upload Display - Candidate
-        const cFileInput = document.getElementById("c-resume");
-        const cFileNameDisplay = document.getElementById("c-file-name");
-        
-        cFileInput.addEventListener("change", function() {
-            if (this.files && this.files[0]) {
-                cFileNameDisplay.textContent = `Selected: ${this.files[0].name}`;
-                cFileNameDisplay.classList.remove("hidden");
-            }
-        });
+            mobileMenuBtn.addEventListener("click", function () {
+                const isHidden = mobileMenu.classList.toggle("hidden");
+                mobileMenuBtn.setAttribute("aria-expanded", String(!isHidden));
+            });
 
-        // Dynamic Salary Fields - Candidate
-        const cRoleTypeInputs = document.getElementsByName("c-roleType");
-        const cPermanentSalaryDiv = document.getElementById("c-permanent-salary");
-        const cContractSalaryDiv = document.getElementById("c-contract-salary");
-        const cSalaryPermanentSelect = document.getElementById("c-salaryPermanent");
-        const cSalaryContractSelect = document.getElementById("c-salaryContract");
-
-        function updateCandidateSalaryFields() {
-            const selected = document.querySelector('input[name="c-roleType"]:checked')?.value;
-            
-            cPermanentSalaryDiv.classList.add("hidden");
-            cContractSalaryDiv.classList.add("hidden");
-            cSalaryPermanentSelect.required = false;
-            cSalaryContractSelect.required = false;
-            
-            if (selected === "permanent") {
-                cPermanentSalaryDiv.classList.remove("hidden");
-                cSalaryPermanentSelect.required = true;
-            } else if (selected === "contract") {
-                cContractSalaryDiv.classList.remove("hidden");
-                cSalaryContractSelect.required = true;
-            } else if (selected === "both") {
-                cPermanentSalaryDiv.classList.remove("hidden");
-                cContractSalaryDiv.classList.remove("hidden");
-            }
-        }
-
-        cRoleTypeInputs.forEach(input => {
-            input.addEventListener("change", updateCandidateSalaryFields);
-        });
-
-        // Dynamic Salary Fields - Employer
-        const eRoleTypeInputs = document.getElementsByName("e-roleType");
-        const ePermanentSalaryDiv = document.getElementById("e-permanent-salary");
-        const eContractSalaryDiv = document.getElementById("e-contract-salary");
-        const eSalaryPermanentSelect = document.getElementById("e-salaryPermanent");
-        const eSalaryContractSelect = document.getElementById("e-salaryContract");
-
-        function updateEmployerSalaryFields() {
-            const selected = document.querySelector('input[name="e-roleType"]:checked')?.value;
-            
-            ePermanentSalaryDiv.classList.add("hidden");
-            eContractSalaryDiv.classList.add("hidden");
-            eSalaryPermanentSelect.required = false;
-            eSalaryContractSelect.required = false;
-            
-            if (selected === "permanent") {
-                ePermanentSalaryDiv.classList.remove("hidden");
-                eSalaryPermanentSelect.required = true;
-            } else if (selected === "contract") {
-                eContractSalaryDiv.classList.remove("hidden");
-                eSalaryContractSelect.required = true;
-            } else if (selected === "both") {
-                ePermanentSalaryDiv.classList.remove("hidden");
-                eContractSalaryDiv.classList.remove("hidden");
-            }
-        }
-
-        eRoleTypeInputs.forEach(input => {
-            input.addEventListener("change", updateEmployerSalaryFields);
-        });
-
-        // Form Submissions
-        const candidateForm = document.getElementById("candidate-form");
-        const employerForm = document.getElementById("employer-form");
-        const modal = document.getElementById("success-modal");
-        const modalContent = document.getElementById("modal-content");
-        const modalTitle = document.getElementById("modal-title");
-        const modalMessage = document.getElementById("modal-message");
-
-        candidateForm.addEventListener("submit", function(e) {
-            e.preventDefault();
-            showModal("Registration Complete!", "Thank you for registering with Consult & Hire. We have received your details and will review your profile. One of our consultants may contact you shortly to complete your agency intake interview.");
-            this.reset();
-            cFileNameDisplay.classList.add("hidden");
-            cPermanentSalaryDiv.classList.add("hidden");
-            cContractSalaryDiv.classList.add("hidden");
-        });
-
-        employerForm.addEventListener("submit", function(e) {
-            e.preventDefault();
-            showModal("Vacancy Submitted!", "Thank you for submitting your vacancy with Consult & Hire. Our team will review your requirements and contact you within 24 hours to discuss your hiring needs and next steps.");
-            this.reset();
-            ePermanentSalaryDiv.classList.add("hidden");
-            eContractSalaryDiv.classList.add("hidden");
-        });
-
-        function showModal(title, message) {
-            modalTitle.textContent = title;
-            modalMessage.textContent = message;
-            modal.classList.remove("hidden");
-            modal.classList.add("flex");
-            setTimeout(() => {
-                modalContent.classList.remove("scale-95", "opacity-0");
-                modalContent.classList.add("scale-100", "opacity-100");
-            }, 10);
-        }
-
-        function closeModal() {
-            modalContent.classList.remove("scale-100", "opacity-100");
-            modalContent.classList.add("scale-95", "opacity-0");
-            setTimeout(() => {
-                modal.classList.add("hidden");
-                modal.classList.remove("flex");
-            }, 300);
-        }
-
-        // Header scroll effect
-        window.addEventListener("scroll", () => {
-            const header = document.getElementById("header");
-            if (window.scrollY > 50) {
-                header.classList.add("shadow-lg", "bg-brand-dark/95");
-            } else {
-                header.classList.remove("shadow-lg");
-            }
-        });
-
-        // Close modal on outside click
-        modal.addEventListener("click", function(e) {
-            if (e.target === modal) {
-                closeModal();
-            }
+            mobileMenu.addEventListener("click", function (event) {
+                if (event.target.tagName === "A") {
+                    mobileMenu.classList.add("hidden");
+                    mobileMenuBtn.setAttribute("aria-expanded", "false");
+                }
+            });
         });
     </script>
 </body>
