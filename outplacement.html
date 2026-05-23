@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outplacement Services | Consult & Hire</title>
+    <meta name="description" content="Outplacement services from Consult & Hire, including CV and LinkedIn optimisation, interview preparation, career coaching, salary guidance, personal branding, networking strategy, job search support, executive coaching, psychometric assessments, workshops and recruitment introductions.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: "#0a0a0a",
+                            blue: "#1e3a8a",
+                            purple: "#581c87",
+                            accent: "#3730a3",
+                            surface: "#171717",
+                            card: "#262626"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 50%, #2e1065 100%);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #1e3a8a;
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+        }
+
+        .dark-input {
+            background-color: #262626;
+            border: 1px solid #404040;
+            color: #e5e5e5;
+        }
+
+        .dark-input::placeholder {
+            color: #9ca3af;
+        }
+
+        .dark-input:focus {
+            background-color: #262626;
+            border-color: #1e3a8a;
+        }
+
+        .service-card {
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #1e3a8a;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-100 bg-brand-dark antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center border border-gray-700">
+                        <i class="fas fa-briefcase text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Consult &amp; Hire</h1>
+                        <p class="text-xs text-gray-400">Experts in Global Tech Talent</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">About Us</a>
+                    <a href="articles.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">Articles</a>
+                    <a href="career-coaching.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">Career Coaching</a>
+                    <a href="outplacement-services.html" class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200">Outplacement</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="gradient-bg pt-36 pb-24 relative overflow-hidden">
+
+        <!-- Optional Background Image -->
+        <div class="absolute inset-0 opacity-20">
+            <img src="global-tech-network.png"
+                 alt="Professional outplacement and career transition support"
+                 class="w-full h-full object-cover">
+        </div>
+
+        <!-- Blur Effects -->
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-5xl mx-auto text-center">
+                <p class="text-blue-300 uppercase tracking-widest font-semibold mb-4">Outplacement Services</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Compassionate career transition support for organisations and employees</h1>
+                <p class="text-xl md:text-2xl text-gray-300 leading-relaxed mb-8">Consult &amp; Hire partners with employers to support people through redundancy, restructuring and career transition with practical, human-centred outplacement services.</p>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#enquire" class="bg-white text-brand-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200 text-center">
+                        Enquire About Outplacement
+                    </a>
+
+                    <a href="#services" class="glass-effect text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 text-center">
+                        View Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="py-20 bg-white text-brand-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-brand-blue uppercase tracking-widest font-semibold mb-3">Supporting Responsible Change</p>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">Helping people move forward with confidence</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">Redundancy and organisational change can be difficult for employees, leaders and HR teams. Our outplacement services are designed to help organisations support affected employees with dignity, structure and practical career guidance.</p>
+                    <p class="text-lg text-gray-600 leading-relaxed">We provide tailored support across CV development, interview preparation, personal branding, job search strategy, coaching and recruitment introductions — helping individuals regain confidence and take positive steps towards their next opportunity.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-10 border border-gray-200 shadow-sm">
+                    <h3 class="text-2xl font-bold mb-8">Designed for:</h3>
+                    <div class="space-y-5">
+                        <div class="flex gap-4">
+                            <i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i>
+                            <p class="text-gray-700">Employers managing redundancy or restructuring programmes</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i>
+                            <p class="text-gray-700">HR teams supporting impacted employees</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i>
+                            <p class="text-gray-700">Senior professionals and executives in transition</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i>
+                            <p class="text-gray-700">Technology teams affected by workforce change</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i>
+                            <p class="text-gray-700">Organisations wanting to provide meaningful post-employment support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <p class="text-blue-300 uppercase tracking-widest font-semibold mb-3">What We Provide</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Outplacement services tailored to your people</h2>
+                <p class="text-gray-400 text-lg">Flexible support packages can be delivered one-to-one, in groups, or through workshops and webinars.</p>
+            </div>
+
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8">
+                    <i class="fas fa-file-alt text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">CV and LinkedIn Optimisation</h3>
+                    <p class="text-gray-400 leading-relaxed">Clear, market-aligned CVs and LinkedIn profiles that communicate strengths, achievements and career direction.</p>
+                </div>
+
+                <div class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8">
+                    <i class="fas fa-comments text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Interview Preparation</h3>
+                    <p class="text-gray-400 leading-relaxed">Structured interview coaching, mock interviews and guidance on answering behavioural and technical questions.</p>
+                </div>
+
+                <div class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8">
+                    <i class="fas fa-route text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Career Coaching</h3>
+                    <p class="text-gray-400 leading-relaxed">One-to-one coaching to help individuals clarify goals, identify options and rebuild confidence during transition.</p>
+                </div>
+
+                <div class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8">
+                    <i class="fas fa-dollar-sign text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Salary Guidance</h3>
+                    <p class="text-gray-400 leading-relaxed">Practical guidance on market salary expectations, negotiation confidence and positioning remuneration conversations.</p>
+                </div>
+
+                <div class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8">
+                    <i class="fas fa-fingerprint text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Personal Branding</h3>
+                    <p class="text-gray-400 leading-relaxed">Support to define a clear professional narrative across CVs, LinkedIn, interviews and networking conversations.</p>
+                </div>
+
+                <div class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8">
+                    <i class="fas fa-network-wired text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Networking Strategy</h3>
+                    <p class="text-gray-400 leading-relaxed">Guidance on building professional networks, approaching contacts and using LinkedIn effectively during job search.</p>
+                </div>
+
+                <div class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8">
+                    <i class="fas fa-search text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Job Search Support</h3>
+                    <p class="text-gray-400 leading-relaxed">Practical advice on targeting roles, applications, market positioning and managing a structured job search.</p>
+                </div>
+
+                <div class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8">
+                    <i class="fas fa-chess-king text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Executive Coaching</h3>
+                    <p class="text-gray-400 leading-relaxed">Tailored support for senior leaders and executives navigating transition, board-level search or portfolio career pathways.</p>
+                </div>
+
+                <div class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8">
+                    <i class="fas fa-brain text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Psychometric Assessments</h3>
+                    <p class="text-gray-400 leading-relaxed">Assessment tools to support self-awareness, career direction, strengths identification and interview preparation.</p>
+                </div>
+
+                <div class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8">
+                    <i class="fas fa-chalkboard-teacher text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Workshops and Webinars</h3>
+                    <p class="text-gray-400 leading-relaxed">Group sessions covering CV writing, LinkedIn, interview skills, job search strategy and market insights.</p>
+                </div>
+
+                <div class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8">
+                    <i class="fas fa-handshake text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Recruitment Introductions</h3>
+                    <p class="text-gray-400 leading-relaxed">Where appropriate, we can make relevant introductions to recruiters, employers and hiring networks.</p>
+                </div>
+
+                <div class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8">
+                    <i class="fas fa-users-cog text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Tailored Programme Design</h3>
+                    <p class="text-gray-400 leading-relaxed">Flexible outplacement programmes designed around the size, seniority and needs of your impacted workforce.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery Options -->
+    <section class="py-20 bg-white text-brand-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-14">
+                <p class="text-brand-blue uppercase tracking-widest font-semibold mb-3">Flexible Delivery</p>
+                <h2 class="text-3xl md:text-5xl font-bold mb-6">Support that fits your organisation</h2>
+                <p class="text-gray-600 text-lg">Outplacement programmes can be designed for individuals, teams or larger employee groups.</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 text-center">
+                    <i class="fas fa-user text-4xl text-brand-blue mb-5"></i>
+                    <h3 class="text-xl font-bold mb-3">One-to-One Coaching</h3>
+                    <p class="text-gray-600">Personalised support for individuals requiring tailored career transition guidance.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 text-center">
+                    <i class="fas fa-users text-4xl text-brand-blue mb-5"></i>
+                    <h3 class="text-xl font-bold mb-3">Group Programmes</h3>
+                    <p class="text-gray-600">Structured support for teams or employee cohorts affected by change.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-2xl p-8 border border-gray-200 text-center">
+                    <i class="fas fa-video text-4xl text-brand-blue mb-5"></i>
+                    <h3 class="text-xl font-bold mb-3">Workshops and Webinars</h3>
+                    <p class="text-gray-600">Practical sessions delivered virtually or in person to support employees at scale.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="py-20 bg-brand-dark border-y border-gray-800">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-blue-300 uppercase tracking-widest font-semibold mb-3">Why Outplacement Matters</p>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Protect your people and your employer brand</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed mb-6">How an organisation handles workforce change can have a lasting impact on employees, culture, reputation and future hiring. Providing meaningful outplacement support shows care, professionalism and responsibility.</p>
+                    <p class="text-gray-400 text-lg leading-relaxed">Our approach combines recruitment expertise, career coaching and technology market insight to help people move forward with clarity and confidence.</p>
+                </div>
+
+                <div class="glass-effect rounded-3xl p-8 md:p-10">
+                    <div class="space-y-5">
+                        <div class="flex gap-4">
+                            <i class="fas fa-check-circle text-blue-300 text-xl mt-1"></i>
+                            <p class="text-gray-200">Supports employees through difficult career transitions</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-check-circle text-blue-300 text-xl mt-1"></i>
+                            <p class="text-gray-200">Helps protect employer brand and employee goodwill</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-check-circle text-blue-300 text-xl mt-1"></i>
+                            <p class="text-gray-200">Provides practical tools for job search and interviews</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-check-circle text-blue-300 text-xl mt-1"></i>
+                            <p class="text-gray-200">Offers market insight from experienced recruiters</p>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-check-circle text-blue-300 text-xl mt-1"></i>
+                            <p class="text-gray-200">Can be tailored by seniority, function, location or group size</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enquiry Form -->
+    <section id="enquire" class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-14">
+                <p class="text-blue-300 uppercase tracking-widest font-semibold mb-3">Employer Enquiry</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Discuss outplacement support</h2>
+                <p class="text-gray-400 text-lg">Complete the form below and we will contact you to discuss your organisation’s requirements.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-brand-card rounded-3xl border border-gray-800 p-8 md:p-12 shadow-2xl">
+                <form class="space-y-6" action="#" method="post">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Full Name *</label>
+                            <input type="text" required class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Your full name">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Work Email *</label>
+                            <input type="email" required class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="you@company.com">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Company Name *</label>
+                            <input type="text" required class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Company name">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
+                            <input type="tel" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Your phone number">
+                        </div>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Approximate Number of Employees Requiring Support</label>
+                            <select class="dark-input form-input w-full rounded-lg px-4 py-3">
+                                <option value="">Select range</option>
+                                <option>1–5</option>
+                                <option>6–20</option>
+                                <option>21–50</option>
+                                <option>51–100</option>
+                                <option>100+</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-2">Preferred Support Type</label>
+                            <select class="dark-input form-input w-full rounded-lg px-4 py-3">
+                                <option value="">Select option</option>
+                                <option>One-to-One Coaching</option>
+                                <option>Group Workshops</option>
+                                <option>Executive Outplacement</option>
+                                <option>Workshops / Webinars</option>
+                                <option>Full Outplacement Programme</option>
+                                <option>Not Sure Yet</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-300 mb-2">Tell us about your requirements</label>
+                        <textarea rows="6" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Share any context about the transition, seniority levels, timeframes, locations, programme goals or support needed."></textarea>
+                    </div>
+
+                    <label class="flex items-start gap-3 text-sm text-gray-400">
+                        <input type="checkbox" required class="mt-1">
+                        <span>I consent to Consult&amp;Hire contacting me regarding outplacement services.</span>
+                    </label>
+
+                    <button type="submit" class="w-full bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200">
+                        Submit Outplacement Enquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="py-20 bg-white text-brand-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center bg-gray-50 rounded-3xl p-10 md:p-14 border border-gray-200">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-blue/10 mb-6">
+                    <i class="fas fa-hands-helping text-3xl text-brand-blue"></i>
+                </div>
+
+                <h2 class="text-3xl md:text-4xl font-bold mb-5">Support your people through change</h2>
+                <p class="text-lg text-gray-600 leading-relaxed mb-8">Outplacement is more than a leaving package. It is a practical way to help people regain confidence, access guidance and move towards their next opportunity with dignity.</p>
+
+                <a href="#enquire" class="inline-block bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200">
+                    Enquire Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2026 Consult &amp; Hire. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
