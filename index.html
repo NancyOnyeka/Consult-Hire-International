@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consult & Hire | Experts in Global Tech Talent</title>
-    <meta name="description" content="Consult & Hire specialises in Engineering, AI, Analytics and Data Science recruitment for tech start-ups, scale-ups and established orgs.">
+    <meta name="description" content="Consult & Hire specialises in global technology recruitment, executive search, talent intelligence, employer branding and hiring support for ambitious organisations.">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +23,7 @@
                 extend: {
                     colors: {
                         brand: {
-                            dark: "#0a0a0a", 
+                            dark: "#0a0a0a",
                             blue: "#1e3a8a",
                             purple: "#581c87",
                             accent: "#3730a3",
@@ -40,9 +40,7 @@
     </script>
 
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
+        html { scroll-behavior: smooth; }
 
         .gradient-bg {
             background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 50%, #2e1065 100%);
@@ -54,55 +52,18 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .form-input:focus {
-            outline: none;
+        .service-card {
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
             border-color: #1e3a8a;
-            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
         }
 
-        .dark-input {
-            background-color: #262626;
-            border: 1px solid #404040;
-            color: #e5e5e5;
-        }
-
-        .dark-input::placeholder {
-            color: #9ca3af;
-        }
-
-        .dark-input:focus {
-            background-color: #262626;
-            border-color: #1e3a8a;
-        }
-
-        .hero-dimensions {
-            min-height: 600px;
-            padding-top: 8rem;
-            padding-bottom: 5rem;
-        }
-
-        @media (min-width: 1024px) {
-            .hero-dimensions {
-                padding-top: 10rem;
-                padding-bottom: 8rem;
-            }
-        }
-
-        .tab-active {
-            background-color: #1e3a8a;
-            color: white;
-            border-color: #1e3a8a;
-        }
-
-        .tab-inactive {
-            background-color: transparent;
-            color: #9ca3af;
-            border-color: #404040;
-        }
-
-        .tab-inactive:hover {
-            background-color: #262626;
-            color: white;
+        .hero-logo {
+            filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.45));
         }
     </style>
 </head>
@@ -113,19 +74,19 @@
     <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300" id="header">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <a href="#home" class="flex items-center space-x-3">
-                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center border border-gray-700">
-                        <i class="fas fa-briefcase text-white text-xl"></i>
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center border border-gray-700 overflow-hidden">
+                        <img src="Logo_Website.png" alt="Consult & Hire logo" class="w-full h-full object-cover">
                     </div>
                     <div>
-                        <h1 class="text-xl font-bold text-white">Consult & Hire</h1>
-                        <p class="text-xs text-gray-400">Global Tech Recruitment</p>
+                        <h1 class="text-xl font-bold text-white">Consult &amp; Hire</h1>
+                        <p class="text-xs text-gray-400">Experts in Global Tech Talent</p>
                     </div>
                 </a>
 
                 <div class="hidden md:flex items-center space-x-8">
                     <ul id="desktop-nav" class="flex space-x-6"></ul>
-                    <a href="register.html" class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200">Register</a>
+                    <a href="hire-talent.html" class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200">Hire Talent</a>
                 </div>
 
                 <button class="md:hidden text-white text-2xl" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -137,184 +98,150 @@
         <div id="mobile-menu" class="hidden md:hidden bg-brand-surface border-t border-gray-800">
             <ul id="mobile-nav" class="px-4 py-4 space-y-3"></ul>
             <div class="px-4 pb-4">
-                <a href="#register" class="block bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors duration-200">Register</a>
+                <a href="hire-talent.html" class="block bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors duration-200">Hire Talent</a>
             </div>
         </div>
     </header>
 
     <!-- Hero -->
-<section id="home" class="hero-dimensions gradient-bg relative overflow-hidden flex items-center">
-
-    <!-- Logo / Brand Image Section -->
-    <section class="hero-dimensions relative overflow-hidden flex items-center justify-center w-full">
-        <div class="absolute inset-0 w-full h-full">
-            <img src="C&H Stock Image 4.png">
-            <div class="absolute inset-0 bg-brand-dark/50"></div>
+    <section id="home" class="gradient-bg pt-32 pb-20 lg:pt-40 lg:pb-28 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
         </div>
-    </section>
-    
-    <!-- Transparent Global Background Image -->
-    <<h1 class="text-xl font-bold text-white">Consult & Hire</h1>
-</section>
-<div class="absolute inset-0 opacity-20">
-    <img src="logo_website.png"
-         alt="Global tech sourcing network"
-         class="w-full h-full object-cover">
-</div>
+
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Experts in Global Tech Talent</h1>
-                <p class="text-xl md:text-2xl text-gray-300 mb-8 font-light">Connecting exceptional Engineering, AI, Analytics and Data Science professionals with innovative companies worldwide.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#register" onclick="switchTab('candidate')" class="bg-white text-brand-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200 text-center">Submit Your CV</a>
-                    <a href="#register" onclick="switchTab('employer')" class="glass-effect text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 text-center">Hire Talent</a>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-blue-300 uppercase tracking-widest font-semibold mb-4">Global Tech Recruitment</p>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Experts in Global Tech Talent</h1>
+                    <p class="text-xl text-gray-300 leading-relaxed mb-8">Connecting ambitious organisations with exceptional Engineering, AI, Analytics, Data Science and technology leadership talent across global markets.</p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="hire-talent.html" class="bg-white text-brand-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200 text-center">Submit a Hiring Enquiry</a>
+                        <a href="register.html" class="glass-effect text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 text-center">Submit Your CV</a>
+                    </div>
+                </div>
+
+                <div class="glass-effect rounded-3xl p-6 md:p-10 flex items-center justify-center min-h-[320px]">
+                    <img src="Logo_Website.png" alt="Consult & Hire logo" class="hero-logo w-full max-w-xl rounded-2xl object-contain">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Specialisms -->
-    <section id="specialisms" class="py-20 bg-brand-surface">
+    <!-- Introduction -->
+    <section class="py-20 bg-white text-brand-dark">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Our Specialisms</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Deep expertise across the most in-demand technical disciplines.</p>
+            <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-brand-blue uppercase tracking-widest font-semibold mb-3">Who We Support</p>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">Specialist hiring support for growing technology teams</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">Consult &amp; Hire works with start-ups, scale-ups and established organisations that need access to high-calibre technology talent.</p>
+                    <p class="text-lg text-gray-600 leading-relaxed">From BAU recruitment and executive search to employer branding, talent mapping and recruiter training, we help organisations hire with clarity, confidence and market insight.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-10 border border-gray-200 shadow-sm">
+                    <h3 class="text-2xl font-bold mb-8">We specialise in:</h3>
+                    <div class="space-y-5">
+                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">Engineering, DevOps, Platform and SRE talent</p></div>
+                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">AI, Machine Learning and Generative AI hiring</p></div>
+                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">Data Engineering, Analytics and Data Science</p></div>
+                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">Technology leadership and executive search</p></div>
+                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">Employer brand and talent intelligence projects</p></div>
+                    </div>
+                </div>
             </div>
-            <div id="specialisms-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-center"></div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-16">
+                <p class="text-blue-300 uppercase tracking-widest font-semibold mb-3">Our Services</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Recruitment and talent solutions built around your goals</h2>
+                <p class="text-gray-400 text-lg">Flexible support for organisations that need to attract, assess and secure specialist technology talent.</p>
+            </div>
+
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <a href="services.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 block">
+                    <i class="fas fa-user-tie text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">BAU Recruitment</h3>
+                    <p class="text-gray-400 leading-relaxed">Ongoing permanent and contract recruitment support for technology teams.</p>
+                </a>
+
+                <a href="services.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 block">
+                    <i class="fas fa-chess-king text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Executive Search</h3>
+                    <p class="text-gray-400 leading-relaxed">Targeted search for senior leaders, specialists and hard-to-reach talent.</p>
+                </a>
+
+                <a href="outplacement-services.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 block">
+                    <i class="fas fa-hands-helping text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Outplacement Services</h3>
+                    <p class="text-gray-400 leading-relaxed">Career transition support for organisations and impacted employees.</p>
+                </a>
+
+                <a href="services.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 block">
+                    <i class="fas fa-bullhorn text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Marketing &amp; Employer Branding</h3>
+                    <p class="text-gray-400 leading-relaxed">Clear talent messaging, EVP development and recruitment marketing support.</p>
+                </a>
+
+                <a href="services.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 block">
+                    <i class="fas fa-map-marked-alt text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Talent Intelligence</h3>
+                    <p class="text-gray-400 leading-relaxed">Market mapping, salary insight and competitor talent intelligence.</p>
+                </a>
+
+                <a href="services.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 block">
+                    <i class="fas fa-chalkboard-teacher text-3xl text-blue-300 mb-5"></i>
+                    <h3 class="text-xl font-bold text-white mb-3">Recruiter Training</h3>
+                    <p class="text-gray-400 leading-relaxed">Training and capability development for recruiters and hiring teams.</p>
+                </a>
+            </div>
         </div>
     </section>
 
     <!-- Why Us -->
-    <section id="why-us" class="py-20 bg-brand-dark border-y border-gray-800">
+    <section class="py-20 bg-brand-dark border-y border-gray-800">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Why Consult&Hire?</h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Partner with specialists who understand the tech talent landscape.</p>
+            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-blue-300 uppercase tracking-widest font-semibold mb-3">Why Consult &amp; Hire</p>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Specialist insight, global reach and practical hiring delivery</h2>
+                    <p class="text-gray-400 text-lg leading-relaxed">We combine recruitment delivery, market insight and employer brand thinking to help organisations compete for talent in demanding technology markets.</p>
+                </div>
+
+                <div class="glass-effect rounded-3xl p-8 md:p-10">
+                    <div class="space-y-5">
+                        <div class="flex gap-4"><i class="fas fa-check-circle text-blue-300 text-xl mt-1"></i><p class="text-gray-200">Deep focus across technical and AI hiring markets</p></div>
+                        <div class="flex gap-4"><i class="fas fa-check-circle text-blue-300 text-xl mt-1"></i><p class="text-gray-200">Support for start-ups, scale-ups and established organisations</p></div>
+                        <div class="flex gap-4"><i class="fas fa-check-circle text-blue-300 text-xl mt-1"></i><p class="text-gray-200">Global sourcing capability for hard-to-reach talent</p></div>
+                        <div class="flex gap-4"><i class="fas fa-check-circle text-blue-300 text-xl mt-1"></i><p class="text-gray-200">Practical advice across recruitment, branding and talent strategy</p></div>
+                    </div>
+                </div>
             </div>
-            <div id="features-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8"></div>
         </div>
     </section>
 
-    <!-- Register -->
-    <section id="register" class="py-20 bg-brand-surface">
+    <!-- CTA -->
+    <section class="py-20 bg-white text-brand-dark">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-5xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Register With Us</h2>
-                    <p class="text-gray-400 text-lg">Whether you are seeking your next opportunity or looking to hire exceptional talent, we are here to help.</p>
+            <div class="max-w-4xl mx-auto text-center bg-gray-50 rounded-3xl p-10 md:p-14 border border-gray-200">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-brand-blue/10 mb-6">
+                    <i class="fas fa-briefcase text-3xl text-brand-blue"></i>
                 </div>
-
-                <div class="flex justify-center mb-8">
-                    <div class="inline-flex bg-brand-card rounded-lg p-1 border border-gray-700">
-                        <button type="button" onclick="switchTab('candidate')" id="tab-candidate" class="px-4 sm:px-6 py-3 rounded-md font-medium transition-all duration-200 tab-active">
-                            <i class="fas fa-user mr-2"></i>I am a Candidate
-                        </button>
-                        <button type="button" onclick="switchTab('employer')" id="tab-employer" class="px-4 sm:px-6 py-3 rounded-md font-medium transition-all duration-200 tab-inactive">
-                            <i class="fas fa-building mr-2"></i>I am an Employer
-                        </button>
-                    </div>
-                </div>
-
-                <!-- Candidate Form -->
-                <div id="form-candidate" class="bg-brand-card rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-800">
-                    <form id="candidate-form" class="space-y-6" action="#" method="post">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="candidate-name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
-                                <input id="candidate-name" name="candidate-name" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Your full name" required>
-                            </div>
-                            <div>
-                                <label for="candidate-email" class="block text-sm font-medium text-gray-300 mb-2">Email Address</label>
-                                <input id="candidate-email" name="candidate-email" type="email" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="you@example.com" required>
-                            </div>
-                        </div>
-
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="candidate-phone" class="block text-sm font-medium text-gray-300 mb-2">Phone Number</label>
-                                <input id="candidate-phone" name="candidate-phone" type="tel" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Your phone number">
-                            </div>
-                            <div>
-                                <label for="candidate-specialism" class="block text-sm font-medium text-gray-300 mb-2">Specialism</label>
-                                <select id="candidate-specialism" name="candidate-specialism" class="dark-input form-input w-full rounded-lg px-4 py-3">
-                                    <option value="">Select your specialism</option>
-                                    <option>Engineering</option>
-                                    <option>AI / Machine Learning</option>
-                                    <option>Analytics</option>
-                                    <option>Data Science</option>
-                                    <option>Product</option>
-                                    <option>Technology Leadership</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="candidate-message" class="block text-sm font-medium text-gray-300 mb-2">Tell us what you are looking for</label>
-                            <textarea id="candidate-message" name="candidate-message" rows="5" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Share your ideal role, location, salary expectations, notice period, or anything else useful."></textarea>
-                        </div>
-
-                        <div>
-                            <label for="candidate-cv" class="block text-sm font-medium text-gray-300 mb-2">Upload CV</label>
-                            <input id="candidate-cv" name="candidate-cv" type="file" class="dark-input form-input w-full rounded-lg px-4 py-3 file:mr-4 file:rounded-lg file:border-0 file:bg-brand-blue file:px-4 file:py-2 file:text-white">
-                        </div>
-
-                        <button type="submit" class="w-full bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200">Submit Candidate Registration</button>
-                    </form>
-                </div>
-
-                <!-- Employer Form -->
-                <div id="form-employer" class="hidden bg-brand-card rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-800">
-                    <form id="employer-form" class="space-y-6" action="#" method="post">
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="employer-name" class="block text-sm font-medium text-gray-300 mb-2">Your Name</label>
-                                <input id="employer-name" name="employer-name" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Your full name" required>
-                            </div>
-                            <div>
-                                <label for="employer-email" class="block text-sm font-medium text-gray-300 mb-2">Work Email</label>
-                                <input id="employer-email" name="employer-email" type="email" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="you@company.com" required>
-                            </div>
-                        </div>
-
-                        <div class="grid md:grid-cols-2 gap-6">
-                            <div>
-                                <label for="company-name" class="block text-sm font-medium text-gray-300 mb-2">Company Name</label>
-                                <input id="company-name" name="company-name" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Company name" required>
-                            </div>
-                            <div>
-                                <label for="hiring-service" class="block text-sm font-medium text-gray-300 mb-2">Service Required</label>
-                                <select id="hiring-service" name="hiring-service" class="dark-input form-input w-full rounded-lg px-4 py-3">
-                                    <option value="">Select a service</option>
-                                    <option>Recruitment</option>
-                                    <option>Executive Search</option>
-                                    <option>Graduate Campaign Management & Hiring</option>
-                                    <option>Early Careers</option>
-                                    <option>Strategic Talent Management</option>
-                                    <option>Employer Branding</option>
-                                    <option>Talent Mapping & Talent Intelligence</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="role-details" class="block text-sm font-medium text-gray-300 mb-2">Hiring Requirements</label>
-                            <textarea id="role-details" name="role-details" rows="5" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="Tell us about the roles, skills, location, salary range, timeline, or hiring challenge."></textarea>
-                        </div>
-
-                        <div>
-                            <label for="job-description" class="block text-sm font-medium text-gray-300 mb-2">Upload Job Description</label>
-                            <input id="job-description" name="job-description" type="file" class="dark-input form-input w-full rounded-lg px-4 py-3 file:mr-4 file:rounded-lg file:border-0 file:bg-brand-blue file:px-4 file:py-2 file:text-white">
-                        </div>
-
-                        <button type="submit" class="w-full bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200">Submit Hiring Enquiry</button>
-                    </form>
-                </div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-5">Ready to discuss your next hire?</h2>
+                <p class="text-lg text-gray-600 leading-relaxed mb-8">Tell us what you are building, the roles you need to fill, and the talent challenges you are trying to solve.</p>
+                <a href="hire_talent.html" class="inline-block bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200">Submit a Hiring Enquiry</a>
             </div>
         </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-20 bg-brand-dark">
+    <section id="contact" class="py-20 bg-brand-surface">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="max-w-3xl mx-auto text-center">
                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Contact Us</h2>
@@ -339,32 +266,8 @@
             { label: "About Us", href: "about.html" },
             { label: "Articles & Tech News", href: "articles.html" },
             { label: "Our Services", href: "services.html" },
+            { label: "Outplacement", href: "outplacement.html" },
             { label: "Contact", href: "#contact" }
-        ];
-
-        const specialismsData = [
-            { title: "Engineering", icon: "fa-code", description: "Software, DevOps, Cloud, and Infrastructure Engineering roles across all levels." },
-            { title: "AI", icon: "fa-robot", description: "Machine Learning Engineers, AI Researchers, and MLOps specialists." },
-            { title: "Analytics", icon: "fa-chart-line", description: "Business Intelligence, Data Analytics, and visualisation experts." },
-            { title: "Data Science", icon: "fa-database", description: "Data Scientists, Statisticians, and Quantitative Analysts." },
-            { title: "Product", icon: "fa-cubes", description: "Product Managers, Product Owners, and strategic product leaders." },
-            { title: "Technology Leadership", icon: "fa-user-tie", description: "CTOs, Heads of Engineering, and senior technology leadership talent." }
-        ];
-
-        const featuresData = [
-            { icon: "fa-bullseye", title: "Specialist Focus", description: "Deep expertise in Engineering, AI, Analytics and Data Science means we speak your language and understand your technical requirements." },
-            { icon: "fa-globe-americas", title: "Global Reach", description: "Based in Brisbane with international capability. We source talent locally and globally to find the right match." },
-            { icon: "fa-rocket", title: "Start-up & Scale-up Specialists", description: "We understand the unique challenges of high-growth organisations, from rapid hiring to leadership search and cultural alignment." }
-        ];
-
-        const servicesData = [
-            { title: "Recruitment", description: "End-to-end hiring solutions across technical, commercial, and operational functions.", icon: "fa-user-tie" },
-            { title: "Executive Search", description: "Targeted leadership search services focused on securing transformational executives and senior leadership talent.", icon: "fa-chess-king" },
-            { title: "Graduate Campaign Management & Hiring", description: "Structured graduate attraction and recruitment programmes designed to identify and engage emerging talent at scale.", icon: "fa-graduation-cap" },
-            { title: "Early Careers", description: "Internship, apprentice, and early careers hiring strategies that build sustainable talent pipelines for future growth.", icon: "fa-seedling" },
-            { title: "Strategic Talent Management", description: "Workforce planning, talent strategy, succession planning, and advisory solutions aligned to organisational objectives.", icon: "fa-sitemap" },
-            { title: "Employer Branding", description: "Helping organisations define and communicate compelling employer value propositions that attract top talent.", icon: "fa-bullhorn" },
-            { title: "Talent Mapping & Talent Intelligence", description: "Market insights, competitor analysis, salary benchmarking, and talent landscape mapping to support informed hiring decisions.", icon: "fa-map-marked-alt" }
         ];
 
         function renderNavItems(items) {
@@ -377,71 +280,9 @@
             `).join("");
         }
 
-        function renderSpecialisms(items) {
-            return items.map(item => `
-                <div class="group p-6 rounded-2xl hover:bg-brand-card transition-colors duration-300">
-                    <div class="w-16 h-16 mx-auto mb-4 text-gray-400 group-hover:text-brand-blue transition-colors duration-300">
-                        <i class="fas ${item.icon} text-4xl"></i>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-blue transition-colors duration-300">${item.title}</h3>
-                    <p class="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto">${item.description}</p>
-                </div>
-            `).join("");
-        }
-
-        function renderFeatures(items) {
-            return items.map(item => `
-                <div class="text-center p-6 bg-brand-surface rounded-2xl border border-gray-800">
-                    <div class="w-16 h-16 bg-brand-card rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-800">
-                        <i class="fas ${item.icon} text-2xl text-brand-blue"></i>
-                    </div>
-                    <h3 class="text-xl font-semibold text-white mb-3">${item.title}</h3>
-                    <p class="text-gray-400 leading-relaxed">${item.description}</p>
-                </div>
-            `).join("");
-        }
-
-        function renderServices(items) {
-            return items.map(item => `
-                <div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 group">
-                    <div class="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-brand-blue transition-colors duration-300">
-                        <i class="fas ${item.icon} text-xl text-brand-blue group-hover:text-white transition-colors duration-300"></i>
-                    </div>
-                    <h4 class="text-lg font-bold text-brand-dark mb-2">${item.title}</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">${item.description}</p>
-                </div>
-            `).join("");
-        }
-
-        function switchTab(type) {
-            const candidateForm = document.getElementById("form-candidate");
-            const employerForm = document.getElementById("form-employer");
-            const candidateTab = document.getElementById("tab-candidate");
-            const employerTab = document.getElementById("tab-employer");
-
-            if (type === "candidate") {
-                candidateForm.classList.remove("hidden");
-                employerForm.classList.add("hidden");
-                candidateTab.classList.add("tab-active");
-                candidateTab.classList.remove("tab-inactive");
-                employerTab.classList.add("tab-inactive");
-                employerTab.classList.remove("tab-active");
-            } else {
-                employerForm.classList.remove("hidden");
-                candidateForm.classList.add("hidden");
-                employerTab.classList.add("tab-active");
-                employerTab.classList.remove("tab-inactive");
-                candidateTab.classList.add("tab-inactive");
-                candidateTab.classList.remove("tab-active");
-            }
-        }
-
         document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("desktop-nav").innerHTML = renderNavItems(navItems);
             document.getElementById("mobile-nav").innerHTML = renderNavItems(navItems);
-            document.getElementById("specialisms-grid").innerHTML = renderSpecialisms(specialismsData);
-            document.getElementById("features-grid").innerHTML = renderFeatures(featuresData);
-            document.getElementById("services-grid").innerHTML = renderServices(servicesData);
             document.getElementById("current-year").textContent = new Date().getFullYear();
 
             const mobileMenuBtn = document.getElementById("mobile-menu-btn");
