@@ -1,1 +1,186 @@
+<!-- Our Services Page Section -->
+<section class="min-h-screen bg-slate-950 text-white px-6 py-20">
+  <div class="max-w-7xl mx-auto">
 
+    <!-- Header -->
+    <div class="text-center mb-14">
+      <h1 class="text-4xl md:text-5xl font-bold mb-6">
+        Our Services
+      </h1>
+      <p class="text-lg text-gray-300 max-w-3xl mx-auto">
+        Specialist recruitment, talent strategy, employer branding and workforce advisory services for organisations building high-performing technology teams.
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="flex flex-wrap justify-center gap-3 mb-10">
+      <button class="service-tab active-tab" onclick="showService('bau', this)">BAU Recruitment</button>
+      <button class="service-tab" onclick="showService('executive', this)">Executive Search</button>
+      <button class="service-tab" onclick="showService('outplacement', this)">Outplacement Services</button>
+      <button class="service-tab" onclick="showService('branding', this)">Marketing & Employer Branding</button>
+      <button class="service-tab" onclick="showService('intelligence', this)">Talent Intelligence & Market Mapping</button>
+      <button class="service-tab" onclick="showService('training', this)">Recruiter Training & Qualification</button>
+    </div>
+
+    <!-- Content Cards -->
+    <div class="bg-gradient-to-br from-slate-900 via-purple-950 to-slate-950 border border-white/10 rounded-3xl p-8 md:p-12 shadow-2xl">
+
+      <div id="bau" class="service-content">
+        <h2>BAU Recruitment</h2>
+        <p>
+          Our BAU recruitment service supports organisations with ongoing hiring needs across technology, digital, engineering, data and AI functions.
+        </p>
+        <ul>
+          <li>Permanent and contract recruitment</li>
+          <li>Role briefing and job advert optimisation</li>
+          <li>Candidate sourcing, screening and shortlist delivery</li>
+          <li>Interview coordination and offer management</li>
+          <li>Support for start-ups, scale-ups and growing teams</li>
+        </ul>
+      </div>
+
+      <div id="executive" class="service-content hidden">
+        <h2>Executive Search</h2>
+        <p>
+          We help organisations identify and engage senior leaders, technical specialists and hard-to-reach talent for critical appointments.
+        </p>
+        <ul>
+          <li>Confidential senior-level searches</li>
+          <li>Leadership and technical executive hiring</li>
+          <li>Targeted headhunting and talent engagement</li>
+          <li>Candidate assessment and market positioning</li>
+          <li>Offer, negotiation and onboarding support</li>
+        </ul>
+      </div>
+
+      <div id="outplacement" class="service-content hidden">
+        <h2>Outplacement Services</h2>
+        <p>
+          We support organisations through restructures, redundancies and workforce transitions by helping impacted employees move forward with confidence.
+        </p>
+        <ul>
+          <li>CV and LinkedIn optimisation</li>
+          <li>Interview preparation and career coaching</li>
+          <li>Salary guidance and job search strategy</li>
+          <li>Personal branding and networking support</li>
+          <li>Workshops, webinars and recruitment introductions</li>
+        </ul>
+      </div>
+
+      <div id="branding" class="service-content hidden">
+        <h2>Marketing & Employer Branding</h2>
+        <p>
+          We help organisations communicate who they are, why people should join them, and what makes their opportunity compelling in a competitive talent market.
+        </p>
+        <ul>
+          <li>Employer value proposition development</li>
+          <li>Careers page and job advert copywriting</li>
+          <li>Candidate attraction messaging</li>
+          <li>Recruitment marketing campaigns</li>
+          <li>Employer brand positioning for tech talent</li>
+        </ul>
+      </div>
+
+      <div id="intelligence" class="service-content hidden">
+        <h2>Talent Intelligence & Market Mapping</h2>
+        <p>
+          Our market intelligence services give organisations a clearer view of the talent landscape before they hire.
+        </p>
+        <ul>
+          <li>Competitor talent mapping</li>
+          <li>Salary and market benchmarking</li>
+          <li>Location and availability analysis</li>
+          <li>Skills mapping across technical markets</li>
+          <li>Strategic hiring insights for workforce planning</li>
+        </ul>
+      </div>
+
+      <div id="training" class="service-content hidden">
+        <h2>Recruiter Training & Qualification</h2>
+        <p>
+          We provide training for internal recruiters, talent teams and hiring managers who want to improve recruitment capability and candidate experience.
+        </p>
+        <ul>
+          <li>Recruitment fundamentals and best practice</li>
+          <li>Technical recruitment training</li>
+          <li>Hiring manager interview training</li>
+          <li>Candidate engagement and sourcing skills</li>
+          <li>Recruiter capability assessment and development</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Styling -->
+<style>
+  .service-tab {
+    padding: 12px 20px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+
+  .service-tab:hover {
+    background: rgba(147, 51, 234, 0.35);
+    transform: translateY(-2px);
+  }
+
+  .active-tab {
+    background: linear-gradient(135deg, #4f46e5, #7e22ce);
+    border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .service-content h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  .service-content p {
+    color: #d1d5db;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-content ul {
+    display: grid;
+    gap: 0.8rem;
+    color: #e5e7eb;
+  }
+
+  .service-content li::before {
+    content: "✓";
+    color: #c084fc;
+    font-weight: bold;
+    margin-right: 0.7rem;
+  }
+
+  .hidden {
+    display: none;
+  }
+</style>
+
+<!-- JavaScript -->
+<script>
+  function showService(serviceId, clickedButton) {
+    const contents = document.querySelectorAll('.service-content');
+    const tabs = document.querySelectorAll('.service-tab');
+
+    contents.forEach(content => {
+      content.classList.add('hidden');
+    });
+
+    tabs.forEach(tab => {
+      tab.classList.remove('active-tab');
+    });
+
+    document.getElementById(serviceId).classList.remove('hidden');
+    clickedButton.classList.add('active-tab');
+  }
+</script>
