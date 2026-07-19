@@ -18,21 +18,24 @@
       theme: {
         extend: {
           colors: {
-            ink: "#111735",
-            navy: "#17204E",
-            purple: "#6532C9",
-            violet: "#8B5CF6",
-            lilac: "#F3ECFF",
-            blueSoft: "#EDF5FF",
-            line: "#E7E8EE",
-            muted: "#626A7D"
+            ink: "#171827",
+            navy: "#202B5C",
+            purple: "#6847A8",
+            violet: "#7B67B6",
+            lilac: "#F1EDF7",
+            blueSoft: "#F4F5F7",
+            line: "#E3E5EA",
+            muted: "#64697A",
+            plum: "#24103F",
+            grape: "#45206F",
+            orchidDeep: "#623B8F"
           },
           fontFamily: {
             sans: ["Inter", "sans-serif"],
             hand: ["Patrick Hand", "cursive"]
           },
           boxShadow: {
-            soft: "0 16px 40px rgba(23,32,78,.08)"
+            soft: "0 16px 40px rgba(32,43,92,.10)"
           }
         }
       }
@@ -41,10 +44,32 @@
 
   <style>
     html { scroll-behavior: smooth; }
-    body { background: #fff; }
+    .purple-gradient {
+      background:
+        radial-gradient(circle at 12% 8%, rgba(139,92,246,.24), transparent 32%),
+        radial-gradient(circle at 88% 82%, rgba(104,71,168,.30), transparent 34%),
+        linear-gradient(135deg, #1C1233 0%, #35205D 48%, #512778 100%);
+    }
+    .purple-gradient-soft {
+      background:
+        radial-gradient(circle at 15% 20%, rgba(184,148,246,.16), transparent 34%),
+        radial-gradient(circle at 90% 70%, rgba(126,87,177,.22), transparent 38%),
+        linear-gradient(135deg, #25133F 0%, #3E2064 50%, #572B7E 100%);
+    }
+    .dark-card {
+      background: rgba(255,255,255,.97);
+      border: 1px solid rgba(255,255,255,.20);
+      box-shadow: 0 24px 60px rgba(13,7,28,.28);
+    }
+    .dark-glass {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.16);
+      backdrop-filter: blur(14px);
+    }
+    body { background: #1C1233; }
     .field {
       width: 100%;
-      border: 1px solid #D9DCE6;
+      border: 1px solid #D5D8E1;
       border-radius: 9px;
       padding: .88rem 1rem;
       color: #111735;
@@ -54,7 +79,7 @@
     .field:focus {
       outline: none;
       border-color: #6532C9;
-      box-shadow: 0 0 0 4px rgba(101,50,201,.10);
+      box-shadow: 0 0 0 4px rgba(104,71,168,.10);
     }
     .mobile-menu { display: none; }
     .mobile-menu.open { display: block; }
@@ -69,32 +94,32 @@
 
 <body class="font-sans text-ink antialiased">
 
-  <header class="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur">
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-[#1C1233]/95 text-white backdrop-blur">
     <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="flex h-20 items-center justify-between">
-        <a href="index.html" class="text-2xl font-bold tracking-tight text-navy">
+        <a href="index.html" class="text-2xl font-bold tracking-tight text-white">
           consult<span class="text-purple">&amp;</span>hire
         </a>
 
         <div class="hidden items-center gap-8 md:flex">
-          <a href="index.html" class="text-sm font-medium text-navy hover:text-purple">Home</a>
-          <a href="employerhub.html" class="text-sm font-medium text-navy hover:text-purple">Employer Hub</a>
-          <a href="candidatehub.html" class="text-sm font-medium text-navy hover:text-purple">Candidate Hub</a>
-          <a href="about.html" class="text-sm font-medium text-navy hover:text-purple">About Us</a>
-          <a href="insights.html" class="text-sm font-medium text-navy hover:text-purple">Insights</a>
-          <a href="contact.html" class="rounded-lg border border-violet px-5 py-3 text-sm font-semibold text-purple hover:bg-lilac">
+          <a href="index.html" class="text-sm font-medium text-white/80 transition hover:text-white">Home</a>
+          <a href="employerhub.html" class="text-sm font-medium text-white/80 transition hover:text-white">Employer Hub</a>
+          <a href="candidatehub.html" class="text-sm font-medium text-white/80 transition hover:text-white">Candidate Hub</a>
+          <a href="about.html" class="text-sm font-medium text-white/80 transition hover:text-white">About Us</a>
+          <a href="insights.html" class="text-sm font-medium text-white/80 transition hover:text-white">Insights</a>
+          <a href="contact.html" class="rounded-lg border border-white/35 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-purple">
             Contact Us
           </a>
         </div>
 
         <button id="menuButton" type="button" class="md:hidden" aria-label="Open navigation" aria-expanded="false">
-          <span class="block h-0.5 w-6 bg-navy"></span>
-          <span class="mt-1.5 block h-0.5 w-6 bg-navy"></span>
-          <span class="mt-1.5 block h-0.5 w-6 bg-navy"></span>
+          <span class="block h-0.5 w-6 bg-white"></span>
+          <span class="mt-1.5 block h-0.5 w-6 bg-white"></span>
+          <span class="mt-1.5 block h-0.5 w-6 bg-white"></span>
         </button>
       </div>
 
-      <div id="mobileMenu" class="mobile-menu border-t border-line pb-5 md:hidden">
+      <div id="mobileMenu" class="mobile-menu border-t border-white/10 pb-5 text-white md:hidden">
         <div class="flex flex-col gap-4 pt-5">
           <a href="index.html">Home</a>
           <a href="employerhub.html">Employer Hub</a>
@@ -109,32 +134,31 @@
 
   <main>
     <!-- Hero -->
-    <section class="border-b border-line bg-white">
+    <section class="border-b border-[#DDE2EA] bg-white">
       <div class="mx-auto grid max-w-7xl items-center gap-8 px-4 py-14 sm:px-6 md:py-20 lg:grid-cols-[.9fr_1.1fr] lg:px-8">
         <div>
           <p class="font-hand text-3xl text-purple">Let’s talk</p>
           <div class="scribble-line mt-1 w-24"></div>
 
           <h1 class="mt-8 max-w-xl text-4xl font-bold leading-tight text-navy md:text-6xl">
-            Good conversations lead to great outcomes.
+            Every great hire starts with a conversation.
           </h1>
 
           <div class="scribble-line ml-36 mt-2 w-36"></div>
 
           <p class="mt-7 max-w-xl text-lg leading-8 text-muted">
-            Whether you need to hire, want advice, or just want to explore what’s possible, we’re here to help.
-            Get in touch — we’d love to hear from you.
+            Whether you are hiring, considering your next career move, or simply looking for advice, we would love to hear from you.
           </p>
 
           <svg class="mt-5 h-16 w-20" viewBox="0 0 80 64" aria-hidden="true">
             <path d="M18 5 C11 23, 22 40, 48 47 M48 47 L38 35 M48 47 L31 51"
-              fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              fill="none" stroke="#7B67B6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
           </svg>
         </div>
 
         <div class="mx-auto w-full max-w-2xl">
           <img
-            src="Contact Images.png" 
+            src="Contact Images.png"
             alt="Hand-drawn man and woman having a friendly conversation"
             class="h-auto w-full"
           >
@@ -143,68 +167,68 @@
     </section>
 
     <!-- Contact routes -->
-    <section class="border-b border-line bg-white">
+    <section class="purple-gradient border-b border-white/10 text-white">
       <div class="mx-auto grid max-w-7xl px-4 sm:grid-cols-2 sm:px-6 lg:grid-cols-4 lg:px-8">
 
-        <a href="clientcalendar.html" class="border-b border-line px-7 py-10 text-center transition hover:bg-lilac/25 sm:border-r lg:border-b-0">
-          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-lilac">
+        <a href="clientcalendar.html" class="border-b border-white/15 px-7 py-10 text-center transition hover:bg-white/10 sm:border-r lg:border-b-0">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-navy">
             <svg viewBox="0 0 32 32" class="h-8 w-8" aria-hidden="true">
               <path d="M5 8 C5 4,10 3,16 3 C22 3,27 5,27 10 V17 C27 21,22 23,16 23 H11 L6 28 L8 22 C6 21,5 19,5 17Z"
-                fill="none" stroke="#6532C9" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              <circle cx="11" cy="13" r="1.2" fill="#6532C9"/>
-              <circle cx="16" cy="13" r="1.2" fill="#6532C9"/>
-              <circle cx="21" cy="13" r="1.2" fill="#6532C9"/>
+                fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="11" cy="13" r="1.2" fill="#FFFFFF"/>
+              <circle cx="16" cy="13" r="1.2" fill="#FFFFFF"/>
+              <circle cx="21" cy="13" r="1.2" fill="#FFFFFF"/>
             </svg>
           </div>
-          <h2 class="mt-5 font-semibold text-purple">Book a Consultation</h2>
-          <p class="mt-3 text-sm leading-6 text-muted">Schedule a free consultation to discuss your hiring challenges and goals.</p>
-          <p class="mt-5 text-sm font-semibold text-purple">Book a time →</p>
+          <h2 class="mt-5 font-semibold text-white">Book a Consultation</h2>
+          <p class="mt-3 text-sm leading-6 text-white/70">Schedule a free consultation to discuss your hiring challenges and goals.</p>
+          <p class="mt-5 text-sm font-semibold text-white">Book a time →</p>
         </a>
 
-        <a href="submit-vacancy.html" class="border-b border-line px-7 py-10 text-center transition hover:bg-blueSoft/40 lg:border-b-0 lg:border-r">
-          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blueSoft">
+        <a href="submit-vacancy.html" class="border-b border-white/15 px-7 py-10 text-center transition hover:bg-white/10 lg:border-b-0 lg:border-r">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-purple">
             <svg viewBox="0 0 32 32" class="h-8 w-8" aria-hidden="true">
-              <rect x="5" y="10" width="22" height="16" rx="2" fill="none" stroke="#1467D8" stroke-width="2"/>
+              <rect x="5" y="10" width="22" height="16" rx="2" fill="none" stroke="#FFFFFF" stroke-width="2"/>
               <path d="M11 10 V7 C11 5,13 4,16 4 C19 4,21 5,21 7 V10 M5 16 H27 M14 16 V19 H18 V16"
-                fill="none" stroke="#1467D8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h2 class="mt-5 font-semibold text-[#1467D8]">Submit a Vacancy</h2>
-          <p class="mt-3 text-sm leading-6 text-muted">Share your vacancy and we’ll get to work finding the right people.</p>
-          <p class="mt-5 text-sm font-semibold text-[#1467D8]">Submit a vacancy →</p>
+          <h2 class="mt-5 font-semibold text-white">Submit a Vacancy</h2>
+          <p class="mt-3 text-sm leading-6 text-white/70">Share your vacancy and we’ll get to work finding the right people.</p>
+          <p class="mt-5 text-sm font-semibold text-white">Submit a vacancy →</p>
         </a>
 
-        <a href="candidatehub.html" class="border-b border-line px-7 py-10 text-center transition hover:bg-lilac/25 sm:border-r lg:border-b-0">
-          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-lilac">
+        <a href="candidatehub.html" class="border-b border-white/15 px-7 py-10 text-center transition hover:bg-white/10 sm:border-r lg:border-b-0">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-navy">
             <svg viewBox="0 0 32 32" class="h-8 w-8" aria-hidden="true">
-              <circle cx="16" cy="10" r="5" fill="none" stroke="#6532C9" stroke-width="2"/>
+              <circle cx="16" cy="10" r="5" fill="none" stroke="#FFFFFF" stroke-width="2"/>
               <path d="M7 27 C7 20,10 17,16 17 C22 17,25 20,25 27Z"
-                fill="none" stroke="#6532C9" stroke-width="2" stroke-linecap="round"/>
+                fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
-          <h2 class="mt-5 font-semibold text-purple">For Candidates</h2>
-          <p class="mt-3 text-sm leading-6 text-muted">Have a question about an application or opportunity? We’re happy to help.</p>
-          <p class="mt-5 text-sm font-semibold text-purple">Candidate support →</p>
+          <h2 class="mt-5 font-semibold text-white">For Candidates</h2>
+          <p class="mt-3 text-sm leading-6 text-white/70">Have a question about an application or opportunity? We’re happy to help.</p>
+          <p class="mt-5 text-sm font-semibold text-white">Candidate support →</p>
         </a>
 
-        <a href="#contact-form" class="px-7 py-10 text-center transition hover:bg-blueSoft/40">
-          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-blueSoft">
+        <a href="#contact-form" class="px-7 py-10 text-center transition hover:bg-white/10">
+          <div class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-purple">
             <svg viewBox="0 0 32 32" class="h-8 w-8" aria-hidden="true">
-              <rect x="4" y="7" width="24" height="18" rx="2" fill="none" stroke="#1467D8" stroke-width="2"/>
-              <path d="M5 9 L16 18 L27 9" fill="none" stroke="#1467D8" stroke-width="2" stroke-linecap="round"/>
+              <rect x="4" y="7" width="24" height="18" rx="2" fill="none" stroke="#FFFFFF" stroke-width="2"/>
+              <path d="M5 9 L16 18 L27 9" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
-          <h2 class="mt-5 font-semibold text-[#1467D8]">General Enquiries</h2>
-          <p class="mt-3 text-sm leading-6 text-muted">Anything else? Send us a message and we’ll get back to you soon.</p>
-          <p class="mt-5 text-sm font-semibold text-[#1467D8]">Send a message →</p>
+          <h2 class="mt-5 font-semibold text-white">General Enquiries</h2>
+          <p class="mt-3 text-sm leading-6 text-white/70">Anything else? Send us a message and we’ll get back to you soon.</p>
+          <p class="mt-5 text-sm font-semibold text-white">Send a message →</p>
         </a>
       </div>
     </section>
 
     <!-- Form -->
-    <section id="contact-form" class="bg-white">
+    <section id="contact-form" class="purple-gradient-soft">
       <div class="mx-auto grid max-w-7xl lg:grid-cols-[1.58fr_1fr]">
-        <div class="border-b border-line px-4 py-12 sm:px-6 lg:border-b-0 lg:border-r lg:px-8">
+        <div class="dark-card m-4 rounded-3xl px-6 py-10 sm:m-6 sm:px-8 lg:my-16 lg:ml-8 lg:mr-4 lg:px-10">
           <p class="font-hand text-3xl text-navy">Send us a message</p>
           <div class="scribble-line mt-1 w-40"></div>
 
@@ -237,14 +261,14 @@
             </div>
 
             <div class="flex flex-col gap-4 sm:flex-row sm:items-center">
-              <button type="submit" class="rounded-lg bg-gradient-to-r from-purple to-violet px-9 py-3.5 font-semibold text-white shadow-soft">
+              <button type="submit" class="rounded-lg bg-gradient-to-r from-purple to-violet px-9 py-3.5 font-semibold text-white shadow-soft transition hover:brightness-110">
                 Send Message
               </button>
 
               <div class="flex items-center gap-3">
                 <svg viewBox="0 0 42 24" class="h-7 w-12" aria-hidden="true">
                   <path d="M40 6 C28 8,21 15,8 15 M8 15 L15 9 M8 15 L16 21"
-                    fill="none" stroke="#8B5CF6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    fill="none" stroke="#7B67B6" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
                 <p class="font-hand text-xl leading-5 text-purple">
                   We’ll get back to you<br>as soon as we can!
@@ -259,13 +283,13 @@
           </form>
         </div>
 
-        <aside class="px-4 py-12 sm:px-6 lg:px-10">
+        <aside class="dark-card m-4 rounded-3xl px-6 py-10 sm:m-6 sm:px-8 lg:my-16 lg:ml-4 lg:mr-8 lg:px-10">
           <p class="font-hand text-3xl text-navy">Other ways to reach us</p>
           <div class="scribble-line mt-1 w-36"></div>
 
           <div class="mt-8 space-y-6">
             <div class="flex gap-4">
-              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-lilac text-xl text-purple">✉</div>
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy text-xl text-white">✉</div>
               <div>
                 <p class="font-semibold text-navy">Email</p>
                 <a href="mailto:hello@consultandhire.com" class="mt-1 block text-sm text-purple">hello@consultandhire.com</a>
@@ -273,7 +297,7 @@
             </div>
 
             <div class="flex gap-4">
-              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blueSoft text-xl text-[#1467D8]">☎</div>
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-purple text-xl text-white">☎</div>
               <div>
                 <p class="font-semibold text-navy">Phone</p>
                 <a href="tel:+611300381292" class="mt-1 block text-sm text-[#1467D8]">1300 381 292</a>
@@ -281,7 +305,7 @@
             </div>
 
             <div class="flex gap-4">
-              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-lilac text-xl text-purple">⌖</div>
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-navy text-xl text-white">⌖</div>
               <div>
                 <p class="font-semibold text-navy">Office</p>
                 <p class="mt-1 text-sm leading-6 text-muted">Level 8, 330 Collins Street<br>Melbourne VIC 3000</p>
@@ -289,7 +313,7 @@
             </div>
 
             <div class="flex gap-4">
-              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-blueSoft text-xl text-[#1467D8]">◷</div>
+              <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-purple text-xl text-white">◷</div>
               <div>
                 <p class="font-semibold text-navy">Hours</p>
                 <p class="mt-1 text-sm leading-6 text-muted">Monday – Friday<br>8:30am – 5:30pm AEST</p>
@@ -297,14 +321,14 @@
             </div>
           </div>
 
-          <div class="relative mt-8 bg-blueSoft px-7 py-6">
+          <div class="relative mt-8 border border-[#E1E3E8] bg-[#F6F7F9] px-7 py-6">
             <p class="font-hand text-2xl leading-8 text-navy">
               We’re real people who care about people.<br>
               No call centres, just helpful conversations.
             </p>
             <svg viewBox="0 0 60 30" class="absolute -bottom-2 right-2 h-8 w-14" aria-hidden="true">
               <path d="M8 20 C12 12,18 12,21 20 M28 24 C32 15,39 15,42 24 M49 12 L54 6"
-                fill="none" stroke="#8B5CF6" stroke-width="3" stroke-linecap="round"/>
+                fill="none" stroke="#7B67B6" stroke-width="3" stroke-linecap="round"/>
             </svg>
           </div>
         </aside>
@@ -312,24 +336,24 @@
     </section>
 
     <!-- Closing strip -->
-    <section class="border-t border-line bg-gradient-to-r from-lilac/70 via-white to-blueSoft/70">
+    <section class="purple-gradient border-t border-white/10 text-white">
       <div class="mx-auto flex max-w-7xl flex-col items-center gap-8 px-4 py-10 sm:px-6 md:flex-row lg:px-8">
-        <img src="Contact Footer.png"
+        <img src="Contact Footer.png">
         <div>
-          <h2 class="text-2xl font-semibold text-navy md:text-3xl">Let’s build something great together.</h2>
+          <h2 class="text-2xl font-semibold text-white md:text-3xl">Let’s build something great together.</h2>
           <div class="scribble-line mt-2 w-40"></div>
-          <p class="mt-4 text-muted">Strong teams. Better hires. Lasting impact. That’s what we’re here for.</p>
+          <p class="mt-4 text-white/70">Strong teams. Better hires. Lasting impact. That’s what we’re here for.</p>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-line bg-white py-7">
-    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-sm text-muted sm:px-6 md:flex-row lg:px-8">
+  <footer class="border-t border-white/10 bg-[#130C25] py-9">
+    <div class="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 px-4 text-sm text-white/65 sm:px-6 md:flex-row lg:px-8">
       <p>&copy; 2026 Consult &amp; Hire. All rights reserved.</p>
       <div class="flex gap-5">
-        <a href="privacy.html" class="hover:text-purple">Privacy</a>
-        <a href="terms.html" class="hover:text-purple">Terms</a>
+        <a href="privacy.html" class="transition hover:text-white">Privacy</a>
+        <a href="terms.html" class="transition hover:text-white">Terms</a>
       </div>
     </div>
   </footer>
