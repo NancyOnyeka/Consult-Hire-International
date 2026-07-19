@@ -4,7 +4,6 @@
     <base target="_self">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Employer Hub | Consult &amp; Hire</title>
     <meta name="description" content="Access Consult & Hire employer services, including consultations, vacancy submission, Talent Academy, Talent Intelligence, employer insights, outplacement and employer brand support.">
 
@@ -45,10 +44,7 @@
 
     <style>
         html { scroll-behavior: smooth; }
-
-        body {
-            background: #ffffff;
-        }
+        body { background: #ffffff; }
 
         .hero-bg {
             background:
@@ -61,33 +57,19 @@
             background: linear-gradient(135deg, #1E2A5A 0%, #47327B 55%, #6847A8 100%);
         }
 
-        .card {
-            transition:
-                transform 0.25s ease,
-                box-shadow 0.25s ease,
-                border-color 0.25s ease;
+        .service-card {
+            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
 
-        .card:hover {
+        .service-card:hover {
             transform: translateY(-7px);
             box-shadow: 0 24px 60px rgba(33, 38, 71, 0.16);
         }
 
-        .card:hover .arrow {
-            transform: translateX(5px);
-        }
-
-        .arrow {
-            transition: transform 0.2s ease;
-        }
-
-        .icon-shell {
-            transition: transform 0.25s ease;
-        }
-
-        .card:hover .icon-shell {
-            transform: scale(1.06);
-        }
+        .service-card:hover .service-arrow { transform: translateX(5px); }
+        .service-arrow { transition: transform 0.2s ease; }
+        .icon-shell { transition: transform 0.25s ease; }
+        .service-card:hover .icon-shell { transform: scale(1.06); }
 
         .mobile-menu { display: none; }
         .mobile-menu.open { display: block; }
@@ -96,7 +78,6 @@
 
 <body class="font-sans text-brand-ink antialiased overflow-x-hidden">
 
-    <!-- Header -->
     <header class="fixed top-0 z-50 w-full border-b border-brand-stone/80 bg-white/90 backdrop-blur-xl">
         <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex h-20 items-center justify-between">
@@ -114,9 +95,7 @@
                     <a href="index.html" class="font-medium text-brand-slate transition-colors hover:text-brand-purple">Home</a>
                     <a href="about.html" class="font-medium text-brand-slate transition-colors hover:text-brand-purple">About Us</a>
                     <a href="current-vacancies.html" class="font-medium text-brand-slate transition-colors hover:text-brand-purple">Current Vacancies</a>
-                    <a href="clientcalendar.html" class="rounded-lg bg-brand-navy px-5 py-3 font-semibold text-white transition-colors hover:bg-brand-purple">
-                        Free Consultation
-                    </a>
+                    <a href="clientcalendar.html" class="rounded-lg bg-brand-navy px-5 py-3 font-semibold text-white transition-colors hover:bg-brand-purple">Free Consultation</a>
                 </div>
 
                 <button id="menu-button" type="button" class="text-2xl text-brand-ink md:hidden" aria-label="Open navigation menu" aria-expanded="false">
@@ -135,31 +114,33 @@
         </nav>
     </header>
 
-    <!-- Hero -->
-    <section class="hero-bg relative overflow-hidden pb-24 pt-36">
-        <div class="absolute -left-20 top-28 h-64 w-64 rounded-full border border-white/60 bg-white/30 blur-sm"></div>
-        <div class="absolute -right-16 bottom-8 h-72 w-72 rounded-full border border-white/60 bg-white/30 blur-sm"></div>
+    <!-- Primary CTA -->
+    <section class="deep-gradient relative overflow-hidden pb-20 pt-36 md:pb-24">
+        <div class="absolute -left-20 top-28 h-64 w-64 rounded-full border border-white/10 bg-white/5"></div>
+        <div class="absolute -right-16 bottom-8 h-72 w-72 rounded-full border border-white/10 bg-white/5"></div>
 
-        <div class="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-5xl text-center">
-                <p class="mb-6 font-semibold uppercase tracking-[0.24em] text-brand-purple">
-                    Consult &amp; Hire
-                </p>
-
-                <h1 class="mb-8 text-5xl font-bold leading-none text-brand-purple md:text-7xl">
-                    Employer Hub
+        <div class="container relative z-10 mx-auto px-4 text-center sm:px-6 lg:px-8">
+            <div class="mx-auto max-w-5xl">
+                <h1 class="mb-6 text-4xl font-bold leading-tight text-white md:text-6xl">
+                    Strategic recruitment starts with the right conversation.
                 </h1>
 
-                <p class="mx-auto max-w-4xl text-xl leading-relaxed text-brand-slate md:text-2xl">
-                    Strategic recruitment support, workforce intelligence and practical employer services—all in one place.
+                <p class="mx-auto max-w-4xl text-xl leading-relaxed text-white/75 md:text-2xl">
+                    Access the insight, support and capability your organisation needs to hire, develop and transition talent with confidence.
                 </p>
 
-                <div class="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
-                    <a href="clientcalendar.html" class="rounded-lg bg-brand-navy px-8 py-4 font-semibold text-white shadow-soft transition-all hover:-translate-y-0.5 hover:bg-brand-purple">
+                <div class="mt-9 flex flex-col justify-center gap-4 sm:flex-row">
+                    <a
+                        href="clientcalendar.html"
+                        class="rounded-lg bg-white px-8 py-4 font-semibold text-brand-navy shadow-soft transition-all hover:-translate-y-0.5 hover:bg-brand-lilacSoft"
+                    >
                         Schedule a Free Consultation
                     </a>
 
-                    <a href="submit-vacancy.html" class="rounded-lg border border-brand-purple/30 bg-white/70 px-8 py-4 font-semibold text-brand-purple shadow-sm transition-all hover:border-brand-purple hover:bg-white">
+                    <a
+                        href="submit-vacancy.html"
+                        class="rounded-lg border border-white/40 bg-white/10 px-8 py-4 font-semibold text-white transition-all hover:border-white/60 hover:bg-white/15"
+                    >
                         Submit a Vacancy
                     </a>
                 </div>
@@ -167,34 +148,12 @@
         </div>
     </section>
 
-    <!-- Intro -->
-    <section class="bg-white py-16">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-4xl text-center">
-                <p class="mb-3 text-sm font-semibold uppercase tracking-[0.22em] text-brand-purple">
-                    Employer Services
-                </p>
-
-                <h2 class="mb-6 text-3xl font-bold text-brand-ink md:text-5xl">
-                    Choose the support your organisation needs
-                </h2>
-
-                <p class="text-lg leading-relaxed text-brand-slate md:text-xl">
-                    Whether you are hiring now, planning future capability, strengthening your employer brand or supporting people through transition, begin with the service most relevant to your business.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Services -->
-    <main class="bg-brand-mist py-20">
+    <main class="bg-brand-mist py-14 md:py-16">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mx-auto grid max-w-7xl gap-7 md:grid-cols-2 lg:grid-cols-3">
 
-                <a href="clientcalendar.html" class="card relative flex flex-col rounded-2xl border border-[#cfd8f1] bg-[#eef3fb] p-8 shadow-soft">
-                    <span class="absolute right-5 top-5 rounded-full bg-brand-navy px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">
-                        Start Here
-                    </span>
+                <a href="clientcalendar.html" class="service-card relative flex flex-col rounded-2xl border border-[#cfd8f1] bg-[#eef3fb] p-8 shadow-soft">
+                    <span class="absolute right-5 top-5 rounded-full bg-brand-navy px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white">Start Here</span>
                     <div class="icon-shell mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-brand-navy text-white">
                         <i class="fas fa-calendar-check text-2xl"></i>
                     </div>
@@ -202,10 +161,10 @@
                     <p class="mb-8 flex-1 leading-relaxed text-brand-slate">
                         Book a convenient time to discuss hiring plans, current challenges or future workforce priorities with a Consult &amp; Hire specialist.
                     </p>
-                    <span class="font-semibold text-brand-navy">View Calendar <i class="arrow fas fa-arrow-right ml-2"></i></span>
+                    <span class="font-semibold text-brand-navy">View Calendar <i class="service-arrow fas fa-arrow-right ml-2"></i></span>
                 </a>
 
-                <a href="submit-vacancy.html" class="card flex flex-col rounded-2xl border border-[#dbcdea] bg-brand-lilacSoft p-8 shadow-soft">
+                <a href="submit-vacancy.html" class="service-card flex flex-col rounded-2xl border border-[#dbcdea] bg-brand-lilacSoft p-8 shadow-soft">
                     <div class="icon-shell mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-brand-purple text-white">
                         <i class="fas fa-file-signature text-2xl"></i>
                     </div>
@@ -213,10 +172,10 @@
                     <p class="mb-8 flex-1 leading-relaxed text-brand-slate">
                         Share the essential details of your vacancy through a short, straightforward form and let us guide the next steps.
                     </p>
-                    <span class="font-semibold text-brand-purple">Submit Vacancy <i class="arrow fas fa-arrow-right ml-2"></i></span>
+                    <span class="font-semibold text-brand-purple">Submit Vacancy <i class="service-arrow fas fa-arrow-right ml-2"></i></span>
                 </a>
 
-                <a href="talent_academy.html" class="card flex flex-col rounded-2xl border border-[#dddfe5] bg-white p-8 shadow-soft">
+                <a href="talent_academy.html" class="service-card flex flex-col rounded-2xl border border-[#dddfe5] bg-white p-8 shadow-soft">
                     <div class="icon-shell mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#6f63a8] text-white">
                         <i class="fas fa-graduation-cap text-2xl"></i>
                     </div>
@@ -224,10 +183,10 @@
                     <p class="mb-8 flex-1 leading-relaxed text-brand-slate">
                         Develop stronger Talent Acquisition teams, hiring managers and business leaders through practical recruitment training.
                     </p>
-                    <span class="font-semibold text-[#5b4f91]">Explore Talent Academy <i class="arrow fas fa-arrow-right ml-2"></i></span>
+                    <span class="font-semibold text-[#5b4f91]">Explore Talent Academy <i class="service-arrow fas fa-arrow-right ml-2"></i></span>
                 </a>
 
-                <a href="talent_intelligence.html" class="card flex flex-col rounded-2xl border border-[#cfdce0] bg-[#f1f7f7] p-8 shadow-soft">
+                <a href="talent_intelligence.html" class="service-card flex flex-col rounded-2xl border border-[#cfdce0] bg-[#f1f7f7] p-8 shadow-soft">
                     <div class="icon-shell mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#4e7a83] text-white">
                         <i class="fas fa-chart-pie text-2xl"></i>
                     </div>
@@ -235,10 +194,10 @@
                     <p class="mb-8 flex-1 leading-relaxed text-brand-slate">
                         Make informed workforce decisions using market insight, talent mapping, salary intelligence and competitor analysis.
                     </p>
-                    <span class="font-semibold text-[#416c74]">Explore Talent Intelligence <i class="arrow fas fa-arrow-right ml-2"></i></span>
+                    <span class="font-semibold text-[#416c74]">Explore Talent Intelligence <i class="service-arrow fas fa-arrow-right ml-2"></i></span>
                 </a>
 
-                <a href="employer_articles.html" class="card flex flex-col rounded-2xl border border-[#e2d5cc] bg-[#faf5f1] p-8 shadow-soft">
+                <a href="employer_articles.html" class="service-card flex flex-col rounded-2xl border border-[#e2d5cc] bg-[#faf5f1] p-8 shadow-soft">
                     <div class="icon-shell mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#9b6b55] text-white">
                         <i class="fas fa-book-open text-2xl"></i>
                     </div>
@@ -246,10 +205,10 @@
                     <p class="mb-8 flex-1 leading-relaxed text-brand-slate">
                         Read commercial insight on candidate experience, employer brand, quality of hire, leadership and recruitment ROI.
                     </p>
-                    <span class="font-semibold text-[#855943]">Read the Journal <i class="arrow fas fa-arrow-right ml-2"></i></span>
+                    <span class="font-semibold text-[#855943]">Read the Journal <i class="service-arrow fas fa-arrow-right ml-2"></i></span>
                 </a>
 
-                <a href="outplacements.html" class="card flex flex-col rounded-2xl border border-[#d7d9e8] bg-[#f5f5fa] p-8 shadow-soft">
+                <a href="outplacements.html" class="service-card flex flex-col rounded-2xl border border-[#d7d9e8] bg-[#f5f5fa] p-8 shadow-soft">
                     <div class="icon-shell mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#5c6288] text-white">
                         <i class="fas fa-people-arrows text-2xl"></i>
                     </div>
@@ -257,10 +216,10 @@
                     <p class="mb-8 flex-1 leading-relaxed text-brand-slate">
                         Support employees through career transition with practical, respectful and professionally delivered outplacement services.
                     </p>
-                    <span class="font-semibold text-[#505675]">Explore Outplacement <i class="arrow fas fa-arrow-right ml-2"></i></span>
+                    <span class="font-semibold text-[#505675]">Explore Outplacement <i class="service-arrow fas fa-arrow-right ml-2"></i></span>
                 </a>
 
-                <a href="employer_.html" class="card flex flex-col rounded-2xl border border-[#dbcdea] bg-[#f6f0fa] p-8 shadow-soft lg:col-start-2">
+                <a href="employer_.html" class="service-card flex flex-col rounded-2xl border border-[#dbcdea] bg-[#f6f0fa] p-8 shadow-soft md:col-span-2 lg:col-span-1 lg:col-start-2">
                     <div class="icon-shell mb-6 flex h-14 w-14 items-center justify-center rounded-xl bg-[#8254a6] text-white">
                         <i class="fas fa-bullhorn text-2xl"></i>
                     </div>
@@ -268,25 +227,20 @@
                     <p class="mb-8 flex-1 leading-relaxed text-brand-slate">
                         Strengthen how your organisation is perceived by candidates and employees through a clearer and more credible employer proposition.
                     </p>
-                    <span class="font-semibold text-[#724692]">Build Your Employer Brand <i class="arrow fas fa-arrow-right ml-2"></i></span>
+                    <span class="font-semibold text-[#724692]">Build Your Employer Brand <i class="service-arrow fas fa-arrow-right ml-2"></i></span>
                 </a>
 
             </div>
         </div>
     </main>
 
-    <!-- Guidance CTA -->
-    <section class="bg-white py-20">
+    <section class="bg-white py-16 md:py-20">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mx-auto max-w-6xl overflow-hidden rounded-3xl border border-brand-lilac bg-brand-lilacSoft shadow-soft">
                 <div class="grid lg:grid-cols-[1.15fr_0.85fr]">
                     <div class="p-8 md:p-12">
-                        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-brand-purple">
-                            Not Sure Where to Start?
-                        </p>
-                        <h2 class="mb-5 text-3xl font-bold text-brand-ink md:text-5xl">
-                            Let’s identify the right next step.
-                        </h2>
+                        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-brand-purple">Not Sure Where to Start?</p>
+                        <h2 class="mb-5 text-3xl font-bold text-brand-ink md:text-5xl">Let’s identify the right next step.</h2>
                         <p class="text-lg leading-relaxed text-brand-slate">
                             A short consultation allows us to understand your priorities and recommend the service, programme or recruitment approach best suited to your organisation.
                         </p>
@@ -305,27 +259,6 @@
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="deep-gradient py-20">
-        <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-4xl">
-                <p class="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#d8c8ef]">
-                    Consult &amp; Hire
-                </p>
-                <h2 class="mb-5 text-3xl font-bold text-white md:text-5xl">
-                    Better talent decisions create stronger organisations.
-                </h2>
-                <p class="mb-8 text-xl text-white/75">
-                    Access the insight, support and capability your organisation needs to hire, develop and transition talent with confidence.
-                </p>
-                <a href="clientcalendar.html" class="inline-flex rounded-lg bg-white px-8 py-4 font-semibold text-brand-navy transition-colors hover:bg-brand-lilac">
-                    Speak With Consult &amp; Hire
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="border-t border-brand-stone bg-white py-8">
         <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
             <p class="text-sm text-brand-slate">&copy; 2026 Consult &amp; Hire. All rights reserved.</p>
