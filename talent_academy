@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Talent Academy | Consult &amp; Hire</title>
+    <meta name="description" content="Develop stronger talent acquisition teams and hiring managers with practical recruitment training from Consult & Hire's Talent Academy.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: "#0a0a0a",
+                            blue: "#1e3a8a",
+                            purple: "#581c87",
+                            accent: "#3730a3",
+                            surface: "#171717",
+                            card: "#262626"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 50%, #2e1065 100%);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .card-hover {
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            border-color: rgba(96, 165, 250, 0.55);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+        }
+
+        .dark-input {
+            background-color: #262626;
+            border: 1px solid #404040;
+            color: #e5e5e5;
+        }
+
+        .dark-input::placeholder {
+            color: #9ca3af;
+        }
+
+        .dark-input:focus {
+            outline: none;
+            border-color: #1e3a8a;
+            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-100 bg-brand-dark antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center border border-gray-700">
+                        <i class="fas fa-briefcase text-white text-xl"></i>
+                    </div>
+
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Consult &amp; Hire</h1>
+                        <p class="text-xs text-gray-400">Experts in Global Tech Talent</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white font-medium transition-colors">Home</a>
+                    <a href="about.html" class="text-gray-300 hover:text-white font-medium transition-colors">About Us</a>
+                    <a href="current-vacancies.html" class="text-gray-300 hover:text-white font-medium transition-colors">Current Vacancies</a>
+                    <a href="#academy-enquiry" class="bg-brand-blue hover:bg-blue-700 text-white px-5 py-3 rounded-lg font-semibold transition-colors">Book Training</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="gradient-bg pt-36 pb-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-5xl mx-auto text-center">
+                <p class="text-blue-300 uppercase tracking-widest font-semibold mb-4">Consult &amp; Hire Talent Academy</p>
+
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    Build Better Hiring Decisions
+                </h1>
+
+                <p class="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
+                    Recruitment is one of the most important decisions an organisation can make. One exceptional hire can transform performance, culture and growth. One poor hire can cost far more than salary alone.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+                    <a href="#programmes" class="bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+                        Explore Programmes
+                    </a>
+
+                    <a href="#academy-enquiry" class="border border-gray-500 hover:border-white text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+                        Request a Proposal
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Narrative -->
+    <section class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-blue-400 uppercase tracking-widest text-sm font-semibold mb-3">More Than a Function</p>
+
+                    <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight mb-6">
+                        Recruitment is both calculable and a craft.
+                    </h2>
+
+                    <div class="space-y-5 text-lg text-gray-300 leading-relaxed">
+                        <p>
+                            Great hiring combines structure, evidence, commercial thinking and human judgement. It requires the discipline to assess what can be measured and the intuition to recognise potential that may not appear on a CV.
+                        </p>
+
+                        <p>
+                            The strongest hiring decisions are not based on instinct alone. Nor are they produced by process alone. They are made when hiring teams know how to combine both.
+                        </p>
+
+                        <p>
+                            Our Talent Academy walks your people through the opportunities and pitfalls of recruitment so they can engage candidates with confidence, assess talent more effectively and secure hires capable of accelerating quality, culture and brand.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="glass-effect rounded-2xl p-8 md:p-10">
+                    <div class="grid sm:grid-cols-2 gap-6">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-blue-900/60 flex items-center justify-center mb-4">
+                                <i class="fas fa-chart-line text-blue-300 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-xl mb-2">Commercial Impact</h3>
+                            <p class="text-gray-400">Connect hiring decisions to performance, growth, retention and return on investment.</p>
+                        </div>
+
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-purple-900/60 flex items-center justify-center mb-4">
+                                <i class="fas fa-brain text-purple-300 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-xl mb-2">Better Judgement</h3>
+                            <p class="text-gray-400">Balance evidence, intuition, behavioural insight and structured assessment.</p>
+                        </div>
+
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-blue-900/60 flex items-center justify-center mb-4">
+                                <i class="fas fa-user-check text-blue-300 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-xl mb-2">Quality of Hire</h3>
+                            <p class="text-gray-400">Identify capability, motivation, potential and long-term organisational fit.</p>
+                        </div>
+
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-purple-900/60 flex items-center justify-center mb-4">
+                                <i class="fas fa-bullhorn text-purple-300 text-xl"></i>
+                            </div>
+                            <h3 class="font-bold text-xl mb-2">Brand Acceleration</h3>
+                            <p class="text-gray-400">Turn every candidate interaction into a stronger representation of your employer brand.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cost of Hiring -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto text-center">
+                <p class="text-blue-400 uppercase tracking-widest text-sm font-semibold mb-3">The Cost of Getting It Wrong</p>
+
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                    A single hire can make or break an organisation.
+                </h2>
+
+                <p class="text-xl text-gray-400 leading-relaxed max-w-4xl mx-auto">
+                    A poor hiring decision can reduce productivity, weaken team morale, affect customers, damage leadership credibility and consume significant time and financial resources. The true cost is rarely confined to recruitment fees or salary.
+                </p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 mt-12">
+                <div class="bg-brand-card border border-gray-800 rounded-2xl p-8 card-hover">
+                    <i class="fas fa-clock text-blue-400 text-3xl mb-5"></i>
+                    <h3 class="text-xl font-bold mb-3">Time Investment</h3>
+                    <p class="text-gray-400">Lost leadership time, repeated interviews, delayed projects and the cost of restarting the hiring process.</p>
+                </div>
+
+                <div class="bg-brand-card border border-gray-800 rounded-2xl p-8 card-hover">
+                    <i class="fas fa-coins text-blue-400 text-3xl mb-5"></i>
+                    <h3 class="text-xl font-bold mb-3">Financial Investment</h3>
+                    <p class="text-gray-400">Salary, onboarding, agency costs, training, missed revenue and replacement expenditure.</p>
+                </div>
+
+                <div class="bg-brand-card border border-gray-800 rounded-2xl p-8 card-hover">
+                    <i class="fas fa-people-arrows text-blue-400 text-3xl mb-5"></i>
+                    <h3 class="text-xl font-bold mb-3">Organisational Impact</h3>
+                    <p class="text-gray-400">Culture, customer confidence, employee retention, team performance and employer reputation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programmes -->
+    <section id="programmes" class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-14">
+                <p class="text-blue-400 uppercase tracking-widest text-sm font-semibold mb-3">Training Programmes</p>
+
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
+                    Choose the capability your team needs
+                </h2>
+
+                <p class="text-xl text-gray-400">
+                    Each programme can be delivered as a standalone workshop or combined into a tailored academy.
+                </p>
+            </div>
+
+            <div class="max-w-7xl mx-auto grid lg:grid-cols-3 gap-8">
+                <article class="bg-brand-card border border-gray-800 rounded-2xl p-8 card-hover flex flex-col">
+                    <div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6">
+                        <i class="fas fa-users-cog text-white text-2xl"></i>
+                    </div>
+
+                    <p class="text-blue-400 text-sm uppercase tracking-wider font-semibold mb-2">For Talent Acquisition Teams</p>
+                    <h3 class="text-2xl font-bold text-white mb-4">TA Excellence Programme</h3>
+
+                    <p class="text-gray-400 mb-6">
+                        Strengthen sourcing, stakeholder management, assessment, candidate engagement and commercial recruitment capability.
+                    </p>
+
+                    <ul class="space-y-3 text-gray-300 mb-8">
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Strategic talent acquisition</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Talent mapping and attraction</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Hiring manager partnerships</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Candidate experience</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Offer and negotiation strategy</li>
+                    </ul>
+
+                    <a href="#academy-enquiry" data-programme="TA Excellence Programme" class="programme-link mt-auto inline-flex justify-center bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                        Enquire About This Programme
+                    </a>
+                </article>
+
+                <article class="bg-brand-card border border-blue-700 rounded-2xl p-8 card-hover flex flex-col relative">
+                    <div class="absolute top-5 right-5 bg-blue-900 text-blue-200 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+                        Popular
+                    </div>
+
+                    <div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6">
+                        <i class="fas fa-user-tie text-white text-2xl"></i>
+                    </div>
+
+                    <p class="text-blue-400 text-sm uppercase tracking-wider font-semibold mb-2">For Hiring Managers</p>
+                    <h3 class="text-2xl font-bold text-white mb-4">Hiring Manager Masterclass</h3>
+
+                    <p class="text-gray-400 mb-6">
+                        Give managers the confidence and structure to define, assess, engage and secure exceptional talent.
+                    </p>
+
+                    <ul class="space-y-3 text-gray-300 mb-8">
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Defining role success</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Structured interviewing</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Behavioural assessment</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Bias awareness</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Candidate engagement</li>
+                    </ul>
+
+                    <a href="#academy-enquiry" data-programme="Hiring Manager Masterclass" class="programme-link mt-auto inline-flex justify-center bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                        Enquire About This Programme
+                    </a>
+                </article>
+
+                <article class="bg-brand-card border border-gray-800 rounded-2xl p-8 card-hover flex flex-col">
+                    <div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6">
+                        <i class="fas fa-crown text-white text-2xl"></i>
+                    </div>
+
+                    <p class="text-blue-400 text-sm uppercase tracking-wider font-semibold mb-2">For Leaders and Executives</p>
+                    <h3 class="text-2xl font-bold text-white mb-4">Strategic Hiring Leadership</h3>
+
+                    <p class="text-gray-400 mb-6">
+                        Help leaders understand hiring as a commercial capability and build stronger accountability across the organisation.
+                    </p>
+
+                    <ul class="space-y-3 text-gray-300 mb-8">
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Workforce planning</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Hiring governance</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Quality-of-hire metrics</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Employer brand strategy</li>
+                        <li><i class="fas fa-check text-blue-400 mr-2"></i>Recruitment ROI</li>
+                    </ul>
+
+                    <a href="#academy-enquiry" data-programme="Strategic Hiring Leadership" class="programme-link mt-auto inline-flex justify-center bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-semibold transition-colors">
+                        Enquire About This Programme
+                    </a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum -->
+    <section class="py-20 bg-white text-brand-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto">
+                <div class="max-w-4xl mb-12">
+                    <p class="text-brand-blue uppercase tracking-widest text-sm font-semibold mb-3">What We Can Cover</p>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-5">Practical capability across the full hiring journey</h2>
+                    <p class="text-xl text-gray-600">Your programme can be tailored around the specific challenges, roles and hiring maturity of your organisation.</p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                        <h3 class="font-bold text-lg mb-2">Recruitment Strategy</h3>
+                        <p class="text-gray-600">Workforce planning, role prioritisation and linking talent decisions to commercial goals.</p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                        <h3 class="font-bold text-lg mb-2">Role Definition</h3>
+                        <p class="text-gray-600">Defining success, separating essential criteria from preference and creating stronger briefs.</p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                        <h3 class="font-bold text-lg mb-2">Candidate Attraction</h3>
+                        <p class="text-gray-600">Compelling job messaging, employer brand and building an effective candidate proposition.</p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                        <h3 class="font-bold text-lg mb-2">Interviewing</h3>
+                        <p class="text-gray-600">Structured, behavioural and competency-based interviewing that produces useful evidence.</p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                        <h3 class="font-bold text-lg mb-2">Assessment</h3>
+                        <p class="text-gray-600">Evaluating capability, motivation, potential, risk and organisational alignment.</p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                        <h3 class="font-bold text-lg mb-2">Decision Quality</h3>
+                        <p class="text-gray-600">Avoiding common pitfalls, reducing bias and making evidence-led selection decisions.</p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                        <h3 class="font-bold text-lg mb-2">Candidate Experience</h3>
+                        <p class="text-gray-600">Creating trust, clarity and engagement throughout every stage of the recruitment process.</p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                        <h3 class="font-bold text-lg mb-2">Offers and Negotiation</h3>
+                        <p class="text-gray-600">Understanding candidate motivation, managing risk and improving offer acceptance.</p>
+                    </div>
+
+                    <div class="bg-gray-50 border border-gray-200 rounded-xl p-6">
+                        <h3 class="font-bold text-lg mb-2">Onboarding and Retention</h3>
+                        <p class="text-gray-600">Turning a successful offer into long-term performance, belonging and retention.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Outcomes -->
+    <section class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                <div class="glass-effect rounded-2xl p-8 md:p-10">
+                    <p class="text-blue-300 uppercase tracking-widest text-sm font-semibold mb-4">Return on Investment</p>
+
+                    <div class="grid grid-cols-2 gap-6">
+                        <div>
+                            <p class="text-4xl font-bold text-white mb-2">Better</p>
+                            <p class="text-gray-400">Quality of hire</p>
+                        </div>
+
+                        <div>
+                            <p class="text-4xl font-bold text-white mb-2">Faster</p>
+                            <p class="text-gray-400">Decision-making</p>
+                        </div>
+
+                        <div>
+                            <p class="text-4xl font-bold text-white mb-2">Stronger</p>
+                            <p class="text-gray-400">Candidate engagement</p>
+                        </div>
+
+                        <div>
+                            <p class="text-4xl font-bold text-white mb-2">Lower</p>
+                            <p class="text-gray-400">Hiring risk</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
+                        Empower your people to secure talent that creates lasting value.
+                    </h2>
+
+                    <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                        Talent Academy is designed to deliver a practical return on both time and financial investment. Participants leave with tools they can use immediately, not theory that disappears after the session.
+                    </p>
+
+                    <ul class="space-y-4 text-gray-300">
+                        <li class="flex gap-3">
+                            <i class="fas fa-check-circle text-blue-400 mt-1"></i>
+                            <span>Greater confidence across Talent Acquisition and hiring managers</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fas fa-check-circle text-blue-400 mt-1"></i>
+                            <span>More consistent and defensible recruitment decisions</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fas fa-check-circle text-blue-400 mt-1"></i>
+                            <span>Improved employer brand and candidate experience</span>
+                        </li>
+                        <li class="flex gap-3">
+                            <i class="fas fa-check-circle text-blue-400 mt-1"></i>
+                            <span>Reduced time, cost and disruption caused by poor hiring</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Delivery -->
+    <section class="py-20 bg-black">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <p class="text-blue-400 uppercase tracking-widest text-sm font-semibold mb-3">Flexible Delivery</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">Training built around your organisation</h2>
+                <p class="text-xl text-gray-400">Select a format that suits your team, operating model and development goals.</p>
+            </div>
+
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-brand-card border border-gray-800 rounded-2xl p-7 text-center card-hover">
+                    <i class="fas fa-chalkboard-teacher text-blue-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">On-site Workshops</h3>
+                    <p class="text-gray-400 text-sm">Interactive face-to-face learning for teams and leadership groups.</p>
+                </div>
+
+                <div class="bg-brand-card border border-gray-800 rounded-2xl p-7 text-center card-hover">
+                    <i class="fas fa-laptop text-blue-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Virtual Sessions</h3>
+                    <p class="text-gray-400 text-sm">Live facilitator-led training for distributed and global teams.</p>
+                </div>
+
+                <div class="bg-brand-card border border-gray-800 rounded-2xl p-7 text-center card-hover">
+                    <i class="fas fa-bolt text-blue-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Masterclasses</h3>
+                    <p class="text-gray-400 text-sm">Focused sessions designed around a priority hiring challenge.</p>
+                </div>
+
+                <div class="bg-brand-card border border-gray-800 rounded-2xl p-7 text-center card-hover">
+                    <i class="fas fa-layer-group text-blue-400 text-3xl mb-4"></i>
+                    <h3 class="font-bold text-lg mb-2">Bespoke Academies</h3>
+                    <p class="text-gray-400 text-sm">Multi-session capability programmes tailored to your organisation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enquiry Form -->
+    <section id="academy-enquiry" class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto">
+                <div class="bg-brand-card border border-gray-800 rounded-2xl shadow-2xl p-8 md:p-12">
+                    <div class="max-w-3xl mb-10">
+                        <p class="text-blue-400 uppercase tracking-widest text-sm font-semibold mb-3">Book Talent Academy</p>
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">Start building stronger hiring capability</h2>
+                        <p class="text-lg text-gray-400">Tell us about your team and objectives. We will recommend the most suitable programme and delivery format.</p>
+                    </div>
+
+                    <form id="academy-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="academy-name" class="block text-sm font-medium text-gray-300 mb-2">Your Name *</label>
+                                <input id="academy-name" name="academy-name" type="text" required class="dark-input w-full rounded-lg px-4 py-3" placeholder="Your full name">
+                            </div>
+
+                            <div>
+                                <label for="academy-email" class="block text-sm font-medium text-gray-300 mb-2">Work Email *</label>
+                                <input id="academy-email" name="academy-email" type="email" required class="dark-input w-full rounded-lg px-4 py-3" placeholder="you@company.com">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="academy-company" class="block text-sm font-medium text-gray-300 mb-2">Company *</label>
+                                <input id="academy-company" name="academy-company" type="text" required class="dark-input w-full rounded-lg px-4 py-3" placeholder="Company name">
+                            </div>
+
+                            <div>
+                                <label for="academy-programme" class="block text-sm font-medium text-gray-300 mb-2">Programme of Interest</label>
+                                <select id="academy-programme" name="academy-programme" class="dark-input w-full rounded-lg px-4 py-3">
+                                    <option value="">Select a programme</option>
+                                    <option>TA Excellence Programme</option>
+                                    <option>Hiring Manager Masterclass</option>
+                                    <option>Strategic Hiring Leadership</option>
+                                    <option>Bespoke Talent Academy</option>
+                                    <option>Not Sure Yet</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="academy-team-size" class="block text-sm font-medium text-gray-300 mb-2">Estimated Number of Participants</label>
+                                <input id="academy-team-size" name="academy-team-size" type="text" class="dark-input w-full rounded-lg px-4 py-3" placeholder="e.g. 8, 20, 50+">
+                            </div>
+
+                            <div>
+                                <label for="academy-format" class="block text-sm font-medium text-gray-300 mb-2">Preferred Delivery Format</label>
+                                <select id="academy-format" name="academy-format" class="dark-input w-full rounded-lg px-4 py-3">
+                                    <option value="">Select a format</option>
+                                    <option>On-site Workshop</option>
+                                    <option>Virtual Instructor-led</option>
+                                    <option>Executive Masterclass</option>
+                                    <option>Multi-session Academy</option>
+                                    <option>Open to Recommendation</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label for="academy-objectives" class="block text-sm font-medium text-gray-300 mb-2">Training Objectives</label>
+                            <textarea id="academy-objectives" name="academy-objectives" rows="6" class="dark-input w-full rounded-lg px-4 py-3" placeholder="Tell us about your current hiring challenges, team capability and what you would like the training to achieve."></textarea>
+                        </div>
+
+                        <label class="flex items-start gap-3 text-sm text-gray-400">
+                            <input type="checkbox" required class="mt-1 h-4 w-4">
+                            <span>I consent to Consult &amp; Hire contacting me about Talent Academy training and related services.</span>
+                        </label>
+
+                        <button id="academy-submit" type="submit" class="w-full bg-brand-blue hover:bg-blue-700 disabled:opacity-60 text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+                            Request Talent Academy Proposal
+                        </button>
+
+                        <p id="academy-status" class="hidden text-center text-sm" role="status" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="gradient-bg py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">Recruitment is too important to leave to chance.</h2>
+                <p class="text-xl text-gray-300 mb-8">Build the confidence, judgement and capability to make hiring one of your organisation's greatest competitive advantages.</p>
+                <a href="#academy-enquiry" class="inline-flex bg-white text-brand-dark hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-colors">Discuss Your Training Needs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2026 Consult &amp; Hire. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const programmeLinks = document.querySelectorAll(".programme-link");
+        const programmeSelect = document.getElementById("academy-programme");
+
+        programmeLinks.forEach(link => {
+            link.addEventListener("click", function () {
+                const programme = this.dataset.programme;
+                programmeSelect.value = programme;
+            });
+        });
+
+        const academyForm = document.getElementById("academy-form");
+        const academySubmit = document.getElementById("academy-submit");
+        const academyStatus = document.getElementById("academy-status");
+
+        academyForm.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            academySubmit.disabled = true;
+            academyStatus.className = "text-center text-sm text-gray-300";
+            academyStatus.textContent = "Submitting your enquiry…";
+
+            await new Promise(resolve => setTimeout(resolve, 900));
+
+            academyStatus.className = "text-center text-sm text-green-400";
+            academyStatus.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Thank you. Your Talent Academy enquiry has been received.';
+            academySubmit.disabled = false;
+        });
+    </script>
+</body>
+</html>
