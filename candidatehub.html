@@ -1,1 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Job Seeker Hub | Consult &amp; Hire</title>
+    <meta name="description" content="Explore current vacancies, career support, interview preparation and candidate registration with Consult & Hire.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: "#0a0a0a",
+                            blue: "#1e3a8a",
+                            purple: "#581c87",
+                            accent: "#3730a3",
+                            surface: "#171717",
+                            card: "#262626"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 50%, #2e1065 100%);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .pathway-card {
+            transition:
+                transform 0.25s ease,
+                border-color 0.25s ease,
+                box-shadow 0.25s ease,
+                background-color 0.25s ease;
+        }
+
+        .pathway-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(96, 165, 250, 0.65);
+            background-color: #2b2b2b;
+            box-shadow: 0 22px 44px rgba(0, 0, 0, 0.3);
+        }
+
+        .pathway-card:hover .pathway-arrow {
+            transform: translateX(5px);
+        }
+
+        .pathway-arrow {
+            transition: transform 0.2s ease;
+        }
+
+        .mobile-menu {
+            display: none;
+        }
+
+        .mobile-menu.open {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-100 bg-brand-dark antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center border border-gray-700">
+                        <i class="fas fa-briefcase text-white text-xl"></i>
+                    </div>
+
+                    <div>
+                        <p class="text-xl font-bold text-white">Consult &amp; Hire</p>
+                        <p class="text-xs text-gray-400">Experts in Global Tech Talent</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="text-gray-300 hover:text-white font-medium transition-colors">Home</a>
+                    <a href="employer-hub.html" class="text-gray-300 hover:text-white font-medium transition-colors">Employer Hub</a>
+                    <a href="current-vacancies.html" class="text-gray-300 hover:text-white font-medium transition-colors">Current Vacancies</a>
+                    <a href="register.html" class="bg-brand-blue hover:bg-blue-700 text-white px-5 py-3 rounded-lg font-semibold transition-colors">
+                        Register
+                    </a>
+                </div>
+
+                <button id="menu-button" type="button" class="md:hidden text-white text-2xl" aria-label="Open navigation menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+
+            <div id="mobile-menu" class="mobile-menu md:hidden border-t border-gray-800 pb-5">
+                <div class="flex flex-col pt-4 space-y-3">
+                    <a href="index.html" class="text-gray-300 hover:text-white">Home</a>
+                    <a href="employer-hub.html" class="text-gray-300 hover:text-white">Employer Hub</a>
+                    <a href="current-vacancies.html" class="text-gray-300 hover:text-white">Current Vacancies</a>
+                    <a href="register.html" class="text-blue-300 hover:text-white font-semibold">Register</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="gradient-bg pt-36 pb-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-5xl mx-auto text-center">
+                <p class="text-blue-300 uppercase tracking-widest font-semibold mb-6">
+                    Consult &amp; Hire
+                </p>
+
+                <h1 class="text-5xl md:text-7xl font-bold text-blue-300 mb-8 leading-none">
+                    Job Seeker Hub
+                </h1>
+
+                <p class="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
+                    Explore career opportunities, strengthen your interview performance and connect with specialist consultants who understand the technology talent market.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
+                    <a href="current-vacancies.html" class="bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+                        View Current Vacancies
+                    </a>
+
+                    <a href="register.html" class="border border-gray-500 hover:border-white text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+                        Join Our Talent Network
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Intro -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-4xl mx-auto text-center">
+                <p class="text-brand-blue uppercase tracking-widest text-sm font-semibold mb-3">
+                    Candidate Services
+                </p>
+
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
+                    Choose the support that moves your career forward
+                </h2>
+
+                <p class="text-lg md:text-xl text-gray-600 leading-relaxed">
+                    Whether you are actively searching, preparing for an interview or planning your next career move, start with the pathway most relevant to you.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pathway Cards -->
+    <main class="py-20 bg-black">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+
+                <!-- Candidate Hub -->
+                <a href="candidate-hub.html" class="pathway-card bg-brand-card border border-blue-700 rounded-2xl p-8 md:p-10 flex flex-col relative">
+                    <div class="absolute top-5 right-5 bg-blue-900 text-blue-200 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
+                        Start Here
+                    </div>
+
+                    <div class="w-16 h-16 rounded-xl gradient-bg flex items-center justify-center mb-7">
+                        <i class="fas fa-user-circle text-white text-3xl"></i>
+                    </div>
+
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                        Candidate Hub
+                    </h2>
+
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8 flex-1">
+                        Access practical career resources, candidate guidance and insights designed to help you navigate your job search with confidence.
+                    </p>
+
+                    <span class="text-white font-semibold">
+                        Explore Candidate Hub
+                        <i class="fas fa-arrow-right ml-2 pathway-arrow"></i>
+                    </span>
+                </a>
+
+                <!-- Current Vacancies -->
+                <a href="current-vacancies.html" class="pathway-card bg-brand-card border border-gray-800 rounded-2xl p-8 md:p-10 flex flex-col">
+                    <div class="w-16 h-16 rounded-xl gradient-bg flex items-center justify-center mb-7">
+                        <i class="fas fa-search text-white text-3xl"></i>
+                    </div>
+
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                        Current Vacancies
+                    </h2>
+
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8 flex-1">
+                        Search current technology, digital and leadership opportunities represented by Consult &amp; Hire.
+                    </p>
+
+                    <span class="text-white font-semibold">
+                        Search Opportunities
+                        <i class="fas fa-arrow-right ml-2 pathway-arrow"></i>
+                    </span>
+                </a>
+
+                <!-- Career Consultant -->
+                <a href="career-consultant-interview-bootcamp.html" class="pathway-card bg-brand-card border border-gray-800 rounded-2xl p-8 md:p-10 flex flex-col">
+                    <div class="w-16 h-16 rounded-xl gradient-bg flex items-center justify-center mb-7">
+                        <i class="fas fa-comments text-white text-3xl"></i>
+                    </div>
+
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                        Career Consultant &amp; Interview Bootcamp
+                    </h2>
+
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8 flex-1">
+                        Work with a career specialist to strengthen your positioning, sharpen your interview technique and prepare for important career conversations.
+                    </p>
+
+                    <span class="text-white font-semibold">
+                        Explore Career Support
+                        <i class="fas fa-arrow-right ml-2 pathway-arrow"></i>
+                    </span>
+                </a>
+
+                <!-- Register -->
+                <a href="register.html" class="pathway-card bg-brand-card border border-gray-800 rounded-2xl p-8 md:p-10 flex flex-col">
+                    <div class="w-16 h-16 rounded-xl gradient-bg flex items-center justify-center mb-7">
+                        <i class="fas fa-user-plus text-white text-3xl"></i>
+                    </div>
+
+                    <h2 class="text-2xl md:text-3xl font-bold text-white mb-4">
+                        Register
+                    </h2>
+
+                    <p class="text-gray-400 text-lg leading-relaxed mb-8 flex-1">
+                        Join our talent network, upload your CV and tell us what you are looking for so we can consider you for relevant opportunities.
+                    </p>
+
+                    <span class="text-white font-semibold">
+                        Register Your Profile
+                        <i class="fas fa-arrow-right ml-2 pathway-arrow"></i>
+                    </span>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Candidate Promise -->
+    <section class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-6xl mx-auto glass-effect rounded-2xl p-8 md:p-12">
+                <div class="grid lg:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <p class="text-blue-300 uppercase tracking-widest text-sm font-semibold mb-4">
+                            Our Candidate Commitment
+                        </p>
+
+                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
+                            Your career deserves more than a transactional recruitment experience.
+                        </h2>
+                    </div>
+
+                    <div>
+                        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+                            We aim to provide honest communication, useful market insight and a respectful candidate experience throughout every interaction.
+                        </p>
+
+                        <ul class="space-y-4 text-gray-300">
+                            <li class="flex gap-3">
+                                <i class="fas fa-check-circle text-blue-400 mt-1"></i>
+                                <span>Clear and transparent communication</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i class="fas fa-check-circle text-blue-400 mt-1"></i>
+                                <span>Relevant opportunities aligned with your goals</span>
+                            </li>
+                            <li class="flex gap-3">
+                                <i class="fas fa-check-circle text-blue-400 mt-1"></i>
+                                <span>Practical preparation and market guidance</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="gradient-bg py-20">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
+                    Ready to explore your next opportunity?
+                </h2>
+
+                <p class="text-xl text-gray-300 mb-8">
+                    Browse current vacancies or register with Consult &amp; Hire to be considered for future roles.
+                </p>
+
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="current-vacancies.html" class="inline-flex justify-center bg-white text-brand-dark hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-colors">
+                        View Current Vacancies
+                    </a>
+
+                    <a href="register.html" class="inline-flex justify-center border border-gray-400 hover:border-white text-white px-8 py-4 rounded-lg font-semibold transition-colors">
+                        Register
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2026 Consult &amp; Hire. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.getElementById("menu-button");
+        const mobileMenu = document.getElementById("mobile-menu");
+
+        menuButton.addEventListener("click", function () {
+            const isOpen = mobileMenu.classList.toggle("open");
+            menuButton.setAttribute("aria-expanded", String(isOpen));
+            menuButton.innerHTML = isOpen
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
+        });
+    </script>
+</body>
+</html>
