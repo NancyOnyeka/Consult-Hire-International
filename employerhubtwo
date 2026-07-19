@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Submit a Hiring Enquiry | Consult & Hire</title>
-  <meta name="description" content="Submit a hiring enquiry with Consult & Hire for specialist technology recruitment, executive search, AI hiring, talent intelligence and employer branding support." />
+  <meta name="description" content="Submit a hiring enquiry with Consult & Hire for specialist technology recruitment, executive search, talent intelligence and employer branding support." />
 
   <style>
     :root {
@@ -417,10 +417,11 @@
       <div class="hero-card">
         <h3>We support hiring across:</h3>
         <ul>
-          <li>Engineering, DevOps, SRE and Platform Engineering</li>
-          <li>AI, Machine Learning and Data Science</li>
-          <li>Product, Analytics and Technology Leadership</li>
-          <li>Executive Search and Talent Intelligence</li>
+          <li>Engineering, EUX, EUC, Design and Solution Architecture</li>
+          <li>Data Science & AI</li>
+          <li>Insights, Quants and Advanced Analytics</li>
+          <li>Executive Search</li>
+          <li>Talent Intelligence</li>
         </ul>
       </div>
     </div>
