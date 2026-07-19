@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consult & Hire | Global Tech Recruitment</title>
+    <meta name="description" content="Consult & Hire specialises in global technology recruitment, executive search, talent intelligence, employer branding and hiring support for ambitious organisations.">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: "#0a0a0a",
+                            blue: "#1e3a8a",
+                            purple: "#581c87",
+                            accent: "#3730a3",
+                            surface: "#171717",
+                            card: "#262626"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 50%, #2e1065 100%);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .service-card {
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: #1e3a8a;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .hero-logo {
+            filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.45));
+        }
+    </style>
+</head>
+
+<body class="font-sans text-gray-100 bg-brand-dark antialiased overflow-x-hidden">
+
+    <!-- Header -->
+    <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300" id="header">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+             <div class="flex justify-between items-center h-20">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center border border-gray-700">
+                        <i class="fas fa-briefcase text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-white">Consult & Hire</h1>
+                        <p class="text-xs text-gray-400">Technology Talent Acquisition</p>
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <ul id="desktop-nav" class="flex space-x-6"></ul>
+                    <a href="register.html" class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200">Register or Hire</a>
+                </div>
+
+                <button class="md:hidden text-white text-2xl" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-surface border-t border-gray-800">
+            <ul id="mobile-nav" class="px-4 py-4 space-y-3"></ul>
+            <div class="px-4 pb-4">
+                <a href="hire_talent.html" class="block bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors duration-200">Hire Talent</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="gradient-bg pt-32 pb-20 lg:pt-40 lg:pb-28 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20">
+            <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
+        </div>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-blue-300 uppercase tracking-widest font-semibold mb-4">Global Tech Recruitment</p>
+                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Experts in Global Tech Talent</h1>
+                    <p class="text-xl text-gray-300 leading-relaxed mb-8">Connecting ambitious organisations with exceptional Engineering, AI, Analytics, Data Science and technology leadership talent across global markets.</p>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="register.html#employer" class="bg-white text-brand-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200 text-center">Submit a Hiring Enquiry</a>
+                        <a href="register.html#candidate" class="glass-effect text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 text-center">Submit Your CV</a>
+                    </div>
+                </div>
+
+                <div class="glass-effect rounded-3xl p-6 md:p-10 flex items-center justify-center min-h-[320px]">
+                    <img src="Logo_Website.png" alt="Consult & Hire logo" class="hero-logo w-full max-w-xl rounded-2xl object-contain">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Introduction -->
+    <section class="py-20 bg-white text-brand-dark">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-5xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <p class="text-brand-blue uppercase tracking-widest font-semibold mb-3">Who We Support</p>
+                    <h2 class="text-3xl md:text-5xl font-bold mb-6">Specialist hiring support for growing technology teams</h2>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-6">Consult &amp; Hire works with start-ups, scale-ups and established organisations that need access to high-calibre technology talent.</p>
+                    <p class="text-lg text-gray-600 leading-relaxed">From BAU recruitment and executive search to employer branding, talent mapping and recruiter training, we help organisations hire with clarity, confidence and market insight.</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-10 border border-gray-200 shadow-sm">
+                    <h3 class="text-2xl font-bold mb-8">We specialise in:</h3>
+                    <div class="space-y-5">
+                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">Engineering, DevOps, Platform and SRE talent</p></div>
+                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">AI, Machine Learning and Generative AI hiring</p></div>
+                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">Data Engineering, Analytics and Data Science</p></div>
+                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">Technology leadership and executive search</p></div>
+                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">Employer brand and talent intelligence projects</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-20 bg-brand-surface">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Contact Us</h2>
+                <p class="text-gray-400 text-lg mb-8">Ready to discuss your next hire or career move? Get in touch with Consult&amp;Hire.</p>
+                <a href="mailto:hello@consultandhire.com" class="inline-flex items-center justify-center bg-white text-brand-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200">
+                    <i class="fas fa-envelope mr-3"></i>hello@consultandhire.com
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black border-t border-gray-800 py-8">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <p class="text-gray-500 text-sm">&copy; <span id="current-year"></span> Consult &amp; Hire. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const navItems = [
+            { label: "Employers", href: "employerhub.html" },
+            { label: "Job Seekers", href: "candidatehub.html" },
+            { label: "About Us", href: "about.html" },
+            { label: "Contact", href: "contactus" }
+        ];
+
+        function renderNavItems(items) {
+            return items.map(item => `
+                <li>
+                    <a href="${item.href}" class="block text-gray-300 hover:text-white font-medium transition-colors duration-200">
+                        ${item.label}
+                    </a>
+                </li>
+            `).join("");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("desktop-nav").innerHTML = renderNavItems(navItems);
+            document.getElementById("mobile-nav").innerHTML = renderNavItems(navItems);
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+
+            const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+
+            mobileMenuBtn.addEventListener("click", function () {
+                const isHidden = mobileMenu.classList.toggle("hidden");
+                mobileMenuBtn.setAttribute("aria-expanded", String(!isHidden));
+            });
+
+            mobileMenu.addEventListener("click", function (event) {
+                if (event.target.tagName === "A") {
+                    mobileMenu.classList.add("hidden");
+                    mobileMenuBtn.setAttribute("aria-expanded", "false");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
