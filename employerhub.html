@@ -1,381 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <base target="_self">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Employer Hub | Consult &amp; Hire</title>
-    <meta name="description" content="Access Consult & Hire employer services, including consultations, vacancy submission, Talent Academy, Talent Intelligence, employer insights, outplacement and employer brand support.">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: "#0a0a0a",
-                            blue: "#1e3a8a",
-                            purple: "#581c87",
-                            accent: "#3730a3",
-                            surface: "#171717",
-                            card: "#262626"
-                        }
-                    },
-                    fontFamily: {
-                        sans: ["Inter", "sans-serif"]
-                    }
-                }
-            }
-        };
-    </script>
-
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-
-        .gradient-bg {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 50%, #2e1065 100%);
-        }
-
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .service-card {
-            transition:
-                transform 0.25s ease,
-                border-color 0.25s ease,
-                box-shadow 0.25s ease,
-                background-color 0.25s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            border-color: rgba(96, 165, 250, 0.6);
-            background-color: #2b2b2b;
-            box-shadow: 0 22px 44px rgba(0, 0, 0, 0.3);
-        }
-
-        .service-card:hover .service-arrow {
-            transform: translateX(4px);
-        }
-
-        .service-arrow {
-            transition: transform 0.2s ease;
-        }
-
-        .mobile-menu {
-            display: none;
-        }
-
-        .mobile-menu.open {
-            display: block;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employer Hub | Consult &amp; Hire</title>
+<meta name="description" content="Access Consult & Hire employer services, including consultations, vacancy submission, Talent Academy, Talent Intelligence, employer insights, outplacement and employer brand support.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config={theme:{extend:{colors:{brand:{dark:'#0a0a0a',blue:'#1e3a8a',surface:'#171717',card:'#262626'}},fontFamily:{sans:['Inter','sans-serif']}}}}
+</script>
+<style>
+html{scroll-behavior:smooth}.gradient-bg{background:linear-gradient(135deg,#0a0a0a 0%,#1e1b4b 50%,#2e1065 100%)}
+.glass-effect{background:rgba(255,255,255,.05);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1)}
+.service-card{transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease,background-color .25s ease}
+.service-card:hover{transform:translateY(-6px);border-color:rgba(96,165,250,.6);background:#2b2b2b;box-shadow:0 22px 44px rgba(0,0,0,.3)}
+.service-card:hover .service-arrow{transform:translateX(4px)}.service-arrow{transition:transform .2s ease}.mobile-menu{display:none}.mobile-menu.open{display:block}
+</style>
 </head>
-
 <body class="font-sans text-gray-100 bg-brand-dark antialiased overflow-x-hidden">
-
-    <!-- Header -->
-    <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="flex items-center space-x-3">
-                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center border border-gray-700">
-                        <i class="fas fa-briefcase text-white text-xl"></i>
-                    </div>
-
-                    <div>
-                        <h1 class="text-xl font-bold text-white">Consult &amp; Hire</h1>
-                        <p class="text-xs text-gray-400">Experts in Global Tech Talent</p>
-                    </div>
-                </a>
-
-                <div class="hidden md:flex items-center space-x-8">
-                    <a href="index.html" class="text-gray-300 hover:text-white font-medium transition-colors">Home</a>
-                    <a href="about.html" class="text-gray-300 hover:text-white font-medium transition-colors">About Us</a>
-                    <a href="current-vacancies.html" class="text-gray-300 hover:text-white font-medium transition-colors">Current Vacancies</a>
-                    <a href="clientcalendar.html" class="bg-brand-blue hover:bg-blue-700 text-white px-5 py-3 rounded-lg font-semibold transition-colors">
-                        Free Consultation
-                    </a>
-                </div>
-
-                <button id="menu-button" type="button" class="md:hidden text-white text-2xl" aria-label="Open navigation menu" aria-expanded="false">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-
-            <div id="mobile-menu" class="mobile-menu md:hidden border-t border-gray-800 pb-5">
-                <div class="flex flex-col pt-4 space-y-3">
-                    <a href="index.html" class="text-gray-300 hover:text-white">Home</a>
-                    <a href="about.html" class="text-gray-300 hover:text-white">About Us</a>
-                    <a href="current-vacancies.html" class="text-gray-300 hover:text-white">Current Vacancies</a>
-                    <a href="clientcalendar.html" class="text-blue-300 hover:text-white font-semibold">Schedule a Free Consultation</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <!-- Hero -->
-    <section class="gradient-bg pt-36 pb-24 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
-        </div>
-
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-5xl mx-auto text-center">
-                <p class="text-blue-300 uppercase tracking-widest font-semibold mb-6">
-                    Consult &amp; Hire
-                </p>
-
-                <h1 class="text-5xl md:text-7xl font-bold text-blue-300 mb-8 leading-none">
-                    Employer Hub
-                </h1>
-
-                <p class="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto">
-                    Your gateway to recruitment services, strategic hiring advice, talent intelligence, employer branding and workforce capability.
-                </p>
-
-                <div class="flex flex-col sm:flex-row justify-center gap-4 mt-10">
-                    <a href="clientcalendar.html" class="bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors">
-                        Schedule a Free Consultation
-                    </a>
-
-                    <a href="submit-vacancy.html" class="border border-gray-500 hover:border-white text-white px-8 py-4 rounded-lg font-semibold transition-colors">
-                        Submit a Vacancy
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Intro -->
-    <section class="py-16 bg-brand-surface">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-4xl mx-auto text-center">
-                <p class="text-blue-400 uppercase tracking-widest text-sm font-semibold mb-3">Employer Services</p>
-
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-6">
-                    Choose the support your organisation needs
-                </h2>
-
-                <p class="text-lg md:text-xl text-gray-400 leading-relaxed">
-                    Whether you are hiring now, planning future capability, strengthening your employer brand or supporting employees through transition, start with the service most relevant to your business.
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Service Cards -->
-    <main class="py-20 bg-black">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <a href="clientcalendar.html" class="service-card bg-brand-card border border-blue-700 rounded-2xl p-8 flex flex-col relative">
-                    <div class="absolute top-5 right-5 bg-blue-900 text-blue-200 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">
-                        Start Here
-                    </div>
-
-                    <div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6">
-                        <i class="fas fa-calendar-check text-white text-2xl"></i>
-                    </div>
-
-                    <h2 class="text-2xl font-bold text-white mb-4">Schedule a Free Consultation</h2>
-
-                    <p class="text-gray-400 leading-relaxed mb-8 flex-1">
-                        Book a convenient time to discuss your hiring plans, current challenges or future workforce needs with a Consult &amp; Hire specialist.
-                    </p>
-
-                    <span class="text-white font-semibold">
-                        View Calendar
-                        <i class="fas fa-arrow-right ml-2 service-arrow"></i>
-                    </span>
-                </a>
-
-                <a href="submit-vacancy.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 flex flex-col">
-                    <div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6">
-                        <i class="fas fa-file-signature text-white text-2xl"></i>
-                    </div>
-
-                    <h2 class="text-2xl font-bold text-white mb-4">Submit a Vacancy</h2>
-
-                    <p class="text-gray-400 leading-relaxed mb-8 flex-1">
-                        Share the essential details of your vacancy through a short, straightforward form and let us guide the next steps.
-                    </p>
-
-                    <span class="text-white font-semibold">
-                        Submit Vacancy
-                        <i class="fas fa-arrow-right ml-2 service-arrow"></i>
-                    </span>
-                </a>
-
-                <a href="talent_academy.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 flex flex-col">
-                    <div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6">
-                        <i class="fas fa-graduation-cap text-white text-2xl"></i>
-                    </div>
-
-                    <h2 class="text-2xl font-bold text-white mb-4">Talent Academy</h2>
-
-                    <p class="text-gray-400 leading-relaxed mb-8 flex-1">
-                        Develop stronger Talent Acquisition teams, hiring managers and business leaders through practical recruitment training.
-                    </p>
-
-                    <span class="text-white font-semibold">
-                        Explore Talent Academy
-                        <i class="fas fa-arrow-right ml-2 service-arrow"></i>
-                    </span>
-                </a>
-
-                <a href="talent_intelligence.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 flex flex-col">
-                    <div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6">
-                        <i class="fas fa-chart-pie text-white text-2xl"></i>
-                    </div>
-
-                    <h2 class="text-2xl font-bold text-white mb-4">Talent Intelligence</h2>
-
-                    <p class="text-gray-400 leading-relaxed mb-8 flex-1">
-                        Make more informed workforce decisions using market insight, talent mapping, salary intelligence and competitor analysis.
-                    </p>
-
-                    <span class="text-white font-semibold">
-                        Explore Talent Intelligence
-                        <i class="fas fa-arrow-right ml-2 service-arrow"></i>
-                    </span>
-                </a>
-
-                <a href="employer_articles.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 flex flex-col">
-                    <div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6">
-                        <i class="fas fa-book-open text-white text-2xl"></i>
-                    </div>
-
-                    <h2 class="text-2xl font-bold text-white mb-4">The Recruiter’s Journal</h2>
-
-                    <p class="text-gray-400 leading-relaxed mb-8 flex-1">
-                        Read commercial recruitment insights on candidate experience, employer brand, quality of hire, leadership and recruitment ROI.
-                    </p>
-
-                    <span class="text-white font-semibold">
-                        Read the Journal
-                        <i class="fas fa-arrow-right ml-2 service-arrow"></i>
-                    </span>
-                </a>
-
-                <a href="outplacements.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 flex flex-col">
-                    <div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6">
-                        <i class="fas fa-people-arrows text-white text-2xl"></i>
-                    </div>
-
-                    <h2 class="text-2xl font-bold text-white mb-4">Outplacement Services</h2>
-
-                    <p class="text-gray-400 leading-relaxed mb-8 flex-1">
-                        Support employees through career transition with practical, respectful and professionally delivered outplacement services.
-                    </p>
-
-                    <span class="text-white font-semibold">
-                        Explore Outplacement
-                        <i class="fas fa-arrow-right ml-2 service-arrow"></i>
-                    </span>
-                </a>
-
-                <a href="employer_.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 flex flex-col lg:col-start-2">
-                    <div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6">
-                        <i class="fas fa-bullhorn text-white text-2xl"></i>
-                    </div>
-
-                    <h2 class="text-2xl font-bold text-white mb-4">Employer Brand</h2>
-
-                    <p class="text-gray-400 leading-relaxed mb-8 flex-1">
-                        Strengthen how your organisation is perceived by candidates and employees through a clearer, more credible employer proposition.
-                    </p>
-
-                    <span class="text-white font-semibold">
-                        Build Your Employer Brand
-                        <i class="fas fa-arrow-right ml-2 service-arrow"></i>
-                    </span>
-                </a>
-            </div>
-        </div>
-    </main>
-
-    <!-- Decision CTA -->
-    <section class="py-20 bg-brand-surface">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-6xl mx-auto glass-effect rounded-2xl p-8 md:p-12">
-                <div class="grid lg:grid-cols-2 gap-10 items-center">
-                    <div>
-                        <p class="text-blue-300 uppercase tracking-widest text-sm font-semibold mb-4">Not Sure Where to Start?</p>
-
-                        <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
-                            Let’s identify the right next step.
-                        </h2>
-
-                        <p class="text-lg text-gray-300 leading-relaxed">
-                            A short consultation allows us to understand your priorities and recommend the service, programme or recruitment approach best suited to your organisation.
-                        </p>
-                    </div>
-
-                    <div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 lg:justify-end">
-                        <a href="clientcalendar.html" class="inline-flex justify-center bg-brand-blue hover:bg-blue-700 text-white px-7 py-4 rounded-lg font-semibold transition-colors">
-                            Schedule a Free Consultation
-                        </a>
-
-                        <a href="submit-vacancy.html" class="inline-flex justify-center border border-gray-500 hover:border-white text-white px-7 py-4 rounded-lg font-semibold transition-colors">
-                            Submit a Vacancy
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="gradient-bg py-20">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div class="max-w-4xl mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold text-white mb-5">
-                    Better talent decisions create stronger organisations.
-                </h2>
-
-                <p class="text-xl text-gray-300 mb-8">
-                    Access the insight, support and capability your organisation needs to hire, develop and transition talent with confidence.
-                </p>
-
-                <a href="clientcalendar.html" class="inline-flex bg-white text-brand-dark hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold transition-colors">
-                    Speak With Consult &amp; Hire
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-black border-t border-gray-800 py-8">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-500 text-sm">&copy; 2026 Consult &amp; Hire. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        const menuButton = document.getElementById("menu-button");
-        const mobileMenu = document.getElementById("mobile-menu");
-
-        menuButton.addEventListener("click", function () {
-            const isOpen = mobileMenu.classList.toggle("open");
-            menuButton.setAttribute("aria-expanded", String(isOpen));
-            menuButton.innerHTML = isOpen
-                ? '<i class="fas fa-times"></i>'
-                : '<i class="fas fa-bars"></i>';
-        });
-    </script>
-</body>
-</html>
+<header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800">
+<nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<a href="index.html" class="flex items-center space-x-3"><div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center border border-gray-700"><i class="fas fa-briefcase text-white text-xl"></i></div><div><h1 class="text-xl font-bold text-white">Consult &amp; Hire</h1><p class="text-xs text-gray-400">Experts in Global Tech Talent</p></div></a>
+<div class="hidden md:flex items-center space-x-8"><a href="index.html" class="text-gray-300 hover:text-white font-medium">Home</a><a href="about.html" class="text-gray-300 hover:text-white font-medium">About Us</a><a href="current-vacancies.html" class="text-gray-300 hover:text-white font-medium">Current Vacancies</a><a href="clientcalendar.html" class="bg-brand-blue hover:bg-blue-700 text-white px-5 py-3 rounded-lg font-semibold">Free Consultation</a></div>
+<button id="menu-button" class="md:hidden text-white text-2xl" aria-label="Open navigation menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+</div>
+<div id="mobile-menu" class="mobile-menu md:hidden border-t border-gray-800 pb-5"><div class="flex flex-col pt-4 space-y-3"><a href="index.html">Home</a><a href="about.html">About Us</a><a href="current-vacancies.html">Current Vacancies</a><a href="clientcalendar.html" class="text-blue-300 font-semibold">Schedule a Free Consultation</a></div></div>
+</nav></header>
+<section class="gradient-bg pt-36 pb-24 relative overflow-hidden"><div class="absolute inset-0 opacity-20"><div class="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div><div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div></div>
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10"><div class="max-w-5xl mx-auto text-center"><p class="text-blue-300 uppercase tracking-widest font-semibold mb-4">Employer Hub</p><h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Everything You Need to Make Better Talent Decisions</h1><p class="text-xl md:text-2xl text-gray-300 leading-relaxed max-w-4xl mx-auto">Access Consult &amp; Hire’s employer services, strategic recruitment support, workforce insight and practical hiring resources from one central hub.</p><div class="flex flex-col sm:flex-row justify-center gap-4 mt-10"><a href="clientcalendar.html" class="bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold">Schedule a Free Consultation</a><a href="submit-vacancy.html" class="border border-gray-500 hover:border-white text-white px-8 py-4 rounded-lg font-semibold">Submit a Vacancy</a></div></div></div></section>
+<section class="py-16 bg-brand-surface"><div class="container mx-auto px-4"><div class="max-w-4xl mx-auto text-center"><p class="text-blue-400 uppercase tracking-widest text-sm font-semibold mb-3">Employer Services</p><h2 class="text-3xl md:text-5xl font-bold text-white mb-6">Choose the support your organisation needs</h2><p class="text-lg md:text-xl text-gray-400 leading-relaxed">Whether you are hiring now, planning future capability, strengthening your employer brand or supporting employees through transition, start with the service most relevant to your business.</p></div></div></section>
+<main class="py-20 bg-black"><div class="container mx-auto px-4 sm:px-6 lg:px-8"><div class="max-w-7xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+<a href="clientcalendar.html" class="service-card bg-brand-card border border-blue-700 rounded-2xl p-8 flex flex-col relative"><div class="absolute top-5 right-5 bg-blue-900 text-blue-200 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full">Start Here</div><div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6"><i class="fas fa-calendar-check text-white text-2xl"></i></div><h2 class="text-2xl font-bold mb-4">Schedule a Free Consultation</h2><p class="text-gray-400 leading-relaxed mb-8 flex-1">Book a convenient time to discuss your hiring plans, current challenges or future workforce needs with a Consult &amp; Hire specialist.</p><span class="font-semibold">View Calendar <i class="fas fa-arrow-right ml-2 service-arrow"></i></span></a>
+<a href="submit-vacancy.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 flex flex-col"><div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6"><i class="fas fa-file-signature text-white text-2xl"></i></div><h2 class="text-2xl font-bold mb-4">Submit a Vacancy</h2><p class="text-gray-400 leading-relaxed mb-8 flex-1">Share the essential details of your vacancy through a short, straightforward form and let us guide the next steps.</p><span class="font-semibold">Submit Vacancy <i class="fas fa-arrow-right ml-2 service-arrow"></i></span></a>
+<a href="talent_academy.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 flex flex-col"><div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6"><i class="fas fa-graduation-cap text-white text-2xl"></i></div><h2 class="text-2xl font-bold mb-4">Talent Academy</h2><p class="text-gray-400 leading-relaxed mb-8 flex-1">Develop stronger Talent Acquisition teams, hiring managers and business leaders through practical recruitment training.</p><span class="font-semibold">Explore Talent Academy <i class="fas fa-arrow-right ml-2 service-arrow"></i></span></a>
+<a href="talent_intelligence.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 flex flex-col"><div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6"><i class="fas fa-chart-pie text-white text-2xl"></i></div><h2 class="text-2xl font-bold mb-4">Talent Intelligence</h2><p class="text-gray-400 leading-relaxed mb-8 flex-1">Make more informed workforce decisions using market insight, talent mapping, salary intelligence and competitor analysis.</p><span class="font-semibold">Explore Talent Intelligence <i class="fas fa-arrow-right ml-2 service-arrow"></i></span></a>
+<a href="employer_articles.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 flex flex-col"><div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6"><i class="fas fa-book-open text-white text-2xl"></i></div><h2 class="text-2xl font-bold mb-4">The Recruiter’s Journal</h2><p class="text-gray-400 leading-relaxed mb-8 flex-1">Read commercial recruitment insights on candidate experience, employer brand, quality of hire, leadership and recruitment ROI.</p><span class="font-semibold">Read the Journal <i class="fas fa-arrow-right ml-2 service-arrow"></i></span></a>
+<a href="outplacements.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 flex flex-col"><div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6"><i class="fas fa-people-arrows text-white text-2xl"></i></div><h2 class="text-2xl font-bold mb-4">Outplacement Services</h2><p class="text-gray-400 leading-relaxed mb-8 flex-1">Support employees through career transition with practical, respectful and professionally delivered outplacement services.</p><span class="font-semibold">Explore Outplacement <i class="fas fa-arrow-right ml-2 service-arrow"></i></span></a>
+<a href="employer_.html" class="service-card bg-brand-card border border-gray-800 rounded-2xl p-8 flex flex-col lg:col-start-2"><div class="w-14 h-14 rounded-xl gradient-bg flex items-center justify-center mb-6"><i class="fas fa-bullhorn text-white text-2xl"></i></div><h2 class="text-2xl font-bold mb-4">Employer Brand</h2><p class="text-gray-400 leading-relaxed mb-8 flex-1">Strengthen how your organisation is perceived by candidates and employees through a clearer, more credible employer proposition.</p><span class="font-semibold">Build Your Employer Brand <i class="fas fa-arrow-right ml-2 service-arrow"></i></span></a>
+</div></div></main>
+<section class="py-20 bg-brand-surface"><div class="container mx-auto px-4"><div class="max-w-6xl mx-auto glass-effect rounded-2xl p-8 md:p-12"><div class="grid lg:grid-cols-2 gap-10 items-center"><div><p class="text-blue-300 uppercase tracking-widest text-sm font-semibold mb-4">Not Sure Where to Start?</p><h2 class="text-3xl md:text-5xl font-bold mb-5">Let’s identify the right next step.</h2><p class="text-lg text-gray-300">A short consultation allows us to understand your priorities and recommend the service, programme or recruitment approach best suited to your organisation.</p></div><div class="flex flex-col sm:flex-row lg:flex-col xl:flex-row gap-4 lg:justify-end"><a href="clientcalendar.html" class="inline-flex justify-center bg-brand-blue hover:bg-blue-700 px-7 py-4 rounded-lg font-semibold">Schedule a Free Consultation</a><a href="submit-vacancy.html" class="inline-flex justify-center border border-gray-500 hover:border-white px-7 py-4 rounded-lg font-semibold">Submit a Vacancy</a></div></div></div></div></section>
+<section class="gradient-bg py-20"><div class="container mx-auto px-4 text-center"><div class="max-w-4xl mx-auto"><h2 class="text-3xl md:text-5xl font-bold mb-5">Better talent decisions create stronger organisations.</h2><p class="text-xl text-gray-300 mb-8">Access the insight, support and capability your organisation needs to hire, develop and transition talent with confidence.</p><a href="clientcalendar.html" class="inline-flex bg-white text-brand-dark hover:bg-gray-100 px-8 py-4 rounded-lg font-semibold">Speak With Consult &amp; Hire</a></div></div></section>
+<footer class="bg-black border-t border-gray-800 py-8"><div class="container mx-auto px-4 text-center"><p class="text-gray-500 text-sm">&copy; 2026 Consult &amp; Hire. All rights reserved.</p></div></footer>
+<script>const b=document.getElementById('menu-button'),m=document.getElementById('mobile-menu');b.addEventListener('click',()=>{const o=m.classList.toggle('open');b.setAttribute('aria-expanded',String(o));b.innerHTML=o?'<i class="fas fa-times"></i>':'<i class="fas fa-bars"></i>';});</script>
+</body></html>
