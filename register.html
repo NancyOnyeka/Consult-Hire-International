@@ -159,7 +159,7 @@
                         <p class="text-gray-400">Tell us about your experience, career goals and preferred opportunities.</p>
                     </div>
 
-                    <form id="candidate-form" class="space-y-6" action="#" method="post" enctype="multipart/form-data">
+                    <form id="candidate-form" class="space-y-6" enctype="multipart/form-data">
                         <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label for="candidate-name" class="block text-sm font-medium text-gray-300 mb-2">Full Name *</label>
@@ -180,7 +180,7 @@
 
                             <div>
                                 <label for="candidate-location" class="block text-sm font-medium text-gray-300 mb-2">Current Location</label>
-                                <input id="candidate-location" name="candidate-location" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="City, country or remote preference">
+                                <input id="candidate-location" name="candidate-location" type="text" class="dark-input form-input w-full rounded-lg px-4 py-3" placeholder="City and country">
                             </div>
                         </div>
 
@@ -190,17 +190,16 @@
                                 <select id="candidate-specialism" name="candidate-specialism" class="dark-input form-input w-full rounded-lg px-4 py-3" required>
                                     <option value="">Select your specialism</option>
                                     <option>Engineering</option>
-                                    <option>Data Science & AI</option>
-                                    <option>Advanced Analytics & BI</option>
+                                    <option>Data Science &amp; AI</option>
+                                    <option>Advanced Analytics &amp; BI</option>
                                     <option>Security</option>
                                     <option>Product</option>
-                                    <option>EUX & EUC</option>
+                                    <option>EUX &amp; EUC</option>
                                     <option>UI Design</option>
                                     <option>Executive</option>
                                 </select>
                             </div>
 
-                        <div class="grid md:grid-cols-2 gap-6">
                             <div>
                                 <label for="candidate-work-type" class="block text-sm font-medium text-gray-300 mb-2">Preferred Work Type</label>
                                 <select id="candidate-work-type" name="candidate-work-type" class="dark-input form-input w-full rounded-lg px-4 py-3">
@@ -212,18 +211,44 @@
                                     <option>Open to Multiple Options</option>
                                 </select>
                             </div>
+                        </div>
 
-                            <div>
-                                <label for="candidate-work-location" class="block text-sm font-medium text-gray-300 mb-2">Preferred Location Model</label>
-                                <select id="candidate-work-location" name="candidate-work-location" class="dark-input form-input w-full rounded-lg px-4 py-3">
-                                    <option value="">Select preference</option>
-                                    <option>Remote</option>
-                                    <option>Hybrid</option>
-                                    <option>On-site</option>
-                                    <option>Open to Relocation</option>
-                                    <option>Open to Global Opportunities</option>
-                                </select>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-300 mb-3">Preferred Location Model</label>
+
+                            <div id="location-options" class="grid sm:grid-cols-2 gap-3">
+                                <label class="flex items-center gap-3 rounded-lg border border-gray-700 bg-brand-surface px-4 py-3">
+                                    <input type="checkbox" id="location-all" name="candidate-work-location[]" value="Open to All" class="h-4 w-4">
+                                    <span>Open to All Opportunities</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 rounded-lg border border-gray-700 bg-brand-surface px-4 py-3">
+                                    <input type="checkbox" class="location-option h-4 w-4" name="candidate-work-location[]" value="Remote">
+                                    <span>Remote</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 rounded-lg border border-gray-700 bg-brand-surface px-4 py-3">
+                                    <input type="checkbox" class="location-option h-4 w-4" name="candidate-work-location[]" value="Hybrid">
+                                    <span>Hybrid</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 rounded-lg border border-gray-700 bg-brand-surface px-4 py-3">
+                                    <input type="checkbox" class="location-option h-4 w-4" name="candidate-work-location[]" value="On-site">
+                                    <span>On-site</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 rounded-lg border border-gray-700 bg-brand-surface px-4 py-3">
+                                    <input type="checkbox" class="location-option h-4 w-4" name="candidate-work-location[]" value="Open to Relocation">
+                                    <span>Open to Relocation</span>
+                                </label>
+
+                                <label class="flex items-center gap-3 rounded-lg border border-gray-700 bg-brand-surface px-4 py-3">
+                                    <input type="checkbox" class="location-option h-4 w-4" name="candidate-work-location[]" value="Open to Global Opportunities">
+                                    <span>Open to Global Opportunities</span>
+                                </label>
                             </div>
+
+                            <p class="text-gray-500 text-sm mt-2">Choose one or more options, or select “Open to All Opportunities”.</p>
                         </div>
 
                         <div class="grid md:grid-cols-2 gap-6">
@@ -249,19 +274,21 @@
                         </div>
 
                         <div>
-                            <label for="candidate-cv" class="block text-sm font-medium text-gray-300 mb-2">Upload CV / Resume</label>
-                            <input id="candidate-cv" name="candidate-cv" type="file" accept=".pdf,.doc,.docx" class="dark-input form-input w-full rounded-lg px-4 py-3 file:mr-4 file:rounded-lg file:border-0 file:bg-brand-blue file:px-4 file:py-2 file:text-white">
+                            <label for="candidate-cv" class="block text-sm font-medium text-gray-300 mb-2">Upload CV / Resume *</label>
+                            <input id="candidate-cv" name="candidate-cv" type="file" accept=".pdf,.doc,.docx" class="dark-input form-input w-full rounded-lg px-4 py-3 file:mr-4 file:rounded-lg file:border-0 file:bg-brand-blue file:px-4 file:py-2 file:text-white" required>
                             <p class="text-gray-500 text-sm mt-2">Accepted formats: PDF, DOC or DOCX.</p>
                         </div>
 
                         <label class="flex items-start gap-3 text-sm text-gray-400">
-                            <input type="checkbox" required class="mt-1">
-                            <span>I confirm that the information provided is accurate and I consent to Consult&amp;Hire contacting me about relevant opportunities.</span>
+                            <input id="candidate-consent" name="candidate-consent" type="checkbox" required class="mt-1 h-4 w-4">
+                            <span>I confirm that the information provided is accurate and I consent to Consult &amp; Hire contacting me about relevant opportunities.</span>
                         </label>
 
-                        <button type="submit" class="w-full bg-brand-blue hover:bg-blue-700 text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200">
+                        <button id="candidate-submit" type="submit" class="w-full bg-brand-blue hover:bg-blue-700 disabled:opacity-60 disabled:cursor-not-allowed text-white px-8 py-4 rounded-lg font-semibold transition-colors duration-200">
                             Submit Candidate Registration
                         </button>
+
+                        <p id="candidate-form-status" class="hidden text-center text-sm" role="status" aria-live="polite"></p>
                     </form>
                 </div>
 
@@ -414,26 +441,61 @@
             const candidateTab = document.getElementById("tab-candidate");
             const employerTab = document.getElementById("tab-employer");
 
-            if (type === "candidate" || type === "I am a candidate") {
-                candidateForm.classList.remove("hidden");
-                employerForm.classList.add("hidden");
+            const showCandidate = type === "candidate";
 
-                candidateTab.classList.add("tab-active");
-                candidateTab.classList.remove("tab-inactive");
+            candidateForm.classList.toggle("hidden", !showCandidate);
+            employerForm.classList.toggle("hidden", showCandidate);
 
-                employerTab.classList.add("tab-inactive");
-                employerTab.classList.remove("tab-active");
-            } else {
-                employerForm.classList.remove("hidden");
-                candidateForm.classList.add("hidden");
+            candidateTab.classList.toggle("tab-active", showCandidate);
+            candidateTab.classList.toggle("tab-inactive", !showCandidate);
 
-                employerTab.classList.add("tab-active");
-                employerTab.classList.remove("tab-inactive");
-
-                candidateTab.classList.add("tab-inactive");
-                candidateTab.classList.remove("tab-active");
-            }
+            employerTab.classList.toggle("tab-active", !showCandidate);
+            employerTab.classList.toggle("tab-inactive", showCandidate);
         }
+
+        const openToAll = document.getElementById("location-all");
+        const locationOptions = document.querySelectorAll(".location-option");
+
+        openToAll.addEventListener("change", function () {
+            locationOptions.forEach(option => {
+                option.checked = false;
+                option.disabled = this.checked;
+            });
+        });
+
+        locationOptions.forEach(option => {
+            option.addEventListener("change", function () {
+                if (this.checked) {
+                    openToAll.checked = false;
+                    locationOptions.forEach(item => {
+                        item.disabled = false;
+                    });
+                }
+            });
+        });
+
+        const candidateForm = document.getElementById("candidate-form");
+        const candidateSubmit = document.getElementById("candidate-submit");
+        const candidateStatus = document.getElementById("candidate-form-status");
+
+        candidateForm.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            candidateSubmit.disabled = true;
+            candidateStatus.className = "text-center text-sm text-gray-300";
+            candidateStatus.textContent = "Submitting your registration…";
+
+            await new Promise(resolve => setTimeout(resolve, 900));
+
+            candidateStatus.className = "text-center text-sm text-green-400";
+            candidateStatus.innerHTML = '<i class="fas fa-check-circle mr-2"></i>Thank you. Your candidate registration has been received.';
+            candidateSubmit.disabled = false;
+        });
+
+        document.getElementById("employer-form").addEventListener("submit", function (event) {
+            event.preventDefault();
+            alert("Employer form preview submitted.");
+        });
     </script>
 </body>
 </html>
