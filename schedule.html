@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Book a Consultation | Consult & Hire</title>
+  <meta name="description" content="Book a confidential consultation with Consult & Hire." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #15163f;
+      --navy-deep: #0d0f2f;
+      --purple: #7954c9;
+      --purple-light: #a883ee;
+      --ink: #17182f;
+      --mist: #f5f4f8;
+      --line: #e5e2ec;
+      --muted: #696c7e;
+      --white: #ffffff;
+      --success: #1f7a52;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Inter", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 10%, rgba(158, 113, 235, .20), transparent 30%),
+        radial-gradient(circle at 88% 88%, rgba(104, 69, 182, .25), transparent 34%),
+        linear-gradient(135deg, #11133b 0%, #191746 50%, #2b1758 100%);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid rgba(255,255,255,.09);
+      background: rgba(13,15,47,.82);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand {
+      color: white;
+      font-size: 1.42rem;
+      font-weight: 700;
+      letter-spacing: -.04em;
+    }
+
+    .brand span { color: var(--purple-light); }
+
+    .back-link {
+      color: rgba(255,255,255,.72);
+      font-size: .9rem;
+      transition: .2s ease;
+    }
+
+    .back-link:hover { color: white; }
+
+    main { padding: 62px 0 74px; }
+
+    .page-heading {
+      max-width: 680px;
+      margin-bottom: 34px;
+      color: white;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: #b999f0;
+      font-size: .78rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.65rem, 6vw, 5rem);
+      line-height: 1;
+      letter-spacing: -.055em;
+    }
+
+    .page-heading p {
+      max-width: 610px;
+      margin: 22px 0 0;
+      color: rgba(255,255,255,.72);
+      line-height: 1.75;
+      font-size: 1rem;
+    }
+
+    .booking-shell {
+      display: grid;
+      grid-template-columns: .72fr 1.28fr;
+      overflow: hidden;
+      background: white;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 20px;
+      box-shadow: 0 32px 80px rgba(5,5,28,.34);
+    }
+
+    .booking-info {
+      padding: 38px 34px;
+      color: white;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(171,126,244,.23), transparent 38%),
+        linear-gradient(160deg, #181749, #21134d);
+    }
+
+    .booking-info h2,
+    .form-panel h2 {
+      margin: 0;
+      font-size: 1.7rem;
+      letter-spacing: -.035em;
+    }
+
+    .booking-info > p {
+      margin: 15px 0 0;
+      color: rgba(255,255,255,.68);
+      line-height: 1.7;
+      font-size: .92rem;
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 20px;
+      margin-top: 34px;
+    }
+
+    .detail {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 13px;
+      align-items: start;
+    }
+
+    .detail-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.12);
+    }
+
+    .detail-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .detail strong {
+      display: block;
+      margin: 2px 0 5px;
+      font-size: .88rem;
+    }
+
+    .detail span {
+      color: rgba(255,255,255,.64);
+      font-size: .84rem;
+      line-height: 1.55;
+    }
+
+    .note {
+      margin-top: 34px;
+      padding: 20px;
+      border: 1px solid rgba(255,255,255,.14);
+      border-radius: 12px;
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.73);
+      font-size: .84rem;
+      line-height: 1.65;
+    }
+
+    .form-panel {
+      padding: 38px 42px 42px;
+      background: white;
+    }
+
+    .form-panel > p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      line-height: 1.65;
+      font-size: .9rem;
+    }
+
+    form { margin-top: 30px; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .field-wrap.full { grid-column: 1 / -1; }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--navy);
+      font-size: .82rem;
+      font-weight: 600;
+    }
+
+    .required { color: #bd3960; }
+
+    .field {
+      width: 100%;
+      min-height: 48px;
+      padding: 13px 14px;
+      border: 1px solid #dcd8e5;
+      border-radius: 8px;
+      color: var(--ink);
+      background: white;
+      outline: none;
+      transition: .2s ease;
+    }
+
+    .field:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 4px rgba(121,84,201,.11);
+    }
+
+    textarea.field {
+      min-height: 112px;
+      resize: vertical;
+    }
+
+    .time-heading {
+      margin: 25px 0 13px;
+      color: var(--navy);
+      font-size: .82rem;
+      font-weight: 600;
+    }
+
+    .time-slots {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .time-option input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .time-option span {
+      min-height: 44px;
+      display: grid;
+      place-items: center;
+      padding: 10px;
+      border: 1px solid #dcd8e5;
+      border-radius: 8px;
+      color: #4e5063;
+      background: white;
+      cursor: pointer;
+      font-size: .86rem;
+      transition: .2s ease;
+    }
+
+    .time-option input:checked + span {
+      color: white;
+      border-color: var(--purple);
+      background: var(--purple);
+      box-shadow: 0 8px 20px rgba(121,84,201,.22);
+    }
+
+    .time-option span:hover {
+      border-color: var(--purple-light);
+      background: #faf8fe;
+    }
+
+    .summary {
+      display: none;
+      margin-top: 24px;
+      padding: 18px;
+      border: 1px solid #ded8eb;
+      border-radius: 10px;
+      background: #f8f6fc;
+    }
+
+    .summary.visible { display: block; }
+
+    .summary-title {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: .9rem;
+      font-weight: 700;
+    }
+
+    .summary-text {
+      margin: 0;
+      color: var(--muted);
+      font-size: .85rem;
+      line-height: 1.65;
+    }
+
+    .submit-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .submit-button {
+      min-height: 50px;
+      padding: 0 25px;
+      border: 0;
+      border-radius: 8px;
+      color: white;
+      background: linear-gradient(135deg, #6842b8, #8d65d4);
+      box-shadow: 0 12px 28px rgba(101,63,178,.26);
+      cursor: pointer;
+      font-weight: 600;
+      transition: .2s ease;
+    }
+
+    .submit-button:hover {
+      transform: translateY(-1px);
+      filter: brightness(1.06);
+    }
+
+    .privacy {
+      max-width: 330px;
+      color: #77798a;
+      font-size: .76rem;
+      line-height: 1.55;
+    }
+
+    .privacy a {
+      color: var(--purple);
+      text-decoration: underline;
+    }
+
+    .honeypot { display: none; }
+
+    footer {
+      padding: 26px 0 30px;
+      color: rgba(255,255,255,.42);
+      font-size: .76rem;
+    }
+
+    @media (max-width: 860px) {
+      .booking-shell { grid-template-columns: 1fr; }
+      .booking-info { padding: 32px; }
+    }
+
+    @media (max-width: 620px) {
+      .container { width: min(100% - 24px, 1120px); }
+      main { padding-top: 42px; }
+      .nav { min-height: 68px; }
+      .form-panel { padding: 30px 22px 34px; }
+      .booking-info { padding: 30px 22px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .field-wrap.full { grid-column: auto; }
+      .time-slots { grid-template-columns: repeat(2, 1fr); }
+      .back-link { font-size: .8rem; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">consult<span>&amp;</span>hire</a>
+    <a class="back-link" href="contact.html">← Back to Contact Us</a>
+  </div>
+</header>
+
+<main>
+  <div class="container">
+    <div class="page-heading">
+      <p class="eyebrow">Book a consultation</p>
+      <h1>Choose a time that works for you.</h1>
+      <p>
+        Select your preferred date and time, tell us a little about what you would like to discuss,
+        and we will confirm the appointment by email.
+      </p>
+    </div>
+
+    <section class="booking-shell">
+      <aside class="booking-info">
+        <h2>Consultation details</h2>
+        <p>A confidential, obligation-free conversation about your hiring needs or recruitment strategy.</p>
+
+        <div class="detail-list">
+          <div class="detail">
+            <div class="detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 7v5l3 2"></path>
+              </svg>
+            </div>
+            <div>
+              <strong>30-minute consultation</strong>
+              <span>Enough time to understand the situation and identify useful next steps.</span>
+            </div>
+          </div>
+
+          <div class="detail">
+            <div class="detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <rect x="3" y="5" width="18" height="15" rx="2"></rect>
+                <path d="M7 3v4M17 3v4M3 10h18"></path>
+              </svg>
+            </div>
+            <div>
+              <strong>Monday to Friday</strong>
+              <span>Available appointment times are shown in Australian Eastern time.</span>
+            </div>
+          </div>
+
+          <div class="detail">
+            <div class="detail-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M4 5h16v12H8l-4 3V5Z"></path>
+              </svg>
+            </div>
+            <div>
+              <strong>Phone or video call</strong>
+              <span>Choose your preferred meeting format when completing the form.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="note">
+          Submitting this form sends a booking request. Your appointment is confirmed only after you receive a confirmation from Consult & Hire.
+        </div>
+      </aside>
+
+      <div class="form-panel">
+        <h2>Request your appointment</h2>
+        <p>Complete the details below and we will be notified at hello@consultandhire.com.</p>
+
+        <form
+          id="bookingForm"
+          action="https://formsubmit.co/hello@consultandhire.com"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="New Consult & Hire Booking Request">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="true">
+          <input type="hidden" name="Appointment timezone" value="Australia/Brisbane (AEST)">
+          <input type="text" name="_honey" class="honeypot" tabindex="-1" autocomplete="off">
+
+          <div class="form-grid">
+            <div class="field-wrap">
+              <label for="firstName">First name <span class="required">*</span></label>
+              <input class="field" id="firstName" name="First name" type="text" placeholder="Your first name" required>
+            </div>
+
+            <div class="field-wrap">
+              <label for="lastName">Last name <span class="required">*</span></label>
+              <input class="field" id="lastName" name="Last name" type="text" placeholder="Your last name" required>
+            </div>
+
+            <div class="field-wrap">
+              <label for="email">Work email <span class="required">*</span></label>
+              <input class="field" id="email" name="Email" type="email" placeholder="you@company.com" required>
+            </div>
+
+            <div class="field-wrap">
+              <label for="phone">Phone number <span class="required">*</span></label>
+              <input class="field" id="phone" name="Phone" type="tel" placeholder="Your phone number" required>
+            </div>
+
+            <div class="field-wrap">
+              <label for="company">Company</label>
+              <input class="field" id="company" name="Company" type="text" placeholder="Your company">
+            </div>
+
+            <div class="field-wrap">
+              <label for="format">Meeting format <span class="required">*</span></label>
+              <select class="field" id="format" name="Meeting format" required>
+                <option value="">Select an option</option>
+                <option>Phone call</option>
+                <option>Video call</option>
+              </select>
+            </div>
+
+            <div class="field-wrap full">
+              <label for="date">Preferred date <span class="required">*</span></label>
+              <input class="field" id="date" name="Preferred date" type="date" required>
+            </div>
+          </div>
+
+          <p class="time-heading">Preferred time <span class="required">*</span></p>
+
+          <div class="time-slots">
+            <label class="time-option">
+              <input type="radio" name="Preferred time" value="9:00 am" required>
+              <span>9:00 am</span>
+            </label>
+
+            <label class="time-option">
+              <input type="radio" name="Preferred time" value="10:00 am">
+              <span>10:00 am</span>
+            </label>
+
+            <label class="time-option">
+              <input type="radio" name="Preferred time" value="11:00 am">
+              <span>11:00 am</span>
+            </label>
+
+            <label class="time-option">
+              <input type="radio" name="Preferred time" value="1:00 pm">
+              <span>1:00 pm</span>
+            </label>
+
+            <label class="time-option">
+              <input type="radio" name="Preferred time" value="2:30 pm">
+              <span>2:30 pm</span>
+            </label>
+
+            <label class="time-option">
+              <input type="radio" name="Preferred time" value="4:00 pm">
+              <span>4:00 pm</span>
+            </label>
+          </div>
+
+          <div class="form-grid" style="margin-top: 20px;">
+            <div class="field-wrap full">
+              <label for="topic">What would you like to discuss? <span class="required">*</span></label>
+              <textarea class="field" id="topic" name="Consultation topic" placeholder="Tell us briefly about your hiring needs or the advice you are seeking." required></textarea>
+            </div>
+          </div>
+
+          <div id="summary" class="summary" aria-live="polite">
+            <p class="summary-title">Your requested appointment</p>
+            <p id="summaryText" class="summary-text"></p>
+          </div>
+
+          <div class="submit-row">
+            <button class="submit-button" type="submit">Request appointment →</button>
+            <p class="privacy">
+              By submitting this form, you agree to our
+              <a href="privacy.html">Privacy Policy</a>.
+            </p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <div class="container">© 2026 Consult & Hire. All rights reserved.</div>
+</footer>
+
+<script>
+  const dateInput = document.getElementById("date");
+  const summary = document.getElementById("summary");
+  const summaryText = document.getElementById("summaryText");
+  const timeInputs = document.querySelectorAll('input[name="Preferred time"]');
+  const formatInput = document.getElementById("format");
+
+  const today = new Date();
+  const localToday = new Date(today.getTime() - today.getTimezoneOffset() * 60000)
+    .toISOString()
+    .split("T")[0];
+
+  dateInput.min = localToday;
+
+  function updateSummary() {
+    const dateValue = dateInput.value;
+    const selectedTime = document.querySelector('input[name="Preferred time"]:checked');
+    const meetingFormat = formatInput.value;
+
+    if (!dateValue && !selectedTime && !meetingFormat) {
+      summary.classList.remove("visible");
+      return;
+    }
+
+    const parts = [];
+
+    if (dateValue) {
+      const displayDate = new Date(dateValue + "T00:00:00").toLocaleDateString("en-AU", {
+        weekday: "long",
+        day: "numeric",
+        month: "long",
+        year: "numeric"
+      });
+      parts.push(displayDate);
+    }
+
+    if (selectedTime) parts.push(selectedTime.value + " AEST");
+    if (meetingFormat) parts.push(meetingFormat);
+
+    summaryText.textContent = parts.join(" · ");
+    summary.classList.add("visible");
+  }
+
+  dateInput.addEventListener("change", updateSummary);
+  formatInput.addEventListener("change", updateSummary);
+  timeInputs.forEach(input => input.addEventListener("change", updateSummary));
+
+  dateInput.addEventListener("input", () => {
+    if (!dateInput.value) return;
+
+    const selectedDate = new Date(dateInput.value + "T00:00:00");
+    const day = selectedDate.getDay();
+
+    if (day === 0 || day === 6) {
+      dateInput.setCustomValidity("Please choose a weekday from Monday to Friday.");
+    } else {
+      dateInput.setCustomValidity("");
+    }
+  });
+
+  document.getElementById("bookingForm").addEventListener("submit", event => {
+    const selectedDate = new Date(dateInput.value + "T00:00:00");
+    const day = selectedDate.getDay();
+
+    if (day === 0 || day === 6) {
+      event.preventDefault();
+      dateInput.setCustomValidity("Please choose a weekday from Monday to Friday.");
+      dateInput.reportValidity();
+    }
+  });
+</script>
+</body>
+</html>
