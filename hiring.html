@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Submit a Hiring Enquiry | Consult & Hire</title>
+  <meta name="description" content="Submit a hiring enquiry with Consult & Hire for specialist technology recruitment, executive search, AI hiring, talent intelligence and employer branding support." />
+
+  <style>
+    :root {
+      --navy: #0f172a;
+      --deep: #111827;
+      --purple: #7c3aed;
+      --purple-dark: #5b21b6;
+      --light: #f8fafc;
+      --muted: #64748b;
+      --border: #e5e7eb;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      color: var(--deep);
+      background: var(--light);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 20;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--navy);
+    }
+
+    .logo span {
+      color: var(--purple);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      color: var(--deep);
+    }
+
+    .nav-links a:hover {
+      color: var(--purple);
+    }
+
+    .nav-cta {
+      background: var(--purple);
+      color: var(--white) !important;
+      padding: 10px 16px;
+      border-radius: 999px;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #111827 0%, #312e81 55%, #6d28d9 100%);
+      color: var(--white);
+      padding: 90px 24px;
+    }
+
+    .hero-inner {
+      max-width: 1180px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      color: #ddd6fe;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(2.4rem, 5vw, 4.6rem);
+      line-height: 1.05;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #e5e7eb;
+      max-width: 680px;
+    }
+
+    .hero-card {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 24px;
+      padding: 30px;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-card h3 {
+      margin-bottom: 14px;
+      font-size: 1.3rem;
+    }
+
+    .hero-card ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-card li::before {
+      content: "✓";
+      color: #c4b5fd;
+      margin-right: 10px;
+      font-weight: 800;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 70px 24px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 44px;
+    }
+
+    .intro h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 14px;
+      color: var(--navy);
+    }
+
+    .intro p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .side-panel,
+    .form-panel {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 30px;
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+    }
+
+    .side-panel h3 {
+      color: var(--navy);
+      margin-bottom: 16px;
+      font-size: 1.35rem;
+    }
+
+    .side-panel p {
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .badge-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 22px;
+    }
+
+    .badge {
+      background: #f3e8ff;
+      color: var(--purple-dark);
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .process {
+      margin-top: 28px;
+      display: grid;
+      gap: 18px;
+    }
+
+    .step {
+      border-left: 3px solid var(--purple);
+      padding-left: 16px;
+    }
+
+    .step strong {
+      display: block;
+      color: var(--navy);
+    }
+
+    .step span {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    form {
+      display: grid;
+      gap: 22px;
+    }
+
+    .form-section {
+      display: grid;
+      gap: 16px;
+      padding-bottom: 22px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .form-section:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .form-section h3 {
+      color: var(--navy);
+      font-size: 1.2rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    label {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--deep);
+      display: grid;
+      gap: 7px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 13px 14px;
+      font: inherit;
+      background: var(--white);
+      color: var(--deep);
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      outline: 2px solid #c4b5fd;
+      border-color: var(--purple);
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .checkbox-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      color: var(--deep);
+    }
+
+    .checkbox-item input {
+      width: auto;
+    }
+
+    .consent {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .consent input {
+      width: auto;
+      margin-top: 5px;
+    }
+
+    button {
+      border: none;
+      background: var(--purple);
+      color: var(--white);
+      padding: 15px 22px;
+      border-radius: 999px;
+      font-size: 1rem;
+      font-weight: 800;
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    button:hover {
+      background: var(--purple-dark);
+      transform: translateY(-1px);
+    }
+
+    footer {
+      background: var(--navy);
+      color: var(--white);
+      padding: 34px 24px;
+      text-align: center;
+      margin-top: 50px;
+    }
+
+    footer p {
+      color: #cbd5e1;
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 860px) {
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+      }
+
+      .hero-inner,
+      .content-grid,
+      .two-col,
+      .checkbox-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 70px 24px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <nav class="nav">
+      <a href="index.html" class="logo">Consult<span>&</span>Hire</a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Our Services</a>
+        <a href="articles.html">Tech News & Articles</a>
+        <a href="register.html">Register</a>
+        <a href="hiring-enquiry.html" class="nav-cta">Submit a Hiring Enquiry</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <div class="eyebrow">Hiring Enquiry</div>
+        <h1>Strategic hiring starts with clarity.</h1>
+        <p>
+          Tell us what you are building, the talent you need, and the hiring challenge you are trying to solve.
+          Consult & Hire supports specialist technology recruitment, executive search, AI hiring, talent intelligence
+          and employer brand-led attraction.
+        </p>
+      </div>
+
+      <div class="hero-card">
+        <h3>We support hiring across:</h3>
+        <ul>
+          <li>Engineering, DevOps, SRE and Platform Engineering</li>
+          <li>AI, Machine Learning and Data Science</li>
+          <li>Product, Analytics and Technology Leadership</li>
+          <li>Executive Search and Talent Intelligence</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="intro">
+      <h2>Submit your hiring enquiry</h2>
+      <p>
+        Complete the form below and we will review your requirements before recommending the most suitable hiring,
+        search or talent intelligence approach.
+      </p>
+    </section>
+
+    <section class="content-grid">
+
+      <aside class="side-panel">
+        <h3>What happens next?</h3>
+        <p>
+          We review your enquiry and contact you to discuss your hiring goals, market conditions, role requirements
+          and recommended search approach.
+        </p>
+
+        <div class="process">
+          <div class="step">
+            <strong>1. Understand</strong>
+            <span>We clarify the role, team context, salary range and hiring priorities.</span>
+          </div>
+
+          <div class="step">
+            <strong>2. Map</strong>
+            <span>We assess the talent market, competitors and candidate availability.</span>
+          </div>
+
+          <div class="step">
+            <strong>3. Engage</strong>
+            <span>We approach and qualify relevant talent with care and discretion.</span>
+          </div>
+
+          <div class="step">
+            <strong>4. Deliver</strong>
+            <span>We support shortlist, interview, offer and onboarding outcomes.</span>
+          </div>
+        </div>
+
+        <div class="badge-list">
+          <span class="badge">Executive Search</span>
+          <span class="badge">AI Hiring</span>
+          <span class="badge">Talent Mapping</span>
+          <span class="badge">Platform Engineering</span>
+          <span class="badge">Employer Branding</span>
+        </div>
+      </aside>
+
+      <section class="form-panel">
+        <form action="#" method="POST">
+
+          <div class="form-section">
+            <h3>Your details</h3>
+
+            <div class="two-col">
+              <label>
+                Full Name *
+                <input type="text" name="full_name" required />
+              </label>
+
+              <label>
+                Work Email *
+                <input type="email" name="work_email" required />
+              </label>
+            </div>
+
+            <div class="two-col">
+              <label>
+                Phone Number
+                <input type="tel" name="phone" />
+              </label>
+
+              <label>
+                Job Title
+                <input type="text" name="job_title" />
+              </label>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Organisation details</h3>
+
+            <div class="two-col">
+              <label>
+                Company Name *
+                <input type="text" name="company_name" required />
+              </label>
+
+              <label>
+                Company Website
+                <input type="url" name="company_website" />
+              </label>
+            </div>
+
+            <div class="two-col">
+              <label>
+                Company Location
+                <input type="text" name="company_location" />
+              </label>
+
+              <label>
+                Company Size
+                <select name="company_size">
+                  <option value="">Select company size</option>
+                  <option>1–50</option>
+                  <option>51–200</option>
+                  <option>201–1000</option>
+                  <option>1000+</option>
+                </select>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Hiring support required</h3>
+
+            <div class="checkbox-grid">
+              <label class="checkbox-item">
+                <input type="checkbox" name="support_required" value="Permanent Hiring" />
+                Permanent Hiring
+              </label>
+
+              <label class="checkbox-item">
+                <input type="checkbox" name="support_required" value="Contract Hiring" />
+                Contract Hiring
+              </label>
+
+              <label class="checkbox-item">
+                <input type="checkbox" name="support_required" value="Executive Search" />
+                Executive Search
+              </label>
+
+              <label class="checkbox-item">
+                <input type="checkbox" name="support_required" value="Talent Intelligence" />
+                Talent Intelligence
+              </label>
+
+              <label class="checkbox-item">
+                <input type="checkbox" name="support_required" value="Employer Branding" />
+                Employer Branding
+              </label>
+
+              <label class="checkbox-item">
+                <input type="checkbox" name="support_required" value="Recruitment Advisory" />
+                Recruitment Advisory
+              </label>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <h3>Role details</h3>
+
+            <div class="two-col">
+              <label>
+                Role Title / Hiring Area *
+                <input type="text" name="role_title" required />
+              </label>
+
+              <label>
+                Number of Vacancies
+                <input type="text" name="number_of_vacancies" />
+              </label>
+            </div>
+
+            <div class="two-col">
+              <label>
+                Location
+                <input type="text" name="role_location" />
+              </label>
+
+              <label>
+                Target Salary / Budget
+                <input type="text" name="salary_budget" />
+              </label>
+            </div>
+
+            <label>
+              Hiring Requirements *
+              <textarea name="hiring_requirements" required placeholder="Tell us about the role, team, technical environment, timeline, hiring challenges or talent requirements."></textarea>
+            </label>
+
+            <label>
+              Hiring Timeline
+              <select name="hiring_timeline">
+                <option value="">Select timeline</option>
+                <option>Immediately</option>
+                <option>Within 30 days</option>
+                <option>Within 60 days</option>
+                <option>Within 90 days</option>
+                <option>Future planning</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="form-section">
+            <label class="consent">
+              <input type="checkbox" name="consent" required />
+              <span>I confirm that I am authorised to submit this enquiry and consent to Consult & Hire contacting me about hiring support.</span>
+            </label>
+
+            <button type="submit">Submit Hiring Enquiry</button>
+          </div>
+
+        </form>
+      </section>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 Consult & Hire. All rights reserved.</p>
+    <p>hello@consultandhire.com</p>
+  </footer>
+
+</body>
+</html>
