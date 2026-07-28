@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>Consult & Hire | Experts in Global Tech Talent</title>
+    <meta name="description" content="Consult & Hire connects ambitious organisations with exceptional technology talent across global markets.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: "#0a0a0a",
+                            blue: "#1e3a8a",
+                            purple: "#581c87",
+                            surface: "#171717"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+
+        .gradient-bg {
+            background:
+                radial-gradient(circle at 15% 20%, rgba(59,130,246,.22), transparent 30rem),
+                radial-gradient(circle at 90% 70%, rgba(147,51,234,.22), transparent 34rem),
+                linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 52%, #2e1065 100%);
+        }
+
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .focus-ring:focus-visible {
+            outline: 3px solid rgba(191, 219, 254, 0.95);
+            outline-offset: 4px;
+        }
+
+        .person-card img {
+            transition: transform .35s ease;
+        }
+
+        .person-card:hover img {
+            transform: scale(1.035);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after {
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden bg-brand-dark font-sans text-gray-100 antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:text-brand-dark">Skip to content</a>
+
+    <header class="fixed left-0 top-0 z-50 w-full border-b border-gray-800 bg-brand-dark/95 backdrop-blur-md">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="Primary navigation">
+            <div class="flex h-20 items-center justify-between">
+                <a href="index.html" class="focus-ring flex items-center gap-3 rounded-lg">
+                    <div class="gradient-bg flex h-11 w-11 items-center justify-center rounded-xl border border-gray-700">
+                        <i class="fas fa-briefcase text-lg text-white" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <span class="block text-lg font-bold text-white">Consult &amp; Hire</span>
+                        <span class="block text-xs text-gray-400">Experts in Global Tech Talent</span>
+                    </div>
+                </a>
+
+                <div class="hidden items-center space-x-8 md:flex">
+                    <ul id="desktop-nav" class="flex space-x-6"></ul>
+                    <a href="register.html" class="focus-ring rounded-lg bg-brand-blue px-6 py-2.5 font-medium text-white transition-colors hover:bg-blue-700">Register or Hire</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="focus-ring rounded-lg p-2 text-2xl text-white md:hidden" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden border-t border-gray-800 bg-brand-surface md:hidden">
+            <ul id="mobile-nav" class="space-y-2 px-4 py-4"></ul>
+            <div class="px-4 pb-4">
+                <a href="register.html" class="block rounded-lg bg-brand-blue px-6 py-3 text-center font-medium text-white hover:bg-blue-700">Register or Hire</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="gradient-bg relative overflow-hidden pb-16 pt-32 lg:pb-20 lg:pt-36">
+            <div class="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid items-center gap-10 lg:grid-cols-[1.03fr_.97fr]">
+                    <div>
+                        <p class="mb-4 font-semibold uppercase tracking-widest text-blue-300">Global Tech Recruitment</p>
+                        <h1 class="mb-6 max-w-3xl text-4xl font-bold leading-tight text-white md:text-6xl">Experts in Global Tech Talent</h1>
+                        <p class="mb-7 max-w-xl text-lg leading-relaxed text-gray-300 md:text-xl">Connecting ambitious organisations with exceptional technology talent across global markets.</p>
+
+                        <div id="site-search" class="relative mb-7 max-w-xl">
+                            <label for="search-input" class="sr-only">Search Consult &amp; Hire</label>
+                            <div class="relative">
+                                <i class="fas fa-search absolute left-5 top-1/2 -translate-y-1/2 text-gray-400" aria-hidden="true"></i>
+                                <input
+                                    id="search-input"
+                                    type="search"
+                                    placeholder="What are you looking for today?"
+                                    autocomplete="off"
+                                    class="focus-ring w-full rounded-xl border border-white/15 bg-white/10 py-4 pl-14 pr-5 text-white placeholder-gray-400 backdrop-blur-md transition focus:border-blue-300 focus:bg-white/15 focus:outline-none"
+                                    aria-controls="search-results"
+                                    aria-expanded="false"
+                                >
+                            </div>
+
+                            <div id="search-results" class="absolute z-40 mt-2 hidden w-full overflow-hidden rounded-xl border border-gray-700 bg-brand-surface text-left shadow-2xl" role="listbox"></div>
+
+                            <div class="mt-4 flex flex-wrap gap-2" aria-label="Popular searches">
+                                <button type="button" class="quick-search rounded-full bg-white/10 px-4 py-2 text-sm text-white transition hover:bg-white/20">Hire Talent</button>
+                                <button type="button" class="quick-search rounded-full bg-white/10 px-4 py-2 text-sm text-white transition hover:bg-white/20">Find Jobs</button>
+                                <button type="button" class="quick-search rounded-full bg-white/10 px-4 py-2 text-sm text-white transition hover:bg-white/20">Executive Search</button>
+                                <button type="button" class="quick-search rounded-full bg-white/10 px-4 py-2 text-sm text-white transition hover:bg-white/20">AI Recruitment</button>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col gap-4 sm:flex-row">
+                            <a href="register.html" class="focus-ring rounded-lg bg-white px-8 py-4 text-center font-semibold text-brand-dark transition-colors hover:bg-gray-200">Submit a Hiring Enquiry</a>
+                            <a href="register.html" class="focus-ring glass-effect rounded-lg px-8 py-4 text-center font-semibold text-white transition-colors hover:bg-white/10">Submit Your CV</a>
+                        </div>
+                    </div>
+
+                    <div class="relative mx-auto w-full max-w-xl">
+                        <div class="grid grid-cols-2 gap-4">
+                            <div class="person-card overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=85" alt="Technology professional smiling" class="h-[340px] w-full object-cover" loading="eager">
+                            </div>
+                            <div class="space-y-4 pt-10">
+                                <div class="person-card overflow-hidden rounded-3xl border border-white/10 bg-white/5 shadow-2xl">
+                                    <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=900&q=85" alt="Technology leader in a professional setting" class="h-[210px] w-full object-cover" loading="eager">
+                                </div>
+                                <div class="glass-effect rounded-3xl p-6">
+                                    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-300">Global Reach</p>
+                                    <p class="mt-3 text-lg font-semibold text-white">Human recruitment, backed by specialist market expertise.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-14 text-gray-900 md:py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+                    <div>
+                        <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand-purple">Our Expertise</p>
+                        <h2 class="text-3xl font-bold leading-tight md:text-4xl">Specialist technology recruitment, delivered simply.</h2>
+                        <p class="mt-4 max-w-lg leading-7 text-gray-600">From critical hires to global growth, we help organisations find the people and capability they need.</p>
+                    </div>
+
+                    <div class="rounded-3xl border border-gray-200 bg-gray-50 p-7 shadow-sm md:p-9">
+                        <h3 class="mb-6 text-2xl font-bold">We specialise in:</h3>
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div class="flex gap-3"><i class="fas fa-check-circle mt-1 text-brand-blue" aria-hidden="true"></i><p class="text-gray-700">Engineering, DevOps, Platform and SRE</p></div>
+                            <div class="flex gap-3"><i class="fas fa-check-circle mt-1 text-brand-blue" aria-hidden="true"></i><p class="text-gray-700">AI, Machine Learning and Data</p></div>
+                            <div class="flex gap-3"><i class="fas fa-check-circle mt-1 text-brand-blue" aria-hidden="true"></i><p class="text-gray-700">Technology leadership and executive search</p></div>
+                            <div class="flex gap-3"><i class="fas fa-check-circle mt-1 text-brand-blue" aria-hidden="true"></i><p class="text-gray-700">Talent intelligence and employer brand</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-brand-surface py-14 md:py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto grid max-w-6xl gap-6 md:grid-cols-2">
+                    <a href="employer.html" class="focus-ring group rounded-3xl border border-gray-800 bg-black/25 p-8 transition hover:border-blue-700 hover:bg-black/40">
+                        <i class="fas fa-building text-2xl text-blue-300" aria-hidden="true"></i>
+                        <h2 class="mt-5 text-2xl font-bold text-white">I’m hiring</h2>
+                        <p class="mt-3 leading-7 text-gray-400">Explore specialist search, market insight and recruitment support for your organisation.</p>
+                        <span class="mt-6 inline-flex items-center font-semibold text-white">Employer services <i class="fas fa-arrow-right ml-3 text-sm transition group-hover:translate-x-1" aria-hidden="true"></i></span>
+                    </a>
+
+                    <a href="candidate.html" class="focus-ring group rounded-3xl border border-gray-800 bg-black/25 p-8 transition hover:border-purple-700 hover:bg-black/40">
+                        <i class="fas fa-user text-2xl text-purple-300" aria-hidden="true"></i>
+                        <h2 class="mt-5 text-2xl font-bold text-white">I’m exploring my next move</h2>
+                        <p class="mt-3 leading-7 text-gray-400">Discover relevant opportunities and practical career support from a specialist team.</p>
+                        <span class="mt-6 inline-flex items-center font-semibold text-white">Candidate support <i class="fas fa-arrow-right ml-3 text-sm transition group-hover:translate-x-1" aria-hidden="true"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="gradient-bg py-14 md:py-16">
+            <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-3xl">
+                    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-300">Consult &amp; Hire</p>
+                    <h2 class="mb-4 text-3xl font-bold text-white md:text-4xl">Ready to discuss your next hire or career move?</h2>
+                    <p class="mb-8 text-lg text-gray-300">Speak with our team about hiring, your next opportunity or a wider talent challenge.</p>
+                    <div class="flex flex-col justify-center gap-4 sm:flex-row">
+                        <a href="clientcalendar.html" class="focus-ring rounded-lg bg-white px-8 py-4 font-semibold text-brand-dark hover:bg-gray-200">Speak With Consult &amp; Hire</a>
+                        <a href="mailto:hello@consultandhire.com" class="focus-ring rounded-lg border border-white/20 px-8 py-4 font-semibold text-white hover:bg-white/10">Email Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-gray-800 bg-black py-7">
+        <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+            <p class="text-sm text-gray-500">&copy; <span id="current-year"></span> Consult &amp; Hire. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const navItems = [
+            { label: "Employers", href: "employer.html" },
+            { label: "Job Seekers", href: "candidate.html" },
+            { label: "About Us", href: "about.html" },
+            { label: "Contact", href: "contact.html" }
+        ];
+
+        const searchItems = [
+            { title: "Hire Technology Talent", description: "Employer recruitment services", href: "employer.html", keywords: "hire employer recruit recruitment staffing technology talent" },
+            { title: "Job Opportunities", description: "Explore technology careers", href: "candidate.html", keywords: "jobs careers candidate find jobs job seeker" },
+            { title: "Submit Your CV", description: "Register with Consult & Hire", href: "register.html", keywords: "cv resume register candidate" },
+            { title: "Executive Search", description: "Technology leadership recruitment", href: "employer.html", keywords: "executive cto cio leadership search" },
+            { title: "AI Recruitment", description: "Artificial intelligence and machine learning specialists", href: "employer.html", keywords: "ai artificial intelligence machine learning generative ai" },
+            { title: "Engineering Recruitment", description: "Software engineering, DevOps, Platform and SRE", href: "employer.html", keywords: "engineering devops sre platform software" },
+            { title: "Data & Analytics", description: "Data engineering, analytics and data science talent", href: "employer.html", keywords: "data analytics engineering science business intelligence" },
+            { title: "Book a Consultation", description: "Speak with Consult & Hire", href: "clientcalendar.html", keywords: "meeting calendar consultation book speak" },
+            { title: "Contact Us", description: "Email or speak with our team", href: "contact.html", keywords: "contact help email enquiry" }
+        ];
+
+        function renderNavItems(items) {
+            return items.map(item => `
+                <li>
+                    <a href="${item.href}" class="block rounded-md px-2 py-2 font-medium text-gray-300 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-200">
+                        ${item.label}
+                    </a>
+                </li>
+            `).join("");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("desktop-nav").innerHTML = renderNavItems(navItems);
+            document.getElementById("mobile-nav").innerHTML = renderNavItems(navItems);
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+
+            const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const icon = mobileMenuBtn.querySelector("i");
+            const searchInput = document.getElementById("search-input");
+            const searchResults = document.getElementById("search-results");
+
+            mobileMenuBtn.addEventListener("click", function () {
+                const opening = mobileMenu.classList.contains("hidden");
+                mobileMenu.classList.toggle("hidden");
+                mobileMenuBtn.setAttribute("aria-expanded", String(opening));
+                icon.className = opening ? "fas fa-times" : "fas fa-bars";
+            });
+
+            mobileMenu.addEventListener("click", function (event) {
+                if (event.target.closest("a")) {
+                    mobileMenu.classList.add("hidden");
+                    mobileMenuBtn.setAttribute("aria-expanded", "false");
+                    icon.className = "fas fa-bars";
+                }
+            });
+
+            function renderSearch(query) {
+                const term = query.trim().toLowerCase();
+
+                if (!term) {
+                    searchResults.innerHTML = "";
+                    searchResults.classList.add("hidden");
+                    searchInput.setAttribute("aria-expanded", "false");
+                    return;
+                }
+
+                const matches = searchItems.filter(item => {
+                    const searchable = `${item.title} ${item.description} ${item.keywords}`.toLowerCase();
+                    return searchable.includes(term);
+                }).slice(0, 5);
+
+                searchResults.innerHTML = matches.length
+                    ? matches.map(item => `
+                        <a href="${item.href}" role="option" class="block border-b border-gray-700 px-5 py-4 transition last:border-b-0 hover:bg-white/10">
+                            <span class="block font-semibold text-white">${item.title}</span>
+                            <span class="mt-1 block text-sm text-gray-400">${item.description}</span>
+                        </a>
+                    `).join("")
+                    : `<div class="px-5 py-4 text-sm text-gray-400">No matching pages found.</div>`;
+
+                searchResults.classList.remove("hidden");
+                searchInput.setAttribute("aria-expanded", "true");
+            }
+
+            searchInput.addEventListener("input", event => renderSearch(event.target.value));
+
+            searchInput.addEventListener("keydown", event => {
+                if (event.key === "Enter") {
+                    const firstResult = searchResults.querySelector("a");
+                    if (firstResult) window.location.href = firstResult.href;
+                }
+
+                if (event.key === "Escape") {
+                    searchResults.classList.add("hidden");
+                    searchInput.setAttribute("aria-expanded", "false");
+                    searchInput.blur();
+                }
+            });
+
+            document.querySelectorAll(".quick-search").forEach(button => {
+                button.addEventListener("click", () => {
+                    searchInput.value = button.textContent.trim();
+                    renderSearch(searchInput.value);
+                    searchInput.focus();
+                });
+            });
+
+            document.addEventListener("click", event => {
+                if (!event.target.closest("#site-search")) {
+                    searchResults.classList.add("hidden");
+                    searchInput.setAttribute("aria-expanded", "false");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
