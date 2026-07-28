@@ -331,6 +331,85 @@
       margin-top: 5px;
     }
 
+
+    .upload-field {
+      border: 2px dashed #c4b5fd;
+      background: #faf7ff;
+      border-radius: 16px;
+      padding: 22px;
+      text-align: center;
+      transition: 0.2s ease;
+      cursor: pointer;
+    }
+
+    .upload-field:hover,
+    .upload-field:focus-within {
+      border-color: var(--purple);
+      background: #f5f3ff;
+    }
+
+    .upload-field input[type="file"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      clip-path: inset(50%);
+    }
+
+    .upload-icon {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: #ede9fe;
+      color: var(--purple-dark);
+      font-size: 1.4rem;
+      font-weight: 800;
+    }
+
+    .upload-title {
+      display: block;
+      color: var(--navy);
+      font-weight: 800;
+      margin-bottom: 5px;
+    }
+
+    .upload-help,
+    .file-name {
+      display: block;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .file-name {
+      margin-top: 10px;
+      color: var(--purple-dark);
+      font-weight: 700;
+    }
+
+    .or-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .or-divider::before,
+    .or-divider::after {
+      content: "";
+      height: 1px;
+      flex: 1;
+      background: var(--border);
+    }
+
     button {
       border: none;
       background: var(--purple);
@@ -477,7 +556,7 @@
       </aside>
 
       <section class="form-panel">
-        <form action="#" method="POST">
+        <form action="#" method="POST" enctype="multipart/form-data">
 
           <div class="form-section">
             <h3>Your details</h3>
@@ -604,9 +683,27 @@
               </label>
             </div>
 
+            <div>
+              <label for="role_document">Upload a role document</label>
+              <label class="upload-field" for="role_document">
+                <span class="upload-icon" aria-hidden="true">↑</span>
+                <span class="upload-title">Choose a role description or brief</span>
+                <span class="upload-help">PDF, Word or text file — maximum 10 MB</span>
+                <span class="file-name" id="file-name">No file selected</span>
+                <input
+                  type="file"
+                  id="role_document"
+                  name="role_document"
+                  accept=".pdf,.doc,.docx,.txt,application/pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain"
+                />
+              </label>
+            </div>
+
+            <div class="or-divider"><span>or add details below</span></div>
+
             <label>
-              Hiring Requirements *
-              <textarea name="hiring_requirements" required placeholder="Tell us about the role, team, technical environment, timeline, hiring challenges or talent requirements."></textarea>
+              Hiring Requirements
+              <textarea name="hiring_requirements" placeholder="Tell us about the role, team, technical environment, timeline, hiring challenges or talent requirements."></textarea>
             </label>
 
             <label>
@@ -641,6 +738,31 @@
     <p>© 2026 Consult & Hire. All rights reserved.</p>
     <p>hello@consultandhire.com</p>
   </footer>
+
+
+  <script>
+    const roleDocument = document.getElementById("role_document");
+    const fileName = document.getElementById("file-name");
+
+    roleDocument.addEventListener("change", function () {
+      const file = this.files && this.files[0];
+
+      if (!file) {
+        fileName.textContent = "No file selected";
+        return;
+      }
+
+      const maxSize = 10 * 1024 * 1024;
+
+      if (file.size > maxSize) {
+        this.value = "";
+        fileName.textContent = "File is too large. Please choose a file under 10 MB.";
+        return;
+      }
+
+      fileName.textContent = file.name;
+    });
+  </script>
 
 </body>
 </html>
