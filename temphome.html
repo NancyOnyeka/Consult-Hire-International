@@ -120,59 +120,18 @@
     </header>
 
       <section class="gradient-bg relative overflow-hidden flex items-center min-h-[65vh]">    
-            <div class="absolute top-0 left-0 w-76 h-36 bg-blue-500 rounded-full blur-5xl transform -translate-x-1/2 -translate-y-1/2"></div>
-            <div class="absolute bottom-0 right-0 w-76 h-56 bg-purple-500 rounded-full blur-5xl transform translate-x-1/2 translate-y-1/2"></div>
+            <div class="absolute top-0 left-0 w-76 h-36 bg-blue-700 rounded-full blur-5xl transform -translate-x-1/2 -translate-y-1/2"></div>
+            <div class="absolute bottom-0 right-0 w-76 h-56 bg-purple-700 rounded-full blur-5xl transform translate-x-1/2 translate-y-1/2"></div>
         </div>
         <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-4xl mx-auto text-center">
                 <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Experts in Global Tech Talent</h1>
                 <p class="text-xl md:text-2xl text-gray-300 mb-8 font-light">Connecting exceptional Engineering, AI, Analytics and Data Science professionals with innovative companies worldwide</p>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="register.html" class="bg-white text-brand-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200 text-center">Job Seeker</a>
-                    <a href="register.html" class="glass-effect text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 text-center">Employer</a>
+                    <a href="register.html" class="bg-white text-brand-dark px-12 py-8 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200 text-center">Job Seeker</a>
+                    <a href="register.html" class="glass-effect text-white px-12 py-8 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 text-center">Employer</a>
                 </div>
             </div>
         </div>
     </section>
-  
-    <script>
-        const navItems = [
-            { "label": "Home", "href": "#" },
-            { "label": "Specialisms", "href": "#specialisms" },
-            { "label": "About Us", "href": "#about" },
-            { "label": "Contact", "href": "#contact" }
-        ];
-        const specialismsData = [
-            { "title": "Engineering", "icon": "fa-code", "description": "Software, DevOps, Cloud, and Infrastructure Engineering roles across all levels." },
-            { "title": "AI", "icon": "fa-robot", "description": "Machine Learning Engineers, AI Researchers, and MLOps specialists." },
-            { "title": "Analytics", "icon": "fa-chart-line", "description": "Business Intelligence, Data Analytics, and Visualization experts." },
-            { "title": "Data Science", "icon": "fa-database", "description": "Data Scientists, Statisticians, and Quantitative Analysts." },
-            { "title": "Product", "icon": "fa-cubes", "description": "Product Managers, Product Owners, and strategic product leaders." },
-            { "title": "Technology Leadership", "icon": "fa-user-tie", "description": "CTOs, Heads of Engineering, and senior technology leadership talent." }
-        ];
-        const featuresData = [
-            { "icon": "fa-bullseye", "title": "Specialized Focus", "description": "Deep expertise in Engineering, AI, Analytics and Data Science means we speak your language and understand your technical requirements." },
-            { "icon": "fa-globe-americas", "title": "Global Reach", "description": "Based in Brisbane with international capabilities. We source talent locally and globally to find the perfect match." },
-            { "icon": "fa-rocket", "title": "Startup Specialists", "description": "We understand the unique challenges of startups and scale-ups, from rapid growth to equity negotiations and cultural fit." }
-        ];
-        const servicesData = [
-            { "title": "Recruitment", "description": "End-to-end hiring solutions across technical, commercial, and operational functions.", "icon": "fa-user-tie" },
-            { "title": "Executive Search", "description": "Targeted leadership search services focused on securing transformational executives and senior leadership talent.", "icon": "fa-chess-king" },
-            { "title": "Graduate Campaign Management & Hiring", "description": "Structured graduate attraction and recruitment programmes designed to identify and engage emerging talent at scale.", "icon": "fa-graduation-cap" },
-            { "title": "Early Careers", "description": "Internship, apprentice, and early careers hiring strategies that build sustainable talent pipelines for future growth.", "icon": "fa-seedling" },
-            { "title": "Strategic Talent Management", "description": "Workforce planning, talent strategy, succession planning, and advisory solutions aligned to organisational objectives.", "icon": "fa-sitemap" },
-            { "title": "Employer Branding", "description": "Helping organisations define and communicate compelling employer value propositions that attract top talent.", "icon": "fa-bullhorn" },
-            { "title": "Talent Mapping & Talent Intelligence", "description": "Market insights, competitor analysis, salary benchmarking, and talent landscape mapping to support informed hiring decisions.", "icon": "fa-map-marked-alt" }
-        ];
-        function renderNavItems(items) { return items.map(item => `<li><a href="${item.href}" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">${item.label}</a></li>`).join(""); }
-        function renderSpecialisms(items) { return items.map(item => `<div class="group"><div class="w-16 h-16 mx-auto mb-4 text-gray-400 group-hover:text-brand-blue transition-colors duration-300"><i class="fas ${item.icon} text-4xl"></i></div><h3 class="text-xl font-bold text-white mb-2 group-hover:text-brand-blue transition-colors duration-300">${item.title}</h3><p class="text-gray-400 text-sm leading-relaxed max-w-xs mx-auto">${item.description}</p></div>`).join(""); }
-        function renderFeatures(items) { return items.map(item => `<div class="text-center p-6"><div class="w-16 h-16 bg-brand-card rounded-full flex items-center justify-center mx-auto mb-4 border border-gray-800"><i class="fas ${item.icon} text-2xl text-brand-blue"></i></div><h3 class="text-xl font-semibold text-white mb-3">${item.title}</h3><p class="text-gray-400 leading-relaxed">${item.description}</p></div>`).join(""); }
-        function renderServices(items) { return items.map(item => `<div class="bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300 group"><div class="w-12 h-12 bg-brand-blue/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-brand-blue transition-colors duration-300"><i class="fas ${item.icon} text-xl text-brand-blue group-hover:text-white transition-colors duration-300"></i></div><h4 class="text-lg font-bold text-brand-dark mb-2">${item.title}</h4><p class="text-gray-600 text-sm leading-relaxed">${item.description}</p></div>`).join(""); }
-        document.getElementById("desktop-nav").innerHTML = renderNavItems(navItems);
-        document.getElementById("mobile-nav").innerHTML = renderNavItems(navItems);
-        document.getElementById("specialisms-grid").innerHTML = renderSpecialisms(specialismsData);
-        document.getElementById("features-grid").innerHTML = renderFeatures(featuresData);
-        document.getElementById("services-grid").innerHTML = renderServices(servicesData);
-    </script>
-</body>
-</html>
+
