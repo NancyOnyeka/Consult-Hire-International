@@ -3,198 +3,445 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#0a0a0a">
+  <meta name="theme-color" content="#080912">
   <title>Employer Services | Consult & Hire</title>
   <meta name="description" content="Technology recruitment, talent academy, employer brand and talent intelligence services from Consult & Hire.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-  <script src="https://cdn.tailwindcss.com"></script>
-
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              dark: '#09090b',
-              surface: '#171717',
-              blue: '#1e3a8a',
-              purple: '#581c87'
-            }
-          },
-          fontFamily: { sans: ['Inter', 'sans-serif'] }
-        }
-      }
-    };
-  </script>
 
   <style>
+    :root {
+      --bg: #080912;
+      --surface: #10121d;
+      --surface-2: #151827;
+      --line: rgba(255,255,255,.11);
+      --text: #f8fafc;
+      --muted: #a7afc0;
+      --purple: #8b5cf6;
+      --blue: #38bdf8;
+      --white: #ffffff;
+      --shadow: 0 24px 70px rgba(0,0,0,.28);
+    }
+
+    * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    .gradient-bg {
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    .container { width: min(1180px, calc(100% - 40px)); margin: 0 auto; }
+    .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+    .focus-ring:focus-visible { outline: 3px solid rgba(56,189,248,.85); outline-offset: 4px; }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(8,9,18,.86);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { height: 76px; display:flex; align-items:center; justify-content:space-between; gap: 24px; }
+    .brand strong { display:block; font-size: 18px; letter-spacing:-.02em; }
+    .brand span { display:block; color: var(--muted); font-size: 11px; margin-top: 3px; }
+    .nav-links { display:flex; align-items:center; gap: 26px; font-size: 14px; color:#d7dbea; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-actions { display:flex; gap:10px; }
+    .btn {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:46px;
+      padding: 0 18px;
+      border-radius: 12px;
+      border:1px solid transparent;
+      font-weight: 700;
+      font-size: 14px;
+      transition: .2s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn-primary { background: linear-gradient(135deg, var(--blue), var(--purple)); color:var(--white); box-shadow: 0 12px 30px rgba(56,189,248,.18); }
+    .btn-secondary { border-color: var(--line); background: rgba(255,255,255,.04); color:var(--white); }
+    .btn-secondary:hover { background: rgba(255,255,255,.08); }
+    .menu-btn { display:none; background:none; border:0; color:white; font-size:22px; }
+    .mobile-menu { display:none; border-top:1px solid var(--line); padding: 14px 20px 20px; }
+    .mobile-menu a { display:block; padding: 12px 0; color:#d7dbea; }
+    .mobile-actions { display:grid; gap:10px; margin-top:10px; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: 76px 0 40px;
       background:
-        linear-gradient(90deg, rgba(9,9,11,.94), rgba(30,27,75,.87), rgba(46,16,101,.74)),
-        url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2200&q=85') center/cover;
+        radial-gradient(circle at 12% 18%, rgba(56,189,248,.18), transparent 31%),
+        radial-gradient(circle at 86% 8%, rgba(139,92,246,.24), transparent 29%),
+        linear-gradient(180deg, #0a0c17 0%, #080912 100%);
     }
-    .glass {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.16);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
+    .hero::before {
+      content:"";
+      position:absolute;
+      inset:-20%;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 44px 44px;
+      mask-image: linear-gradient(to bottom, black, transparent 88%);
+      pointer-events:none;
+      animation:gridDrift 18s linear infinite;
     }
-    .focus-ring:focus-visible {
-      outline: 3px solid rgba(191,219,254,.95);
-      outline-offset: 4px;
+    .hero::after {
+      content:"";
+      position:absolute;
+      width:420px;
+      height:420px;
+      right:-120px;
+      top:-170px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(139,92,246,.24), transparent 68%);
+      filter:blur(8px);
+      animation:orbFloat 10s ease-in-out infinite alternate;
+      pointer-events:none;
     }
-    .service-card { transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
-    .service-card:hover { transform: translateY(-5px); box-shadow: 0 18px 45px rgba(15,23,42,.12); }
+    @keyframes gridDrift { to { transform:translate3d(44px,44px,0); } }
+    @keyframes orbFloat { to { transform:translate(-70px,70px) scale(1.12); } }
+    .hero-inner { position:relative; z-index:1; text-align:center; max-width: 930px; margin:0 auto; }
+    .eyebrow {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      border:1px solid rgba(56,189,248,.28);
+      background:rgba(56,189,248,.08);
+      color:#bae6fd;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.13em;
+      text-transform:uppercase;
+    }
+    .eyebrow-dot { width:7px; height:7px; background:var(--blue); border-radius:50%; box-shadow:0 0 18px rgba(56,189,248,.9); }
+    h1 { font-size: clamp(48px, 7vw, 82px); line-height:.98; letter-spacing:-.055em; margin:22px 0 0; }
+    .hero p { max-width:760px; margin:24px auto 0; color:#c7cddd; font-size: clamp(17px, 2vw, 21px); line-height:1.7; }
+    .hero-actions { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin-top:30px; }
+    .hero-note { margin-top:18px; color:#7f8798; font-size:13px; }
+
+    .hero-visual {
+      position:relative;
+      margin:38px auto 0;
+      max-width:1080px;
+      height:310px;
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:2px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:24px;
+      background:rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+    }
+    .visual-panel { position:relative; overflow:hidden; min-width:0; }
+    .visual-panel img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s ease; }
+    .hero-visual:hover .visual-panel img { transform:scale(1.035); }
+    .visual-panel::after { content:""; position:absolute; inset:0; pointer-events:none; }
+    .visual-panel.city::after { background:linear-gradient(90deg, rgba(8,9,18,.48), rgba(8,9,18,.06)); }
+    .visual-panel.team::after { background:linear-gradient(90deg, rgba(8,9,18,.08), rgba(139,92,246,.20)); }
+    .visual-divider {
+      position:absolute;
+      z-index:3;
+      left:50%;
+      top:0;
+      bottom:0;
+      width:1px;
+      background:linear-gradient(transparent, rgba(255,255,255,.72), transparent);
+      box-shadow:0 0 22px rgba(56,189,248,.35);
+    }
+    .visual-label {
+      position:absolute; left:18px; bottom:18px; z-index:4;
+      display:inline-flex; align-items:center; gap:8px;
+      padding:9px 12px; border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(8,9,18,.72); backdrop-filter:blur(10px);
+      color:#e6e9f2; font-size:12px; font-weight:700;
+    }
+    .visual-label.right { left:auto; right:18px; }
+    .pulse-node {
+      position:absolute;
+      z-index:4;
+      width:10px;
+      height:10px;
+      border-radius:50%;
+      background:var(--blue);
+      box-shadow:0 0 0 0 rgba(56,189,248,.65);
+      animation:pulse 2.4s infinite;
+    }
+    .node-one { left:24%; top:24%; }
+    .node-two { right:22%; top:31%; animation-delay:.8s; background:var(--purple); }
+    @keyframes pulse { 70% { box-shadow:0 0 0 18px rgba(56,189,248,0); } 100% { box-shadow:0 0 0 0 rgba(56,189,248,0); } }
+
+    .services { padding: 16px 0 58px; }
+    .services-shell {
+      border:1px solid var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,.045), rgba(255,255,255,.025));
+      border-radius: 24px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+    .services-top { display:flex; align-items:center; justify-content:space-between; gap:20px; padding: 10px 8px 18px; }
+    .services-top h2 { margin:0; font-size:24px; letter-spacing:-.03em; }
+    .services-top p { margin:0; color:var(--muted); font-size:14px; }
+    .service-grid { display:grid; grid-template-columns:repeat(4, minmax(0,1fr)); gap:12px; }
+    .service-card {
+      position:relative;
+      min-height:255px;
+      padding:22px;
+      border:1px solid var(--line);
+      border-radius:18px;
+      background: var(--surface);
+      transition:.22s ease;
+      overflow:hidden;
+    }
+    .service-card::after {
+      content:"";
+      position:absolute;
+      width:110px;
+      height:110px;
+      border-radius:50%;
+      top:-54px;
+      right:-48px;
+      background: radial-gradient(circle, rgba(139,92,246,.25), transparent 68%);
+      transition:.22s ease;
+    }
+    .service-card:hover { transform:translateY(-4px); border-color:rgba(56,189,248,.42); background:var(--surface-2); }
+    .service-card:hover::after { transform:scale(1.2); }
+    .service-number { color:#70778a; font-size:12px; font-weight:700; letter-spacing:.13em; }
+    .service-icon {
+      width:44px;
+      height:44px;
+      margin-top:28px;
+      border-radius:13px;
+      display:grid;
+      place-items:center;
+      color:#071015;
+      background:linear-gradient(135deg, var(--blue), var(--purple));
+      color:#fff;
+      box-shadow:0 14px 30px rgba(56,189,248,.14);
+    }
+    .service-card h3 { margin:18px 0 0; font-size:21px; letter-spacing:-.025em; }
+    .service-card p { margin:10px 0 0; color:var(--muted); font-size:14px; line-height:1.65; }
+    .service-link { position:absolute; left:22px; right:22px; bottom:20px; display:flex; align-items:center; justify-content:space-between; color:#eef2f7; font-size:13px; font-weight:700; }
+    .service-link i { transition:.2s ease; }
+    .service-card:hover .service-link i { transform:translateX(4px); }
+
+    .cta-strip { padding: 0 0 54px; }
+    .cta-card {
+      display:grid;
+      grid-template-columns:1fr auto;
+      align-items:center;
+      gap:28px;
+      padding:28px;
+      border:1px solid rgba(56,189,248,.22);
+      border-radius:22px;
+      background:
+        radial-gradient(circle at 85% 50%, rgba(56,189,248,.15), transparent 32%),
+        linear-gradient(135deg, #111522, #0d1019);
+    }
+    .cta-card h2 { margin:0; font-size:29px; letter-spacing:-.035em; }
+    .cta-card p { margin:8px 0 0; color:var(--muted); line-height:1.6; }
+    .cta-actions { display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
+
+    footer { border-top:1px solid var(--line); padding:24px 0; color:#737b8d; font-size:13px; }
+    .footer-inner { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .footer-links { display:flex; gap:18px; }
+    .footer-links a:hover { color:white; }
+
+    @media (max-width: 980px) {
+      .nav-links, .nav-actions { display:none; }
+      .menu-btn { display:block; }
+      .mobile-menu.open { display:block; }
+      .service-grid { grid-template-columns:repeat(2, minmax(0,1fr)); }
+      .cta-card { grid-template-columns:1fr; }
+      .cta-actions { justify-content:flex-start; }
+    }
+    @media (max-width: 640px) {
+      .container { width:min(100% - 28px, 1180px); }
+      .hero { padding-top:58px; }
+      .hero-visual { height:auto; min-height:420px; grid-template-columns:1fr; border-radius:18px; }
+      .visual-panel { min-height:210px; }
+      .visual-divider { left:0; right:0; top:50%; bottom:auto; width:auto; height:1px; }
+      .visual-label.right { left:18px; right:auto; }
+      h1 { font-size:49px; }
+      .hero-actions, .cta-actions { display:grid; grid-template-columns:1fr; }
+      .btn { width:100%; }
+      .services-top { align-items:flex-start; flex-direction:column; }
+      .service-grid { grid-template-columns:1fr; }
+      .service-card { min-height:230px; }
+      .footer-inner { flex-direction:column; align-items:flex-start; }
+      .footer-links { flex-wrap:wrap; }
+    }
     @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { transition-duration: .01ms !important; }
+      html { scroll-behavior:auto; }
+      *, *::before, *::after { transition-duration:.01ms !important; }
     }
   </style>
 </head>
+<body>
+  <a href="#main-content" class="sr-only focus-ring">Skip to content</a>
 
-<body class="overflow-x-hidden bg-brand-dark font-sans text-gray-100 antialiased">
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:text-brand-dark">Skip to content</a>
+  <header>
+    <div class="container nav">
+      <a href="index.html" class="brand focus-ring" aria-label="Consult and Hire home">
+        <strong>Consult &amp; Hire</strong>
+        <span>Experts in Global Tech Talent</span>
+      </a>
 
-  <header class="fixed left-0 top-0 z-50 w-full border-b border-white/10 bg-brand-dark/95 backdrop-blur-md">
-    <nav class="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="Primary navigation">
-      <div class="flex h-20 items-center justify-between">
-        <a href="index.html" class="focus-ring rounded-lg">
-          <span class="block text-lg font-bold text-white">Consult &amp; Hire</span>
-          <span class="block text-xs text-gray-400">Experts in Global Tech Talent</span>
-        </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="candidate.html">Job Seekers</a>
+        <a href="about.html">About Us</a>
+        <a href="contact.html">Contact</a>
+      </nav>
 
-        <div class="hidden items-center gap-7 md:flex">
-          <a href="employer.html" class="font-medium text-white">Employers</a>
-          <a href="candidate.html" class="text-gray-300 transition hover:text-white">Job Seekers</a>
-          <a href="about.html" class="text-gray-300 transition hover:text-white">About</a>
-          <a href="contact.html" class="text-gray-300 transition hover:text-white">Contact</a>
-          <a href="register.html" class="focus-ring rounded-lg border border-white/25 px-5 py-2.5 font-semibold text-white transition hover:bg-white/10">Register</a>
-          <a href="schedule.html" class="focus-ring rounded-lg bg-white px-5 py-2.5 font-semibold text-brand-dark transition hover:bg-gray-200">Schedule a Consultation</a>
-        </div>
-
-        <button id="mobile-menu-btn" class="focus-ring rounded-lg p-2 text-2xl text-white md:hidden" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-          <i class="fas fa-bars" aria-hidden="true"></i>
-        </button>
+      <div class="nav-actions">
+        <a href="register.html" class="btn btn-secondary focus-ring">Register</a>
+        <a href="schedule.html" class="btn btn-primary focus-ring">Schedule a Consultation</a>
       </div>
-    </nav>
 
-    <div id="mobile-menu" class="hidden border-t border-gray-800 bg-brand-surface md:hidden">
-      <div class="space-y-2 px-4 py-4">
-        <a href="employer.html" class="block rounded-lg bg-white/5 px-4 py-3 font-medium text-white">Employers</a>
-        <a href="candidate.html" class="block rounded-lg px-4 py-3 text-gray-300 hover:bg-white/5 hover:text-white">Job Seekers</a>
-        <a href="about.html" class="block rounded-lg px-4 py-3 text-gray-300 hover:bg-white/5 hover:text-white">About</a>
-        <a href="contact.html" class="block rounded-lg px-4 py-3 text-gray-300 hover:bg-white/5 hover:text-white">Contact</a>
-        <a href="register.html" class="mt-3 block rounded-lg border border-white/20 px-4 py-3 text-center font-semibold text-white">Register</a>
-        <a href="schedule.html" class="block rounded-lg bg-white px-4 py-3 text-center font-semibold text-brand-dark">Schedule a Consultation</a>
+      <button id="menuBtn" class="menu-btn focus-ring" aria-label="Open menu" aria-expanded="false">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu">
+      <a href="candidate.html">Job Seekers</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+      <div class="mobile-actions">
+        <a href="register.html" class="btn btn-secondary">Register</a>
+        <a href="schedule.html" class="btn btn-primary">Schedule a Consultation</a>
       </div>
     </div>
   </header>
 
   <main id="main-content">
-    <section class="gradient-bg relative pt-20">
-      <div class="container mx-auto px-4 py-20 sm:px-6 md:py-24 lg:px-8 lg:py-28">
-        <div class="max-w-4xl">
-          <p class="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-blue-200">Employer Services</p>
-          <h1 class="text-4xl font-bold leading-tight text-white md:text-6xl">Build better technology teams.</h1>
-          <p class="mt-5 max-w-3xl text-lg leading-8 text-gray-200 md:text-xl">From one critical hire to a complete talent strategy, choose the support your business needs and move forward with confidence.</p>
-          <div class="mt-8 flex flex-col gap-3 sm:flex-row">
-            <a href="register.html" class="focus-ring rounded-lg bg-white px-7 py-3.5 text-center font-semibold text-brand-dark transition hover:bg-gray-200">Register Your Role</a>
-            <a href="schedule.html" class="focus-ring glass rounded-lg px-7 py-3.5 text-center font-semibold text-white transition hover:bg-white/15">Schedule a Consultation</a>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> Global Tech Recruitment</div>
+        <h1>Hire your company’s future.</h1>
+        <p>From a single critical hire to a complete talent strategy, access flexible recruitment expertise built for ambitious technology companies.</p>
+        <div class="hero-actions">
+          <a href="register.html" class="btn btn-primary focus-ring">Register a Role <i class="fas fa-arrow-right"></i></a>
+          <a href="schedule.html" class="btn btn-secondary focus-ring">Schedule a Consultation</a>
+        </div>
+        <div class="hero-note">Choose one service or combine several into a tailored hiring solution.</div>
+
+        <div class="hero-visual" aria-label="Global city and collaborating technology professionals">
+          <div class="visual-panel city">
+            <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1400&q=86" alt="Modern global city skyline at dusk">
+            <div class="visual-label"><i class="fas fa-city"></i> Global opportunity</div>
+          </div>
+          <div class="visual-panel team">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=86" alt="Technology professionals collaborating around a table">
+            <div class="visual-label right"><i class="fas fa-users"></i> Teams that build the future</div>
+          </div>
+          <div class="visual-divider" aria-hidden="true"></div>
+          <span class="pulse-node node-one" aria-hidden="true"></span>
+          <span class="pulse-node node-two" aria-hidden="true"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="services" id="services">
+      <div class="container">
+        <div class="services-shell">
+          <div class="services-top">
+            <h2>Everything you need to hire smarter.</h2>
+            <p>Explore our four employer services.</p>
+          </div>
+
+          <div class="service-grid">
+            <a href="hire_query.html" class="service-card focus-ring">
+              <div class="service-number">01 / HIRE</div>
+              <div class="service-icon"><i class="fas fa-user-check"></i></div>
+              <h3>Hire</h3>
+              <p>End-to-end recruitment strategy and delivery, with as much or as little support as you need.</p>
+              <div class="service-link"><span>Explore service</span><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <a href="talent_academy.html" class="service-card focus-ring">
+              <div class="service-number">02 / ACADEMY</div>
+              <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+              <h3>Talent Academy</h3>
+              <p>Give recruitment teams the tools and techniques to hire better, quicker and with greater quality.</p>
+              <div class="service-link"><span>Explore service</span><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <a href="employer_brand.html" class="service-card focus-ring">
+              <div class="service-number">03 / BRAND</div>
+              <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+              <h3>Employer Brand</h3>
+              <p>Strengthen your talent marketing, candidate proposition and visibility in the market.</p>
+              <div class="service-link"><span>Explore service</span><i class="fas fa-arrow-right"></i></div>
+            </a>
+
+            <a href="talent_intelligence.html" class="service-card focus-ring">
+              <div class="service-number">04 / INSIGHT</div>
+              <div class="service-icon"><i class="fas fa-chart-line"></i></div>
+              <h3>Talent Intelligence</h3>
+              <p>Use market mapping and talent insight to make smarter, more strategic hiring decisions.</p>
+              <div class="service-link"><span>Explore service</span><i class="fas fa-arrow-right"></i></div>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="services" class="bg-white py-12 text-gray-900 md:py-16">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="mb-8 flex flex-col justify-between gap-4 md:flex-row md:items-end">
+    <section class="cta-strip">
+      <div class="container">
+        <div class="cta-card">
           <div>
-            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-brand-purple">Our Services</p>
-            <h2 class="mt-2 text-3xl font-bold md:text-4xl">Choose the support you need.</h2>
+            <h2>Ready to build what comes next?</h2>
+            <p>Register a role now or talk through the wider hiring challenge with us.</p>
           </div>
-          <p class="max-w-xl text-gray-600">Each service can be used independently or combined into a tailored hiring solution.</p>
-        </div>
-
-        <div class="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-          <a href="hire_query.html" class="service-card group flex min-h-[290px] flex-col rounded-2xl border border-gray-200 bg-gray-50 p-6 hover:border-blue-300">
-            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-brand-blue"><i class="fas fa-user-check"></i></div>
-            <h3 class="mt-6 text-2xl font-bold">Hire</h3>
-            <p class="mt-3 leading-7 text-gray-600">End-to-end recruitment strategy and delivery, with as much or as little help as you need.</p>
-            <span class="mt-auto pt-6 font-semibold text-brand-blue">Explore Hire <i class="fas fa-arrow-right ml-2 text-sm transition group-hover:translate-x-1"></i></span>
-          </a>
-
-          <a href="talent_academy.html" class="service-card group flex min-h-[290px] flex-col rounded-2xl border border-gray-200 bg-gray-50 p-6 hover:border-purple-300">
-            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-purple-100 text-brand-purple"><i class="fas fa-graduation-cap"></i></div>
-            <h3 class="mt-6 text-2xl font-bold">Talent Academy</h3>
-            <p class="mt-3 leading-7 text-gray-600">Equip recruitment teams with the tools and techniques to hire better, quicker and with greater quality.</p>
-            <span class="mt-auto pt-6 font-semibold text-brand-purple">Explore Academy <i class="fas fa-arrow-right ml-2 text-sm transition group-hover:translate-x-1"></i></span>
-          </a>
-
-          <a href="employer_brand.html" class="service-card group flex min-h-[290px] flex-col rounded-2xl border border-gray-200 bg-gray-50 p-6 hover:border-blue-300">
-            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-blue-100 text-brand-blue"><i class="fas fa-bullhorn"></i></div>
-            <h3 class="mt-6 text-2xl font-bold">Employer Brand</h3>
-            <p class="mt-3 leading-7 text-gray-600">Strengthen your talent marketing, candidate proposition and visibility in the market.</p>
-            <span class="mt-auto pt-6 font-semibold text-brand-blue">Explore Employer Brand <i class="fas fa-arrow-right ml-2 text-sm transition group-hover:translate-x-1"></i></span>
-          </a>
-
-          <a href="talent_intelligence.html" class="service-card group flex min-h-[290px] flex-col rounded-2xl border border-gray-200 bg-gray-50 p-6 hover:border-purple-300">
-            <div class="flex h-11 w-11 items-center justify-center rounded-xl bg-purple-100 text-brand-purple"><i class="fas fa-chart-line"></i></div>
-            <h3 class="mt-6 text-2xl font-bold">Talent Intelligence</h3>
-            <p class="mt-3 leading-7 text-gray-600">Use market mapping and talent insight to make smarter, more strategic hiring decisions.</p>
-            <span class="mt-auto pt-6 font-semibold text-brand-purple">Explore Intelligence <i class="fas fa-arrow-right ml-2 text-sm transition group-hover:translate-x-1"></i></span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="bg-brand-surface py-12 md:py-16">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
-          <div>
-            <p class="text-sm font-semibold uppercase tracking-[0.22em] text-blue-300">Ready to Hire?</p>
-            <h2 class="mt-3 text-3xl font-bold text-white md:text-4xl">Tell us what your business needs.</h2>
-            <p class="mt-4 max-w-2xl text-lg leading-8 text-gray-400">Register a role now or schedule a conversation to discuss your wider hiring strategy.</p>
-          </div>
-          <div class="flex flex-col gap-3 sm:flex-row">
-            <a href="register.html" class="focus-ring rounded-lg bg-white px-7 py-3.5 text-center font-semibold text-brand-dark transition hover:bg-gray-200">Register</a>
-            <a href="schedule.html" class="focus-ring rounded-lg border border-white/20 px-7 py-3.5 text-center font-semibold text-white transition hover:bg-white/10">Schedule a Consultation</a>
+          <div class="cta-actions">
+            <a href="register.html" class="btn btn-primary focus-ring">Register</a>
+            <a href="schedule.html" class="btn btn-secondary focus-ring">Schedule a Consultation</a>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="border-t border-gray-800 bg-black py-7">
-    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col items-center justify-between gap-4 text-center md:flex-row md:text-left">
-        <p class="text-sm text-gray-500">&copy; <span id="current-year"></span> Consult &amp; Hire. All rights reserved.</p>
-        <div class="flex flex-wrap justify-center gap-5 text-sm text-gray-500">
-          <a href="privacypolicy.html" class="hover:text-white">Privacy Policy</a>
-          <a href="termsofuse.html" class="hover:text-white">Terms of Use</a>
-          <a href="contact.html" class="hover:text-white">Contact</a>
-        </div>
+  <footer>
+    <div class="container footer-inner">
+      <span>&copy; <span id="year"></span> Consult &amp; Hire.</span>
+      <div class="footer-links">
+        <a href="privacypolicy.html">Privacy</a>
+        <a href="termsofuse.html">Terms</a>
+        <a href="contact.html">Contact</a>
       </div>
     </div>
   </footer>
 
   <script>
-    const button = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const icon = button.querySelector('i');
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const menuIcon = menuBtn.querySelector('i');
 
-    button.addEventListener('click', () => {
-      const isOpen = !menu.classList.contains('hidden');
-      menu.classList.toggle('hidden');
-      button.setAttribute('aria-expanded', String(!isOpen));
-      icon.className = isOpen ? 'fas fa-bars' : 'fas fa-times';
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+      menuIcon.className = open ? 'fas fa-times' : 'fas fa-bars';
     });
 
-    document.getElementById('current-year').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
