@@ -112,8 +112,8 @@
 
                 <div class="hidden md:flex items-center space-x-8">
                     <a href="index.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">Home</a>
-                    <a href="employer.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">Employers</a>
-                    <a href="candidate" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">Job Seekers</a>
+                    <a href="employer.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">Employer</a>
+                    <a href="candidate" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">Job Seeker</a>
                     <a href="about.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">About Us</a>
                     <a href="contact.html" class="text-gray-300 hover:text-white font-medium transition-colors duration-200">Contact Us</a>
                 </div>
