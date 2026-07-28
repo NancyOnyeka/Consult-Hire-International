@@ -136,46 +136,88 @@
 
     .hero-visual {
       position:relative;
-      margin:38px auto 0;
+      margin:38px auto 48px;
       max-width:1080px;
-      height:310px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:2px;
+      min-height:390px;
+    }
+    .city-frame {
+      position:relative;
+      height:330px;
       overflow:hidden;
       border:1px solid rgba(255,255,255,.12);
       border-radius:24px;
       background:rgba(255,255,255,.08);
       box-shadow:var(--shadow);
     }
-    .visual-panel { position:relative; overflow:hidden; min-width:0; }
-    .visual-panel img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .8s ease; }
-    .hero-visual:hover .visual-panel img { transform:scale(1.035); }
-    .visual-panel::after { content:""; position:absolute; inset:0; pointer-events:none; }
-    .visual-panel.city::after { background:linear-gradient(90deg, rgba(8,9,18,.48), rgba(8,9,18,.06)); }
-    .visual-panel.team::after { background:linear-gradient(90deg, rgba(8,9,18,.08), rgba(139,92,246,.20)); }
-    .visual-divider {
+    .city-frame img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 48%;
+      display:block;
+      transition:transform .9s ease;
+    }
+    .hero-visual:hover .city-frame img { transform:scale(1.025); }
+    .city-frame::after {
+      content:"";
       position:absolute;
-      z-index:3;
-      left:50%;
-      top:0;
-      bottom:0;
-      width:1px;
-      background:linear-gradient(transparent, rgba(255,255,255,.72), transparent);
-      box-shadow:0 0 22px rgba(56,189,248,.35);
+      inset:0;
+      background:
+        linear-gradient(90deg, rgba(8,9,18,.58), rgba(8,9,18,.10) 52%, rgba(8,9,18,.24)),
+        linear-gradient(0deg, rgba(8,9,18,.50), transparent 48%);
+      pointer-events:none;
     }
-    .visual-label {
-      position:absolute; left:18px; bottom:18px; z-index:4;
-      display:inline-flex; align-items:center; gap:8px;
-      padding:9px 12px; border-radius:999px;
-      border:1px solid rgba(255,255,255,.16);
-      background:rgba(8,9,18,.72); backdrop-filter:blur(10px);
-      color:#e6e9f2; font-size:12px; font-weight:700;
-    }
-    .visual-label.right { left:auto; right:18px; }
-    .pulse-node {
+    .team-card {
       position:absolute;
       z-index:4;
+      right:34px;
+      bottom:-46px;
+      width:min(430px, 46%);
+      height:245px;
+      overflow:hidden;
+      border:8px solid #0a0c17;
+      border-radius:22px;
+      background:var(--surface);
+      box-shadow:0 28px 60px rgba(0,0,0,.46);
+      transform:rotate(-1.2deg);
+      transition:transform .3s ease;
+    }
+    .hero-visual:hover .team-card { transform:rotate(0deg) translateY(-3px); }
+    .team-card img {
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      object-position:center 45%;
+      display:block;
+    }
+    .team-card::after {
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(0deg, rgba(8,9,18,.55), transparent 52%);
+      pointer-events:none;
+    }
+    .visual-label {
+      position:absolute;
+      left:20px;
+      bottom:20px;
+      z-index:5;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.16);
+      background:rgba(8,9,18,.75);
+      backdrop-filter:blur(10px);
+      color:#e6e9f2;
+      font-size:12px;
+      font-weight:700;
+    }
+    .team-card .visual-label { left:16px; bottom:14px; }
+    .pulse-node {
+      position:absolute;
+      z-index:5;
       width:10px;
       height:10px;
       border-radius:50%;
@@ -184,7 +226,7 @@
       animation:pulse 2.4s infinite;
     }
     .node-one { left:24%; top:24%; }
-    .node-two { right:22%; top:31%; animation-delay:.8s; background:var(--purple); }
+    .node-two { right:19%; top:18%; animation-delay:.8s; background:var(--purple); }
     @keyframes pulse { 70% { box-shadow:0 0 0 18px rgba(56,189,248,0); } 100% { box-shadow:0 0 0 0 rgba(56,189,248,0); } }
 
     .services { padding: 16px 0 58px; }
@@ -274,10 +316,17 @@
     @media (max-width: 640px) {
       .container { width:min(100% - 28px, 1180px); }
       .hero { padding-top:58px; }
-      .hero-visual { height:auto; min-height:420px; grid-template-columns:1fr; border-radius:18px; }
-      .visual-panel { min-height:210px; }
-      .visual-divider { left:0; right:0; top:50%; bottom:auto; width:auto; height:1px; }
-      .visual-label.right { left:18px; right:auto; }
+      .hero-visual { min-height:500px; margin-bottom:26px; }
+      .city-frame { height:285px; border-radius:18px; }
+      .team-card {
+        left:18px;
+        right:18px;
+        bottom:0;
+        width:auto;
+        height:245px;
+        border-width:6px;
+        transform:none;
+      }
       h1 { font-size:49px; }
       .hero-actions, .cta-actions { display:grid; grid-template-columns:1fr; }
       .btn { width:100%; }
@@ -342,16 +391,17 @@
         </div>
         <div class="hero-note">Choose one service or combine several into a tailored hiring solution.</div>
 
-        <div class="hero-visual" aria-label="Global city and collaborating technology professionals">
-          <div class="visual-panel city">
-            <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1400&q=86" alt="Modern global city skyline at dusk">
-            <div class="visual-label"><i class="fas fa-city"></i> Global opportunity</div>
+        <div class="hero-visual" aria-label="A global city with an overlapping image of a happy technology team collaborating">
+          <div class="city-frame">
+            <img src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&w=1800&q=88" alt="Modern global city skyline at dusk">
+            <div class="visual-label"><i class="fas fa-globe"></i> Global opportunity</div>
           </div>
-          <div class="visual-panel team">
-            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1400&q=86" alt="Technology professionals collaborating around a table">
-            <div class="visual-label right"><i class="fas fa-users"></i> Teams that build the future</div>
+
+          <div class="team-card">
+            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=88" alt="A happy and diverse technology team collaborating together">
+            <div class="visual-label"><i class="fas fa-users"></i> People building what comes next</div>
           </div>
-          <div class="visual-divider" aria-hidden="true"></div>
+
           <span class="pulse-node node-one" aria-hidden="true"></span>
           <span class="pulse-node node-two" aria-hidden="true"></span>
         </div>
