@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0a">
+    <title>Terms of Use | Consult & Hire</title>
+    <meta name="description" content="Terms of Use for the Consult & Hire website and online services.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: "#0a0a0a",
+                            blue: "#1e3a8a",
+                            purple: "#581c87",
+                            surface: "#171717"
+                        }
+                    },
+                    fontFamily: {
+                        sans: ["Inter", "sans-serif"]
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        .gradient-bg {
+            background:
+                radial-gradient(circle at 15% 20%, rgba(59,130,246,.22), transparent 30rem),
+                radial-gradient(circle at 90% 70%, rgba(147,51,234,.22), transparent 34rem),
+                linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 52%, #2e1065 100%);
+        }
+        .focus-ring:focus-visible {
+            outline: 3px solid rgba(191, 219, 254, 0.95);
+            outline-offset: 4px;
+        }
+        .legal-copy h2 {
+            margin-top: 2.25rem;
+            margin-bottom: .8rem;
+            font-size: 1.35rem;
+            line-height: 1.4;
+            font-weight: 700;
+            color: #111827;
+        }
+        .legal-copy p,
+        .legal-copy li {
+            color: #4b5563;
+            line-height: 1.8;
+        }
+        .legal-copy p { margin-bottom: 1rem; }
+        .legal-copy ul {
+            margin: .75rem 0 1.25rem 1.25rem;
+            list-style: disc;
+        }
+        .legal-copy a {
+            color: #1e3a8a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden bg-brand-dark font-sans text-gray-100 antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:text-brand-dark">Skip to content</a>
+
+    <header class="fixed left-0 top-0 z-50 w-full border-b border-gray-800 bg-brand-dark/95 backdrop-blur-md">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="Primary navigation">
+            <div class="flex h-20 items-center justify-between">
+                <a href="index.html" class="focus-ring flex items-center gap-3 rounded-lg" aria-label="Consult & Hire home">
+                    <div class="gradient-bg flex h-11 w-11 items-center justify-center rounded-xl border border-gray-700">
+                        <i class="fas fa-briefcase text-lg text-white" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <span class="block text-lg font-bold text-white">Consult &amp; Hire</span>
+                        <span class="block text-xs text-gray-400">Experts in Global Tech Talent</span>
+                    </div>
+                </a>
+
+                <div class="hidden items-center space-x-8 md:flex">
+                    <ul id="desktop-nav" class="flex space-x-6"></ul>
+                    <a href="register.html" class="focus-ring rounded-lg bg-brand-blue px-6 py-2.5 font-medium text-white transition-colors hover:bg-blue-700">Register or Hire</a>
+                </div>
+
+                <button id="mobile-menu-btn" class="focus-ring rounded-lg p-2 text-2xl text-white md:hidden" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <i class="fas fa-bars" aria-hidden="true"></i>
+                </button>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden border-t border-gray-800 bg-brand-surface md:hidden">
+            <ul id="mobile-nav" class="space-y-2 px-4 py-4"></ul>
+            <div class="px-4 pb-4">
+                <a href="register.html" class="block rounded-lg bg-brand-blue px-6 py-3 text-center font-medium text-white hover:bg-blue-700">Register or Hire</a>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <section class="gradient-bg pb-16 pt-32 md:pb-20 md:pt-36">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-4xl text-center">
+                    <p class="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-blue-300">Website Information</p>
+                    <h1 class="text-4xl font-bold text-white md:text-6xl">Terms of Use</h1>
+                    <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-gray-300">These terms explain the conditions that apply when you access or use the Consult &amp; Hire website.</p>
+                    <p class="mt-4 text-sm text-gray-400">Last updated: 28 July 2026</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-gray-50 py-14 text-gray-900 md:py-20">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[250px_1fr]">
+                    <aside class="h-fit rounded-2xl border border-gray-200 bg-white p-6 shadow-sm lg:sticky lg:top-28">
+                        <p class="mb-4 text-sm font-bold uppercase tracking-[0.16em] text-brand-purple">On this page</p>
+                        <nav aria-label="Terms of Use sections">
+                            <ul class="space-y-3 text-sm text-gray-600">
+                                <li><a class="hover:text-brand-blue" href="#acceptance">Acceptance</a></li>
+                                <li><a class="hover:text-brand-blue" href="#website-use">Using the website</a></li>
+                                <li><a class="hover:text-brand-blue" href="#recruitment">Recruitment information</a></li>
+                                <li><a class="hover:text-brand-blue" href="#submissions">Information you submit</a></li>
+                                <li><a class="hover:text-brand-blue" href="#intellectual-property">Intellectual property</a></li>
+                                <li><a class="hover:text-brand-blue" href="#liability">Liability</a></li>
+                                <li><a class="hover:text-brand-blue" href="#privacy">Privacy</a></li>
+                                <li><a class="hover:text-brand-blue" href="#changes">Changes and contact</a></li>
+                            </ul>
+                        </nav>
+                    </aside>
+
+                    <article class="legal-copy rounded-3xl border border-gray-200 bg-white p-7 shadow-sm md:p-12">
+                        <div class="rounded-2xl border border-blue-100 bg-blue-50 p-5 text-sm leading-7 text-blue-950">
+                            By using this website, you agree to these Terms of Use. If you do not agree, please stop using the website.
+                        </div>
+
+                        <h2 id="acceptance">1. About these Terms</h2>
+                        <p>These Terms of Use apply to the Consult &amp; Hire website and any related online forms, information, resources and services made available through it.</p>
+                        <p>In these Terms, “Consult &amp; Hire”, “we”, “us” and “our” refer to the operator of this website. “You” means any person who accesses or uses the website.</p>
+
+                        <h2 id="website-use">2. Permitted use of the website</h2>
+                        <p>You may use this website for lawful purposes, including learning about our services, making a hiring enquiry, exploring career opportunities, submitting your details or contacting our team.</p>
+                        <p>You must not:</p>
+                        <ul>
+                            <li>use the website in a way that is unlawful, fraudulent, misleading or harmful;</li>
+                            <li>attempt to gain unauthorised access to the website, its systems or any information stored within them;</li>
+                            <li>introduce malicious code, viruses or other harmful technology;</li>
+                            <li>scrape, copy, reproduce or commercially exploit website content without permission; or</li>
+                            <li>interfere with the operation, security or availability of the website.</li>
+                        </ul>
+
+                        <h2 id="recruitment">3. Recruitment and employment information</h2>
+                        <p>Information on this website is general in nature. Job listings, salary information, market insights, candidate profiles and recruitment content may change and should not be treated as a guarantee of employment, engagement, availability, remuneration or hiring outcomes.</p>
+                        <p>Submitting a CV, application, enquiry or other information does not create an employment relationship, agency relationship, contractual obligation or guarantee that you will be contacted, represented, shortlisted or offered a role.</p>
+                        <p>Employers remain responsible for their own hiring decisions, checks, employment arrangements and compliance obligations. Candidates remain responsible for ensuring the accuracy of the information they provide and for making their own career decisions.</p>
+
+                        <h2 id="submissions">4. Information and materials you submit</h2>
+                        <p>You confirm that any information you submit through the website is accurate, current and not misleading, and that you have the right to provide it to us.</p>
+                        <p>When you submit a CV, job description, enquiry, contact details or other material, you authorise us to use that information for the purpose for which it was provided, including assessing your enquiry, communicating with you and delivering recruitment or related services.</p>
+                        <p>You must not submit confidential, sensitive or third-party information unless you are authorised to do so.</p>
+
+                        <h2 id="intellectual-property">5. Intellectual property</h2>
+                        <p>Unless otherwise stated, the website and its content—including text, branding, graphics, layouts, icons and original materials—are owned by or licensed to Consult &amp; Hire and are protected by intellectual property laws.</p>
+                        <p>You may view and print website content for your own personal or internal business use. You may not reproduce, publish, distribute, modify or commercially use our content without our prior written permission.</p>
+
+                        <h2>6. Third-party websites and services</h2>
+                        <p>The website may contain links to third-party websites, platforms or services. These links are provided for convenience only. We do not control or endorse third-party content and are not responsible for its availability, accuracy, security or privacy practices.</p>
+
+                        <h2>7. Website availability and accuracy</h2>
+                        <p>We aim to keep the website accurate, secure and available, but we do not guarantee that it will always be uninterrupted, error-free or completely current. We may update, suspend, restrict or withdraw any part of the website without notice.</p>
+
+                        <h2 id="liability">8. Disclaimers and limitation of liability</h2>
+                        <p>To the maximum extent permitted by law, the website and its content are provided on an “as is” and “as available” basis. We exclude warranties and representations that are not expressly stated in these Terms.</p>
+                        <p>To the maximum extent permitted by law, Consult &amp; Hire is not liable for indirect, incidental, special or consequential loss arising from your access to, reliance on or inability to use the website.</p>
+                        <p>Nothing in these Terms excludes, restricts or modifies any right, guarantee or remedy that cannot lawfully be excluded under the Australian Consumer Law or other applicable legislation.</p>
+
+                        <h2 id="privacy">9. Privacy and personal information</h2>
+                        <p>We handle personal information in accordance with our <a href="privacy.html">Privacy Policy</a>. By submitting personal information through this website, you acknowledge that it may be collected, used and disclosed as described in that policy.</p>
+
+                        <h2>10. Security</h2>
+                        <p>While we take reasonable steps to protect the website and information submitted through it, no internet transmission or electronic storage system is completely secure. You are responsible for taking appropriate precautions when using the website.</p>
+
+                        <h2>11. Governing law</h2>
+                        <p>These Terms are governed by the laws of Queensland, Australia. You submit to the non-exclusive jurisdiction of the courts of Queensland and the courts entitled to hear appeals from them.</p>
+
+                        <h2 id="changes">12. Changes to these Terms</h2>
+                        <p>We may update these Terms from time to time. The updated version will be published on this page with a revised “Last updated” date. Your continued use of the website after an update means you accept the revised Terms.</p>
+
+                        <h2>13. Contact us</h2>
+                        <p>Questions about these Terms can be sent to:</p>
+                        <p><strong>Consult &amp; Hire</strong><br>
+                        Email: <a href="mailto:hello@consultandhire.com">hello@consultandhire.com</a></p>
+
+                        <div class="mt-10 rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm leading-7 text-amber-950">
+                            <strong>Important:</strong> This page is a general website template and is not legal advice. It should be reviewed by an Australian lawyer and updated to reflect your exact business name, entity details, services, data practices and contractual arrangements before publication.
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-gray-800 bg-black py-8">
+        <div class="container mx-auto flex flex-col items-center justify-between gap-4 px-4 text-center sm:px-6 md:flex-row lg:px-8">
+            <p class="text-sm text-gray-500">&copy; <span id="current-year"></span> Consult &amp; Hire. All rights reserved.</p>
+            <div class="flex gap-6 text-sm text-gray-400">
+                <a href="privacy.html" class="focus-ring rounded hover:text-white">Privacy Policy</a>
+                <a href="terms.html" class="focus-ring rounded text-white">Terms of Use</a>
+                <a href="contact.html" class="focus-ring rounded hover:text-white">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navItems = [
+            { label: "Employers", href: "employer.html" },
+            { label: "Job Seekers", href: "candidate.html" },
+            { label: "About Us", href: "about.html" },
+            { label: "Contact", href: "contact.html" }
+        ];
+
+        function renderNavItems(items) {
+            return items.map(item => `
+                <li>
+                    <a href="${item.href}" class="block rounded-md px-2 py-2 font-medium text-gray-300 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-200">
+                        ${item.label}
+                    </a>
+                </li>
+            `).join("");
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("desktop-nav").innerHTML = renderNavItems(navItems);
+            document.getElementById("mobile-nav").innerHTML = renderNavItems(navItems);
+            document.getElementById("current-year").textContent = new Date().getFullYear();
+
+            const mobileMenuBtn = document.getElementById("mobile-menu-btn");
+            const mobileMenu = document.getElementById("mobile-menu");
+            const icon = mobileMenuBtn.querySelector("i");
+
+            mobileMenuBtn.addEventListener("click", function () {
+                const opening = mobileMenu.classList.contains("hidden");
+                mobileMenu.classList.toggle("hidden");
+                mobileMenuBtn.setAttribute("aria-expanded", String(opening));
+                icon.className = opening ? "fas fa-times" : "fas fa-bars";
+            });
+
+            mobileMenu.addEventListener("click", function (event) {
+                if (event.target.closest("a")) {
+                    mobileMenu.classList.add("hidden");
+                    mobileMenuBtn.setAttribute("aria-expanded", "false");
+                    icon.className = "fas fa-bars";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
