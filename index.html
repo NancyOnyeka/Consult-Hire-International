@@ -1,22 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <base target="_self">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0a0a0a">
     <title>Consult & Hire | Global Tech Recruitment</title>
-    <meta name="description" content="Consult & Hire specialises in global technology recruitment, executive search, talent intelligence, employer branding and hiring support for ambitious organisations.">
+    <meta name="description" content="Consult & Hire connects ambitious organisations with exceptional technology talent across global markets.">
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -26,9 +22,7 @@
                             dark: "#0a0a0a",
                             blue: "#1e3a8a",
                             purple: "#581c87",
-                            accent: "#3730a3",
-                            surface: "#171717",
-                            card: "#262626"
+                            surface: "#171717"
                         }
                     },
                     fontFamily: {
@@ -43,7 +37,7 @@
         html { scroll-behavior: smooth; }
 
         .gradient-bg {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 50%, #2e1065 100%);
+            background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 52%, #2e1065 100%);
         }
 
         .glass-effect {
@@ -52,138 +46,118 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
-        .service-card {
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .service-card:hover {
-            transform: translateY(-6px);
-            border-color: #1e3a8a;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.25);
-        }
-
         .hero-logo {
             filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.45));
+        }
+
+        .focus-ring:focus-visible {
+            outline: 3px solid rgba(191, 219, 254, 0.95);
+            outline-offset: 4px;
         }
     </style>
 </head>
 
-<body class="font-sans text-gray-100 bg-brand-dark antialiased overflow-x-hidden">
+<body class="overflow-x-hidden bg-brand-dark font-sans text-gray-100 antialiased">
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-white focus:px-4 focus:py-3 focus:text-brand-dark">Skip to content</a>
 
-    <!-- Header -->
-    <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300" id="header">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-             <div class="flex justify-between items-center h-20">
-                <a href="index.html" class="flex items-center space-x-3">
-                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center border border-gray-700">
-                        <i class="fas fa-briefcase text-white text-xl"></i>
+    <header class="fixed left-0 top-0 z-50 w-full border-b border-gray-800 bg-brand-dark/95 backdrop-blur-md">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8" aria-label="Primary navigation">
+            <div class="flex h-20 items-center justify-between">
+                <a href="index.html" class="focus-ring flex items-center space-x-3 rounded-lg">
+                    <div class="gradient-bg flex h-12 w-12 items-center justify-center rounded-xl border border-gray-700">
+                        <i class="fas fa-briefcase text-xl text-white"></i>
                     </div>
                     <div>
-                        <h1 class="text-xl font-bold text-white">Consult & Hire</h1>
-                        <p class="text-xs text-gray-400">Technology Talent Acquisition</p>
+                        <span class="block text-xl font-bold text-white">Consult &amp; Hire</span>
+                        <span class="block text-xs text-gray-400">Technology Talent Acquisition</span>
                     </div>
                 </a>
 
-                <div class="hidden md:flex items-center space-x-8">
+                <div class="hidden items-center space-x-8 md:flex">
                     <ul id="desktop-nav" class="flex space-x-6"></ul>
-                    <a href="register.html" class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200">Register or Hire</a>
+                    <a href="register.html" class="focus-ring rounded-lg bg-brand-blue px-6 py-2.5 font-medium text-white transition-colors hover:bg-blue-700">Register or Hire</a>
                 </div>
 
-                <button class="md:hidden text-white text-2xl" id="mobile-menu-btn" aria-label="Toggle menu" aria-expanded="false">
+                <button id="mobile-menu-btn" class="focus-ring rounded-lg p-2 text-2xl text-white md:hidden" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
                     <i class="fas fa-bars"></i>
                 </button>
             </div>
         </nav>
 
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-surface border-t border-gray-800">
-            <ul id="mobile-nav" class="px-4 py-4 space-y-3"></ul>
+        <div id="mobile-menu" class="hidden border-t border-gray-800 bg-brand-surface md:hidden">
+            <ul id="mobile-nav" class="space-y-2 px-4 py-4"></ul>
             <div class="px-4 pb-4">
-                <a href="hire_talent.html" class="block bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors duration-200">Hire Talent</a>
+                <a href="register.html" class="block rounded-lg bg-brand-blue px-6 py-3 text-center font-medium text-white hover:bg-blue-700">Register or Hire</a>
             </div>
         </div>
     </header>
 
-    <!-- Hero -->
-    <section id="home" class="gradient-bg pt-32 pb-20 lg:pt-40 lg:pb-28 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-20">
-            <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500 rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
-            <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500 rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
-        </div>
-
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <p class="text-blue-300 uppercase tracking-widest font-semibold mb-4">Global Tech Recruitment</p>
-                    <h1 class="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">Experts in Global Tech Talent</h1>
-                    <p class="text-xl text-gray-300 leading-relaxed mb-8">Connecting ambitious organisations with exceptional technology talent across global markets.</p>
-
-                    <div class="flex flex-col sm:flex-row gap-4">
-                        <a href="register.html" class="bg-white text-brand-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200 text-center">Submit a Hiring Enquiry</a>
-                        <a href="register.html" class="glass-effect text-white px-8 py-4 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 text-center">Submit Your CV</a>
-                    </div>
-                </div>
-
-                <div class="glass-effect rounded-3xl p-6 md:p-10 flex items-center justify-center min-h-[320px]">
-                    <img src="Logo_Website.png" alt="Consult & Hire logo" class="hero-logo w-full max-w-xl rounded-2xl object-contain">
-                </div>
+    <main id="main-content">
+        <section class="gradient-bg relative overflow-hidden pb-16 pt-32 lg:pb-20 lg:pt-36">
+            <div class="absolute inset-0 opacity-20" aria-hidden="true">
+                <div class="absolute left-0 top-0 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-500 blur-3xl"></div>
+                <div class="absolute bottom-0 right-0 h-96 w-96 translate-x-1/2 translate-y-1/2 rounded-full bg-purple-500 blur-3xl"></div>
             </div>
-        </div>
-    </section>
 
-                <div class="bg-gray-50 rounded-3xl p-10 border border-gray-200 shadow-sm">
-                    <h3 class="text-2xl font-bold mb-8">We specialise in:</h3>
-                    <div class="space-y-5">
-                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">Engineering, DevOps, Platform and SRE talent</p></div>
-                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">AI, Machine Learning and Generative AI hiring</p></div>
-                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">Data Engineering, Analytics and Data Science</p></div>
-                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">Technology leadership and executive search</p></div>
-                        <div class="flex gap-4"><i class="fas fa-check-circle text-brand-blue text-xl mt-1"></i><p class="text-gray-700">Employer brand and talent intelligence projects</p></div>
+            <div class="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid items-center gap-10 lg:grid-cols-2">
+                    <div>
+                        <p class="mb-4 font-semibold uppercase tracking-widest text-blue-300">Global Tech Recruitment</p>
+                        <h1 class="mb-6 text-4xl font-bold leading-tight text-white md:text-6xl">Experts in Global Tech Talent</h1>
+                        <p class="mb-8 max-w-xl text-lg leading-relaxed text-gray-300 md:text-xl">Connecting ambitious organisations with exceptional technology talent across global markets.</p>
+
+                        <div class="flex flex-col gap-4 sm:flex-row">
+                            <a href="register.html" class="focus-ring rounded-lg bg-white px-8 py-4 text-center font-semibold text-brand-dark transition-colors hover:bg-gray-200">Submit a Hiring Enquiry</a>
+                            <a href="register.html" class="focus-ring glass-effect rounded-lg px-8 py-4 text-center font-semibold text-white transition-colors hover:bg-white/10">Submit Your CV</a>
+                        </div>
+                    </div>
+
+                    <div class="glass-effect flex min-h-[280px] items-center justify-center rounded-3xl p-6 md:p-9">
+                        <img src="Logo_Website.png" alt="Consult & Hire logo" class="hero-logo w-full max-w-xl rounded-2xl object-contain">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-     <section class="deep-gradient pb-16 pt-36 md:pb-20 md:pt-40">
+        <section class="bg-white py-14 text-gray-900 md:py-16">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mx-auto grid max-w-6xl gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
+                    <div>
+                        <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-brand-purple">Our Expertise</p>
+                        <h2 class="text-3xl font-bold leading-tight md:text-4xl">Specialist technology recruitment, delivered simply.</h2>
+                    </div>
+
+                    <div class="rounded-3xl border border-gray-200 bg-gray-50 p-7 shadow-sm md:p-9">
+                        <h3 class="mb-6 text-2xl font-bold">We specialise in:</h3>
+                        <div class="grid gap-4 sm:grid-cols-2">
+                            <div class="flex gap-3"><i class="fas fa-check-circle mt-1 text-brand-blue"></i><p class="text-gray-700">Engineering, DevOps, Platform and SRE</p></div>
+                            <div class="flex gap-3"><i class="fas fa-check-circle mt-1 text-brand-blue"></i><p class="text-gray-700">AI, Machine Learning and Data</p></div>
+                            <div class="flex gap-3"><i class="fas fa-check-circle mt-1 text-brand-blue"></i><p class="text-gray-700">Technology leadership and executive search</p></div>
+                            <div class="flex gap-3"><i class="fas fa-check-circle mt-1 text-brand-blue"></i><p class="text-gray-700">Talent intelligence and employer brand</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-brand-surface py-14 md:py-16">
+            <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+                <div class="mx-auto max-w-3xl">
+                    <p class="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-blue-300">Consult &amp; Hire</p>
+                    <h2 class="mb-4 text-3xl font-bold text-white md:text-4xl">Ready to discuss your next hire or career move?</h2>
+                    <p class="mb-8 text-lg text-gray-400">Speak with our team about hiring, your next opportunity or a wider talent challenge.</p>
+                    <div class="flex flex-col justify-center gap-4 sm:flex-row">
+                        <a href="clientcalendar.html" class="focus-ring rounded-lg bg-white px-8 py-4 font-semibold text-brand-dark hover:bg-gray-200">Speak With Consult &amp; Hire</a>
+                        <a href="mailto:hello@consultandhire.com" class="focus-ring rounded-lg border border-gray-700 px-8 py-4 font-semibold text-white hover:bg-white/5">Email Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="border-t border-gray-800 bg-black py-7">
         <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-4xl">
-                <p class="mb-4 text-sm font-semibold uppercase tracking-[0.22em] text-[#d8c8ef]">
-                    Consult & Hire
-                </p>
-                <h1 class="mb-5 text-3xl font-bold text-white md:text-5xl">
-                    Better talent strategies 
-                    create stronger organisations.
-                </h1>
-                <p class="mb-8 text-xl text-white/75">
-                    Access the insight, support and capability your organisation needs to hire, develop and transition talent with confidence.
-                </p>
-
-                <a
-                    href="clientcalendar.html"
-                    class="inline-flex rounded-lg bg-white px-8 py-4 font-semibold text-brand-navy transition-colors hover:bg-brand-lilac"
-                >
-                    Speak With Consult & Hire
-                </a>
-            </div>
-        </div>
-    </section>
-    <!-- Contact -->
-    <section id="contact" class="py-20 bg-brand-surface">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="max-w-3xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Contact Us</h2>
-                <p class="text-gray-400 text-lg mb-8">Ready to discuss your next hire or career move? Get in touch with Consult&amp;Hire.</p>
-                <a href="mailto:hello@consultandhire.com" class="inline-flex items-center justify-center bg-white text-brand-dark px-8 py-4 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200">
-                    <i class="fas fa-envelope mr-3"></i>hello@consultandhire.com
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="bg-black border-t border-gray-800 py-8">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <p class="text-gray-500 text-sm">&copy; <span id="current-year"></span> Consult &amp; Hire. All rights reserved.</p>
+            <p class="text-sm text-gray-500">&copy; <span id="current-year"></span> Consult &amp; Hire. All rights reserved.</p>
         </div>
     </footer>
 
@@ -198,7 +172,7 @@
         function renderNavItems(items) {
             return items.map(item => `
                 <li>
-                    <a href="${item.href}" class="block text-gray-300 hover:text-white font-medium transition-colors duration-200">
+                    <a href="${item.href}" class="block rounded-md px-2 py-2 font-medium text-gray-300 transition-colors hover:text-white focus:outline-none focus:ring-2 focus:ring-blue-200">
                         ${item.label}
                     </a>
                 </li>
@@ -212,16 +186,20 @@
 
             const mobileMenuBtn = document.getElementById("mobile-menu-btn");
             const mobileMenu = document.getElementById("mobile-menu");
+            const icon = mobileMenuBtn.querySelector("i");
 
             mobileMenuBtn.addEventListener("click", function () {
-                const isHidden = mobileMenu.classList.toggle("hidden");
-                mobileMenuBtn.setAttribute("aria-expanded", String(!isHidden));
+                const opening = mobileMenu.classList.contains("hidden");
+                mobileMenu.classList.toggle("hidden");
+                mobileMenuBtn.setAttribute("aria-expanded", String(opening));
+                icon.className = opening ? "fas fa-times" : "fas fa-bars";
             });
 
             mobileMenu.addEventListener("click", function (event) {
                 if (event.target.tagName === "A") {
                     mobileMenu.classList.add("hidden");
                     mobileMenuBtn.setAttribute("aria-expanded", "false");
+                    icon.className = "fas fa-bars";
                 }
             });
         });
