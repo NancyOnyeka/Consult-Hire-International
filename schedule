@@ -394,7 +394,7 @@
 <header>
   <div class="container nav">
     <a class="brand" href="index.html">consult<span>&amp;</span>hire</a>
-    <a class="back-link" href="contact.html">← Back to Contact Us</a>
+    <a class="back-link" href="contact">← Back to Contact Us</a>
   </div>
 </header>
 
@@ -565,7 +565,7 @@
             <button class="submit-button" type="submit">Request appointment →</button>
             <p class="privacy">
               By submitting this form, you agree to our
-              <a href="privacy.html">Privacy Policy</a>.
+              <a href="privacy">Privacy Policy</a>.
             </p>
           </div>
         </form>
