@@ -24,7 +24,7 @@
         <div id="mobile-menu" class="hidden md:hidden bg-brand-surface border-t border-gray-800">
             <ul id="mobile-nav" class="px-4 py-4 space-y-3"></ul>
             <div class="px-4 pb-4">
-                <a href="hire_talent.html" class="block bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors duration-200">Hire Talent</a>
+                <a href="hire_query.html" class="block bg-brand-blue hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium text-center transition-colors duration-200">Hire Talent</a>
             </div>
         </div>
     </header>
@@ -582,15 +582,15 @@
 
 <header>
   <div class="container nav">
-    <a href="#" class="brand">consult<span>&amp;</span>hire</a>
+    <a href="index.html" class="brand">consult<span>&amp;</span>hire</a>
 
     <nav id="navLinks" class="nav-links" aria-label="Primary navigation">
       <a href="index.html">Home</a>
-      <a href="employerhub.html">Employer Hub</a>
+      <a href="employer.html">Employer</a>
       <a href="candidatehub.html">Candidate Hub</a>
       <a href="about.html">About Us</a>
-      <a href="#">Insights</a>
-      <a href="#contact" class="nav-cta">Contact Us</a>
+      <a href="articles.html">Insights</a>
+      <a href="contact.html" class="nav-cta">Contact Us</a>
     </nav>
 
     <button id="menuBtn" class="menu-btn" type="button" aria-label="Toggle navigation" aria-expanded="false">
@@ -616,7 +616,7 @@
           we’d love to help.
         </p>
 
-        <a href="#contact" class="hero-btn">Get in touch <span>→</span></a>
+        <a href="contact.html" class="hero-btn">Get in touch <span>→</span></a>
       </div>
 
       <div class="hero-art">
@@ -627,7 +627,7 @@
   <section class="routes">
     <div class="container route-grid">
 
-      <a class="route" href="#">
+      <a class="route" href="schedule.html">
         <div class="icon-circle">
           <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M5 7h17a5 5 0 0 1 5 5v4a5 5 0 0 1-5 5h-8l-5 4 1-5H9a4 4 0 0 1-4-4Z"/>
@@ -641,7 +641,7 @@
         <span class="route-link">Book a time &nbsp;→</span>
       </a>
 
-      <a class="route" href="#">
+      <a class="route" href="schedule.html">
         <div class="icon-circle">
           <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="5" y="10" width="22" height="16" rx="2"/>
@@ -653,7 +653,7 @@
         <span class="route-link">Submit a vacancy &nbsp;→</span>
       </a>
 
-      <a class="route" href="#">
+      <a class="route" href="hire_query.html">
         <div class="icon-circle">
           <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="16" cy="10" r="5"/>
@@ -665,7 +665,7 @@
         <span class="route-link">Candidate support &nbsp;→</span>
       </a>
 
-      <a class="route" href="#contact">
+      <a class="route" href="contact.html">
         <div class="icon-circle">
           <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
             <rect x="4" y="7" width="24" height="18" rx="2"/>
@@ -723,7 +723,7 @@
                 <rect x="5" y="10" width="14" height="10" rx="2"/>
                 <path d="M8 10V7a4 4 0 0 1 8 0v3"/>
               </svg>
-              <span>By submitting this form, you agree to our <a href="#">Privacy Policy</a>.</span>
+              <span>By submitting this form, you agree to our <a href="privacypolicy.html">Privacy Policy</a>.</span>
             </div>
           </div>
         </form>
@@ -811,29 +811,29 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <a href="#" class="brand">consult<span>&amp;</span>hire</a>
+        <a href="hire_query.html" class="brand">consult<span>&amp;</span>hire</a>
         <p>Connecting great people with great opportunities.</p>
       </div>
 
       <div class="footer-col">
         <h4>Quick links</h4>
         <a href="index.html">Home</a>
-        <a href="employerhub.html">Employer Hub</a>
-        <a href="candidatehub.html">Candidate Hub</a>
+        <a href="employer.html">Employer Hub</a>
+        <a href="candidate.html">Candidate Hub</a>
         <a href="about.html">About Us</a>
       </div>
 
       <div class="footer-col">
         <h4>Legal</h4>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
-        <a href="#">Cookie Policy</a>
+        <a href="privacypolicy.html">Privacy Policy</a>
+        <a href="terms.html">Terms of Use</a>
+        <a href="cookies.html">Cookie Policy</a>
       </div>
 
       <div class="footer-col">
         <h4>Follow us</h4>
         <div class="socials">
-          <a class="social" href="#" aria-label="LinkedIn">in</a>
+          <a class="social" href="https://www.linkedin.com/company/117504210/" aria-label="LinkedIn">in</a>
           <a class="social" href="#" aria-label="Instagram">◎</a>
         </div>
       </div>
