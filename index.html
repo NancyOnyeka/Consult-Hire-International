@@ -1115,6 +1115,28 @@
         animation-iteration-count: 1 !important;
       }
     }
+  .friends-note {
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.friends-note a {
+  color: var(--blue);
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(98, 215, 255, 0.45);
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    text-shadow 180ms ease;
+}
+
+.friends-note a:hover {
+  color: var(--green);
+  border-color: var(--green);
+  text-shadow: 0 0 14px rgba(119, 242, 189, 0.35);
+}
   </style>
 </head>
 
@@ -1186,8 +1208,17 @@
         <div class="form-message" id="formMessage" aria-live="polite"></div>
 
         <p class="social-note reveal delay-four">
-          No spam. Just one friendly message when the site is ready. In the meantime, check out our friends at https://www.talenture.com.au/
-        </p>
+          No spam. Just one friendly message when the site is ready. 
+          <p class="friends-note reveal delay-four">
+  In the meantime, check out our friends at
+  <a
+    href="https://www.talenture.com.au"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Talenture
+  </a>
+</p>
       </div>
 
       <div class="visual-wrap" aria-label="Animated website construction scene">
