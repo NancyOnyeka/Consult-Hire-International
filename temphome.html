@@ -1,137 +1,222 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <base target="_self">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consult & Hire | Experts in Global Tech Talent</title>
-    <meta name="description" content="Consult & Hire specialises in Engineering, AI, Analytics and Data Science recruitment for tech startups and scale-ups. Based in Brisbane, Australia.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            dark: "#0a0a0a",
-                            blue: "#1e3a8a",
-                            purple: "#581c87",
-                            accent: "#3730a3",
-                            surface: "#171717",
-                            card: "#262626"
-                        }
-                    },
-                    fontFamily: {
-                        sans: ["Inter", "sans-serif"]
-                    }
-                }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Consult & Hire connects exceptional technology talent with ambitious organisations across global markets." />
+  <title>Consult & Hire | Experts in Global Tech Talent</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              ink: '#100B24',
+              navy: '#171033',
+              purple: '#6D4AFF',
+              violet: '#9B7BFF',
+              blue: '#4F8CFF',
+              mist: '#F5F3FF'
             }
+          },
+          boxShadow: {
+            glow: '0 0 60px rgba(109, 74, 255, 0.28)',
+            soft: '0 24px 70px rgba(16, 11, 36, 0.16)'
+          }
         }
-    </script>
-    <style>
-        .gradient-bg {
-            background: linear-gradient(135deg, #0a0a0a 0%, #1e1b4b 50%, #2e1065 100%);
-        }
-        .glass-effect {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        .form-input:focus {
-            outline: none;
-            border-color: #1e3a8a;
-            box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.2);
-        }
-        .checkbox-custom:checked {
-            background-color: #1e3a8a;
-            border-color: #1e3a8a;
-        }
-        .dark-input {
-            background-color: #262626;
-            border-color: #404040;
-            color: #e5e5e5;
-        }
-        .dark-input:focus {
-            background-color: #262626;
-            border-color: #1e3a8a;
-        }
-        .hero-dimensions {
-            min-height: 600px;
-            padding-top: 8rem;
-            padding-bottom: 5rem;
-        }
-        @media (min-width: 1024px) {
-            .hero-dimensions {
-                padding-top: 10rem;
-                padding-bottom: 8rem;
-            }
-        }
-        .tab-active {
-            background-color: #1e3a8a;
-            color: white;
-            border-color: #1e3a8a;
-        }
-        .tab-inactive {
-            background-color: transparent;
-            color: #9ca3af;
-            border-color: #404040;
-        }
-        .tab-inactive:hover {
-            background-color: #262626;
-            color: white;
-        }
-        .about-gradient-text {
-            background: linear-gradient(135deg, #1e3a8a 0%, #581c87 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-    </style>
+      }
+    }
+  </script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+
+    .tech-flow {
+      background:
+        radial-gradient(circle at 18% 28%, rgba(109, 74, 255, .22), transparent 30%),
+        radial-gradient(circle at 82% 68%, rgba(79, 140, 255, .18), transparent 32%),
+        linear-gradient(135deg, rgba(255,255,255,.025), transparent 46%);
+    }
+
+    .tech-flow::before,
+    .tech-flow::after {
+      content: '';
+      position: absolute;
+      width: 52rem;
+      height: 16rem;
+      border: 1px solid rgba(255,255,255,.07);
+      border-radius: 50%;
+      transform: rotate(-12deg);
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+
+    .tech-flow::before { left: -18rem; top: 18%; }
+    .tech-flow::after { right: -19rem; bottom: 8%; animation-delay: -7s; }
+
+    @keyframes drift {
+      from { transform: rotate(-12deg) translateX(-1.5rem); opacity: .55; }
+      to { transform: rotate(-8deg) translateX(2rem); opacity: .9; }
+    }
+
+    .orb {
+      filter: blur(70px);
+      opacity: .42;
+      animation: float 12s ease-in-out infinite alternate;
+    }
+
+    .orb:nth-child(2) { animation-delay: -4s; }
+
+    @keyframes float {
+      from { transform: translate3d(-2%, -2%, 0) scale(1); }
+      to { transform: translate3d(4%, 5%, 0) scale(1.12); }
+    }
+
+    .hub-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      padding: 1px;
+      background: linear-gradient(135deg, rgba(255,255,255,.42), rgba(255,255,255,.08));
+      -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      -webkit-mask-composite: xor;
+      mask-composite: exclude;
+      pointer-events: none;
+    }
+
+    .hub-card:hover .arrow { transform: translateX(6px); }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation: none !important; transition: none !important; }
+    }
+  </style>
 </head>
-<body class="font-sans text-gray-100 bg-brand-dark antialiased overflow-x-hidden">
-    <header class="fixed w-full top-0 z-50 bg-brand-dark/95 backdrop-blur-md border-b border-gray-800 transition-all duration-300" id="header">
-        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center space-x-3">
-                    <div class="w-12 h-12 gradient-bg rounded-xl flex items-center justify-center border border-gray-700">
-                        <i class="fas fa-briefcase text-white text-xl"></i>
-                    </div>
-                    <div>
-                        <h1 class="text-xl font-bold text-white">Consult & Hire</h1>
-                        <p class="text-xs text-gray-400">Experts in Global Tech Talent</p>
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center space-x-8">
-                    <ul id="desktop-nav" class="flex space-x-6"></ul>
-                    <a href="register.html" class="bg-brand-blue hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg font-medium transition-colors duration-200">Register</a>
-                </div>
-                <button class="md:hidden text-white text-2xl" id="mobile-menu-btn" aria-label="Toggle menu">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-        </nav>
-        <div id="mobile-menu" class="hidden md:hidden bg-brand-surface border-t border-gray-800">
-            <ul id="mobile-nav" class="px-4 py-4 space-y-3"></ul>
-        </div>
-    </header>
 
-      <section class="gradient-bg relative overflow-hidden flex items-center min-h-[60vh]">    
-            <div class="absolute top-0 left-0 w-76 h-36 bg-blue-700 rounded-full blur-5xl transform -translate-x-1/2 -translate-y-1/2"></div>
-            <div class="absolute bottom-0 right-0 w-76 h-56 bg-purple-700 rounded-full blur-5xl transform translate-x-1/2 translate-y-1/2"></div>
+<body class="bg-brand-ink text-white antialiased">
+  <header class="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-brand-ink/80 backdrop-blur-xl">
+    <div class="mx-auto flex h-18 max-w-7xl items-center justify-between px-5 py-4 sm:px-8 lg:px-10">
+      <a href="index.html" class="text-lg font-semibold tracking-tight text-white" aria-label="Consult and Hire home">
+        Consult<span class="text-brand-violet">&amp;</span>Hire
+      </a>
+
+      <nav class="hidden items-center gap-7 text-sm text-white/70 md:flex" aria-label="Primary navigation">
+        <a href="about.html" class="transition hover:text-white">About</a>
+        <a href="contact.html" class="transition hover:text-white">Contact</a>
+        <a href="bookings.html" class="rounded-full border border-white/20 px-4 py-2 font-medium text-white transition hover:border-white/40 hover:bg-white/10">
+          Book a consultation
+        </a>
+      </nav>
+
+      <button id="menuButton" class="rounded-lg border border-white/15 p-2 text-white md:hidden" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round">
+          <path d="M4 7h16M4 12h16M4 17h16" />
+        </svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="hidden border-t border-white/10 bg-brand-ink px-5 py-5 md:hidden">
+      <div class="flex flex-col gap-4 text-sm text-white/80">
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+        <a href="bookings.html" class="rounded-lg bg-white px-4 py-3 text-center font-semibold text-brand-ink">Book a consultation</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="relative flex min-h-screen items-center overflow-hidden px-5 pb-12 pt-28 sm:px-8 lg:px-10">
+      <div class="tech-flow absolute inset-0 overflow-hidden"></div>
+      <div class="orb absolute -left-28 top-24 h-80 w-80 rounded-full bg-brand-purple"></div>
+      <div class="orb absolute -right-20 bottom-10 h-96 w-96 rounded-full bg-brand-blue"></div>
+      <div class="absolute left-1/2 top-1/3 h-56 w-56 -translate-x-1/2 rounded-full bg-brand-violet/20 blur-3xl"></div>
+
+      <div class="relative z-10 mx-auto w-full max-w-7xl">
+        <div class="mx-auto max-w-4xl text-center">
+          <div class="mb-5 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-2 text-xs font-semibold uppercase tracking-[0.2em] text-white/75 backdrop-blur-md">
+            <span class="h-2 w-2 rounded-full bg-brand-violet shadow-[0_0_15px_rgba(155,123,255,.9)]"></span>
+            Global Tech Recruitment
+          </div>
+
+          <h1 class="text-balance text-5xl font-semibold leading-[1.02] tracking-[-0.045em] sm:text-6xl lg:text-7xl">
+            Experts in Global
+            <span class="bg-gradient-to-r from-white via-brand-violet to-brand-blue bg-clip-text text-transparent">Tech Talent</span>
+          </h1>
+
+          <p class="mx-auto mt-6 max-w-2xl text-base leading-7 text-white/66 sm:text-lg">
+            Connecting exceptional technology professionals with ambitious organisations across global markets.
+          </p>
         </div>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="max-w-4xl mx-auto text-center">
-                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">Experts in Global Tech Talent</h1>
-                <p class="text-xl md:text-2xl text-gray-300 mb-8 font-light">Connecting exceptional Engineering, AI, Analytics and Data Science professionals with innovative companies worldwide</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="register.html" class="bg-white text-brand-dark px-12 py-8 rounded-lg font-semibold hover:bg-gray-200 transition-colors duration-200 text-center">Job Seeker</a>
-                    <a href="register.html" class="glass-effect text-white px-12 py-8 rounded-lg font-semibold hover:bg-white/10 transition-colors duration-200 text-center">Employer</a>
-                </div>
+
+        <div class="mx-auto mt-9 max-w-6xl overflow-hidden rounded-[2rem] border border-white/12 bg-white/[0.055] shadow-soft backdrop-blur-xl">
+          <div class="relative h-48 overflow-hidden sm:h-56 lg:h-64">
+            <img
+              src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1800&q=86"
+              alt="A modern technology team collaborating around laptops"
+              class="h-full w-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-ink via-brand-ink/20 to-transparent"></div>
+            <div class="absolute inset-x-0 bottom-0 flex items-end justify-between px-6 pb-5 sm:px-8">
+              <span class="text-xs font-semibold uppercase tracking-[0.2em] text-white/72">People powering technology</span>
+              <span class="hidden rounded-full border border-white/20 bg-brand-ink/45 px-3 py-1 text-xs text-white/70 backdrop-blur-md sm:inline-flex">Global teams</span>
             </div>
+          </div>
+
+          <div class="grid md:grid-cols-2">
+            <a href="candidate-hub.html" class="group relative flex min-h-32 items-center justify-between border-b border-white/10 px-6 py-7 transition hover:bg-white/[0.06] md:border-b-0 md:border-r sm:px-8">
+              <div>
+                <p class="text-2xl font-semibold tracking-tight sm:text-3xl">Candidate Hub</p>
+              </div>
+              <span class="arrow flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.06] text-xl transition duration-200 group-hover:border-brand-violet/70 group-hover:bg-brand-violet/15">→</span>
+            </a>
+
+            <a href="employer-hub.html" class="group relative flex min-h-32 items-center justify-between px-6 py-7 transition hover:bg-white/[0.06] sm:px-8">
+              <div>
+                <p class="text-2xl font-semibold tracking-tight sm:text-3xl">Employer Hub</p>
+              </div>
+              <span class="arrow flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-white/[0.06] text-xl transition duration-200 group-hover:border-brand-blue/70 group-hover:bg-brand-blue/15">→</span>
+            </a>
+          </div>
         </div>
+
+        <div class="mt-10 flex flex-wrap items-center justify-center gap-x-7 gap-y-3 text-xs font-medium uppercase tracking-[0.16em] text-white/38">
+          <span>Engineering</span>
+          <span class="h-1 w-1 rounded-full bg-white/20"></span>
+          <span>AI</span>
+          <span class="h-1 w-1 rounded-full bg-white/20"></span>
+          <span>Data</span>
+          <span class="h-1 w-1 rounded-full bg-white/20"></span>
+          <span>Analytics</span>
+          <span class="h-1 w-1 rounded-full bg-white/20"></span>
+          <span>Executive Search</span>
+        </div>
+      </div>
     </section>
+  </main>
 
+  <footer class="border-t border-white/10 bg-brand-ink">
+    <div class="mx-auto flex max-w-7xl flex-col gap-4 px-5 py-6 text-sm text-white/45 sm:flex-row sm:items-center sm:justify-between sm:px-8 lg:px-10">
+      <p>© <span id="year"></span> Consult &amp; Hire.</p>
+      <div class="flex gap-5">
+        <a href="privacy.html" class="transition hover:text-white">Privacy</a>
+        <a href="terms-of-use.html" class="transition hover:text-white">Terms</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuButton = document.getElementById('menuButton');
+    const mobileMenu = document.getElementById('mobileMenu');
+
+    menuButton.addEventListener('click', () => {
+      const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!isOpen));
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
