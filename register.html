@@ -3,646 +3,694 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Register | Consult & Hire</title>
-  <meta name="description" content="Register with Consult & Hire as a candidate or employer." />
+  <meta name="description" content="Book a confidential, obligation-free consultation with Consult & Hire." />
+  <title>Book a Consultation | Consult & Hire</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #11194f;
-      --purple: #6f4bd8;
-      --purple-dark: #5837bd;
-      --purple-soft: #eee8ff;
-      --lavender: #f6f3ff;
-      --lavender-2: #fbfaff;
-      --white: #ffffff;
-      --line: #e8e2f6;
-      --muted: #666987;
-      --mint: #bfe8e2;
-      --pink: #f5b3da;
-      --yellow: #ffd176;
-      --shadow: 0 18px 50px rgba(64, 44, 128, .10);
+      --navy: #0b1025;
+      --navy-2: #121735;
+      --ink: #121633;
+      --muted: #666b85;
+      --purple: #7055d9;
+      --purple-dark: #5538bd;
+      --lavender: #c9bdf6;
+      --lavender-soft: #eeeaf9;
+      --surface: rgba(255,255,255,.92);
+      --surface-muted: rgba(244,241,251,.9);
+      --border: rgba(112,85,217,.16);
+      --shadow: 0 22px 60px rgba(27, 24, 73, .18);
+      --success: #287d66;
+      --danger: #a83d58;
     }
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
       margin: 0;
-      font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      min-height: 100vh;
+      font-family: "DM Sans", sans-serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at 8% 14%, rgba(184, 224, 220, .30), transparent 24%),
-        radial-gradient(circle at 91% 20%, rgba(179, 147, 225, .32), transparent 28%),
-        radial-gradient(circle at 52% 86%, rgba(111, 75, 216, .12), transparent 34%),
-        linear-gradient(145deg, #c9c3d8 0%, #d8d2e5 48%, #c8c0db 100%);
-      min-height: 100vh;
+        radial-gradient(circle at 10% 5%, rgba(139,112,231,.30), transparent 30%),
+        radial-gradient(circle at 88% 28%, rgba(91,164,219,.20), transparent 26%),
+        linear-gradient(145deg, #171431 0%, #29204b 38%, #6d5e91 72%, #d8d1e8 100%);
+      overflow-x: hidden;
     }
 
-    a { color: inherit; text-decoration: none; }
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      border-radius: 999px;
+      filter: blur(28px);
+      pointer-events: none;
+      z-index: 0;
+      animation: floatGlow 11s ease-in-out infinite alternate;
+    }
+    body::before {
+      width: 330px;
+      height: 330px;
+      top: 11%;
+      left: -120px;
+      background: rgba(133, 97, 232, .25);
+    }
+    body::after {
+      width: 420px;
+      height: 420px;
+      right: -150px;
+      bottom: -110px;
+      background: rgba(192, 174, 245, .24);
+      animation-delay: -4s;
+    }
+
+    @keyframes floatGlow {
+      from { transform: translate3d(0,0,0) scale(1); }
+      to { transform: translate3d(28px,-22px,0) scale(1.08); }
+    }
+
+    @keyframes pulseDot {
+      0%,100% { opacity: .45; transform: scale(.82); }
+      50% { opacity: 1; transform: scale(1.12); }
+    }
+
+    a { color: inherit; }
     button, input, select, textarea { font: inherit; }
 
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      min-height: 116px;
-      background-color: rgba(255,255,255,.96);
-      background-image:
-        linear-gradient(rgba(255,255,255,.84), rgba(255,255,255,.84)),
-        url("wallpaper.png");
-      background-size: auto, 760px auto;
-      background-position: center;
-      border-radius: 0 0 18px 18px;
-      box-shadow: 0 8px 26px rgba(59, 43, 108, .12);
-      backdrop-filter: blur(14px);
-    }
-
-    .header-inner {
-      width: min(1450px, calc(100% - 56px));
-      min-height: 116px;
+    .page-shell {
+      position: relative;
+      z-index: 1;
+      width: min(1440px, 100%);
       margin: 0 auto;
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: center;
-      gap: 36px;
+      padding: 22px clamp(18px, 3vw, 46px) 38px;
     }
 
-    .brand strong {
-      display: block;
-      font-size: clamp(1.45rem, 2vw, 2rem);
-      line-height: 1;
-      letter-spacing: -.04em;
-    }
-
-    .brand span {
-      display: block;
-      margin-top: 7px;
-      font-size: .93rem;
-      font-weight: 500;
-    }
-
-    .nav {
+    .topbar {
+      min-height: 76px;
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: clamp(22px, 3vw, 48px);
-      font-size: .98rem;
-      font-weight: 500;
+      justify-content: space-between;
+      gap: 22px;
+      padding: 14px 20px;
+      border-radius: 22px;
+      color: white;
+      background: rgba(10, 14, 36, .76);
+      border: 1px solid rgba(255,255,255,.11);
+      box-shadow: 0 18px 50px rgba(3,5,17,.24);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
     }
 
-    .nav a { position: relative; padding: 13px 0; }
-    .nav a:hover, .nav a.active { color: var(--purple); }
-    .nav a.active::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 2px;
-      height: 3px;
-      border-radius: 999px;
-      background: var(--purple);
+    .brand { text-decoration: none; line-height: 1; }
+    .brand strong {
+      display: block;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.15rem, 2vw, 1.45rem);
+      letter-spacing: -.045em;
     }
+    .brand span { display: block; margin-top: 6px; color: #c9c7da; font-size: .78rem; }
 
-    .header-cta {
+    .back-link {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
-      gap: 10px;
-      min-height: 52px;
-      padding: 0 25px;
-      border-radius: 10px;
-      color: #fff;
-      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
-      box-shadow: 0 10px 24px rgba(95, 63, 196, .24);
-      font-weight: 700;
+      gap: 8px;
+      text-decoration: none;
+      color: #eceafd;
+      font-weight: 600;
+      font-size: .92rem;
+      padding: 10px 13px;
+      border-radius: 12px;
+      transition: background .2s ease, transform .2s ease;
     }
+    .back-link:hover { background: rgba(255,255,255,.09); transform: translateX(-2px); }
 
-    .menu-button { display: none; }
-
-    .page-shell {
-      width: min(1400px, calc(100% - 48px));
-      margin: 0 auto;
-      padding: 54px 0 70px;
-    }
-
-    .intro {
+    .hero {
+      color: white;
+      padding: clamp(42px, 7vw, 86px) 4px clamp(30px, 5vw, 55px);
       display: grid;
-      grid-template-columns: minmax(0, .76fr) minmax(620px, 1.24fr);
-      gap: 34px;
-      align-items: start;
-    }
-
-    .intro-panel {
-      position: sticky;
-      top: 150px;
-      overflow: hidden;
-      min-height: 610px;
-      padding: 56px;
-      border: 1px solid rgba(225, 216, 248, .8);
-      border-radius: 28px;
-      background: rgba(250,249,255,.88);
-      box-shadow: 0 22px 58px rgba(42, 31, 82, .18);
-    }
-
-    .intro-panel::before {
-      content: "";
-      position: absolute;
-      width: 320px;
-      height: 320px;
-      right: -120px;
-      bottom: -120px;
-      border-radius: 50%;
-      background: rgba(190, 232, 226, .5);
-    }
-
-    .intro-panel::after {
-      content: "";
-      position: absolute;
-      width: 180px;
-      height: 180px;
-      left: -70px;
-      top: 48%;
-      border-radius: 50%;
-      background: rgba(231, 218, 255, .62);
+      grid-template-columns: 1.3fr .7fr;
+      align-items: end;
+      gap: 40px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      margin-bottom: 24px;
-      padding: 9px 14px;
+      gap: 9px;
+      margin-bottom: 18px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.16);
       border-radius: 999px;
-      color: var(--purple-dark);
-      background: var(--purple-soft);
-      font-size: .82rem;
-      font-weight: 800;
+      background: rgba(255,255,255,.08);
+      color: #e5e0ff;
+      font-size: .8rem;
+      font-weight: 700;
       text-transform: uppercase;
-      letter-spacing: .08em;
+      letter-spacing: .12em;
+      backdrop-filter: blur(12px);
+    }
+    .eyebrow-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ad96ff;
+      box-shadow: 0 0 18px rgba(173,150,255,.95);
+      animation: pulseDot 2.4s ease-in-out infinite;
     }
 
     h1 {
-      position: relative;
-      z-index: 2;
-      max-width: 550px;
       margin: 0;
-      font-size: clamp(3rem, 5vw, 5.2rem);
-      line-height: .98;
-      letter-spacing: -.065em;
+      max-width: 820px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.7rem, 6vw, 6rem);
+      line-height: .96;
+      letter-spacing: -.06em;
+    }
+    .hero-copy {
+      margin: 24px 0 0;
+      max-width: 700px;
+      color: rgba(242,241,250,.82);
+      font-size: clamp(1rem, 1.55vw, 1.2rem);
+      line-height: 1.7;
     }
 
-    .intro-copy {
-      position: relative;
-      z-index: 2;
-      max-width: 530px;
-      margin: 28px 0 30px;
-      color: var(--muted);
-      font-size: 1.1rem;
-      line-height: 1.75;
+    .status-card {
+      justify-self: end;
+      width: min(100%, 360px);
+      padding: 22px;
+      border-radius: 22px;
+      background: rgba(9,13,34,.54);
+      border: 1px solid rgba(255,255,255,.13);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 20px 55px rgba(4,5,18,.24);
     }
-
-    .icon-stage {
-      position: relative;
-      z-index: 2;
-      width: min(100%, 440px);
-      height: 250px;
-      margin-top: 34px;
-      border-radius: 24px;
-      background: rgba(255,255,255,.75);
-      overflow: hidden;
-    }
-
-    .icon-stage img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
-    }
-
-    .trust-note {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      margin-top: 26px;
-      color: var(--muted);
-      font-size: .92rem;
-    }
-
-    .trust-note span:first-child {
-      display: grid;
-      place-items: center;
-      width: 30px;
-      height: 30px;
-      flex: 0 0 auto;
-      border-radius: 50%;
-      color: var(--purple);
-      background: var(--purple-soft);
-      font-weight: 800;
-    }
-
-    .form-panel {
-      overflow: hidden;
-      border: 1px solid rgba(225, 216, 248, .85);
-      border-radius: 28px;
-      background: rgba(252,251,255,.95);
-      box-shadow: 0 22px 58px rgba(42, 31, 82, .18);
-    }
-
-    .form-panel-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-      padding: 27px 30px;
-      border-bottom: 1px solid var(--line);
-      background: rgba(251,250,255,.92);
-    }
-
-    .form-panel-head h2 { margin: 0; font-size: 1.25rem; }
-    .form-panel-head p { margin: 6px 0 0; color: var(--muted); font-size: .91rem; }
-
-    .tabs {
-      display: inline-grid;
-      grid-template-columns: 1fr 1fr;
-      padding: 5px;
-      border: 1px solid var(--line);
-      border-radius: 13px;
-      background: #f6f2ff;
-    }
-
-    .tab-button {
-      border: 0;
-      padding: 11px 18px;
-      border-radius: 9px;
-      color: var(--muted);
-      background: transparent;
-      cursor: pointer;
+    .status-card .label {
+      color: #bdb9ce;
+      font-size: .76rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
       font-weight: 700;
     }
-
-    .tab-button.active {
-      color: #fff;
-      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
-      box-shadow: 0 7px 16px rgba(95,63,196,.22);
+    .status-card strong {
+      display: block;
+      margin-top: 8px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 1.3rem;
     }
-
-    .form-body { padding: 34px 34px 38px; }
-    .registration-form { display: none; }
-    .registration-form.active { display: block; }
-
-    .section-heading {
+    .status-line {
       display: flex;
-      align-items: center;
-      gap: 14px;
-      margin: 0 0 24px;
+      justify-content: space-between;
+      gap: 15px;
+      margin-top: 17px;
+      color: #dedbec;
+      font-size: .88rem;
     }
-
-    .section-number {
-      display: grid;
-      place-items: center;
-      width: 36px;
-      height: 36px;
-      border-radius: 11px;
-      color: var(--purple-dark);
-      background: var(--purple-soft);
-      font-weight: 800;
+    .progress {
+      height: 6px;
+      overflow: hidden;
+      margin-top: 13px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.10);
     }
-
-    .section-heading h3 { margin: 0; font-size: 1.05rem; }
-    .section-heading p { margin: 3px 0 0; color: var(--muted); font-size: .86rem; }
-
-    .form-grid {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 21px;
-    }
-
-    .field { display: flex; flex-direction: column; gap: 8px; }
-    .field.full { grid-column: 1 / -1; }
-    .field label { font-size: .88rem; font-weight: 700; }
-    .field label .required { color: #d9487f; }
-
-    input, select, textarea {
-      width: 100%;
-      border: 1px solid #ddd5ef;
-      border-radius: 12px;
-      outline: none;
-      color: var(--ink);
-      background: #fff;
-      transition: border-color .2s, box-shadow .2s, transform .2s;
-    }
-
-    input, select { min-height: 50px; padding: 0 15px; }
-    textarea { min-height: 122px; padding: 14px 15px; resize: vertical; }
-
-    input:focus, select:focus, textarea:focus {
-      border-color: #9b7ee8;
-      box-shadow: 0 0 0 4px rgba(111,75,216,.10);
-    }
-
-    .helper { color: var(--muted); font-size: .78rem; }
-
-    .upload-box {
-      position: relative;
-      display: grid;
-      place-items: center;
-      min-height: 132px;
-      padding: 22px;
-      border: 1.5px dashed #bba9e8;
-      border-radius: 15px;
-      text-align: center;
-      background: #fbf9ff;
-      cursor: pointer;
-    }
-
-    .upload-box input {
-      position: absolute;
-      inset: 0;
-      width: 100%;
+    .progress > span {
+      display: block;
       height: 100%;
-      opacity: 0;
-      cursor: pointer;
+      width: 72%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, #9076ee, #c3b4ff);
+      box-shadow: 0 0 16px rgba(170,145,255,.68);
     }
 
-    .upload-icon {
+    .booking-layout {
       display: grid;
-      place-items: center;
+      grid-template-columns: minmax(280px, .72fr) minmax(0, 1.45fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .details-panel {
+      position: sticky;
+      top: 22px;
+      padding: clamp(24px, 3vw, 34px);
+      color: white;
+      background: linear-gradient(160deg, rgba(18,20,49,.88), rgba(45,36,82,.82));
+      overflow: hidden;
+    }
+    .details-panel::after {
+      content: "</>";
+      position: absolute;
+      right: -10px;
+      bottom: -20px;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: 7rem;
+      font-weight: 700;
+      color: rgba(255,255,255,.035);
+      transform: rotate(-8deg);
+    }
+    .details-panel h2,
+    .form-panel h2 {
+      margin: 0;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      letter-spacing: -.035em;
+    }
+    .details-intro {
+      margin: 12px 0 0;
+      color: #d1cedf;
+      line-height: 1.65;
+    }
+    .detail-list {
+      display: grid;
+      gap: 13px;
+      margin-top: 28px;
+    }
+    .detail-item {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 13px;
+      align-items: start;
+      padding: 15px;
+      border-radius: 17px;
+      background: rgba(255,255,255,.065);
+      border: 1px solid rgba(255,255,255,.09);
+    }
+    .detail-icon {
       width: 42px;
       height: 42px;
-      margin-bottom: 8px;
-      border-radius: 13px;
-      color: var(--purple);
-      background: var(--purple-soft);
-      font-size: 1.3rem;
-      font-weight: 800;
-    }
-
-    .form-divider {
-      height: 1px;
-      margin: 34px 0;
-      background: var(--line);
-    }
-
-    .checkbox-row {
       display: grid;
-      grid-template-columns: auto 1fr;
-      gap: 12px;
-      align-items: start;
-      margin-top: 26px;
-      color: var(--muted);
-      font-size: .84rem;
+      place-items: center;
+      border-radius: 13px;
+      background: rgba(173,150,255,.16);
+      color: #d9ceff;
+      font-size: 1.15rem;
+    }
+    .detail-item strong { display: block; font-size: .96rem; }
+    .detail-item span { display: block; margin-top: 4px; color: #bab6ca; font-size: .82rem; line-height: 1.5; }
+    .notice {
+      margin-top: 18px;
+      padding: 15px 16px;
+      border-left: 3px solid #a68af1;
+      border-radius: 0 13px 13px 0;
+      color: #d6d2e3;
+      background: rgba(255,255,255,.05);
+      font-size: .82rem;
       line-height: 1.55;
     }
 
-    .checkbox-row input { width: 18px; min-height: 18px; margin-top: 2px; accent-color: var(--purple); }
-
-    .submit-row {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 26px;
+    .form-panel {
+      padding: clamp(24px, 4vw, 42px);
+      background: linear-gradient(160deg, rgba(255,255,255,.96), rgba(241,237,249,.94));
     }
+    .form-intro { margin: 10px 0 28px; color: var(--muted); line-height: 1.6; }
 
-    .submit-button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      min-height: 56px;
-      padding: 0 25px;
-      border: 0;
-      border-radius: 12px;
-      color: #fff;
-      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
-      box-shadow: 0 12px 26px rgba(95,63,196,.25);
+    form { display: grid; gap: 25px; }
+    .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .field { min-width: 0; }
+    .field.full { grid-column: 1 / -1; }
+    label, legend {
+      display: block;
+      margin-bottom: 8px;
+      color: #242844;
+      font-weight: 700;
+      font-size: .88rem;
+    }
+    .required { color: var(--purple-dark); }
+
+    input, select, textarea {
+      width: 100%;
+      color: var(--ink);
+      background: rgba(255,255,255,.86);
+      border: 1px solid rgba(64,52,120,.17);
+      border-radius: 14px;
+      outline: none;
+      transition: border-color .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    input, select { min-height: 52px; padding: 0 15px; }
+    textarea { min-height: 126px; padding: 14px 15px; resize: vertical; }
+    input:focus, select:focus, textarea:focus {
+      background: #fff;
+      border-color: rgba(112,85,217,.68);
+      box-shadow: 0 0 0 4px rgba(112,85,217,.10);
+    }
+    input::placeholder, textarea::placeholder { color: #9a9db0; }
+
+    fieldset { margin: 0; padding: 0; border: 0; }
+    .time-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 10px; }
+    .time-option { position: relative; }
+    .time-option input { position: absolute; opacity: 0; pointer-events: none; }
+    .time-option label {
+      min-height: 48px;
+      margin: 0;
+      display: grid;
+      place-items: center;
       cursor: pointer;
-      font-weight: 800;
+      border-radius: 13px;
+      background: rgba(255,255,255,.76);
+      border: 1px solid rgba(74,58,135,.17);
+      color: #4e526b;
+      font-weight: 700;
+      transition: .2s ease;
+    }
+    .time-option label:hover { transform: translateY(-2px); border-color: rgba(112,85,217,.38); }
+    .time-option input:checked + label {
+      color: white;
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      border-color: transparent;
+      box-shadow: 0 10px 25px rgba(85,56,189,.24);
+    }
+    .time-option input:focus-visible + label { outline: 3px solid rgba(112,85,217,.25); outline-offset: 2px; }
+
+    .summary-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(112,85,217,.10), rgba(126,177,217,.10));
+      border: 1px solid rgba(112,85,217,.14);
+    }
+    .summary-card span { display: block; color: var(--muted); font-size: .78rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
+    .summary-card strong { display: block; margin-top: 6px; font-size: .96rem; line-height: 1.5; }
+    .summary-mark {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      border-radius: 15px;
+      color: white;
+      background: linear-gradient(135deg, #7a5bd6, #5033b5);
+      box-shadow: 0 10px 22px rgba(80,51,181,.24);
     }
 
-    .submit-button:hover { transform: translateY(-2px); }
+    .submit-row { display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .privacy-copy { color: #777b90; font-size: .77rem; line-height: 1.5; }
+    .privacy-copy a { color: var(--purple-dark); font-weight: 700; }
+    .submit-button {
+      min-height: 55px;
+      padding: 0 22px;
+      border: 0;
+      border-radius: 15px;
+      cursor: pointer;
+      color: white;
+      background: linear-gradient(135deg, #775bd8, #4d31b3);
+      box-shadow: 0 14px 30px rgba(77,49,179,.27);
+      font-weight: 800;
+      transition: transform .2s ease, box-shadow .2s ease;
+      white-space: nowrap;
+    }
+    .submit-button:hover { transform: translateY(-2px); box-shadow: 0 18px 36px rgba(77,49,179,.34); }
+    .submit-button:disabled { opacity: .65; cursor: wait; transform: none; }
+
+    .feedback {
+      display: none;
+      padding: 14px 16px;
+      border-radius: 13px;
+      font-size: .88rem;
+      line-height: 1.5;
+    }
+    .feedback.show { display: block; }
+    .feedback.success { color: #135c49; background: #e8f5f0; border: 1px solid #b8dfd1; }
+    .feedback.error { color: #8c2941; background: #faeaf0; border: 1px solid #efbfd0; }
 
     footer {
-      width: min(1400px, calc(100% - 48px));
-      margin: 0 auto;
-      padding: 0 0 34px;
+      padding: 25px 4px 0;
+      color: rgba(255,255,255,.62);
       display: flex;
       justify-content: space-between;
-      color: var(--muted);
-      font-size: .82rem;
+      gap: 18px;
+      font-size: .78rem;
+    }
+    footer a { color: rgba(255,255,255,.82); }
+
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; gap: 26px; }
+      .status-card { justify-self: start; }
+      .booking-layout { grid-template-columns: 1fr; }
+      .details-panel { position: relative; top: auto; }
+      .detail-list { grid-template-columns: repeat(3, minmax(0,1fr)); }
+      .detail-item { grid-template-columns: 1fr; }
     }
 
-    @media (max-width: 1120px) {
-      .nav { display: none; }
-      .menu-button {
-        display: grid;
-        place-items: center;
-        width: 46px;
-        height: 46px;
-        border: 1px solid var(--line);
-        border-radius: 12px;
-        background: #fff;
-      }
-      .header-inner { grid-template-columns: 1fr auto auto; }
-      .intro { grid-template-columns: 1fr; }
-      .intro-panel { position: relative; top: auto; min-height: auto; }
-      .icon-stage { height: 220px; }
-    }
-
-    @media (max-width: 760px) {
-      .site-header, .header-inner { min-height: 92px; }
-      .header-inner, .page-shell, footer { width: min(100% - 28px, 1400px); }
-      .header-cta { display: none; }
-      .header-inner { grid-template-columns: 1fr auto; gap: 12px; }
-      .page-shell { padding-top: 28px; }
-      .intro-panel { padding: 34px 24px; border-radius: 21px; }
-      h1 { font-size: clamp(2.7rem, 14vw, 4.1rem); }
-      .form-panel { border-radius: 21px; }
-      .form-panel-head { align-items: flex-start; flex-direction: column; padding: 22px; }
-      .tabs { width: 100%; }
-      .form-body { padding: 27px 22px 32px; }
+    @media (max-width: 720px) {
+      .page-shell { padding: 12px 12px 28px; }
+      .topbar { min-height: 68px; padding: 12px 14px; border-radius: 17px; }
+      .brand span { display: none; }
+      .back-link { font-size: .82rem; padding: 9px 10px; }
+      .hero { padding: 42px 5px 28px; }
+      .detail-list { grid-template-columns: 1fr; }
       .form-grid { grid-template-columns: 1fr; }
-      .field.full { grid-column: auto; }
+      .time-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .submit-row { align-items: stretch; flex-direction: column; }
       .submit-button { width: 100%; }
-      footer { flex-direction: column; gap: 8px; }
+      footer { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
     }
   </style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="header-inner">
+  <div class="page-shell">
+    <header class="topbar">
       <a class="brand" href="index.html" aria-label="Consult and Hire home">
         <strong>Consult &amp; Hire</strong>
         <span>Experts in Global Tech Talent</span>
       </a>
+      <a class="back-link" href="contact.html">← Back to Contact Us</a>
+    </header>
 
-      <nav class="nav" aria-label="Primary navigation">
-        <a href="index.html">Home</a>
-        <a href="candidate.html">Candidate Hub</a>
-        <a href="employer.html">Employer Hub</a>
-        <a href="about.html">About Us</a>
-        <a href="employer_articles.html">Resources</a>
-        <a href="contact.html">Contact Us</a>
-      </nav>
-
-      <a class="header-cta" href="#registration">Register</a>
-      <button class="menu-button" type="button" aria-label="Open menu">☰</button>
-    </div>
-  </header>
-
-  <main class="page-shell" id="registration">
-    <section class="intro">
-      <aside class="intro-panel">
-        <div class="eyebrow">Registration</div>
-        <h1>Let’s get you connected.</h1>
-        <p class="intro-copy">Create your profile or tell us what your organisation needs. We’ll take it from there.</p>
-        <div class="icon-stage">
-          <img src="briefcase.png" alt="Hand-drawn person carrying a briefcase" />
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> Book a consultation</div>
+          <h1 id="page-title">Choose a time that works for you.</h1>
+          <p class="hero-copy">Select your preferred date and time, tell us a little about what you would like to discuss, and we will confirm the appointment by email.</p>
         </div>
-        <div class="trust-note"><span>✓</span><span>Your details are handled securely and only used to support your enquiry.</span></div>
-      </aside>
+        <aside class="status-card" aria-label="Consultation booking status">
+          <span class="label">Consultation system</span>
+          <strong>Ready when you are.</strong>
+          <div class="status-line"><span>Australian Eastern time</span><span>30 minutes</span></div>
+          <div class="progress" aria-hidden="true"><span></span></div>
+        </aside>
+      </section>
 
-      <section class="form-panel" aria-label="Registration forms">
-        <div class="form-panel-head">
-          <div>
-            <h2>Register with Consult &amp; Hire</h2>
-            <p>Select the form that best matches what you need.</p>
+      <section class="booking-layout" aria-label="Consultation booking">
+        <aside class="panel details-panel">
+          <h2>Consultation details</h2>
+          <p class="details-intro">A confidential, obligation-free conversation about your hiring needs or recruitment strategy.</p>
+
+          <div class="detail-list">
+            <div class="detail-item">
+              <div class="detail-icon">◷</div>
+              <div><strong>30-minute consultation</strong><span>Enough time to understand the situation and identify useful next steps.</span></div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon">▦</div>
+              <div><strong>Monday to Friday</strong><span>Available appointment times are shown in Australian Eastern time.</span></div>
+            </div>
+            <div class="detail-item">
+              <div class="detail-icon">⌁</div>
+              <div><strong>Phone or video call</strong><span>Choose your preferred meeting format when completing the form.</span></div>
+            </div>
           </div>
-          <div class="tabs" role="tablist" aria-label="Registration type">
-            <button class="tab-button active" type="button" data-tab="candidate" role="tab" aria-selected="true">Candidate</button>
-            <button class="tab-button" type="button" data-tab="employer" role="tab" aria-selected="false">Employer</button>
-          </div>
-        </div>
 
-        <div class="form-body">
-          <form id="candidate-form" class="registration-form active" action="#" method="post" enctype="multipart/form-data">
-            <div class="section-heading">
-              <span class="section-number">1</span>
-              <div><h3>Your details</h3><p>Tell us how to reach you.</p></div>
-            </div>
-            <div class="form-grid">
-              <div class="field"><label for="candidate-name">Full Name <span class="required">*</span></label><input id="candidate-name" name="full_name" type="text" required autocomplete="name"></div>
-              <div class="field"><label for="candidate-email">Email Address <span class="required">*</span></label><input id="candidate-email" name="email" type="email" required autocomplete="email"></div>
-              <div class="field"><label for="candidate-phone">Phone Number</label><input id="candidate-phone" name="phone" type="tel" autocomplete="tel"></div>
-              <div class="field"><label for="candidate-location">Current Location</label><input id="candidate-location" name="location" type="text" autocomplete="address-level2"></div>
-            </div>
+          <div class="notice">Submitting this form sends a booking request. Your appointment is confirmed only after you receive a confirmation from Consult &amp; Hire.</div>
+        </aside>
 
-            <div class="form-divider"></div>
-            <div class="section-heading">
-              <span class="section-number">2</span>
-              <div><h3>Your career preferences</h3><p>Help us understand your expertise and next move.</p></div>
-            </div>
+        <section class="panel form-panel">
+          <h2>Request your appointment</h2>
+          <p class="form-intro">Complete the details below and we will be notified at hello@consultandhire.com.</p>
+
+          <form id="bookingForm" novalidate>
             <div class="form-grid">
               <div class="field">
-                <label for="specialism">Primary Specialism <span class="required">*</span></label>
-                <select id="specialism" name="specialism" required>
-                  <option value="">Select your specialism</option>
-                  <option>Software Engineering</option><option>AI / Machine Learning</option><option>Generative AI</option><option>Data Science</option><option>Data Engineering</option><option>Analytics / Business Intelligence</option><option>DevOps / DevSecOps</option><option>Site Reliability Engineering</option><option>Platform Engineering</option><option>Cloud Engineering</option><option>Cyber Security</option><option>Product Management</option><option>Technology Leadership</option><option>Other</option>
+                <label for="firstName">First name <span class="required">*</span></label>
+                <input id="firstName" name="firstName" type="text" autocomplete="given-name" placeholder="Your first name" required />
+              </div>
+              <div class="field">
+                <label for="lastName">Last name <span class="required">*</span></label>
+                <input id="lastName" name="lastName" type="text" autocomplete="family-name" placeholder="Your last name" required />
+              </div>
+              <div class="field">
+                <label for="email">Work email <span class="required">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" placeholder="you@company.com" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone number <span class="required">*</span></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Your phone number" required />
+              </div>
+              <div class="field">
+                <label for="company">Company</label>
+                <input id="company" name="company" type="text" autocomplete="organization" placeholder="Your company" />
+              </div>
+              <div class="field">
+                <label for="format">Meeting format <span class="required">*</span></label>
+                <select id="format" name="format" required>
+                  <option value="">Select a format</option>
+                  <option>Video call</option>
+                  <option>Phone call</option>
                 </select>
               </div>
-              <div class="field">
-                <label for="seniority">Seniority Level</label>
-                <select id="seniority" name="seniority"><option value="">Select level</option><option>Graduate / Entry Level</option><option>Mid-Level</option><option>Senior</option><option>Lead</option><option>Principal</option><option>Manager</option><option>Head of / Director</option><option>Executive / C-Suite</option></select>
-              </div>
-              <div class="field">
-                <label for="work-type">Preferred Work Type</label>
-                <select id="work-type" name="work_type"><option value="">Select preference</option><option>Permanent</option><option>Contract</option><option>Fixed-Term</option><option>Freelance / Consulting</option><option>Open to Multiple Options</option></select>
-              </div>
-              <div class="field">
-                <label for="location-model">Preferred Location Model</label>
-                <select id="location-model" name="location_model"><option value="">Select preference</option><option>Remote</option><option>Hybrid</option><option>On-site</option><option>Open to Relocation</option><option>Open to Global Opportunities</option></select>
-              </div>
-              <div class="field"><label for="salary">Expected Salary / Rate</label><input id="salary" name="salary" type="text" placeholder="e.g. AUD 150,000 or $900/day"></div>
-              <div class="field"><label for="availability">Availability / Notice Period</label><input id="availability" name="availability" type="text" placeholder="e.g. 4 weeks"></div>
-              <div class="field full"><label for="linkedin">LinkedIn Profile</label><input id="linkedin" name="linkedin" type="url" placeholder="https://linkedin.com/in/your-profile"></div>
-              <div class="field full"><label for="career-goals">Career Goals / Role Preferences</label><textarea id="career-goals" name="career_goals" placeholder="Tell us what you’d like your next role to look like."></textarea></div>
               <div class="field full">
-                <label>Upload CV / Résumé</label>
-                <label class="upload-box">
-                  <input type="file" name="cv" accept=".pdf,.doc,.docx">
-                  <span class="upload-icon">↑</span>
-                  <strong>Choose a file or drag it here</strong>
-                  <span class="helper">PDF, DOC or DOCX</span>
-                </label>
+                <label for="date">Preferred date <span class="required">*</span></label>
+                <input id="date" name="date" type="date" required />
               </div>
-            </div>
-            <label class="checkbox-row"><input type="checkbox" required><span>I confirm that the information provided is accurate and consent to Consult &amp; Hire contacting me about relevant opportunities.</span></label>
-            <div class="submit-row"><button class="submit-button" type="submit">Submit Candidate Registration <span>→</span></button></div>
-          </form>
-
-          <form id="employer-form" class="registration-form" action="#" method="post" enctype="multipart/form-data">
-            <div class="section-heading">
-              <span class="section-number">1</span>
-              <div><h3>Your details</h3><p>Tell us who you are and where you work.</p></div>
-            </div>
-            <div class="form-grid">
-              <div class="field"><label for="employer-name">Your Name <span class="required">*</span></label><input id="employer-name" name="name" type="text" required></div>
-              <div class="field"><label for="employer-email">Work Email <span class="required">*</span></label><input id="employer-email" name="work_email" type="email" required></div>
-              <div class="field"><label for="employer-phone">Phone Number</label><input id="employer-phone" name="phone" type="tel"></div>
-              <div class="field"><label for="company-name">Company Name <span class="required">*</span></label><input id="company-name" name="company" type="text" required></div>
-              <div class="field"><label for="company-website">Company Website</label><input id="company-website" name="website" type="url" placeholder="https://"></div>
-              <div class="field"><label for="company-location">Company Location</label><input id="company-location" name="company_location" type="text"></div>
             </div>
 
-            <div class="form-divider"></div>
-            <div class="section-heading">
-              <span class="section-number">2</span>
-              <div><h3>Your hiring needs</h3><p>Share as much or as little detail as you have.</p></div>
+            <fieldset>
+              <legend>Preferred time <span class="required">*</span></legend>
+              <div class="time-grid">
+                <div class="time-option"><input type="radio" id="time-0900" name="time" value="9:00 am" required><label for="time-0900">9:00 am</label></div>
+                <div class="time-option"><input type="radio" id="time-1000" name="time" value="10:00 am"><label for="time-1000">10:00 am</label></div>
+                <div class="time-option"><input type="radio" id="time-1100" name="time" value="11:00 am"><label for="time-1100">11:00 am</label></div>
+                <div class="time-option"><input type="radio" id="time-1300" name="time" value="1:00 pm"><label for="time-1300">1:00 pm</label></div>
+                <div class="time-option"><input type="radio" id="time-1430" name="time" value="2:30 pm"><label for="time-1430">2:30 pm</label></div>
+                <div class="time-option"><input type="radio" id="time-1600" name="time" value="4:00 pm"><label for="time-1600">4:00 pm</label></div>
+              </div>
+            </fieldset>
+
+            <div class="field">
+              <label for="discussion">What would you like to discuss? <span class="required">*</span></label>
+              <textarea id="discussion" name="discussion" placeholder="Tell us a little about your hiring needs, recruitment strategy or current challenge." required></textarea>
             </div>
-            <div class="form-grid">
-              <div class="field">
-                <label for="service">Service Required <span class="required">*</span></label>
-                <select id="service" name="service" required><option value="">Select a service</option><option>Recruitment</option><option>Executive Search</option><option>Graduate Campaign Management &amp; Hiring</option><option>Early Careers</option><option>Strategic Talent Management</option><option>Employer Branding</option><option>Talent Mapping &amp; Talent Intelligence</option><option>Multiple Services</option></select>
+
+            <div class="summary-card" aria-live="polite">
+              <div>
+                <span>Your requested appointment</span>
+                <strong id="appointmentSummary">Choose a date, time and meeting format.</strong>
               </div>
-              <div class="field">
-                <label for="timeline">Hiring Timeline</label>
-                <select id="timeline" name="timeline"><option value="">Select timeline</option><option>Immediate</option><option>Within 1 Month</option><option>1–3 Months</option><option>3–6 Months</option><option>Planning Ahead</option></select>
-              </div>
-              <div class="field"><label for="role-title">Role Title / Hiring Area</label><input id="role-title" name="role_title" type="text"></div>
-              <div class="field"><label for="number-hires">Number of Hires</label><input id="number-hires" name="number_of_hires" type="number" min="1"></div>
-              <div class="field full"><label for="requirements">Hiring Requirements</label><textarea id="requirements" name="requirements" placeholder="Tell us about the role, team, skills or challenge."></textarea></div>
-              <div class="field full">
-                <label>Upload Job Description / Brief</label>
-                <label class="upload-box">
-                  <input type="file" name="job_description" accept=".pdf,.doc,.docx">
-                  <span class="upload-icon">↑</span>
-                  <strong>Choose a file or drag it here</strong>
-                  <span class="helper">PDF, DOC or DOCX</span>
-                </label>
-              </div>
+              <div class="summary-mark">✓</div>
             </div>
-            <label class="checkbox-row"><input type="checkbox" required><span>I confirm that I am authorised to submit this enquiry and consent to Consult &amp; Hire contacting me about hiring support.</span></label>
-            <div class="submit-row"><button class="submit-button" type="submit">Submit Employer Registration <span>→</span></button></div>
+
+            <div id="feedback" class="feedback" role="status"></div>
+
+            <div class="submit-row">
+              <div class="privacy-copy">By submitting this form, you agree to our <a href="privacypolicy.html">Privacy Policy</a>.</div>
+              <button class="submit-button" type="submit">Request appointment →</button>
+            </div>
           </form>
-        </div>
+        </section>
       </section>
-    </section>
-  </main>
+    </main>
 
-  <footer><span>© 2026 Consult &amp; Hire. All rights reserved.</span><span>Experts in Global Tech Talent</span></footer>
+    <footer>
+      <span>© 2026 Consult &amp; Hire. All rights reserved.</span>
+      <span>Designed with humans. Powered by technology.</span>
+    </footer>
+  </div>
 
   <script>
-    const buttons = document.querySelectorAll('.tab-button');
-    const forms = document.querySelectorAll('.registration-form');
+    const form = document.getElementById('bookingForm');
+    const dateInput = document.getElementById('date');
+    const formatInput = document.getElementById('format');
+    const summary = document.getElementById('appointmentSummary');
+    const feedback = document.getElementById('feedback');
+    const submitButton = form.querySelector('.submit-button');
 
-    buttons.forEach(button => {
-      button.addEventListener('click', () => {
-        const target = button.dataset.tab;
-        buttons.forEach(item => {
-          item.classList.toggle('active', item === button);
-          item.setAttribute('aria-selected', item === button ? 'true' : 'false');
-        });
-        forms.forEach(form => form.classList.toggle('active', form.id === `${target}-form`));
-      });
+    function isoLocalDate(date) {
+      const y = date.getFullYear();
+      const m = String(date.getMonth() + 1).padStart(2, '0');
+      const d = String(date.getDate()).padStart(2, '0');
+      return `${y}-${m}-${d}`;
+    }
+
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate() + 1);
+    dateInput.min = isoLocalDate(tomorrow);
+
+    function selectedTime() {
+      return form.querySelector('input[name="time"]:checked')?.value || '';
+    }
+
+    function formatDate(value) {
+      if (!value) return '';
+      const [year, month, day] = value.split('-').map(Number);
+      return new Intl.DateTimeFormat('en-AU', {
+        weekday: 'long', day: 'numeric', month: 'long', year: 'numeric'
+      }).format(new Date(year, month - 1, day));
+    }
+
+    function isWeekend(value) {
+      if (!value) return false;
+      const [year, month, day] = value.split('-').map(Number);
+      const weekday = new Date(year, month - 1, day).getDay();
+      return weekday === 0 || weekday === 6;
+    }
+
+    function updateSummary() {
+      const parts = [];
+      if (dateInput.value) parts.push(formatDate(dateInput.value));
+      if (selectedTime()) parts.push(selectedTime());
+      if (formatInput.value) parts.push(formatInput.value);
+      summary.textContent = parts.length ? parts.join(' · ') : 'Choose a date, time and meeting format.';
+    }
+
+    dateInput.addEventListener('change', () => {
+      if (isWeekend(dateInput.value)) {
+        dateInput.setCustomValidity('Please choose a Monday to Friday appointment.');
+      } else {
+        dateInput.setCustomValidity('');
+      }
+      updateSummary();
     });
+    formatInput.addEventListener('change', updateSummary);
+    form.querySelectorAll('input[name="time"]').forEach(input => input.addEventListener('change', updateSummary));
 
-    document.querySelectorAll('.upload-box input').forEach(input => {
-      input.addEventListener('change', () => {
-        const box = input.closest('.upload-box');
-        const title = box.querySelector('strong');
-        title.textContent = input.files.length ? input.files[0].name : 'Choose a file or drag it here';
-      });
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      feedback.className = 'feedback';
+
+      if (isWeekend(dateInput.value)) {
+        dateInput.setCustomValidity('Please choose a Monday to Friday appointment.');
+      }
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        feedback.textContent = 'Please complete the required fields before requesting your appointment.';
+        feedback.className = 'feedback error show';
+        return;
+      }
+
+      submitButton.disabled = true;
+      submitButton.textContent = 'Preparing request…';
+
+      const data = new FormData(form);
+      const subject = encodeURIComponent(`Consultation request — ${data.get('firstName')} ${data.get('lastName')}`);
+      const body = encodeURIComponent([
+        'New consultation request',
+        '',
+        `Name: ${data.get('firstName')} ${data.get('lastName')}`,
+        `Work email: ${data.get('email')}`,
+        `Phone: ${data.get('phone')}`,
+        `Company: ${data.get('company') || 'Not provided'}`,
+        `Meeting format: ${data.get('format')}`,
+        `Preferred date: ${formatDate(data.get('date'))}`,
+        `Preferred time: ${data.get('time')} (Australian Eastern time)`,
+        '',
+        'Discussion:',
+        data.get('discussion')
+      ].join('\n'));
+
+      window.location.href = `mailto:hello@consultandhire.com?subject=${subject}&body=${body}`;
+
+      window.setTimeout(() => {
+        feedback.textContent = 'Your email application has opened with the consultation request prepared. Send it to complete your booking request.';
+        feedback.className = 'feedback success show';
+        submitButton.disabled = false;
+        submitButton.textContent = 'Request appointment →';
+      }, 650);
     });
   </script>
 </body>
