@@ -1,0 +1,1481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tell Consult & Hire about your ideal work, technical strengths and career preferences." />
+  <title>Tell us about yourself… | Consult & Hire</title>
+
+  <style>
+    :root {
+      --ink: #12132a;
+      --muted: #66677d;
+      --purple: #7557ef;
+      --purple-dark: #5237c9;
+      --violet: #9c7cff;
+      --navy: #101126;
+      --navy-soft: #1b1c3d;
+      --lavender: #e8e4f2;
+      --lavender-deep: #d9d3e9;
+      --card: rgba(255,255,255,.94);
+      --line: rgba(32, 25, 67, .12);
+      --success: #2f8f68;
+      --danger: #b54b5f;
+      --shadow: 0 28px 80px rgba(31, 25, 67, .18);
+      --radius-lg: 30px;
+      --radius-md: 20px;
+      --radius-sm: 14px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 12%, rgba(157,124,255,.30), transparent 30%),
+        radial-gradient(circle at 91% 84%, rgba(78,61,180,.22), transparent 32%),
+        linear-gradient(145deg, #d6d0e4 0%, #e7e3ee 48%, #c8c0dc 100%);
+      overflow-x: hidden;
+    }
+
+    body::before,
+    body::after {
+      content: "";
+      position: fixed;
+      z-index: -2;
+      border-radius: 999px;
+      filter: blur(10px);
+      opacity: .55;
+      animation: drift 13s ease-in-out infinite alternate;
+    }
+
+    body::before {
+      width: 440px;
+      height: 440px;
+      background: rgba(105, 79, 229, .22);
+      top: -180px;
+      right: -120px;
+    }
+
+    body::after {
+      width: 360px;
+      height: 360px;
+      background: rgba(38, 42, 101, .16);
+      bottom: -180px;
+      left: -100px;
+      animation-delay: -5s;
+    }
+
+    @keyframes drift {
+      from { transform: translate3d(0, 0, 0) scale(1); }
+      to { transform: translate3d(-25px, 30px, 0) scale(1.08); }
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    button, input, textarea, select {
+      font: inherit;
+    }
+
+    button {
+      border: 0;
+      cursor: pointer;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background:
+        linear-gradient(rgba(255,255,255,.88), rgba(255,255,255,.88)),
+        url("wallpaper.png") center / cover;
+      border-bottom: 1px solid rgba(24, 20, 55, .09);
+      backdrop-filter: blur(16px);
+    }
+
+    .nav {
+      width: min(1240px, calc(100% - 40px));
+      min-height: 84px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .brand strong {
+      font-size: 1.16rem;
+      letter-spacing: -.03em;
+    }
+
+    .brand span {
+      margin-top: 7px;
+      color: var(--purple-dark);
+      font-size: .73rem;
+      font-weight: 750;
+      letter-spacing: .04em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 26px;
+      margin-left: auto;
+      font-size: .9rem;
+      font-weight: 650;
+    }
+
+    .nav-links a {
+      color: #45445a;
+      transition: color .2s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a[aria-current="page"] {
+      color: var(--purple-dark);
+    }
+
+    .nav-cta {
+      padding: 12px 19px;
+      border-radius: 999px;
+      color: #fff;
+      font-size: .88rem;
+      font-weight: 760;
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      box-shadow: 0 12px 26px rgba(93, 64, 207, .24);
+    }
+
+    .menu-button { display: none; }
+
+    .page-shell {
+      width: min(1180px, calc(100% - 34px));
+      margin: 0 auto;
+      padding: 54px 0 64px;
+    }
+
+    .intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(320px, .92fr);
+      gap: 34px;
+      align-items: stretch;
+    }
+
+    .intro-copy,
+    .journey-panel {
+      border: 1px solid rgba(255,255,255,.52);
+      box-shadow: var(--shadow);
+    }
+
+    .intro-copy {
+      position: relative;
+      overflow: hidden;
+      min-height: 340px;
+      padding: 48px;
+      border-radius: var(--radius-lg);
+      color: #fff;
+      background:
+        linear-gradient(135deg, rgba(14,15,39,.97), rgba(47,34,101,.94)),
+        url("wallpaper.png") center / cover;
+    }
+
+    .intro-copy::after {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      right: -80px;
+      bottom: -100px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(156,124,255,.58), transparent 68%);
+      animation: pulse 5s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(.9); opacity: .65; }
+      to { transform: scale(1.15); opacity: 1; }
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255,255,255,.18);
+      border-radius: 999px;
+      color: #d7ccff;
+      background: rgba(255,255,255,.08);
+      font-size: .75rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #b69dff;
+      box-shadow: 0 0 0 6px rgba(182,157,255,.12);
+    }
+
+    h1 {
+      max-width: 680px;
+      margin: 0;
+      font-size: clamp(2.45rem, 5.7vw, 5rem);
+      line-height: .98;
+      letter-spacing: -.065em;
+    }
+
+    .intro-copy p {
+      position: relative;
+      z-index: 1;
+      max-width: 650px;
+      margin: 24px 0 0;
+      color: rgba(255,255,255,.76);
+      font-size: 1.05rem;
+      line-height: 1.72;
+    }
+
+    .journey-panel {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 38px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,.75);
+      backdrop-filter: blur(18px);
+    }
+
+    .journey-panel h2 {
+      margin: 0;
+      font-size: 1.45rem;
+      letter-spacing: -.03em;
+    }
+
+    .journey-panel p {
+      margin: 12px 0 26px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .journey-points {
+      display: grid;
+      gap: 14px;
+    }
+
+    .journey-point {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 14px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .journey-point strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: .93rem;
+    }
+
+    .journey-point span {
+      color: var(--muted);
+      font-size: .84rem;
+      line-height: 1.45;
+    }
+
+    .point-icon {
+      width: 28px;
+      height: 28px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 28px;
+      border-radius: 9px;
+      color: var(--purple-dark);
+      background: #eee9ff;
+      font-weight: 900;
+    }
+
+    .wizard-wrap {
+      margin-top: 32px;
+    }
+
+    .wizard {
+      min-height: 570px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,.6);
+      border-radius: var(--radius-lg);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .wizard-top {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 24px;
+      padding: 26px 34px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+    }
+
+    .progress-copy {
+      font-size: .82rem;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .progress-copy strong {
+      color: var(--ink);
+    }
+
+    .progress-track {
+      height: 8px;
+      margin-top: 10px;
+      overflow: hidden;
+      border-radius: 999px;
+      background: #e9e5f1;
+    }
+
+    .progress-bar {
+      width: 0;
+      height: 100%;
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--purple), var(--violet));
+      transition: width .5s cubic-bezier(.22,.8,.24,1);
+    }
+
+    .autosave {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--success);
+      font-size: .78rem;
+      font-weight: 780;
+    }
+
+    .autosave::before {
+      content: "✓";
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(47,143,104,.1);
+    }
+
+    .question-stage {
+      position: relative;
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      min-height: 474px;
+    }
+
+    .question-aside {
+      padding: 40px 30px;
+      color: #fff;
+      background:
+        radial-gradient(circle at 30% 15%, rgba(154,124,255,.28), transparent 30%),
+        linear-gradient(180deg, #161731, #272052);
+    }
+
+    .question-number {
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--violet), var(--purple-dark));
+      box-shadow: 0 16px 30px rgba(93,64,207,.26);
+      font-weight: 850;
+      font-size: 1.2rem;
+    }
+
+    .question-aside p {
+      margin: 24px 0 0;
+      color: rgba(255,255,255,.67);
+      font-size: .82rem;
+      line-height: 1.6;
+    }
+
+    .question-card {
+      display: flex;
+      flex-direction: column;
+      padding: 44px clamp(28px, 5vw, 72px) 34px;
+      animation: questionIn .48s cubic-bezier(.22,.8,.24,1);
+    }
+
+    @keyframes questionIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .question-label {
+      margin-bottom: 12px;
+      color: var(--purple-dark);
+      font-size: .75rem;
+      font-weight: 850;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .question-card h2 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(1.65rem, 3.2vw, 2.65rem);
+      line-height: 1.16;
+      letter-spacing: -.045em;
+    }
+
+    .helper {
+      max-width: 700px;
+      margin: 14px 0 24px;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .field,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid #d9d3e5;
+      border-radius: var(--radius-sm);
+      outline: none;
+      color: var(--ink);
+      background: #fbfaff;
+      transition: border .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .field,
+    select {
+      min-height: 54px;
+      padding: 0 16px;
+    }
+
+    textarea {
+      min-height: 150px;
+      padding: 16px;
+      resize: vertical;
+      line-height: 1.55;
+    }
+
+    .field:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #9279eb;
+      background: #fff;
+      box-shadow: 0 0 0 4px rgba(117,87,239,.11);
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .choice {
+      position: relative;
+    }
+
+    .choice input {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .choice label {
+      min-height: 58px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 13px 16px;
+      border: 1px solid #ddd7e9;
+      border-radius: 15px;
+      color: #444257;
+      background: #fbfaff;
+      cursor: pointer;
+      transition: .2s ease;
+    }
+
+    .choice label::before {
+      content: "";
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+      border: 2px solid #c6bddc;
+      border-radius: 7px;
+      background: #fff;
+    }
+
+    .choice input:checked + label {
+      color: var(--purple-dark);
+      border-color: #8b70e8;
+      background: #f1edff;
+      box-shadow: 0 9px 22px rgba(93,64,207,.1);
+    }
+
+    .choice input:checked + label::before {
+      content: "✓";
+      display: grid;
+      place-items: center;
+      color: #fff;
+      border-color: var(--purple);
+      background: var(--purple);
+      font-size: .72rem;
+      font-weight: 900;
+    }
+
+    .specialism-builder {
+      display: grid;
+      gap: 14px;
+    }
+
+    .specialism-entry {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(180px, .7fr) 42px;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .remove-row {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      color: var(--danger);
+      background: rgba(181,75,95,.08);
+      font-size: 1.15rem;
+    }
+
+    .add-row {
+      justify-self: start;
+      padding: 11px 15px;
+      border-radius: 12px;
+      color: var(--purple-dark);
+      background: #eee9ff;
+      font-weight: 800;
+    }
+
+    .inline-fields {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 12px;
+    }
+
+    .other-field {
+      margin-top: 12px;
+      display: none;
+    }
+
+    .other-field.visible { display: block; }
+
+    .error {
+      min-height: 22px;
+      margin-top: 12px;
+      color: var(--danger);
+      font-size: .82rem;
+      font-weight: 700;
+    }
+
+    .question-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: auto;
+      padding-top: 30px;
+    }
+
+    .primary-button,
+    .secondary-button,
+    .skip-button {
+      min-height: 50px;
+      border-radius: 14px;
+      font-weight: 800;
+      transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+
+    .primary-button {
+      min-width: 150px;
+      padding: 0 22px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--purple), var(--purple-dark));
+      box-shadow: 0 12px 26px rgba(93,64,207,.24);
+    }
+
+    .primary-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 32px rgba(93,64,207,.31);
+    }
+
+    .secondary-button {
+      padding: 0 18px;
+      color: #4f4c60;
+      background: #efecf4;
+    }
+
+    .secondary-button:disabled {
+      opacity: .45;
+      cursor: not-allowed;
+    }
+
+    .skip-button {
+      margin-left: auto;
+      padding: 0 10px;
+      color: var(--muted);
+      background: transparent;
+    }
+
+    .skip-button:hover { color: var(--purple-dark); }
+
+    .completion {
+      display: none;
+      min-height: 570px;
+      padding: 54px;
+      text-align: center;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+
+    .completion.visible { display: flex; }
+
+    .completion-icon {
+      width: 84px;
+      height: 84px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 24px;
+      border-radius: 26px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--violet), var(--purple-dark));
+      box-shadow: 0 20px 38px rgba(93,64,207,.27);
+      font-size: 2rem;
+    }
+
+    .completion h2 {
+      margin: 0;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      letter-spacing: -.05em;
+    }
+
+    .completion p {
+      max-width: 650px;
+      margin: 18px auto 28px;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .completion-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .summary {
+      display: none;
+      margin-top: 28px;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: rgba(255,255,255,.88);
+      box-shadow: var(--shadow);
+    }
+
+    .summary.visible { display: block; }
+
+    .summary-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 28px 32px;
+      color: #fff;
+      background: linear-gradient(135deg, var(--navy), #302267);
+    }
+
+    .summary-head h2 {
+      margin: 0;
+      font-size: 1.35rem;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1px;
+      background: var(--line);
+    }
+
+    .summary-item {
+      padding: 24px 28px;
+      background: rgba(255,255,255,.96);
+    }
+
+    .summary-item strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--purple-dark);
+      font-size: .76rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .summary-item span {
+      white-space: pre-wrap;
+      line-height: 1.55;
+      color: #3d3b50;
+    }
+
+    footer {
+      padding: 30px 20px 44px;
+      text-align: center;
+      color: rgba(30,28,54,.6);
+      font-size: .82rem;
+    }
+
+    @media (max-width: 920px) {
+      .nav-links { display: none; }
+      .nav-cta { margin-left: auto; }
+      .intro { grid-template-columns: 1fr; }
+      .intro-copy { min-height: auto; }
+      .question-stage { grid-template-columns: 145px minmax(0, 1fr); }
+      .question-aside { padding: 32px 22px; }
+    }
+
+    @media (max-width: 680px) {
+      .site-header { position: relative; }
+      .nav {
+        width: min(100% - 28px, 1240px);
+        min-height: 74px;
+      }
+      .brand span { font-size: .66rem; }
+      .nav-cta { padding: 10px 14px; }
+      .page-shell {
+        width: min(100% - 22px, 1180px);
+        padding-top: 24px;
+      }
+      .intro-copy,
+      .journey-panel { padding: 30px 24px; }
+      .intro-copy { border-radius: 24px; }
+      .journey-panel { border-radius: 24px; }
+      .wizard { border-radius: 24px; }
+      .wizard-top {
+        grid-template-columns: 1fr;
+        padding: 22px;
+      }
+      .autosave { display: none; }
+      .question-stage { display: block; }
+      .question-aside {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 18px 22px;
+      }
+      .question-number {
+        width: 46px;
+        height: 46px;
+        border-radius: 14px;
+      }
+      .question-aside p {
+        margin: 0;
+      }
+      .question-card {
+        min-height: 510px;
+        padding: 30px 22px 24px;
+      }
+      .choice-grid,
+      .summary-grid { grid-template-columns: 1fr; }
+      .specialism-entry {
+        grid-template-columns: 1fr 42px;
+      }
+      .specialism-entry select {
+        grid-column: 1 / -1;
+        grid-row: 2;
+      }
+      .inline-fields { grid-template-columns: 1fr; }
+      .question-actions {
+        flex-wrap: wrap;
+      }
+      .primary-button { flex: 1; }
+      .skip-button {
+        width: 100%;
+        margin-left: 0;
+      }
+      .completion { padding: 38px 22px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Consult and Hire home">
+        <strong>Consult &amp; Hire</strong>
+        <span>Experts in Global Tech Talent</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="candidate.html" aria-current="page">Candidate Hub</a>
+        <a href="employer.html">Employer Hub</a>
+        <a href="about.html">About Us</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+      <a class="nav-cta" href="register.html">Register</a>
+    </nav>
+  </header>
+
+  <main class="page-shell">
+    <section class="intro">
+      <article class="intro-copy">
+        <div class="eyebrow"><span class="status-dot"></span> Candidate discovery</div>
+        <h1>Tell us about yourself…</h1>
+        <p>
+          A CV tells us where you have worked. This helps us understand the kind of work,
+          environment and opportunity that could bring out your very best.
+        </p>
+      </article>
+
+      <aside class="journey-panel">
+        <div>
+          <h2>This is not another application form.</h2>
+          <p>
+            You will see one thoughtful question at a time. Answer in your own words,
+            or skip anything you would rather discuss later.
+          </p>
+        </div>
+
+        <div class="journey-points">
+          <div class="journey-point">
+            <span class="point-icon">1</span>
+            <div><strong>One question at a time</strong><span>No overwhelming wall of fields.</span></div>
+          </div>
+          <div class="journey-point">
+            <span class="point-icon">✓</span>
+            <div><strong>Your progress is saved</strong><span>Come back on this device whenever you need.</span></div>
+          </div>
+          <div class="journey-point">
+            <span class="point-icon">↗</span>
+            <div><strong>Better-fit opportunities</strong><span>Help us look beyond job titles and keywords.</span></div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="wizard-wrap" aria-label="Candidate discovery questionnaire">
+      <div class="wizard" id="wizard">
+        <div id="wizardContent">
+          <div class="wizard-top">
+            <div>
+              <div class="progress-copy">
+                Question <strong id="currentNumber">1</strong> of <strong id="totalNumber">16</strong>
+              </div>
+              <div class="progress-track" aria-hidden="true">
+                <div class="progress-bar" id="progressBar"></div>
+              </div>
+            </div>
+            <div class="autosave" id="saveStatus">Progress saved</div>
+          </div>
+
+          <div class="question-stage">
+            <aside class="question-aside">
+              <div class="question-number" id="questionBadge">01</div>
+              <p id="asideCopy">Your technical world, in your own words.</p>
+            </aside>
+
+            <div class="question-card" id="questionCard"></div>
+          </div>
+        </div>
+
+        <div class="completion" id="completion">
+          <div class="completion-icon">✓</div>
+          <h2>That’s the human behind the CV.</h2>
+          <p>
+            Thank you. Your answers give Consult &amp; Hire a much clearer picture of the work,
+            environment and opportunities that may genuinely suit you.
+          </p>
+          <div class="completion-actions">
+            <button class="primary-button" id="reviewAnswers" type="button">Review my answers</button>
+            <button class="secondary-button" id="emailAnswers" type="button">Send by email</button>
+            <button class="secondary-button" id="downloadAnswers" type="button">Download a copy</button>
+          </div>
+        </div>
+      </div>
+
+      <section class="summary" id="summary">
+        <div class="summary-head">
+          <h2>Your candidate discovery summary</h2>
+          <button class="secondary-button" id="continueEditing" type="button">Continue editing</button>
+        </div>
+        <div class="summary-grid" id="summaryGrid"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Consult &amp; Hire International · Experts in Global Tech Talent
+  </footer>
+
+  <script>
+    const STORAGE_KEY = "consultHireCandidateDiscoveryV1";
+
+    const proficiencyLevels = [
+      "Beginner",
+      "Still Learning",
+      "Comfortable",
+      "Skilled",
+      "Highly Skilled",
+      "Expert",
+      "Expert+ / Innovator"
+    ];
+
+    const questions = [
+      {
+        id: "specialisms",
+        title: "Which technical specialisms best describe you?",
+        helper: "Add as many as you need, then choose your current level in each one.",
+        type: "specialisms",
+        aside: "Your technical world, in your own words."
+      },
+      {
+        id: "idealRole",
+        title: "If you could design your ideal role, what would the work entail?",
+        helper: "Focus only on the work itself—not company type, culture or team structure.",
+        type: "textarea",
+        placeholder: "For example: the problems you would solve, systems you would build, decisions you would own…",
+        aside: "Forget the job title. Describe the work."
+      },
+      {
+        id: "idealEnvironment",
+        title: "What would your ideal work environment look, feel and operate like?",
+        helper: "Think about pace, autonomy, communication, structure, energy and working style.",
+        type: "textarea",
+        placeholder: "Describe the environment in which you do your best work…",
+        aside: "The conditions that help you thrive."
+      },
+      {
+        id: "currentRoleType",
+        title: "Which best describes your current role?",
+        helper: "This helps us ask the most relevant leadership question next.",
+        type: "single",
+        options: ["Leadership role", "Individual contributor", "A blend of both", "Neither / not currently working"],
+        aside: "A small question that shapes the next one."
+      },
+      {
+        id: "leadershipStyle",
+        title: "How would you describe the leadership style that matters most in your work?",
+        helper: "Leaders: describe your own style. Individual contributors: describe the style that gets the best from you.",
+        type: "textarea",
+        placeholder: "For example: coaching-led, highly autonomous, direct and decisive, collaborative, structured…",
+        aside: "How leadership helps good work happen."
+      },
+      {
+        id: "locationFlexibility",
+        title: "Would you consider relocating or working across different time zones for the ideal role?",
+        helper: "Select everything you would genuinely consider.",
+        type: "multi",
+        options: [
+          "Open to relocating internationally",
+          "Open to relocating interstate / regionally",
+          "Open to working unsociable hours",
+          "Open to overlapping with another time zone",
+          "Remote only, without relocation",
+          "Not open to relocation or unsociable hours"
+        ],
+        aside: "Where opportunity and flexibility meet."
+      },
+      {
+        id: "workEnjoyment",
+        title: "Which parts of technology work do you enjoy most?",
+        helper: "Choose as many as you like.",
+        type: "multiOther",
+        options: ["Designing solutions", "Building", "Fixing", "Maintaining", "Leading", "Advising", "Researching"],
+        aside: "The work that gives you energy."
+      },
+      {
+        id: "organisationStage",
+        title: "What type of organisation do you think you would thrive in—and why?",
+        helper: "You can select more than one if the right conditions matter more than company stage.",
+        type: "multiOther",
+        options: ["Start-up", "Scale-up", "Established organisation"],
+        otherLabel: "Tell us why",
+        aside: "Different stages create different kinds of work."
+      },
+      {
+        id: "diversity",
+        title: "What does the term “diversity” mean to you?",
+        helper: "There is no scripted answer. We are interested in your own perspective.",
+        type: "textarea",
+        placeholder: "Share what diversity means in practical, human or professional terms…",
+        aside: "Your perspective matters more than jargon."
+      },
+      {
+        id: "commonPraise",
+        title: "What is the one piece of praise previous employers would most likely share about you?",
+        helper: "Think about the pattern—not necessarily the biggest compliment.",
+        type: "textarea",
+        placeholder: "Previous managers or colleagues would probably say…",
+        aside: "The strength other people consistently see."
+      },
+      {
+        id: "commonComplaint",
+        title: "What is the one complaint previous employers might have in common about you?",
+        helper: "Honest self-awareness is more useful than a polished interview answer.",
+        type: "textarea",
+        placeholder: "They might say that I sometimes…",
+        aside: "Self-awareness is a professional strength."
+      },
+      {
+        id: "minimumSalary",
+        title: "What is the minimum salary you would consider?",
+        helper: "Choose your currency and enter either an annual salary or hourly/day rate.",
+        type: "money",
+        aside: "Your practical lower boundary."
+      },
+      {
+        id: "idealSalary",
+        title: "What is your ideal market-rate salary for the work you do?",
+        helper: "This is the level you believe fairly reflects your experience and target work.",
+        type: "money",
+        aside: "What fair market value looks like to you."
+      },
+      {
+        id: "noticePeriod",
+        title: "What is your current notice period or availability?",
+        helper: "Include any flexibility or fixed commitments we should know about.",
+        type: "text",
+        placeholder: "For example: 4 weeks, immediately available, negotiable…",
+        aside: "When your next chapter could begin."
+      },
+      {
+        id: "interviewAvailability",
+        title: "What days or times usually work best for you to interview?",
+        helper: "General availability is fine. You can always confirm exact times later.",
+        type: "textarea",
+        placeholder: "For example: Tuesdays and Thursdays before 9am, or after 4pm weekdays…",
+        aside: "Make future conversations easier to arrange."
+      },
+      {
+        id: "anythingElse",
+        title: "Is there anything else you would like us to understand about you?",
+        helper: "Optional. Add context that a CV or the previous questions may not capture.",
+        type: "textarea",
+        placeholder: "Anything else you would like us to know…",
+        aside: "One final space, entirely yours."
+      }
+    ];
+
+    let state = {
+      current: 0,
+      answers: {},
+      skipped: [],
+      completed: false
+    };
+
+    const wizardContent = document.getElementById("wizardContent");
+    const completion = document.getElementById("completion");
+    const questionCard = document.getElementById("questionCard");
+    const currentNumber = document.getElementById("currentNumber");
+    const totalNumber = document.getElementById("totalNumber");
+    const questionBadge = document.getElementById("questionBadge");
+    const asideCopy = document.getElementById("asideCopy");
+    const progressBar = document.getElementById("progressBar");
+    const saveStatus = document.getElementById("saveStatus");
+    const summary = document.getElementById("summary");
+    const summaryGrid = document.getElementById("summaryGrid");
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+    totalNumber.textContent = questions.length;
+
+    function loadState() {
+      try {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+        if (saved && typeof saved === "object") {
+          state = { ...state, ...saved };
+          if (state.current >= questions.length) state.current = questions.length - 1;
+        }
+      } catch (_) {}
+    }
+
+    function saveState() {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      saveStatus.textContent = "Progress saved";
+    }
+
+    function escapeHTML(value = "") {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function choicesHTML(q, multiple = false) {
+      const selected = state.answers[q.id] || (multiple ? [] : "");
+      return `<div class="choice-grid">
+        ${q.options.map((option, index) => {
+          const checked = multiple ? selected.includes(option) : selected === option;
+          return `<div class="choice">
+            <input
+              type="${multiple ? "checkbox" : "radio"}"
+              id="${q.id}-${index}"
+              name="${q.id}"
+              value="${escapeHTML(option)}"
+              ${checked ? "checked" : ""}
+            />
+            <label for="${q.id}-${index}">${escapeHTML(option)}</label>
+          </div>`;
+        }).join("")}
+      </div>`;
+    }
+
+    function renderInput(q) {
+      const value = state.answers[q.id] ?? "";
+
+      if (q.type === "textarea") {
+        return `<textarea id="answerInput" placeholder="${escapeHTML(q.placeholder || "")}">${escapeHTML(value)}</textarea>`;
+      }
+
+      if (q.type === "text") {
+        return `<input class="field" id="answerInput" type="text" value="${escapeHTML(value)}" placeholder="${escapeHTML(q.placeholder || "")}" />`;
+      }
+
+      if (q.type === "single") {
+        return choicesHTML(q, false);
+      }
+
+      if (q.type === "multi") {
+        return choicesHTML(q, true);
+      }
+
+      if (q.type === "multiOther") {
+        const answer = value && typeof value === "object" ? value : { selected: [], other: "" };
+        const mockQ = { ...q, id: q.id, options: q.options };
+        state.answers[q.id] = answer;
+        const html = choicesHTML({ ...mockQ, }, true)
+          .replaceAll(
+            /checked/g,
+            "checked"
+          );
+        return `${html}
+          <div class="other-field visible">
+            <input class="field" id="otherInput" type="text"
+              value="${escapeHTML(answer.other || "")}"
+              placeholder="${escapeHTML(q.otherLabel || "Other — please specify")}" />
+          </div>`;
+      }
+
+      if (q.type === "money") {
+        const answer = value && typeof value === "object" ? value : { currency: "AUD", amount: "", basis: "Annual salary" };
+        state.answers[q.id] = answer;
+        return `<div class="inline-fields">
+          <select id="currencyInput" aria-label="Currency">
+            ${["AUD","USD","GBP","EUR","NZD","CAD","SGD","INR","Other"].map(c => `<option ${answer.currency === c ? "selected" : ""}>${c}</option>`).join("")}
+          </select>
+          <input class="field" id="amountInput" inputmode="decimal" type="text"
+            value="${escapeHTML(answer.amount || "")}" placeholder="Amount or range" />
+        </div>
+        <select id="basisInput" style="margin-top:12px" aria-label="Salary basis">
+          ${["Annual salary","Hourly rate","Daily rate","Contract value"].map(b => `<option ${answer.basis === b ? "selected" : ""}>${b}</option>`).join("")}
+        </select>`;
+      }
+
+      if (q.type === "specialisms") {
+        let rows = Array.isArray(value) && value.length ? value : [{ name: "", level: "" }];
+        state.answers[q.id] = rows;
+        return `<div class="specialism-builder" id="specialismBuilder">
+          ${rows.map((row, index) => specialismRowHTML(row, index)).join("")}
+          <button class="add-row" id="addSpecialism" type="button">+ Add another specialism</button>
+        </div>`;
+      }
+
+      return "";
+    }
+
+    function specialismRowHTML(row, index) {
+      return `<div class="specialism-entry" data-index="${index}">
+        <input class="field specialism-name" type="text" value="${escapeHTML(row.name || "")}" placeholder="e.g. DevOps, Generative AI, Data Engineering" />
+        <select class="specialism-level" aria-label="Proficiency level">
+          <option value="">Select level</option>
+          ${proficiencyLevels.map(level => `<option ${row.level === level ? "selected" : ""}>${level}</option>`).join("")}
+        </select>
+        <button class="remove-row" type="button" aria-label="Remove specialism">×</button>
+      </div>`;
+    }
+
+    function renderQuestion() {
+      const q = questions[state.current];
+
+      wizardContent.style.display = "";
+      completion.classList.remove("visible");
+      summary.classList.remove("visible");
+
+      currentNumber.textContent = state.current + 1;
+      questionBadge.textContent = String(state.current + 1).padStart(2, "0");
+      asideCopy.textContent = q.aside;
+      progressBar.style.width = `${(state.current / questions.length) * 100}%`;
+
+      questionCard.innerHTML = `
+        <div class="question-label">Tell us about yourself</div>
+        <h2>${q.title}</h2>
+        <p class="helper">${q.helper}</p>
+        <div class="input-area">${renderInput(q)}</div>
+        <div class="error" id="errorMessage"></div>
+        <div class="question-actions">
+          <button class="secondary-button" id="backButton" type="button" ${state.current === 0 ? "disabled" : ""}>Back</button>
+          <button class="primary-button" id="nextButton" type="button">${state.current === questions.length - 1 ? "Finish" : "Continue"}</button>
+          <button class="skip-button" id="skipButton" type="button">Skip for now</button>
+        </div>
+      `;
+
+      bindDynamicInputs(q);
+
+      document.getElementById("backButton").addEventListener("click", goBack);
+      document.getElementById("nextButton").addEventListener("click", () => advance(false));
+      document.getElementById("skipButton").addEventListener("click", () => advance(true));
+      questionCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+
+    function bindDynamicInputs(q) {
+      if (q.type === "specialisms") {
+        const builder = document.getElementById("specialismBuilder");
+        document.getElementById("addSpecialism").addEventListener("click", () => {
+          collectCurrentAnswer(q);
+          state.answers[q.id].push({ name: "", level: "" });
+          renderQuestion();
+        });
+
+        builder.querySelectorAll(".remove-row").forEach(button => {
+          button.addEventListener("click", () => {
+            collectCurrentAnswer(q);
+            const index = Number(button.closest(".specialism-entry").dataset.index);
+            state.answers[q.id].splice(index, 1);
+            if (!state.answers[q.id].length) state.answers[q.id].push({ name: "", level: "" });
+            renderQuestion();
+          });
+        });
+      }
+    }
+
+    function collectCurrentAnswer(q) {
+      if (q.type === "textarea" || q.type === "text") {
+        state.answers[q.id] = document.getElementById("answerInput").value.trim();
+      }
+
+      if (q.type === "single") {
+        const chosen = document.querySelector(`input[name="${q.id}"]:checked`);
+        state.answers[q.id] = chosen ? chosen.value : "";
+      }
+
+      if (q.type === "multi") {
+        state.answers[q.id] = [...document.querySelectorAll(`input[name="${q.id}"]:checked`)].map(el => el.value);
+      }
+
+      if (q.type === "multiOther") {
+        state.answers[q.id] = {
+          selected: [...document.querySelectorAll(`input[name="${q.id}"]:checked`)].map(el => el.value),
+          other: document.getElementById("otherInput").value.trim()
+        };
+      }
+
+      if (q.type === "money") {
+        state.answers[q.id] = {
+          currency: document.getElementById("currencyInput").value,
+          amount: document.getElementById("amountInput").value.trim(),
+          basis: document.getElementById("basisInput").value
+        };
+      }
+
+      if (q.type === "specialisms") {
+        state.answers[q.id] = [...document.querySelectorAll(".specialism-entry")].map(row => ({
+          name: row.querySelector(".specialism-name").value.trim(),
+          level: row.querySelector(".specialism-level").value
+        })).filter(row => row.name || row.level);
+      }
+    }
+
+    function answerIsValid(q) {
+      const answer = state.answers[q.id];
+
+      if (q.type === "specialisms") {
+        return Array.isArray(answer) && answer.length > 0 &&
+          answer.every(row => row.name && row.level);
+      }
+
+      if (q.type === "multi") {
+        return Array.isArray(answer) && answer.length > 0;
+      }
+
+      if (q.type === "multiOther") {
+        return answer && (answer.selected?.length > 0 || answer.other);
+      }
+
+      if (q.type === "money") {
+        return answer && answer.amount;
+      }
+
+      return typeof answer === "string" && answer.trim().length > 0;
+    }
+
+    function advance(skip) {
+      const q = questions[state.current];
+      collectCurrentAnswer(q);
+
+      if (!skip && !answerIsValid(q)) {
+        document.getElementById("errorMessage").textContent =
+          q.type === "specialisms"
+            ? "Please add at least one specialism and select its level—or skip this question."
+            : "Please answer this question, or choose “Skip for now”.";
+        return;
+      }
+
+      if (skip) {
+        if (!state.skipped.includes(q.id)) state.skipped.push(q.id);
+        delete state.answers[q.id];
+      } else {
+        state.skipped = state.skipped.filter(id => id !== q.id);
+      }
+
+      saveState();
+
+      if (state.current < questions.length - 1) {
+        state.current += 1;
+        saveState();
+        renderQuestion();
+      } else {
+        finishJourney();
+      }
+    }
+
+    function goBack() {
+      const q = questions[state.current];
+      collectCurrentAnswer(q);
+      if (state.current > 0) {
+        state.current -= 1;
+        saveState();
+        renderQuestion();
+      }
+    }
+
+    function finishJourney() {
+      state.completed = true;
+      saveState();
+      wizardContent.style.display = "none";
+      completion.classList.add("visible");
+      progressBar.style.width = "100%";
+      document.getElementById("wizard").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function formatAnswer(q) {
+      if (state.skipped.includes(q.id)) return "Skipped";
+      const answer = state.answers[q.id];
+
+      if (q.type === "specialisms") {
+        return answer?.map(row => `${row.name} — ${row.level}`).join("\n") || "Not answered";
+      }
+
+      if (q.type === "multi") {
+        return answer?.join(", ") || "Not answered";
+      }
+
+      if (q.type === "multiOther") {
+        const parts = [...(answer?.selected || [])];
+        if (answer?.other) parts.push(answer.other);
+        return parts.join(", ") || "Not answered";
+      }
+
+      if (q.type === "money") {
+        return answer?.amount
+          ? `${answer.currency} ${answer.amount} · ${answer.basis}`
+          : "Not answered";
+      }
+
+      return answer || "Not answered";
+    }
+
+    function showSummary() {
+      summaryGrid.innerHTML = questions.map(q => `
+        <article class="summary-item">
+          <strong>${q.title}</strong>
+          <span>${escapeHTML(formatAnswer(q))}</span>
+        </article>
+      `).join("");
+
+      completion.classList.remove("visible");
+      document.getElementById("wizard").style.display = "none";
+      summary.classList.add("visible");
+      summary.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    function buildPlainText() {
+      return [
+        "CONSULT & HIRE — CANDIDATE DISCOVERY",
+        "",
+        ...questions.flatMap(q => [q.title, formatAnswer(q), ""])
+      ].join("\n");
+    }
+
+    function emailAnswers() {
+      const subject = encodeURIComponent("Candidate discovery — Tell us about yourself");
+      const body = encodeURIComponent(
+        `${buildPlainText()}\n\nPlease add your name and preferred contact details before sending.`
+      );
+      window.location.href = `mailto:hello@consultandhire.com?subject=${subject}&body=${body}`;
+    }
+
+    function downloadAnswers() {
+      const blob = new Blob([buildPlainText()], { type: "text/plain;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const anchor = document.createElement("a");
+      anchor.href = url;
+      anchor.download = "consult-and-hire-candidate-discovery.txt";
+      document.body.appendChild(anchor);
+      anchor.click();
+      anchor.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    document.getElementById("reviewAnswers").addEventListener("click", showSummary);
+    document.getElementById("emailAnswers").addEventListener("click", emailAnswers);
+    document.getElementById("downloadAnswers").addEventListener("click", downloadAnswers);
+    document.getElementById("continueEditing").addEventListener("click", () => {
+      document.getElementById("wizard").style.display = "";
+      state.current = 0;
+      state.completed = false;
+      saveState();
+      renderQuestion();
+    });
+
+    loadState();
+
+    if (state.completed) {
+      finishJourney();
+    } else {
+      renderQuestion();
+    }
+  </script>
+</body>
+</html>
