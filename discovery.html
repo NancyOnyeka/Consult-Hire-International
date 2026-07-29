@@ -1281,7 +1281,7 @@
         <button class="remove-row" type="button" aria-label="Remove specialism">×</button>
       </div>`;
     }
-
+function renderQuestion()
 {
       const q = questions[state.current];
 
@@ -1312,7 +1312,6 @@
       document.getElementById("backButton").addEventListener("click", goBack);
       document.getElementById("nextButton").addEventListener("click", () => advance(false));
       document.getElementById("skipButton").addEventListener("click", () => advance(true));
-      questionCard.scrollIntoView({ behavior: "smooth", block: "nearest" });
     }
 
     function bindDynamicInputs(q) {
